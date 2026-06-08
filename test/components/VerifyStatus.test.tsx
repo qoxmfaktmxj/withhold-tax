@@ -12,4 +12,9 @@ describe('VerifyStatus', () => {
     const el = screen.getByText(/강의기반/)
     expect(el).toHaveAttribute('id')
   })
+  it('descId prop overrides the default id', () => {
+    render(<VerifyStatus status="강의기반" descId="vs-f_x" />)
+    const el = screen.getByText(/강의기반/)
+    expect(el).toHaveAttribute('id', 'vs-f_x')
+  })
 })

@@ -6,9 +6,9 @@ const MAP: Record<Fact['verifyStatus'], { icon: string; tone: string; note: stri
   '강의기반': { icon: '·', tone: 'var(--color-lecture)', note: '강의 설명 기반. 공식 1차 출처 미확정 — 신고 전 별도 확인 필요' },
 }
 
-export function VerifyStatus({ status }: { status: Fact['verifyStatus'] }) {
+export function VerifyStatus({ status, descId }: { status: Fact['verifyStatus']; descId?: string }) {
   const m = MAP[status]
-  const id = `vs-${status}`
+  const id = descId ?? `vs-${status}`
   return (
     <span id={id} title={m.note} aria-label={`검증상태: ${status}. ${m.note}`}
       style={{ color: m.tone, fontSize: 11, fontWeight: 500 }}>

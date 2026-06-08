@@ -19,9 +19,36 @@ describe('Fact', () => {
     expect(screen.getByText('LAW')).toBeInTheDocument()
     expect(screen.getByText(/확정/)).toBeInTheDocument()
   })
-  it('강의기반 fact wires aria-describedby to status disclosure', () => {
+  it('강의기반 fact wires aria-describedby to unique per-fact disclosure id', () => {
     render(<Fact data={{ ...data, verifyStatus: '강의기반' }}>설명</Fact>)
     const region = screen.getByTestId('fact-f_a1b2c3')
-    expect(region.getAttribute('aria-describedby')).toContain('vs-강의기반')
+    expect(region.getAttribute('aria-describedby')).toBe('vs-f_a1b2c3')
+    const statusEl = document.getElementById('vs-f_a1b2c3')
+    expect(statusEl).not.toBeNull()
+  })
+  it('확정 fact has no aria-describedby', () => {
+    render(<Fact data={data}>설명</Fact>)
+    const region = screen.getByTestId('fact-f_a1b2c3')
+    expect(region).not.toHaveAttribute('aria-describedby')
+  })
+  it('two 강의기반 facts with different ids produce unique disclosure ids', () => {
+    render(
+      <>
+        <Fact data={{ ...data, id: 'f_aaa111', verifyStatus: '강의기반' }}>첫번째</Fact>
+        <Fact data={{ ...data, id: 'f_bbb222', verifyStatus: '강의기반' }}>두번째</Fact>
+      </>
+    )
+    const region1 = screen.getByTestId('fact-f_aaa111')
+    const region2 = screen.getByTestId('fact-f_bbb222')
+    const id1 = region1.getAttribute('aria-describedby')
+    const id2 = region2.getAttribute('aria-describedby')
+    expect(id1).toBe('vs-f_aaa111')
+    expect(id2).toBe('vs-f_bbb222')
+    expect(id1).not.toBe(id2)
+    // no duplicate ids in the document
+    const allWithId1 = document.querySelectorAll(`#${id1}`)
+    expect(allWithId1).toHaveLength(1)
+    const allWithId2 = document.querySelectorAll(`#${id2}`)
+    expect(allWithId2).toHaveLength(1)
   })
 })
