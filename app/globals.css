@@ -27,3 +27,9 @@ body {
 
 h1, h2, h3 { font-family: var(--font-serif), serif; letter-spacing: -0.02em; font-weight: 400; }
 code, pre, .mono { font-family: var(--font-mono), ui-monospace, monospace; }
+
+.wt-tbl { border-collapse: collapse; width: 100%; font-size: 14px; }
+.wt-tbl thead th { background: var(--color-surface-dark); color: var(--color-on-dark); padding: 8px 12px; text-align: left; }
+.wt-tbl td { border-top: 1px solid var(--color-hairline); padding: 8px 12px; }
+.wt-tbl tbody tr:nth-child(even) { background: var(--color-surface-card); }
+.wt-tbl td.hl { background: #ffe98a; } .wt-tbl td.red { color: var(--color-primary-active); } .wt-tbl td.grn { color: var(--color-verified); }
