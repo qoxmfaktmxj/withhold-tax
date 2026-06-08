@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { FactSchema } from '@/lib/facts/schema'
+import { FactSchema, FactsFileSchema } from '@/lib/facts/schema'
 
 const valid = {
   id: 'f_a1b2c3', slug: 'ch03.small-amount.personal-service',
@@ -27,5 +27,51 @@ describe('FactSchema', () => {
     expect(r.primarySourceVerified).toBe(false)
     expect(r.confidenceScore).toBe(0)
     expect(r.subordinateLawRef).toBe('')
+    expect(r.scopeLimitations).toBe('')
+    expect(r.localTaxRef).toBe('')
+    expect(r.supersededRefs).toBe('')
+    expect(r.sunsetDate).toBe('')
+    expect(r.reviewerId).toBe('')
+    expect(r.appliesFrom).toBe('')
+  })
+
+  // confidenceScore 정수 범위 검증
+  it('rejects confidenceScore > 100', () => {
+    expect(() => FactSchema.parse({ ...valid, confidenceScore: 101 })).toThrow()
+  })
+  it('rejects confidenceScore < 0', () => {
+    expect(() => FactSchema.parse({ ...valid, confidenceScore: -1 })).toThrow()
+  })
+  it('rejects non-integer confidenceScore', () => {
+    expect(() => FactSchema.parse({ ...valid, confidenceScore: 50.5 })).toThrow()
+  })
+
+  // history min(1) 검증
+  it('rejects empty history array', () => {
+    expect(() => FactSchema.parse({ ...valid, history: [] })).toThrow()
+  })
+
+  // chapter 형식 검증
+  it('rejects bad chapter "CH3"', () => {
+    expect(() => FactSchema.parse({ ...valid, chapter: 'CH3' })).toThrow()
+  })
+  it('rejects bad chapter "3"', () => {
+    expect(() => FactSchema.parse({ ...valid, chapter: '3' })).toThrow()
+  })
+  it('accepts valid chapter "ch10"', () => {
+    expect(() => FactSchema.parse({ ...valid, chapter: 'ch10' })).not.toThrow()
+  })
+
+  // 실제 날짜 유효성 검증 (refine)
+  it('rejects impossible date "2026-13-45"', () => {
+    expect(() => FactSchema.parse({ ...valid, effectiveDate: '2026-13-45' })).toThrow()
+  })
+
+  // FactsFileSchema 검증
+  it('FactsFileSchema accepts array of one valid fact', () => {
+    expect(() => FactsFileSchema.parse([valid])).not.toThrow()
+  })
+  it('FactsFileSchema rejects array with bad id', () => {
+    expect(() => FactsFileSchema.parse([{ ...valid, id: 'bad' }])).toThrow()
   })
 })
