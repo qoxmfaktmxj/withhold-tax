@@ -3,10 +3,16 @@
 import { useState, useMemo } from 'react'
 import { buildIndex, searchIndex, type Doc } from '@/lib/search/build-index'
 
-export function Search({ docs }: { docs: Doc[] }) {
+interface SearchProps {
+  docs: Doc[]
+  availableChapters: string[]
+}
+
+export function Search({ docs, availableChapters }: SearchProps) {
   const [query, setQuery] = useState('')
   const idx = useMemo(() => buildIndex(docs), [docs])
   const results = useMemo(() => (query.trim() ? searchIndex(idx, query.trim()) : []), [idx, query])
+  const availableSet = useMemo(() => new Set(availableChapters), [availableChapters])
 
   return (
     <div className="wt-search" style={{ margin: 'var(--space-xl) 0' }}>
@@ -44,19 +50,33 @@ export function Search({ docs }: { docs: Doc[] }) {
         >
           {results.map((r) => (
             <li key={r.id} style={{ borderTop: '1px solid var(--color-hairline)' }}>
-              <a
-                href={`/ch/${r.chapter}`}
-                style={{
-                  display: 'block',
-                  padding: '8px 12px',
-                  color: 'var(--color-ink)',
-                  textDecoration: 'none',
-                  fontSize: 14,
-                }}
-              >
-                <span style={{ color: 'var(--color-muted)', fontSize: 12, marginRight: 8 }}>{r.chapter}</span>
-                {r.title}
-              </a>
+              {availableSet.has(r.chapter) ? (
+                <a
+                  href={`/ch/${r.chapter}`}
+                  style={{
+                    display: 'block',
+                    padding: '8px 12px',
+                    color: 'var(--color-ink)',
+                    textDecoration: 'none',
+                    fontSize: 14,
+                  }}
+                >
+                  <span style={{ color: 'var(--color-muted)', fontSize: 12, marginRight: 8 }}>{r.chapter}</span>
+                  {r.title}
+                </a>
+              ) : (
+                <span
+                  style={{
+                    display: 'block',
+                    padding: '8px 12px',
+                    color: 'var(--color-muted)',
+                    fontSize: 14,
+                  }}
+                >
+                  <span style={{ fontSize: 12, marginRight: 8 }}>{r.chapter}</span>
+                  {r.title} (작성 예정)
+                </span>
+              )}
             </li>
           ))}
         </ul>

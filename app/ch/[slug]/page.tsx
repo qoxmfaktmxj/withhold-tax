@@ -1,24 +1,13 @@
 import { notFound } from 'next/navigation'
-import fs from 'node:fs'
-import path from 'node:path'
 import type { ReactNode } from 'react'
 import factsRaw from '@/content/facts.json'
 import { loadFacts, byChapter } from '@/lib/facts/store'
+import { availableChapterSlugs } from '@/lib/chapters'
 import { ChapterVerifySummary } from '@/components/ChapterVerifySummary'
 import { Fact } from '@/components/Fact'
 
-const CH_DIR = path.join(process.cwd(), 'content', 'chapters')
-
-function chapterSlugs(): string[] {
-  if (!fs.existsSync(CH_DIR)) return []
-  return fs
-    .readdirSync(CH_DIR)
-    .filter((f) => f.endsWith('.mdx'))
-    .map((f) => f.replace(/\.mdx$/, ''))
-}
-
 export function generateStaticParams() {
-  return chapterSlugs().map((slug) => ({ slug }))
+  return availableChapterSlugs().map((slug) => ({ slug }))
 }
 
 export const dynamicParams = false
@@ -29,7 +18,7 @@ export default async function ChapterPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  if (!chapterSlugs().includes(slug)) notFound()
+  if (!availableChapterSlugs().includes(slug)) notFound()
 
   const facts = loadFacts(factsRaw)
   const chFacts = byChapter(facts, slug)

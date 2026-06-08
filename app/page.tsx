@@ -1,6 +1,8 @@
+import Link from 'next/link'
 import factsRaw from '@/content/facts.json'
 import { loadFacts } from '@/lib/facts/store'
 import { factsToDocs } from '@/lib/search/facts-docs'
+import { availableChapterSlugs } from '@/lib/chapters'
 import { Search } from '@/components/Search'
 
 const CHAPTERS = [
@@ -20,19 +22,28 @@ const CHAPTERS = [
 
 export default function Home() {
   const docs = factsToDocs(loadFacts(factsRaw))
+  const available = new Set(availableChapterSlugs())
   return (
     <div>
       <section style={{ padding: 'var(--space-section) 0 var(--space-xl)' }}>
         <h1 style={{ fontSize: 48, margin: 0 }}>원천징수 실무 레퍼런스</h1>
         <p style={{ color: 'var(--color-muted)', fontSize: 18 }}>출처·시행일이 명시된 사내 참고 자료. 2026 기준.</p>
-        <p><a href="/updates-2026" style={{ color: 'var(--color-primary)' }}>→ 2026년 개정·시행 항목 보기</a></p>
+        <p><Link href="/updates-2026" style={{ color: 'var(--color-primary)' }}>→ 2026년 개정·시행 항목 보기</Link></p>
       </section>
-      <Search docs={docs} />
+      <Search docs={docs} availableChapters={[...available]} />
       <h2>목차</h2>
       <ul style={{ lineHeight: 2, listStyle: 'none', padding: 0 }}>
-        {CHAPTERS.map((c) => (
-          <li key={c.slug}><a href={`/ch/${c.slug}`} style={{ color: 'var(--color-ink)' }}>{c.title}</a></li>
-        ))}
+        {CHAPTERS.map((c) =>
+          available.has(c.slug) ? (
+            <li key={c.slug}>
+              <Link href={`/ch/${c.slug}`} style={{ color: 'var(--color-ink)' }}>{c.title}</Link>
+            </li>
+          ) : (
+            <li key={c.slug}>
+              <span style={{ color: 'var(--color-muted)' }}>{c.title} (작성 예정)</span>
+            </li>
+          )
+        )}
       </ul>
     </div>
   )
