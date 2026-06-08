@@ -10,8 +10,11 @@ export function byChapter(facts: Fact[], chapter: string): Fact[] {
   return facts.filter((f) => f.chapter === chapter)
 }
 
+/** 개정·신설·폐지 등 변경이 있는 전체 항목, 시행일 최신순 */
 export function dashboardFacts(facts: Fact[]): Fact[] {
-  return facts.filter((f) => f.changeType !== '없음' || f.effectiveDate >= '2026-01-01')
+  return facts
+    .filter((f) => f.changeType !== '없음')
+    .sort((a, b) => (b.effectiveDate || '').localeCompare(a.effectiveDate || ''))
 }
 
 export function reviewDue(facts: Fact[]): Fact[] {

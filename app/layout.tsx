@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { IBM_Plex_Sans_KR, JetBrains_Mono, Gowun_Batang } from "next/font/google";
 import "./globals.css";
 import { Disclaimer } from "@/components/Disclaimer";
@@ -42,9 +43,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <header style={{ position: 'sticky', top: 0, height: 64, display: 'flex', alignItems: 'center',
           padding: '0 var(--space-lg)', background: 'var(--color-canvas)', borderBottom: '1px solid var(--color-hairline)', zIndex: 10 }}>
-          <a href="/" style={{ fontFamily: 'var(--font-serif)', fontSize: 18 }}>원천징수 레퍼런스</a>
+          <Link href="/" style={{ fontFamily: 'var(--font-serif)', fontSize: 18 }}>원천징수 레퍼런스</Link>
           <nav style={{ marginLeft: 'auto', display: 'flex', gap: 'var(--space-md)', fontSize: 14 }}>
-            <a href="/updates-2026">2026 개정</a><a href="/review-due">검토 임박</a>
+            <Link href="/updates-2026">2026 개정</Link><Link href="/review-due">검토 임박</Link>
           </nav>
         </header>
         <main style={{ maxWidth: 880, margin: '0 auto', padding: 'var(--space-xl) var(--space-lg)' }}>{children}</main>

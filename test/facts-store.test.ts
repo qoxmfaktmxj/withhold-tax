@@ -13,15 +13,21 @@ const f = (o: Partial<Fact>): Fact => ({
 
 describe('facts store', () => {
   it('loadFacts validates and throws on bad data', () => {
-    expect(() => loadFacts([{ id: 'bad' } as any])).toThrow()
+    expect(() => loadFacts([{ id: 'bad' } as unknown])).toThrow()
   })
   it('byChapter groups', () => {
     const list = [f({ id: 'f_000001', chapter: 'ch3' }), f({ id: 'f_000002', chapter: 'ch4' })]
     expect(byChapter(list, 'ch3')).toHaveLength(1)
   })
-  it('dashboardFacts picks 2026 changes', () => {
-    const list = [f({ id: 'f_000001', changeType: '신설', effectiveDate: '2026-01-01' }), f({ id: 'f_000002', changeType: '없음' })]
-    expect(dashboardFacts(list)).toHaveLength(1)
+  it('dashboardFacts: 없음 제외, 변경 항목만 포함, 시행일 최신순', () => {
+    const list = [
+      f({ id: 'f_000001', changeType: '개정', effectiveDate: '2024-01-01' }),
+      f({ id: 'f_000002', changeType: '없음', effectiveDate: '2026-01-01' }),
+      f({ id: 'f_000003', changeType: '신설', effectiveDate: '2026-07-01' }),
+    ]
+    const result = dashboardFacts(list)
+    expect(result).toHaveLength(2)
+    expect(result.map((x) => x.id)).toEqual(['f_000003', 'f_000001'])
   })
   it('reviewDue sorts by nextReviewBy ascending, skips empty', () => {
     const list = [f({ id: 'f_000001', nextReviewBy: '2027-03-31' }), f({ id: 'f_000002', nextReviewBy: '' }), f({ id: 'f_000003', nextReviewBy: '2026-12-01' })]
