@@ -32,8 +32,7 @@ export default async function ChapterPage({
   if (!chapterSlugs().includes(slug)) notFound()
 
   const facts = loadFacts(factsRaw)
-  const chKey = /^ch\d+$/.test(slug) ? slug : slug
-  const chFacts = byChapter(facts, chKey)
+  const chFacts = byChapter(facts, slug)
   const factMap = Object.fromEntries(facts.map((f) => [f.id, f]))
 
   const F = ({ id, children }: { id: string; children: ReactNode }) =>

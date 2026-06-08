@@ -61,6 +61,12 @@ describe('FactSchema', () => {
   it('accepts valid chapter "ch10"', () => {
     expect(() => FactSchema.parse({ ...valid, chapter: 'ch10' })).not.toThrow()
   })
+  it('accepts named chapter "nonresident"', () => {
+    expect(() => FactSchema.parse({ ...valid, chapter: 'nonresident' })).not.toThrow()
+  })
+  it('accepts named chapter "interest-dividend"', () => {
+    expect(() => FactSchema.parse({ ...valid, chapter: 'interest-dividend' })).not.toThrow()
+  })
 
   // 실제 날짜 유효성 검증 (refine)
   it('rejects impossible date "2026-13-45"', () => {

@@ -16,7 +16,7 @@ export const Risk = z.enum(['high', 'medium', 'low'])
 export const FactSchema = z.object({
   id: z.string().regex(/^f_[a-z0-9]{6}$/, 'f_ + 6 lowercase alphanumeric'),
   slug: z.string().min(1),
-  chapter: z.string().regex(/^ch\d+$/),
+  chapter: z.string().regex(/^[a-z][a-z0-9-]*$/),
   claim: z.string().min(1),
   sourceType: SourceType,
   sourceTitle: z.string(),
