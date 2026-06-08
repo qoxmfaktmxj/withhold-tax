@@ -33,3 +33,10 @@ code, pre, .mono { font-family: var(--font-mono), ui-monospace, monospace; }
 .wt-tbl td { border-top: 1px solid var(--color-hairline); padding: 8px 12px; }
 .wt-tbl tbody tr:nth-child(even) { background: var(--color-surface-card); }
 .wt-tbl td.hl { background: #ffe98a; } .wt-tbl td.red { color: var(--color-primary-active); } .wt-tbl td.grn { color: var(--color-verified); }
+
+@media print {
+  header, footer nav, .wt-search { display: none !important; }
+  main { max-width: 100%; }
+  [role="note"][aria-label^="출처"], .wt-tbl { break-inside: avoid; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 10px; color: #666; }
+}
