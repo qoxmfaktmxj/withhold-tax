@@ -1,0 +1,2053 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>원천징수실무 완전정리 | CFO Academy · 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #16140f;
+  --ink-soft: #2a2620;
+  --paper: #f4efe3;
+  --paper-2: #ebe3d0;
+  --paper-3: #e0d6bd;
+  --accent: #c43e25;
+  --accent-deep: #9c2f1a;
+  --accent-2: #1f5640;
+  --accent-2-soft: #2d7355;
+  --gold: #b8860b;
+  --gold-bright: #d4a017;
+  --muted: #6b6357;
+  --muted-light: #8a8175;
+  --line: #d0c8b3;
+  --line-dark: #b8ad93;
+  --highlight: #ffe98a;
+  --highlight-soft: #fff4c2;
+  --blue: #2c5f8a;
+  --purple: #6b4e8f;
+  --shadow-sm: 0 2px 8px rgba(22, 20, 15, 0.06);
+  --shadow-md: 0 8px 24px rgba(22, 20, 15, 0.10);
+  --shadow-lg: 0 20px 50px rgba(22, 20, 15, 0.16);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+  font-weight: 400;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(196, 62, 37, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 85% 60%, rgba(31, 86, 64, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(184, 134, 11, 0.03) 0%, transparent 40%);
+}
+
+/* grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.container { max-width: 1180px; margin: 0 auto; padding: 0 48px; }
+
+/* ============ PROGRESS BAR ============ */
+.progress-bar {
+  position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--gold) 50%, var(--accent-2) 100%);
+  z-index: 10000; transition: width 0.1s ease;
+}
+
+/* ============ NAV ============ */
+.topnav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(244, 239, 227, 0.88);
+  backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid var(--line);
+  transition: transform 0.3s ease;
+}
+.topnav-inner {
+  max-width: 1180px; margin: 0 auto; padding: 12px 48px;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.topnav-brand {
+  font-family: 'Fraunces', serif; font-weight: 700; font-size: 17px;
+  letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px;
+}
+.topnav-brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+.topnav-links { display: flex; gap: 4px; flex-wrap: wrap; }
+.topnav-links a {
+  font-size: 12px; font-weight: 500; color: var(--muted); text-decoration: none;
+  padding: 6px 11px; border-radius: 20px; transition: all 0.2s; white-space: nowrap;
+  font-family: 'JetBrains Mono', monospace;
+}
+.topnav-links a:hover { background: var(--accent); color: var(--paper); }
+.nav-toggle { display: none; }
+@media (max-width: 980px) {
+  .topnav-links { display: none; }
+}
+
+/* ============ HERO ============ */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+  position: relative; padding: 120px 0 80px; overflow: hidden;
+}
+.hero-bg-text {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(180px, 32vw, 480px);
+  color: var(--ink); opacity: 0.025; white-space: nowrap; pointer-events: none;
+  z-index: 0; letter-spacing: -0.04em;
+}
+.hero-content { position: relative; z-index: 2; }
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.35em;
+  color: var(--accent); text-transform: uppercase; margin-bottom: 28px;
+  display: flex; align-items: center; gap: 16px;
+  opacity: 0; animation: fadeUp 0.8s 0.1s forwards;
+}
+.hero-eyebrow::before { content: ''; width: 48px; height: 2px; background: var(--accent); }
+.hero-title {
+  font-family: 'Fraunces', serif; font-weight: 600; line-height: 1.04;
+  font-size: clamp(52px, 9vw, 120px); letter-spacing: -0.03em; margin-bottom: 36px;
+  font-variation-settings: "opsz" 144;
+}
+.hero-title .line { display: block; opacity: 0; animation: fadeUp 0.9s forwards; }
+.hero-title .line:nth-child(1) { animation-delay: 0.2s; }
+.hero-title .line:nth-child(2) { animation-delay: 0.35s; }
+.hero-title em { font-style: italic; color: var(--accent); font-weight: 400; }
+.hero-title .outline {
+  -webkit-text-stroke: 2px var(--ink); color: transparent; font-weight: 700;
+}
+.hero-desc {
+  font-family: 'Fraunces', serif; font-style: italic; font-size: clamp(18px, 2.5vw, 26px);
+  color: var(--muted); max-width: 620px; margin-bottom: 48px; line-height: 1.5;
+  opacity: 0; animation: fadeUp 0.9s 0.5s forwards;
+}
+.hero-meta {
+  display: flex; gap: 48px; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.9s 0.65s forwards;
+}
+.hero-meta-item { }
+.hero-meta-num {
+  font-family: 'Fraunces', serif; font-weight: 700; font-size: 42px; line-height: 1;
+  color: var(--accent); font-variation-settings: "opsz" 144;
+}
+.hero-meta-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em;
+  color: var(--muted); text-transform: uppercase; margin-top: 6px;
+}
+.scroll-hint {
+  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+  font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.3em;
+  color: var(--muted); text-transform: uppercase; text-align: center;
+  opacity: 0; animation: fadeUp 1s 1s forwards;
+}
+.scroll-hint .arrow { display: block; margin-top: 10px; font-size: 18px; animation: bounce 2s infinite; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+
+/* ============ DAY DIVIDER ============ */
+.day-divider {
+  position: relative; padding: 100px 0 60px; text-align: center;
+}
+.day-divider-tag {
+  display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  letter-spacing: 0.3em; color: var(--paper); background: var(--ink);
+  padding: 8px 20px; border-radius: 30px; margin-bottom: 24px; text-transform: uppercase;
+}
+.day-divider-title {
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(40px, 6vw, 72px);
+  line-height: 1; letter-spacing: -0.02em; margin-bottom: 16px;
+  font-variation-settings: "opsz" 144;
+}
+.day-divider-title em { font-style: italic; color: var(--accent); }
+.day-divider-sub {
+  font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--muted);
+  letter-spacing: 0.1em;
+}
+.day-divider-rule {
+  width: 100px; height: 3px; background: var(--accent); margin: 32px auto 0;
+}
+
+/* ============ TOC ============ */
+.toc-section { padding: 60px 0; }
+.toc-card {
+  background: linear-gradient(135deg, var(--paper-2) 0%, var(--paper) 100%);
+  border: 1px solid var(--line); border-radius: 4px;
+  padding: 56px; position: relative; box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+.toc-card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 6px; height: 100%;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--gold) 50%, var(--accent-2) 100%);
+}
+.toc-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.3em;
+  color: var(--accent); text-transform: uppercase; margin-bottom: 8px;
+}
+.toc-heading {
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: 34px; margin-bottom: 36px;
+  letter-spacing: -0.01em;
+}
+.toc-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 48px; }
+@media (max-width: 768px) { .toc-cols { grid-template-columns: 1fr; } }
+.toc-link {
+  display: flex; align-items: baseline; gap: 16px; padding: 11px 0;
+  text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--line);
+  transition: all 0.25s; cursor: pointer;
+}
+.toc-link:hover { padding-left: 10px; color: var(--accent); }
+.toc-link:hover .toc-link-num { background: var(--accent); color: var(--paper); }
+.toc-link-num {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600;
+  color: var(--accent); border: 1px solid var(--line-dark); border-radius: 4px;
+  padding: 3px 7px; min-width: 32px; text-align: center; transition: all 0.25s;
+}
+.toc-link-text { font-size: 14px; font-weight: 500; flex: 1; }
+.toc-link-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted-light); }
+
+/* ============ CHAPTER ============ */
+.chapter { padding: 70px 0; position: relative; }
+.chapter-marker {
+  display: flex; align-items: flex-start; gap: 36px; margin-bottom: 56px;
+  padding-bottom: 28px; border-bottom: 3px solid var(--ink); position: relative;
+}
+.chapter-marker::after {
+  content: ''; position: absolute; bottom: -3px; left: 0; width: 120px; height: 3px;
+  background: var(--accent);
+}
+.chapter-big-num {
+  font-family: 'Fraunces', serif; font-weight: 300; font-style: italic;
+  font-size: clamp(72px, 12vw, 130px); line-height: 0.8; color: var(--accent);
+  font-variation-settings: "opsz" 144; flex-shrink: 0;
+}
+.chapter-head-text { padding-top: 8px; }
+.chapter-kicker {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.25em;
+  color: var(--muted); text-transform: uppercase; margin-bottom: 12px;
+}
+.chapter-title {
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.05; letter-spacing: -0.02em; font-variation-settings: "opsz" 100;
+}
+
+/* ============ SECTION ============ */
+.sec { margin-bottom: 64px; scroll-margin-top: 90px; }
+.sec-head {
+  display: flex; align-items: baseline; gap: 18px; margin-bottom: 28px;
+}
+.sec-num {
+  font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  color: var(--paper); background: var(--accent); padding: 5px 12px; border-radius: 4px;
+  flex-shrink: 0;
+}
+.sec-title {
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: 28px; line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.sec-title .stars { color: var(--gold); font-size: 18px; letter-spacing: 2px; margin-left: 4px; }
+
+p { margin-bottom: 18px; font-size: 15.5px; }
+p strong, li strong { font-weight: 600; color: var(--ink); }
+mark {
+  background: linear-gradient(180deg, transparent 55%, var(--highlight) 55%);
+  padding: 0 3px; font-weight: 600;
+}
+mark.green { background: linear-gradient(180deg, transparent 55%, #a8e0c0 55%); }
+mark.blue { background: linear-gradient(180deg, transparent 55%, #aed4ee 55%); }
+code {
+  font-family: 'JetBrains Mono', monospace; font-size: 13px;
+  background: var(--paper-3); padding: 2px 7px; border-radius: 4px; color: var(--accent-deep);
+}
+
+/* ============ TABLE ============ */
+.tbl {
+  margin: 28px 0; border: 2px solid var(--ink); border-radius: 4px; overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.tbl table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.tbl th {
+  background: var(--ink); color: var(--paper); padding: 15px 18px; text-align: left;
+  font-weight: 600; font-size: 13px; letter-spacing: 0.02em;
+}
+.tbl td { padding: 13px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tbl tr:last-child td { border-bottom: none; }
+.tbl tbody tr:nth-child(even) { background: rgba(235, 227, 208, 0.5); }
+.tbl tbody tr:hover { background: var(--highlight-soft); }
+.tbl td.hl { background: var(--highlight) !important; font-weight: 600; }
+.tbl td.red { color: var(--accent); font-weight: 600; }
+.tbl td.grn { color: var(--accent-2); font-weight: 600; }
+.tbl-scroll { overflow-x: auto; }
+
+/* ============ CALLOUT ============ */
+.box {
+  border-radius: 4px; padding: 24px 28px; margin: 28px 0; position: relative;
+  border-left: 5px solid var(--accent); background: rgba(196, 62, 37, 0.055);
+}
+.box.imp { border-color: var(--accent); background: rgba(196, 62, 37, 0.08); }
+.box.note { border-color: var(--accent-2); background: rgba(31, 86, 64, 0.06); }
+.box.warn { border-color: var(--gold); background: rgba(184, 134, 11, 0.09); }
+.box.tip { border-color: var(--blue); background: rgba(44, 95, 138, 0.07); }
+.box-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em;
+  text-transform: uppercase; font-weight: 700; margin-bottom: 10px; color: var(--accent);
+  display: flex; align-items: center; gap: 8px;
+}
+.box.note .box-label { color: var(--accent-2); }
+.box.warn .box-label { color: var(--gold); }
+.box.tip .box-label { color: var(--blue); }
+.box p:last-child { margin-bottom: 0; }
+.box p { font-size: 14.5px; }
+
+/* ============ FORMULA ============ */
+.formula {
+  background: linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 100%);
+  color: var(--paper); padding: 32px 36px; margin: 28px 0; border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.9;
+  position: relative; overflow-x: auto; box-shadow: var(--shadow-md);
+}
+.formula::before {
+  content: 'FORMULA'; position: absolute; top: 12px; right: 18px; font-size: 9px;
+  letter-spacing: 0.3em; color: var(--gold-bright); opacity: 0.6;
+}
+.formula .op { color: var(--gold-bright); font-weight: 600; }
+.formula .hl { color: #ffd966; font-weight: 600; }
+.formula .grn { color: #7fd4a8; }
+.formula .dim { color: var(--muted-light); }
+
+/* ============ COMPARE ============ */
+.compare { display: grid; grid-template-columns: 1fr 56px 1fr; margin: 28px 0; }
+@media (max-width: 680px) { .compare { grid-template-columns: 1fr; } }
+.compare-side {
+  padding: 26px; background: var(--paper); border: 2px solid var(--ink);
+}
+.compare-side.l { border-right: none; }
+.compare-side.r { border-left: none; }
+@media (max-width: 680px) {
+  .compare-side.l, .compare-side.r { border: 2px solid var(--ink); }
+}
+.compare-vs {
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 22px;
+  color: var(--accent); background: var(--ink); color: var(--gold-bright);
+  border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+}
+@media (max-width: 680px) { .compare-vs { padding: 10px; border: 2px solid var(--ink); border-top: none; border-bottom: none; } }
+.compare-title {
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: 19px; margin-bottom: 14px;
+  color: var(--accent); padding-bottom: 10px; border-bottom: 1px solid var(--line);
+}
+.compare-side.r .compare-title { color: var(--accent-2); }
+.compare-side ul { list-style: none; font-size: 14px; }
+.compare-side li { padding: 7px 0 7px 20px; position: relative; }
+.compare-side li::before { content: '—'; position: absolute; left: 0; color: var(--muted); }
+
+/* ============ STAT GRID ============ */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 28px 0; }
+.stat {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 4px;
+  padding: 24px; position: relative; overflow: hidden; transition: all 0.3s;
+}
+.stat:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--accent); }
+.stat::after {
+  content: ''; position: absolute; top: 0; right: 0; width: 40px; height: 40px;
+  background: radial-gradient(circle at top right, rgba(196,62,37,0.15), transparent 70%);
+}
+.stat-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em;
+  color: var(--muted); text-transform: uppercase; margin-bottom: 10px;
+}
+.stat-val {
+  font-family: 'Fraunces', serif; font-weight: 700; font-size: 38px; line-height: 1;
+  color: var(--accent); margin-bottom: 8px; font-variation-settings: "opsz" 144;
+}
+.stat-val small { font-size: 15px; font-weight: 500; }
+.stat-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+
+/* ============ FLOW ============ */
+.flow {
+  display: flex; align-items: center; gap: 10px; margin: 28px 0; flex-wrap: wrap;
+  justify-content: center; padding: 24px; background: var(--paper-2);
+  border-radius: 6px; border: 1px dashed var(--line-dark);
+}
+.flow-node {
+  padding: 14px 20px; background: var(--paper); border: 2px solid var(--ink);
+  border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  font-weight: 600; text-align: center;
+}
+.flow-node.accent { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.flow-node.grn { background: var(--accent-2); color: var(--paper); border-color: var(--accent-2); }
+.flow-node small { display: block; font-size: 9px; font-weight: 400; opacity: 0.8; margin-top: 3px; }
+.flow-arr { font-family: 'Fraunces', serif; font-size: 22px; color: var(--accent); }
+
+/* ============ CASE ============ */
+.case {
+  margin: 32px 0; border: 1px solid var(--line-dark); border-radius: 6px;
+  background: var(--paper); overflow: hidden; box-shadow: var(--shadow-sm);
+}
+.case-head {
+  background: linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 100%);
+  padding: 16px 24px; display: flex; align-items: center; gap: 14px;
+}
+.case-tag {
+  font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.2em;
+  background: var(--accent); color: var(--paper); padding: 4px 9px; border-radius: 3px;
+}
+.case-title { font-family: 'Fraunces', serif; font-weight: 600; font-style: italic; font-size: 18px; color: var(--paper); }
+.case-body { padding: 24px 26px; font-size: 14.5px; }
+.case-body ul { list-style: none; }
+.case-body li { padding: 5px 0 5px 22px; position: relative; }
+.case-body li::before { content: '▸'; position: absolute; left: 4px; color: var(--accent); }
+
+/* ============ LIST ============ */
+.dlist { list-style: none; margin: 18px 0; }
+.dlist > li { padding: 9px 0 9px 30px; position: relative; border-bottom: 1px dotted var(--line); font-size: 15px; }
+.dlist > li:last-child { border-bottom: none; }
+.dlist > li::before { content: '▸'; position: absolute; left: 8px; color: var(--accent); font-weight: 600; }
+ol.dlist { counter-reset: dl; }
+ol.dlist > li::before { content: counter(dl); counter-increment: dl; font-family: 'JetBrains Mono', monospace; font-size: 11px; background: var(--accent); color: var(--paper); width: 18px; height: 18px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; left: 0; top: 11px; }
+ol.dlist > li { padding-left: 32px; }
+
+/* ============ BADGE ============ */
+.badge {
+  display: inline-block; padding: 2px 9px; font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  border: 1px solid var(--accent); color: var(--accent); border-radius: 20px;
+  background: rgba(196,62,37,0.06); margin-left: 6px; vertical-align: middle;
+}
+.badge.gold { border-color: var(--gold); color: var(--gold); background: rgba(184,134,11,0.06); }
+.badge.grn { border-color: var(--accent-2); color: var(--accent-2); background: rgba(31,86,64,0.06); }
+
+/* ============ APPENDIX ============ */
+.appendix { padding: 70px 0; }
+.glossary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-top: 36px; }
+.gloss-item {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 4px;
+  padding: 18px 20px; transition: all 0.25s; border-left: 3px solid var(--accent);
+}
+.gloss-item:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.gloss-term {
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: 16px; margin-bottom: 6px;
+  color: var(--accent-deep);
+}
+.gloss-def { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
+
+/* search */
+.gloss-search {
+  width: 100%; padding: 16px 22px; font-family: 'IBM Plex Sans KR', sans-serif;
+  font-size: 15px; border: 2px solid var(--ink); border-radius: 4px; background: var(--paper);
+  margin-top: 24px; color: var(--ink);
+}
+.gloss-search:focus { outline: none; border-color: var(--accent); }
+
+/* cheatsheet */
+.cheat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 36px; }
+.cheat-card {
+  background: var(--paper); border: 2px solid var(--ink); border-radius: 6px;
+  overflow: hidden; box-shadow: var(--shadow-sm); transition: all 0.3s;
+}
+.cheat-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.cheat-card-head {
+  background: var(--ink); color: var(--paper); padding: 14px 18px;
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.cheat-card-head .ic { color: var(--gold-bright); }
+.cheat-card-body { padding: 18px; }
+.cheat-row {
+  display: flex; justify-content: space-between; gap: 12px; padding: 9px 0;
+  border-bottom: 1px dotted var(--line); font-size: 13.5px;
+}
+.cheat-row:last-child { border-bottom: none; }
+.cheat-row .k { color: var(--muted); }
+.cheat-row .v { font-weight: 600; text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; }
+.cheat-row .v.red { color: var(--accent); }
+.cheat-row .v.grn { color: var(--accent-2); }
+
+/* index table */
+.idx-search-wrap { margin: 28px 0; }
+.idx-table { font-size: 13px; }
+.idx-table th { cursor: pointer; user-select: none; }
+.idx-table th:hover { background: var(--accent-deep); }
+
+/* ============ FOOTER ============ */
+.footer {
+  background: linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 100%);
+  color: var(--paper); padding: 70px 0 50px; margin-top: 80px; position: relative;
+  overflow: hidden;
+}
+.footer::before {
+  content: ''; position: absolute; top: -100px; right: -100px; width: 300px; height: 300px;
+  border-radius: 50%; background: radial-gradient(circle, var(--accent) 0%, transparent 70%); opacity: 0.2;
+}
+.footer-content { position: relative; z-index: 2; text-align: center; }
+.footer-title {
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: 36px; margin-bottom: 16px;
+  font-variation-settings: "opsz" 144;
+}
+.footer-title em { font-style: italic; color: var(--gold-bright); }
+.footer-meta {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em;
+  color: rgba(244,239,227,0.6); text-transform: uppercase; margin-top: 24px;
+}
+
+/* back to top */
+.totop {
+  position: fixed; bottom: 28px; right: 28px; width: 48px; height: 48px;
+  background: var(--ink); color: var(--paper); border: none; border-radius: 50%;
+  font-size: 20px; cursor: pointer; z-index: 1000; opacity: 0; pointer-events: none;
+  transition: all 0.3s; box-shadow: var(--shadow-md);
+}
+.totop.show { opacity: 1; pointer-events: auto; }
+.totop:hover { background: var(--accent); transform: translateY(-3px); }
+
+/* reveal animation */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s, transform 0.7s; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* print */
+@media print {
+  body { background: white; }
+  .topnav, .totop, .progress-bar, .scroll-hint, .gloss-search, .idx-search-wrap { display: none; }
+  .hero { min-height: auto; page-break-after: always; }
+  .chapter { page-break-before: always; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 24px; }
+  .topnav-inner { padding: 12px 24px; }
+  .chapter-marker { gap: 18px; }
+  .hero-meta { gap: 28px; }
+}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="topnav" id="topnav">
+  <div class="topnav-inner">
+    <div class="topnav-brand"><span class="dot"></span>원천징수실무</div>
+    <div class="topnav-links">
+      <a href="#hero">표지</a>
+      <a href="#toc">목차</a>
+      <a href="#day1">DAY 1</a>
+      <a href="#day2">DAY 2</a>
+      <a href="#glossary">용어사전</a>
+      <a href="#index">교재색인</a>
+      <a href="#cheatsheet">치트시트</a>
+    </div>
+  </div>
+</nav>
+<!-- ============ HERO ============ -->
+<header class="hero" id="hero">
+  <div class="hero-bg-text">源泉</div>
+  <div class="container hero-content">
+    <div class="hero-eyebrow">CFO Academy · Withholding Tax Practice · 2026</div>
+    <h1 class="hero-title">
+      <span class="line">원천징수<em>실무</em></span>
+      <span class="line outline">완전정리</span>
+    </h1>
+    <p class="hero-desc">소득세법 8가지 소득의 구조부터 거주자 판정, 근로·퇴직·사업·기타소득의 원천징수 실무까지 — 세무사 차재영·박교원 2일 과정 종합 정리본</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><div class="hero-meta-num">2</div><div class="hero-meta-label">Days · 0521-0522</div></div>
+      <div class="hero-meta-item"><div class="hero-meta-num">12</div><div class="hero-meta-label">Chapters</div></div>
+      <div class="hero-meta-item"><div class="hero-meta-num">143</div><div class="hero-meta-label">Topics</div></div>
+      <div class="hero-meta-item"><div class="hero-meta-num">3</div><div class="hero-meta-label">Appendices</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL TO BEGIN<span class="arrow">↓</span></div>
+</header>
+
+<!-- ============ TOC ============ -->
+<section class="toc-section" id="toc">
+  <div class="container">
+    <div class="toc-card reveal">
+      <div class="toc-label">Contents · 목차</div>
+      <h2 class="toc-heading">2일 과정 전체 구성</h2>
+      <div class="toc-cols">
+        <a class="toc-link" href="#ch1"><span class="toc-link-num">01</span><span class="toc-link-text">소득세의 기본 구조</span><span class="toc-link-meta">DAY1</span></a>
+        <a class="toc-link" href="#ch2"><span class="toc-link-num">02</span><span class="toc-link-text">법체계와 세금의 분류</span><span class="toc-link-meta">DAY1</span></a>
+        <a class="toc-link" href="#ch3"><span class="toc-link-num">03</span><span class="toc-link-text">원천징수 제도의 핵심</span><span class="toc-link-meta">DAY1</span></a>
+        <a class="toc-link" href="#ch4"><span class="toc-link-num">04</span><span class="toc-link-text">가산세와 신고 실무</span><span class="toc-link-meta">DAY1</span></a>
+        <a class="toc-link" href="#ch5"><span class="toc-link-num">05</span><span class="toc-link-text">거주자·비거주자와 해외 파견</span><span class="toc-link-meta">DAY1</span></a>
+        <a class="toc-link" href="#ch6"><span class="toc-link-num">06</span><span class="toc-link-text">근로소득 비과세 실무 (I)</span><span class="toc-link-meta">DAY1</span></a>
+        <a class="toc-link" href="#ch7"><span class="toc-link-num">07</span><span class="toc-link-text">신고서 작성과 검증 구조</span><span class="toc-link-meta">DAY2</span></a>
+        <a class="toc-link" href="#ch8"><span class="toc-link-num">08</span><span class="toc-link-text">근로소득 비과세 실무 (II)</span><span class="toc-link-meta">DAY2</span></a>
+        <a class="toc-link" href="#ch9"><span class="toc-link-num">09</span><span class="toc-link-text">간이세액표와 퇴직소득</span><span class="toc-link-meta">DAY2</span></a>
+        <a class="toc-link" href="#ch10"><span class="toc-link-num">10</span><span class="toc-link-text">사업소득·기타소득 원천징수</span><span class="toc-link-meta">DAY2</span></a>
+        <a class="toc-link" href="#glossary"><span class="toc-link-num">A</span><span class="toc-link-text">핵심 용어 사전</span><span class="toc-link-meta">APPENDIX</span></a>
+        <a class="toc-link" href="#index"><span class="toc-link-num">B</span><span class="toc-link-text">교재 페이지 색인표</span><span class="toc-link-meta">APPENDIX</span></a>
+        <a class="toc-link" href="#cheatsheet"><span class="toc-link-num">C</span><span class="toc-link-text">빠른 참조 치트시트</span><span class="toc-link-meta">APPENDIX</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ DAY 1 ============ -->
+<div class="day-divider" id="day1">
+  <div class="container">
+    <span class="day-divider-tag">DAY 01 · 2026.05.21</span>
+    <h2 class="day-divider-title">기초와 <em>골격</em></h2>
+    <p class="day-divider-sub">소득세 구조 · 법체계 · 원천징수 메커니즘 · 근로소득 비과세</p>
+    <div class="day-divider-rule"></div>
+  </div>
+</div>
+
+<!-- CHAPTER 1 -->
+<section class="chapter" id="ch1">
+  <div class="container">
+    <div class="chapter-marker reveal">
+      <div class="chapter-big-num">01</div>
+      <div class="chapter-head-text">
+        <div class="chapter-kicker">Foundations · 거주자 / 소득 8종 / 종합과세</div>
+        <h2 class="chapter-title">소득세의 기본 구조</h2>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">1.1</span><h3 class="sec-title">소득세의 정의와 주요 용어</h3></div>
+      <p>소득세는 <strong>개인소득세(소득세)</strong>와 <strong>법인소득세(법인세)</strong>로 구분되며, 통상 "소득세"라 하면 개인소득세를 가리킵니다.</p>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th style="width:24%">구분</th><th>정의</th></tr></thead>
+        <tbody>
+          <tr><td><strong>거주자</strong></td><td>국내 주소를 두거나 <mark>183일 이상 거소</mark>를 둔 개인</td></tr>
+          <tr><td><strong>비거주자</strong></td><td>거주자가 아닌 개인</td></tr>
+          <tr><td><strong>내국법인</strong></td><td>국내 본점/주사무소 또는 <mark>사업의 실질적 관리장소</mark>를 둔 법인</td></tr>
+          <tr><td><strong>외국법인</strong></td><td>내국법인이 아닌 법인</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box note">
+        <div class="box-label">◆ Background · 론스타 사건</div>
+        <p>"사업의 실질적 관리장소" 규정은 <strong>론스타-스타타워 사건</strong>이 계기. 론스타가 스타타워 법인 지분을 싱가포르 투자청(GIC)에 매각하며 약 8천억 양도차익 발생. 의사결정 장소를 벨기에라 주장해 한국 과세권 회피 시도 → 이후 실질적 관리장소가 국내면 내국법인으로 보아 과세하도록 규정 신설.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">1.2</span><h3 class="sec-title">열거주의 vs 포괄주의</h3></div>
+      <div class="compare">
+        <div class="compare-side l">
+          <div class="compare-title">소득원천설 (열거주의)</div>
+          <ul>
+            <li>적용: <strong>소득세법</strong></li>
+            <li>법에 규정된 소득만 과세</li>
+            <li>개인 코인·주식 → 비과세 (열거 안 됨)</li>
+            <li>유형별 포괄주의: 이자·배당·사업·근로·연금</li>
+          </ul>
+        </div>
+        <div class="compare-vs">VS</div>
+        <div class="compare-side r">
+          <div class="compare-title">순자산증가설 (포괄주의)</div>
+          <ul>
+            <li>적용: <strong>법인세법</strong></li>
+            <li>합법/불법 불문, 소득 발생 시 과세</li>
+            <li>법인 코인·주식 → 과세</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">1.3</span><h3 class="sec-title">소득세법상 8가지 소득</h3></div>
+      <div class="formula">
+<span class="op">┌─ 종합소득 (6가지) ──────────────┐</span>
+   1. 이자소득      2. 배당소득
+   3. 사업소득      4. 근로소득
+   5. 연금소득      6. 기타소득
+<span class="op">└─────────────────────────────────┘</span>
+
+<span class="op">┌─ 분류과세 (2가지) ──────────────┐</span>
+   7. 퇴직소득      8. 양도소득
+<span class="op">└─────────────────────────────────┘</span></div>
+      <p><strong>종합과세 이유</strong>: 누진세 구조 → 합산 시 세부담 증가. 최고세율 45% + 지방소득세 4.5% = <mark>49.5%</mark>. 과세표준 1.5억 구간에서 세율 24% → 35% (11%p 점프).</p>
+      <ul class="dlist">
+        <li><strong>퇴직소득 분류과세</strong>: 장기 누적 소득 → 연분연승법 (근속연수로 나눔)</li>
+        <li><strong>양도소득 분류과세</strong>: 장기 보유 자산 차익 + 중과세율 별도 (다주택자 등)</li>
+      </ul>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">1.4</span><h3 class="sec-title">소득금액 계산 구조</h3></div>
+      <div class="formula"><span class="hl">소득금액 = 총수입금액 − 필요경비</span></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>소득</th><th>총수입금액</th><th>필요경비</th></tr></thead>
+        <tbody>
+          <tr><td>이자·배당</td><td class="grn">⭕</td><td class="red">❌ (인정 안 함)</td></tr>
+          <tr><td>사업·기타</td><td class="grn">⭕</td><td class="grn">⭕</td></tr>
+          <tr><td>근로</td><td>총급여</td><td>근로소득공제</td></tr>
+          <tr><td>연금</td><td>총연금액</td><td>연금소득공제</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box">
+        <div class="box-label">◆ 회계 vs 세법 용어</div>
+        <p><strong>회계</strong>: 수익 − 비용 = 이익 &nbsp;/&nbsp; <strong>소득세법</strong>: 총수입금액 − 필요경비 = 소득금액. 4대보험은 일반적으로 <strong>총수입금액(총급여) 기준</strong> 산정.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 2 -->
+<section class="chapter" id="ch2">
+  <div class="container">
+    <div class="chapter-marker reveal">
+      <div class="chapter-big-num">02</div>
+      <div class="chapter-head-text">
+        <div class="chapter-kicker">Legal Framework · 3단 입법 / 신고납부 vs 정부부과</div>
+        <h2 class="chapter-title">법체계와 세금의 분류</h2>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">2.1</span><h3 class="sec-title">3단 입법구조</h3></div>
+      <div class="flow">
+        <div class="flow-node accent">법률<small>국회 (본법)</small></div>
+        <div class="flow-arr">→</div>
+        <div class="flow-node">시행령<small>정부 (대통령령)</small></div>
+        <div class="flow-arr">→</div>
+        <div class="flow-node">시행규칙<small>기재부장관 (부령)</small></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="stat-label">본법 개정</div><div class="stat-val">1.1</div><div class="stat-desc">1월 1일 개정 발효</div></div>
+        <div class="stat"><div class="stat-label">시행령 개정</div><div class="stat-val">2.10</div><div class="stat-desc">2월 10일 전후</div></div>
+        <div class="stat"><div class="stat-label">시행규칙 개정</div><div class="stat-val">3.10</div><div class="stat-desc">3월 10일 전후 (서식 포함)</div></div>
+      </div>
+      <p><strong>조문 읽는 법</strong>: <code>소득세법 제4조 제1항 제1호 가목</code> · 구조: 조 → 항 → 호 → 목 · 시행령은 본법을 이길 수 없음(상위법 우선).</p>
+      <div class="box tip">
+        <div class="box-label">◆ Pro Tip · 법령 검색 사이트</div>
+        <p><strong>국가법령정보센터</strong>(law.go.kr) — 모든 공포 법령 게재. <strong>법제처 현행법령</strong>은 실무 작업 시(링크 잘 걸림), <strong>최신법령</strong>은 개정 이력 확인 시. <strong>국민참여입법센터</strong>는 입법 예고 단계 확인용(서식 미리보기). 법령정보 API(open.law.go.kr)를 AI에 연동하면 최신 법령 검증 가능.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">2.2</span><h3 class="sec-title">세금의 결정방식 분류</h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>구분</th><th>신고납부세목</th><th>정부부과세목</th></tr></thead>
+        <tbody>
+          <tr><td>다른 표현</td><td>자기결정</td><td>정부결정</td></tr>
+          <tr><td>결정주체</td><td>납세자 본인</td><td>정부</td></tr>
+          <tr><td>해당 세목</td><td>소득세·법인세·부가세 등 대부분</td><td class="red">상속세·증여세·종부세 (3가지만)</td></tr>
+          <tr><td>통제방식</td><td>사후 세무조사</td><td>사전 결정</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>결정</strong> = 과세표준과 세액을 정하는 것</p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">2.3</span><h3 class="sec-title">수정신고 vs 경정청구 <span class="stars">★</span></h3></div>
+      <div class="compare">
+        <div class="compare-side l">
+          <div class="compare-title">수정신고 (증액)</div>
+          <ul>
+            <li>방향: <strong>세액 ↑</strong> (더 내는 것)</li>
+            <li>효력: <strong>자동 경정</strong></li>
+            <li>결정주체: 납세자 본인</li>
+            <li>국가 손해: 없음 (자동 인정)</li>
+          </ul>
+        </div>
+        <div class="compare-vs">VS</div>
+        <div class="compare-side r">
+          <div class="compare-title">경정청구 (감액)</div>
+          <ul>
+            <li>방향: <strong>세액 ↓</strong> (돌려받는 것)</li>
+            <li>효력: <strong>청구 효력만</strong></li>
+            <li>결정주체: <strong>세무서</strong>가 결정</li>
+            <li>국가 손해: 있음 (검토 필요)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="box warn">
+        <div class="box-label">◆ 중요 용어</div>
+        <p><strong>경정기관 = 세무서</strong> · <strong>기한 후 신고</strong>: 신고기한 지난 후 신고 → 결정력 없음(세무서가 결정). 4대보험도 동일 용어 사용.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 3 -->
+<section class="chapter" id="ch3">
+  <div class="container">
+    <div class="chapter-marker reveal">
+      <div class="chapter-big-num">03</div>
+      <div class="chapter-head-text">
+        <div class="chapter-kicker">Withholding Essentials · 세율 / 의제 / 승계</div>
+        <h2 class="chapter-title">원천징수 제도의 핵심</h2>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">3.1</span><h3 class="sec-title">원천징수의 법적 성격</h3></div>
+      <ul class="dlist">
+        <li><strong>공무수탁사인설</strong>: 원천징수의무자가 국가 일을 대신해주는 민간인</li>
+        <li><strong>채무인수설</strong>: 원천납세의무자(근로자)의 채무를 회사가 인수 (면책적/병존적, 정설 없음)</li>
+      </ul>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>용어</th><th>의미</th></tr></thead>
+        <tbody>
+          <tr><td><strong>원천징수의무자</strong></td><td>회사 (소득 지급자)</td></tr>
+          <tr><td><strong>원천납세의무자</strong></td><td>근로자/소득 귀속자 (원래 세금 낼 사람)</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">3.2</span><h3 class="sec-title">원천징수 대상 (개인 vs 법인) <span class="stars">★</span></h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>소득</th><th>개인 원천징수</th><th>법인 원천징수</th></tr></thead>
+        <tbody>
+          <tr><td>이자소득</td><td class="grn">⭕</td><td class="grn">⭕</td></tr>
+          <tr><td>배당소득</td><td class="grn">⭕</td><td class="red">❌ (단, <strong>펀드는 예외 ⭕</strong>)</td></tr>
+          <tr><td>사업소득</td><td>△ (3.3%)</td><td class="red">❌</td></tr>
+          <tr><td>근로/연금/기타/퇴직</td><td class="grn">⭕</td><td class="red">❌</td></tr>
+          <tr><td>양도소득</td><td class="red">❌</td><td class="red">❌</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box">
+        <div class="box-label">◆ 펀드의 처리</div>
+        <p>주식형 → 성격상 배당소득 / 채권형 → 성격상 이자소득 / 혼합형 → 섞임. <strong>세법상 일괄 "배당소득(집합투자기구)"으로 구분.</strong> 법인도 펀드는 원천징수 대상.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">3.3</span><h3 class="sec-title">주요 원천징수 세율</h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>구분</th><th>세율</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td>이자소득 (일반)</td><td class="red"><strong>14%</strong></td><td>—</td></tr>
+          <tr><td>이자소득 (비영업대금 이익)</td><td class="red"><strong>25%</strong></td><td>—</td></tr>
+          <tr><td>배당소득 (일반)</td><td class="red"><strong>14%</strong></td><td>—</td></tr>
+          <tr><td class="hl"><strong>고배당기업 분리과세</strong></td><td class="hl"><strong>9%</strong></td><td class="hl">2025년 신설</td></tr>
+          <tr><td>사업소득</td><td class="red"><strong>3.3%</strong></td><td>소득세 3% + 지방세 0.3%</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>고배당 분리과세 신설 배경</strong>: 금융소득 2천만원 초과 시 종합과세되는데, 배당 많이 하는 기업(예: 삼성전자) 투자 유도 목적.</p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">3.4</span><h3 class="sec-title">완납적 vs 예납적 원천징수</h3></div>
+      <div class="compare">
+        <div class="compare-side l">
+          <div class="compare-title">완납적 원천징수</div>
+          <ul><li>원천징수로 납세의무 종결</li><li>대표 사례: <strong>복권 당첨금</strong></li></ul>
+        </div>
+        <div class="compare-vs">VS</div>
+        <div class="compare-side r">
+          <div class="compare-title">예납적 원천징수</div>
+          <ul><li>미리 떼고 추후 정산</li><li>대표 사례: <strong>근로소득</strong> (연말정산)</li></ul>
+        </div>
+      </div>
+      <p>근로소득은 종합소득 → 원래 5월 종합소득세 신고 대상. 회사가 대신해주는 것이 <strong>연말정산</strong>. 근로소득 외 다른 소득이 있으면 별도 5월 신고 필요.</p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">3.5</span><h3 class="sec-title">과세 최저한 (소액부징수)</h3></div>
+      <div class="stats">
+        <div class="stat"><div class="stat-label">기타소득</div><div class="stat-val">5<small>만원</small></div><div class="stat-desc">이하 과세 제외 (소득금액)</div></div>
+        <div class="stat"><div class="stat-label">복권 당첨금</div><div class="stat-val">200<small>만원</small></div><div class="stat-desc">이하 과세 제외</div></div>
+        <div class="stat"><div class="stat-label">일반 원천징수</div><div class="stat-val">1,000<small>원</small></div><div class="stat-desc">미만 부징수 (이자소득 제외)</div></div>
+      </div>
+      <div class="case">
+        <div class="case-head"><span class="case-tag">CASE</span><span class="case-title">사업소득 3.3% — 쿠팡이츠·배민 라이더 사례</span></div>
+        <div class="case-body">
+          <p>과거: 매일 지급 시 1건당 900원으로 천원 미만이라 원천징수 회피 가능. 합쳐서 지급하면 원천징수 대상. <strong>2024.7.1부터 사업소득 3.3%도 1,000원 미만 부징수 적용</strong>으로 정리.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">3.6</span><h3 class="sec-title">원천징수시기 특례 (지급시기 의제) <span class="stars">★★</span></h3></div>
+      <p><strong>미지급 급여에 대한 강제 원천징수 규정</strong> — 급여를 못 줘서 원천징수 신고를 못하면 연말정산 불가. 이를 방지하기 위한 핵심 특례입니다.</p>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>구분</th><th>미지급 기간</th><th>지급 의제 시점</th><th>신고기한</th></tr></thead>
+        <tbody>
+          <tr><td>일반 근로</td><td>1월~11월 급여 미지급</td><td>12월 31일 지급 간주</td><td class="red">1월 10일</td></tr>
+          <tr><td>일반 근로</td><td>12월 급여 미지급</td><td>익년 2월 말일 지급 간주</td><td class="red">3월 10일</td></tr>
+          <tr><td><strong>일용직</strong></td><td>평상시</td><td>의제 적용 ❌</td><td>실제 지급 시 신고</td></tr>
+          <tr><td><strong>일용직</strong></td><td>12월 미지급분</td><td>12월 의제 적용</td><td>1월 말일</td></tr>
+        </tbody>
+      </table></div>
+      <p>적용 대상: <strong>근로소득·사업소득·퇴직소득</strong> (연말정산 발생 소득)</p>
+    </div>
+  </div>
+</section>
+<!-- CHAPTER 4 -->
+<section class="chapter" id="ch4">
+  <div class="container">
+    <div class="chapter-marker reveal">
+      <div class="chapter-big-num">04</div>
+      <div class="chapter-head-text">
+        <div class="chapter-kicker">Penalties & Filing · 지급명세서 / 사업자단위과세</div>
+        <h2 class="chapter-title">가산세와 신고 실무</h2>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">4.1</span><h3 class="sec-title">가산세 체계 (3종 세트) <span class="stars">★</span></h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>가산세 종류</th><th>계산식</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td><strong>신고불성실</strong> (과소신고)</td><td>본세 × 10%</td><td>부정행위 40%</td></tr>
+          <tr><td><strong>납부지연</strong></td><td>본세 × 미납일수 × <mark>22/100,000</mark></td><td>연 약 8.05%</td></tr>
+          <tr><td><strong>제출 관련</strong></td><td>미제출금액 × 1%</td><td>—</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">4.2</span><h3 class="sec-title">지급명세서 가산세</h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>구분</th><th>미제출</th><th>지연제출</th><th>지연 기준</th></tr></thead>
+        <tbody>
+          <tr><td><strong>지급명세서</strong> (연)</td><td>1%</td><td>0.5%</td><td>3개월 이내</td></tr>
+          <tr><td><strong>간이지급명세서</strong> (근로 반기)</td><td>0.25%</td><td>0.125%</td><td class="red">3개월 이내</td></tr>
+          <tr><td><strong>간이지급명세서</strong> (사업·기타 매월)</td><td>0.25%</td><td>0.125%</td><td class="red">1개월 이내</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>가산세 한도</strong>: 일반기업 <strong>1억원</strong> / 중소기업 <strong>5천만원</strong></p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">4.3</span><h3 class="sec-title">원천세 납부지연 가산세 <span class="stars">★★</span></h3></div>
+      <div class="formula">
+원천세 납부지연 가산세 <span class="op">=</span> <span class="hl">MIN(A, B)</span>  <span class="dim">&lt;한도 10%&gt;</span>
+
+<span class="op">A =</span> 본세 × <span class="hl">3%</span> + 본세 × 미납일수 × 22/100,000
+<span class="op">B =</span> 본세 × <span class="hl">10%</span> (한도)</div>
+      <div class="box imp">
+        <div class="box-label">◆ 핵심 포인트</div>
+        <p>약 <strong>319일</strong> 지점에서 한도 10% 도달 → 그 이상 지연 시 더 늘어나지 않음. 작년 연말정산 수정신고는 <strong>12월 안에 처리 권장</strong>. 법 제목이 <strong>"원천징수 등 납부지연 가산세"</strong>로 "신고"라는 말 없음 → 원천세는 <mark>납부만 하면 가산세 없음</mark>.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">4.4</span><h3 class="sec-title">지급명세서 제출 기한 <span class="stars">★</span></h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>소득 구분</th><th>제출 기한</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>근로·퇴직·원천징수 대상 사업소득</strong></td><td class="red"><strong>3월 10일</strong></td></tr>
+          <tr><td><strong>이자·배당소득</strong></td><td><strong>2월 말일</strong></td></tr>
+          <tr><td>그 외</td><td>2월 말일</td></tr>
+          <tr><td>일용직 지급명세서</td><td>매월</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box note">
+        <div class="box-label">◆ 사고방식의 전환</div>
+        <p>❌ "모든 지급명세서 제출 시기는 3월 10일" &nbsp;→&nbsp; ⭕ "기본은 <strong>2월 말일</strong>, 단 근로·퇴직·사업소득만 3월 10일"</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">4.5</span><h3 class="sec-title">간이지급명세서 (근로) <span class="stars">★</span></h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>제출 시기</th><th>기준</th><th>포함 기간</th></tr></thead>
+        <tbody>
+          <tr><td>상반기</td><td class="red"><strong>지급 기준</strong></td><td>1~5월 지급분 (5개월)</td></tr>
+          <tr><td>하반기</td><td class="red"><strong>귀속 기준</strong></td><td>6~12월 귀속분 (7개월)</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>예시</strong>: 1월 급여를 2월 5일 지급 → 상반기 분에 미포함(지급 기준). <strong>12월 미지급 시 특례</strong>: 12월 말일까지 미지급 → 12월 지급 의제 → 1월 말일까지 제출.</p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">4.6</span><h3 class="sec-title">사업자단위 과세 사업자 <span class="stars">★</span></h3></div>
+      <p>본점 1개 + 지점 다수 → 원래는 각 사업장별 사업자등록. <strong>사업자단위 과세 신청</strong> 시 본점 사업자등록번호 하나로 통합 관리, 지점은 사업자등록 말소 → <strong>종사업장 번호(부번)</strong>로 관리.</p>
+      <div class="case">
+        <div class="case-head"><span class="case-tag">CASE</span><span class="case-title">코레일 — 전국 800개 사업장 단위과세</span></div>
+        <div class="case-body"><p>모든 사업장에 개별 사업자등록을 내기 어려워 사업자단위 과세 활용. 단, <strong>지방세는 사업장 소재지별 신고 필수</strong>.</p></div>
+      </div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>구분</th><th>국세</th><th>지방세</th></tr></thead>
+        <tbody>
+          <tr><td>사업장별 따로 신고</td><td>자유 (한 통이라 무관)</td><td class="red">필수 (지자체별)</td></tr>
+          <tr><td>잘못 신고 시</td><td>가산세 없음</td><td class="red">가산세 발생 가능</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>원천세 납세지</strong>: 원칙 본점 납부, 예외로 <strong>독립채산제</strong>(본점/지점 손익 분리) 시 각각 납부 가능.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 5 -->
+<section class="chapter" id="ch5">
+  <div class="container">
+    <div class="chapter-marker reveal">
+      <div class="chapter-big-num">05</div>
+      <div class="chapter-head-text">
+        <div class="chapter-kicker">International · 과세권 / 국내원천 / 외국납부세액공제</div>
+        <h2 class="chapter-title">거주자·비거주자와 해외 파견</h2>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">5.1</span><h3 class="sec-title">거주자로 보는 경우 (무조건)</h3></div>
+      <ol class="dlist">
+        <li>국내에 생계를 같이하는 가족 + 직업·자산 상태에서 183일 이상 거주 인정</li>
+        <li>국외 근무 공무원</li>
+        <li><mark>거주자/내국법인의 국외사업장 또는 해외현지법인(100% 출자)에 파견된 임직원 → 기간 무관 거주자</mark></li>
+      </ol>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">5.2</span><h3 class="sec-title">해외 진출 형태 3가지</h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>형태</th><th>법인 국적</th><th>사업장 위치</th><th>특징</th></tr></thead>
+        <tbody>
+          <tr><td><strong>연락사무소</strong></td><td>한국법인</td><td>현지</td><td>영리행위 불가</td></tr>
+          <tr><td><strong>지점</strong></td><td>한국법인</td><td>현지</td><td>영리행위 가능</td></tr>
+          <tr><td><strong>현지법인</strong></td><td class="red">현지국 법인 (외투법인)</td><td>현지</td><td>독립 법인</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box">
+        <div class="box-label">◆ 외투법인의 정의</div>
+        <p><strong>외투법인 = 내국법인 (한국법인)</strong>, 단 주주가 외국인일 뿐. 예: 한국IBM = 한국법인 + 한국사업자(주주만 미국IBM).</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">5.3</span><h3 class="sec-title">과세권 vs 원천 판단 <span class="stars">★★</span></h3></div>
+      <div class="compare">
+        <div class="compare-side l">
+          <div class="compare-title">거주자</div>
+          <ul><li>과세권 범위: <strong>전세계 소득</strong></li><li>국내+국외 원천 모두 과세</li></ul>
+        </div>
+        <div class="compare-vs">VS</div>
+        <div class="compare-side r">
+          <div class="compare-title">비거주자</div>
+          <ul><li>과세권 범위: <strong>국내원천소득만</strong></li><li>국외 원천 → 과세 ❌</li></ul>
+        </div>
+      </div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>소득</th><th>원천 판단 기준</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>근로소득</strong></td><td><mark>어느 나라 땅을 밟고 일하느냐</mark> (용역수행지)</td></tr>
+          <tr><td>이자소득</td><td>돈 주는 나라 (지급지)</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box imp">
+        <div class="box-label">◆ 자주 헷갈리는 부분</div>
+        <p>❌ "한국 회사가 돈 주면 국내원천" &nbsp;→&nbsp; ⭕ "한국 땅에서 일했으면 국내원천" (근로소득)</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">5.4</span><h3 class="sec-title">해외 파견자 과세 + 납세조합</h3></div>
+      <div class="case">
+        <div class="case-head"><span class="case-tag">CASE</span><span class="case-title">삼성전자 직원 A가 베트남 현지법인 파견</span></div>
+        <div class="case-body"><ul>
+          <li><strong>거주자 여부</strong>: 한국 거주자 (100% 자회사 파견은 무조건 거주자)</li>
+          <li><strong>근로 수행지</strong>: 베트남 → 국외원천소득</li>
+          <li><strong>과세권</strong>: 거주자이므로 전세계 소득 과세 ⭕</li>
+          <li><strong>세금 신고</strong>: 한국 + 베트남 양국 신고</li>
+          <li><strong>이중과세 방지</strong>: <mark>외국납부세액공제</mark></li>
+        </ul></div>
+      </div>
+      <p><strong>납세조합</strong>: 해외 현지법인 급여의 원천징수만 대신해주는 사업자(보통 회계법인). 원천징수 시 을종 → <strong>갑종 전환</strong> → 연말정산 합산 가능. <strong>세액공제 5%</strong>(신고서 66번). 외국납부세액공제는 69번.</p>
+      <div class="box note">
+        <div class="box-label">◆ 양국 거주자 판정 (220p)</div>
+        <p>① 항구적 주거 → ② <strong>중대한 이해관계의 중심지(어디서 돈을 더 버느냐)</strong> ← 핵심 → ③ 일상적 거소 → ④ 국적. 예: 손흥민 → 중대 이해관계 중심지 미국/영국 → 외국 거주자.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">5.5</span><h3 class="sec-title">국외근로소득 비과세 <span class="stars">★</span></h3></div>
+      <div class="stats">
+        <div class="stat"><div class="stat-label">일반 해외파견</div><div class="stat-val">100<small>만원/월</small></div><div class="stat-desc">비과세 한도</div></div>
+        <div class="stat"><div class="stat-label">원양선원·건설현장</div><div class="stat-val">500<small>만원/월</small></div><div class="stat-desc">비과세 한도</div></div>
+        <div class="stat"><div class="stat-label">출장</div><div class="stat-val" style="color:var(--muted)">❌</div><div class="stat-desc">적용 안 됨</div></div>
+      </div>
+      <div class="box warn">
+        <div class="box-label">◆ 실무 쟁점 · 건설현장 범위</div>
+        <p>건축물이 <strong>지어지고 있는 상태</strong>만 인정. 완공 후 유지보수 ❌. 건설현장 파견 <strong>인사팀 직원</strong>도 ❌. 공무원은 국내 근무 급여 초과분 비과세.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">5.6</span><h3 class="sec-title">벽지수당 비과세 (103p) <span class="stars">★</span></h3></div>
+      <div class="stats"><div class="stat"><div class="stat-label">월 한도</div><div class="stat-val">20<small>만원</small></div><div class="stat-desc">연 240만원</div></div></div>
+      <ol class="dlist">
+        <li>회사가 <strong>벽지의 범위 사전 정의</strong> (공무원 특수지근무수당 지급대상지역 차용 가능)</li>
+        <li>벽지 근무자에게 <strong>추가 지급되는 금액</strong>만 비과세</li>
+        <li>동일 직급·동일 업무 비교 시 추가분이어야 함 / 이름만 쪼개기 ❌</li>
+      </ol>
+      <div class="case">
+        <div class="case-head"><span class="case-tag">CASE</span><span class="case-title">강원랜드 — 중부지방국세청 추징 시도 (24억)</span></div>
+        <div class="case-body"><p>본점 강원도 정선(벽지) + 파견 50명 서울 셔틀 근무. 양쪽 모두 벽지수당 지급 → 추징 시도, 다행히 해결.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 6 -->
+<section class="chapter" id="ch6">
+  <div class="container">
+    <div class="chapter-marker reveal">
+      <div class="chapter-big-num">06</div>
+      <div class="chapter-head-text">
+        <div class="chapter-kicker">Employment Income I · 비과세 / 식대 / 자가운전</div>
+        <h2 class="chapter-title">근로소득 비과세 실무 (I)</h2>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">6.1</span><h3 class="sec-title">근로소득 구조</h3></div>
+      <div class="formula">
+근로 제공으로 받은 총소득
+  <span class="op">−</span> 근로소득 과세제외 항목
+  <span class="op">=</span> 근로소득
+  <span class="op">−</span> 비과세 근로소득
+  <span class="op">=</span> <span class="hl">과세대상 근로소득 (총급여)</span></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>구분</th><th>과세제외</th><th>비과세</th></tr></thead>
+        <tbody>
+          <tr><td>항목 수</td><td>적음</td><td>많음 (93~94p 열거)</td></tr>
+          <tr><td>예시</td><td>경조금·퇴직연금·선원 재해보상</td><td>일반·실비변상·복리후생 비과세</td></tr>
+          <tr><td>외국인 단일세율 19% 합산</td><td class="red">❌ 제외</td><td class="grn">⭕ 포함</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box">
+        <div class="box-label">◆ 주요 항목</div>
+        <p><strong>국민건강보험 회사부담분</strong> → 비과세(94p) · <strong>국민연금 회사부담분</strong> → 과세제외(연금 받을 때 과세) · <strong>인센티브 → IRP 이체</strong> → 과세제외(퇴직금 받을 때 과세)</p>
+      </div>
+      <div class="box warn">
+        <div class="box-label">◆ 2021년 중요 변경</div>
+        <p><strong>복리후생 성격 비과세</strong>가 과세제외 → 비과세로 <strong>이동</strong>. 외국인 단일세율 19% 적용 시 사택 제공이익 등이 포함되는 문제 발생.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">6.2</span><h3 class="sec-title">물품 등 지급 시 평가</h3></div>
+      <p><strong>평가 기준</strong>: <mark>시가(매가) 환산</mark> — 회사 매가 80만원 + 부가세 → <strong>88만원</strong>을 총급여에 합산. 회계는 복리후생비/급여 계정 구분, <strong>세법은 구분 없이 모두 원천징수</strong>.</p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">6.3</span><h3 class="sec-title">성과급(인센티브) <span class="stars">★</span></h3></div>
+      <div class="box imp">
+        <div class="box-label">◆ 귀속시기 핵심</div>
+        <p><strong>개인별 지급액이 확정되는 연도</strong>(내가 얼마 받을지 아는 시점). 예: 2025년 성과평가 → 2026년 4월 지급 → <strong>2026년 성과급</strong>.</p>
+      </div>
+      <p><strong>임금성 판단(노동법)</strong>: 성과급(PS, Profit Sharing) = <strong>임금 아님</strong>. 주주 몫인 당기순이익을 직원과 공유 = 일의 대가가 아닌 <strong>경영 파트너로서의 이익 공유</strong>.</p>
+      <div class="compare">
+        <div class="compare-side l">
+          <div class="compare-title">임금성 — 입장 차이</div>
+          <ul><li>근로자: 임금 ⭕ 선호 (퇴직금·수당 ↑)</li><li>회사: 임금 ❌ 선호 (퇴직금·수당 ↓)</li></ul>
+        </div>
+        <div class="compare-vs">VS</div>
+        <div class="compare-side r">
+          <div class="compare-title">비과세 — 입장 일치</div>
+          <ul><li>근로자: 비과세 ⭕ 선호</li><li>회사: 비과세 ⭕ 선호</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">6.4</span><h3 class="sec-title">회사 내·외부 소득 분류 + 사인보너스 <span class="stars">★</span></h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>구분</th><th>가능 소득</th><th>가장 보수적인 원천징수</th></tr></thead>
+        <tbody>
+          <tr><td><strong>회사 내부 직원</strong></td><td>근로·퇴직·기타</td><td class="red"><strong>근로소득</strong>으로</td></tr>
+          <tr><td><strong>회사 외부인</strong></td><td>사업·기타</td><td class="red"><strong>사업소득</strong>으로</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>근로 vs 기타</strong>: 업무 관련성 ⭕ → 근로소득 / 업무 관련성 ❌ → 기타소득. (예: 인사팀 직원의 연말정산 교육 강의 = 근로 / 사이판 여행 기고 = 기타)</p>
+      <div class="case">
+        <div class="case-head"><span class="case-tag">CASE</span><span class="case-title">사인 보너스 / 이적료 (155p)</span></div>
+        <div class="case-body"><p>계약 조건에 따라 <strong>근로기간 동안 안분</strong>. 야구선수 6억 계약금 + 3년 계약 → 매년 2억씩 안분(누진세 회피). 야구선수는 사업소득자(3.3%)지만 사인 보너스는 안분 적용.</p></div>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">6.5</span><h3 class="sec-title">생산직 야간근로수당 비과세 <span class="stars">★</span></h3></div>
+      <div class="stats"><div class="stat"><div class="stat-label">기본 한도</div><div class="stat-val">240<small>만원/연</small></div><div class="stat-desc">월 20만원이 아님!</div></div></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>항목</th><th>작년까지</th><th>올해부터 <span class="badge gold">2025 개정</span></th></tr></thead>
+        <tbody>
+          <tr><td>월정액 급여</td><td>210만원 이하</td><td class="red"><strong>260만원 이하</strong></td></tr>
+          <tr><td>직전연도 총급여</td><td>3,000만원 이하</td><td class="red"><strong>3,700만원 이하</strong></td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>생산직 범위 확대(112p)</strong>: 광업·제조업·건설업(3·4번) 외에 ① 서비스 종사자(돌봄·숙박·조리·음식) ② 판매 종사자(매장 판매원) ⑤ 운송 단순 노무·청소·가사 종사자도 포함.</p>
+      <div class="box warn">
+        <div class="box-label">◆ 실무 주의사항</div>
+        <p>1월에 야근수당 50만원 → 50만원 비과세, 누적 240 도달 시 종료. <strong>중도 입사자는 직전연도 총급여 확인 불가 → 적용 불가</strong>. 계속 근무자만 적용. 식대는 월정액 급여 판단 시 비과세 처리.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">6.6</span><h3 class="sec-title">식대 비과세 (116~118p) <span class="stars">★★</span></h3></div>
+      <div class="stats">
+        <div class="stat"><div class="stat-label">현물 식사 제공</div><div class="stat-val" style="color:var(--accent-2)">전액</div><div class="stat-desc">금액 제한 없이 비과세</div></div>
+        <div class="stat"><div class="stat-label">현금 지급</div><div class="stat-val">20<small>만원/월</small></div><div class="stat-desc">비과세 한도</div></div>
+        <div class="stat"><div class="stat-label">식권 (현물 간주)</div><div class="stat-val" style="color:var(--accent-2)">전액</div><div class="stat-desc">현금 환전 가능 시 20만원</div></div>
+      </div>
+      <div class="box imp">
+        <div class="box-label">◆ 외부 식당 정산 방법 (118p) — 중요!</div>
+        <p><strong>식권으로 정산</strong>: 현물 인정 → 전액 비과세 &nbsp;/&nbsp; <strong>법인카드 1인당 결제</strong>: 현금 간주 → 월 20만원 한도</p>
+      </div>
+      <p><strong>월정액 급여 판단 시</strong>: <mark>식대는 월정액 급여에 포함</mark>(비과세지만 포함). 이유 = 월정액 급여 = "매달 고정적으로 받는 금액".</p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">6.7</span><h3 class="sec-title">자가운전보조금 (119~120p) <span class="stars">★</span></h3></div>
+      <div class="stats"><div class="stat"><div class="stat-label">비과세 한도</div><div class="stat-val">20<small>만원/월</small></div><div class="stat-desc">시내 출장비 대신</div></div></div>
+      <ol class="dlist">
+        <li>종업원 <strong>소유</strong> 또는 본인 <strong>명의 임차</strong> 차량 (부부 공동명의 ⭕, 타인 공동명의 ❌)</li>
+        <li>종업원이 <strong>직접 운전</strong></li>
+        <li>시내 출장 등 <strong>업무 수행에 이용</strong> / 월 20만원 이내</li>
+      </ol>
+      <div class="box imp">
+        <div class="box-label">◆ 건강보험공단 추징 주의 ★★</div>
+        <p><strong>내근직 직원에게 자가운전보조금 지급 → 무조건 문제 삼음.</strong> 건강보험공단이 명단 + 주민번호로 차량 보유 크로스체크(국세청보다 잘 추적). 대응: <strong>시내 출장 기록</strong>을 만들어 둘 것. 출근 목적은 무관, 낮 시간 시내 출장 목적이어야 함.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">6.8</span><h3 class="sec-title">차량 구입 vs 리스 vs 렌트</h3></div>
+      <p><strong>결론</strong>: 현금 여유 있으면 <mark>구입</mark>. "리스/렌트가 비용 처리에 유리"는 잘못된 인식(구입도 감가상각 처리 가능).</p>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>구분</th><th>비용</th><th>단점</th></tr></thead>
+        <tbody>
+          <tr><td><strong>구입</strong></td><td>3,000만원</td><td>초기 자금 소요</td></tr>
+          <tr><td><strong>리스</strong></td><td>3,500만원</td><td>명의가 리스사 → 등록세 2번, 리스 이자(전체 차값 기준)</td></tr>
+          <tr><td><strong>렌트</strong></td><td>3,300만원</td><td>렌트사 보험 가입 → <strong>보험료에도 부가세 부담</strong></td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>렌트 유리한 경우</strong>: 직원이 차량 운행(사고 시 할증 회피). 예: 사장 차량을 직원 3명이 운행.</p>
+    </div>
+  </div>
+</section>
+<!-- ============ DAY 2 ============ -->
+<div class="day-divider" id="day2">
+  <div class="container">
+    <span class="day-divider-tag">DAY 02 · 2026.05.22</span>
+    <h2 class="day-divider-title">실무와 <em>응용</em></h2>
+    <p class="day-divider-sub">신고서 작성 · 비과세 심화 · 퇴직소득 · 사업·기타소득</p>
+    <div class="day-divider-rule"></div>
+  </div>
+</div>
+
+<!-- CHAPTER 7 -->
+<section class="chapter" id="ch7">
+  <div class="container">
+    <div class="chapter-marker reveal">
+      <div class="chapter-big-num">07</div>
+      <div class="chapter-head-text">
+        <div class="chapter-kicker">Filing & Verification · 이행상황신고서 / 비과세 코드</div>
+        <h2 class="chapter-title">신고서 작성과 검증 구조</h2>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">7.1</span><h3 class="sec-title">원천징수이행상황신고서 + 부표 (28p)</h3></div>
+      <div class="flow">
+        <div class="flow-node accent">앞장 (메인)<small>이자소득 A50번 기재</small></div>
+        <div class="flow-arr">→</div>
+        <div class="flow-node">부표 (31p~)<small>감면 상품 내역</small></div>
+      </div>
+      <p>이자소득 비과세·청년저축 등 감면 상품 내역을 부표에 작성. <strong>법인 원천은 이자+펀드만</strong> 해당.</p>
+      <div class="box note">
+        <div class="box-label">◆ 핵심 포인트</div>
+        <p>부표 잘못 작성해도 <strong>가산세 없음</strong>. 원천세는 납부 가산세만 있음(신고 가산세 ❌). 세금만 맞게 내면 부표 오류는 문제 안 됨.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">7.2</span><h3 class="sec-title">2025년 서식 개정 사항 <span class="stars">★</span></h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>서식</th><th>변경 내용</th></tr></thead>
+        <tbody>
+          <tr><td>이행상황신고서 (28p)</td><td><strong>금융투자소득세 칸 삭제</strong>(시행 무산) → 항목번호 당겨짐</td></tr>
+          <tr><td>거주자 사업소득 (332p)</td><td>"기타 자영업자" → <strong>"기타 인적용역자"</strong></td></tr>
+          <tr><td>기타소득 (376p)</td><td>74번 아래 <strong>81번 신설</strong>, 82번(이용권 관련) 신설</td></tr>
+          <tr><td>지급명세서 (254p)</td><td><strong>장기집합투자증권저축 소득공제 삭제</strong> → 번호 당겨짐</td></tr>
+          <tr><td>지급명세서 (255p)</td><td>고향사랑기부금 변경(200만원 초과분), 소비증가분 삭제</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box tip">
+        <div class="box-label">◆ 서식 미리보기 팁</div>
+        <p><strong>국민참여입법센터</strong>에서 입법 예고 단계의 빨간색 변경 부분을 미리 확인 가능. 입법 예고까지 가면 대부분 통과됨.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">7.3</span><h3 class="sec-title">신고서 핵심 칸과 직원 정보 <span class="stars">★★</span></h3></div>
+      <p>작성방법(29p): <strong>라(4)칸 = 총지급액</strong> (비과세·과세미달 포함한 총금액). 다만 비과세 근로소득은 일부 제외(지급명세서 X 처리분).</p>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>항목</th><th>세무적 의미</th></tr></thead>
+        <tbody>
+          <tr><td>주소</td><td>중요하지 않음</td></tr>
+          <tr><td>주민번호</td><td class="red"><mark>맞아야 함 (모든 추적의 기준)</mark></td></tr>
+          <tr><td>근무기간</td><td><mark class="green">4대보험 부과 기간 역산에 사용</mark></td></tr>
+          <tr><td><strong>인정상여</strong></td><td>직원 소득세 ⭕ but <strong>법인 비용처리 ❌</strong></td></tr>
+        </tbody>
+      </table></div>
+      <div class="box warn">
+        <div class="box-label">◆ 인정상여 실무 팁</div>
+        <p>인정상여 = 차량 운행일지 오기재, 직원 무이자 대여 인정이자, 가지급금 등. <strong>자신 없으면 인정상여 안 쓰기</strong>(상여로 통일). 국세청이 인정상여 금액 보고 법인세 경비처리 부인 여부 체크.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">7.4</span><h3 class="sec-title">지급명세서 비과세 코드 (257p) <span class="stars">★★★</span></h3></div>
+      <p>비과세는 원래 기재 불필요하나, 국세청이 <strong>관리하고 싶은 비과세만</strong> 기재 요구. ✅ "O" 표시된 것만 작성(X는 제외). 잘못 설정하면 가산세.</p>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>코드</th><th>내용</th><th>지급명세서 기재</th></tr></thead>
+        <tbody>
+          <tr><td>G01</td><td>비과세 학자금 (직원 대학원)</td><td class="grn">⭕</td></tr>
+          <tr><td>H05/H06/H07</td><td>일·숙직료 / 자가운전보조금 / 차량유지비</td><td class="red">❌</td></tr>
+          <tr><td>H10~H15</td><td>연구보조비 (기관별 구분)</td><td class="grn">⭕</td></tr>
+          <tr><td>M01~M04</td><td>해외파견 비과세 (M01·M03 삭제)</td><td class="grn">⭕</td></tr>
+          <tr><td>P01 / Q01</td><td>식대 / 생산직 야간근로수당</td><td class="grn">⭕</td></tr>
+          <tr><td>건강보험 회사부담분</td><td>비과세지만 기재 X</td><td class="red">❌</td></tr>
+          <tr><td>W02</td><td>임직원 할인액 (2024 이슈)</td><td class="grn">⭕</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">7.5</span><h3 class="sec-title">총지급액 검증 구조 + A공익 코드 <span class="stars">★★</span></h3></div>
+      <div class="formula">
+원천세 신고: 매월 총지급액 합산  <span class="op">=</span>  <span class="hl">X</span>
+지급명세서: 연간 총지급액         <span class="op">=</span>  <span class="hl">Y</span>
+
+<span class="op">원칙:</span> <span class="grn">X = Y</span>  (구조적으로 검증 가능)</div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>코드</th><th>의미</th></tr></thead>
+        <tbody>
+          <tr><td>A01</td><td>일반 근로소득 (매월 신고)</td></tr>
+          <tr><td>A02</td><td><mark>중도퇴사자 연말정산</mark></td></tr>
+          <tr><td>A03</td><td>일용직</td></tr>
+          <tr><td>A04</td><td><mark>계속근무자 연말정산 (1월만 사용)</mark></td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>검산 예</strong>: 100명·1인 1억(총 100억), 매월 1명 퇴사 → A01 누적 ≈ 78억 + <strong>A02 누적 22억 = 100억</strong>.</p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">7.6</span><h3 class="sec-title">차이 발생 원인 + 중도퇴사자 처리 <span class="stars">★★</span></h3></div>
+      <p>16번(누적합계) vs 20번(지급명세서 총합) 차이 3가지: ① <strong>종전근무지 합산</strong> ② <strong>가족(자녀) 학자금</strong>(세금 안 떼고 지급) ③ <strong>연말 일괄 반영 상여</strong>(매월 판단 → 가산세 가능).</p>
+      <div class="case">
+        <div class="case-head"><span class="case-tag">CASE</span><span class="case-title">중도퇴사자 — 권장 처리 3가지</span></div>
+        <div class="case-body"><ul>
+          <li><strong>방법1</strong>: 모아서 한 번에 수정신고</li>
+          <li><strong>방법2</strong>: 12월 중도정산 일괄 처리(1월 10일 신고)</li>
+          <li><strong>방법3</strong>(가장 깔끔): 연말정산에 포함 → 환급 발생 → <mark>가산세 ❌</mark></li>
+        </ul>
+        <p style="margin-top:10px;">수정신고 시 <strong>귀속·지급 일치 필수</strong>: 5월 귀속 5월 지급 신고 잘못 → 동일하게 수정. 6월 지급으로 잘못 수정 시 미궁.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 8 -->
+<section class="chapter" id="ch8">
+  <div class="container">
+    <div class="chapter-marker reveal">
+      <div class="chapter-big-num">08</div>
+      <div class="chapter-head-text">
+        <div class="chapter-kicker">Employment Income II · 복지 / 보험 / 사택 / 대여금</div>
+        <h2 class="chapter-title">근로소득 비과세 실무 (II)</h2>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">8.1</span><h3 class="sec-title">연차수당 귀속시기 (158p) <span class="stars">★★</span></h3></div>
+      <div class="formula">
+2025년 출근율 80%↑ <span class="op">→</span> 2026년 연차휴가권 발생 (15개)
+                       2026년 사용 7개 / 미사용 8개
+                       <span class="op">→</span> 2027년 1월 연차수당 지급 (8개분)</div>
+      <div class="box imp">
+        <div class="box-label">◆ 핵심 원칙</div>
+        <p><strong>연차수당 = 휴가권과 귀속 일치</strong> = 휴가권 있는 연도에 귀속. 2027년 1월 받는 연차수당 = <mark>2026년 소득</mark>.</p>
+      </div>
+      <p>실무: 이론은 12월 귀속·1월 지급으로 신고 한 줄 추가, 현실은 대부분 지급 기준(1월 귀속 1월 지급)으로 신고(일관되면 무난).</p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">8.2</span><h3 class="sec-title">의료비·교육비 지원 <span class="stars">★</span></h3></div>
+      <p><strong>의료비(122p)</strong>: 회사 지원 → 총급여 합산. 단 <strong>산업안전보건법상 건강검진</strong>(사무직 2년 1회/생산직 1년 1회)은 비과세. 임원 100만원/직원 50만원 차이나 가족 포함분은 원칙적 과세(병원 일괄 계산서로 실무상 잘 안 걸림).</p>
+      <div class="box note">
+        <div class="box-label">◆ 교육비 (125p)</div>
+        <p><strong>본인 학자금 비과세 요건</strong>: ① 업무 관련 교육 ② 회사 규정 ③ 6개월 초과 시 반환 조건. 직원 대학원 지원 절차 = 세금 안 떼고 신고 → 지급명세서 비과세 코드 표시 → 연말정산 간소화 교육비에서 차감. <strong>가족(자녀) 학자금은 무조건 총급여 합산</strong>.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">8.3</span><h3 class="sec-title">출산·보육수당 (128p) <span class="stars">★★</span></h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>항목</th><th>작년까지</th><th>올해부터 <span class="badge gold">2025</span></th></tr></thead>
+        <tbody>
+          <tr><td>자녀 보육수당</td><td>근로자당 20만원</td><td class="red"><mark>자녀 1명당 20만원</mark></td></tr>
+          <tr><td>맞벌이</td><td>한 명만 가능</td><td class="red">둘 다 가능</td></tr>
+        </tbody>
+      </table></div>
+      <p>6세 이하(연도별 판단, 2026년 기준 6세 = 2020년 이후 출생). 기본공제 신청 필수. <strong>세법 나이 = 무조건 연도별</strong>(생일 무관).</p>
+      <div class="box">
+        <div class="box-label">◆ 출산축하금 vs 출산지원금</div>
+        <p><strong>출산축하금</strong>: 지급명세서 기재 ❌, 초과분 경조금 처리 / <strong>출산지원금</strong>(부영 등): 코드 18-3번 기재 ⭕, 자녀당 2년 내 2회까지 비과세. <strong>어린이집 보육비</strong>: 회사 외 어린이집 지원금도 현재 비과세로 변경.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">8.4</span><h3 class="sec-title">경조사비·재해보상·단체보험</h3></div>
+      <ul class="dlist">
+        <li><strong>경조사비(130p)</strong>: 혼·상 정도, <strong>사회통념상 타당 범위</strong>(동종업계 평균 기준)</li>
+        <li><strong>재해보상(132p)</strong>: 업무상 ⭕비과세 / 업무외 ❌과세. 한 방에 지급 ⭕ / 매월 분할(생계보조비) ❌</li>
+        <li><strong>단체보험(133p)</strong>: 4대보험·임직원 책임배상·신원보증 비과세. 저축형은 <mark>연 70만원까지 비과세</mark>, 초과분·환급분 과세</li>
+      </ul>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">8.5</span><h3 class="sec-title">사택 제공 이익 (138p) <span class="stars">★★</span></h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>대상</th><th>비과세</th></tr></thead>
+        <tbody>
+          <tr><td>직원 / 비출자 임원 / 소액주주 임원</td><td class="grn">⭕</td></tr>
+          <tr><td><strong>대주주 임원</strong></td><td class="red">❌ (총급여 합산)</td></tr>
+        </tbody>
+      </table></div>
+      <div class="compare">
+        <div class="compare-side l">
+          <div class="compare-title">회사 소유 사택</div>
+          <ul><li>무상 제공 → 비과세 ⭕</li><li><strong>저가 제공 → 비과세 ⭕</strong></li></ul>
+        </div>
+        <div class="compare-vs">VS</div>
+        <div class="compare-side r">
+          <div class="compare-title">임차 사택</div>
+          <ul><li>무상 제공 → 비과세 ⭕</li><li><strong>저가 제공 → 과세 ❌</strong></li></ul>
+        </div>
+      </div>
+      <div class="box warn">
+        <div class="box-label">◆ 독일계 회사 사례</div>
+        <p>월세 1,000만원 임차, 회사 70% + 직원 30% 부담 → <strong>회사 부담분 700만원 전체가 과세</strong>(저가는 임차사택에 비과세 인정 X).</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">8.6</span><h3 class="sec-title">무이자/저리 대여금 (140~144p) <span class="stars">★★</span></h3></div>
+      <p>중소기업 직원 주택 대여만 예외 인정, 그 외는 이자 받아야 함.</p>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>적정이자율</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td><strong>당좌대출 이자율</strong></td><td class="red"><mark>4.6%</mark> (법정)</td></tr>
+          <tr><td><strong>가중평균 차입이자율</strong></td><td>(2%×3억 + 3%×5억) ÷ 8억</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box note">
+        <div class="box-label">◆ 무이자 대여 가능 항목 + 편법 차단</div>
+        <p>이자 면제: 직원 급여 가지급금·경조사비·학자금·중소기업 주택대여 등. <strong>편법 차단</strong>: 특수관계자 차입금만 있거나 무차입 경영 시 → 무조건 4.6%. 부모-자식 대여도 4.6%(결혼 시 1억 증여 면제, 앞뒤 2년).</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">8.7</span><h3 class="sec-title">임직원 할인·복지포인트·스톡옵션</h3></div>
+      <ul class="dlist">
+        <li><strong>임직원 할인(145p)</strong>: MAX(시가 20%, 연 240만원) 비과세. 차량·가전·보석 2년, 그 외 1년 보유. 본인 사용분만(가족 할인분 과세)</li>
+        <li><strong>선택적 복지포인트</strong>: <mark>총급여 합산</mark>(대법원 확정). 사내근로복지기금은 과세제외</li>
+        <li><strong>통신비(149p)</strong>: 회사 명의 개통 100% 지원 시 비과세, 직원 명의는 5만원 정도 권장</li>
+      </ul>
+      <div class="box">
+        <div class="box-label">◆ 스톡옵션 (벤처 특례, 150p)</div>
+        <p>일반 회사: 행사이익 무조건 총급여 합산. <strong>비상장 벤처</strong>: 연 2억 / 누적 5억 비과세. 초과분은 5년 분할납부 또는 양도소득 전환 선택.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">8.8</span><h3 class="sec-title">출장비·통근·이사비·임금삭감</h3></div>
+      <ul class="dlist">
+        <li><strong>배우자 동반 출장비</strong> 비과세 사유 3가지: ① 부부동반 모임 ② 언어 통역 ③ 건강 보조(휠체어)</li>
+        <li><strong>통근버스</strong> 과세제외 / 출퇴근 교통비 현금지급 과세 / 포상 출장비 과세</li>
+        <li><strong>해외 발령 이사비</strong> 비과세, 외국인 향수병 본국 귀국 비행기값 비과세</li>
+        <li><strong>임금 삭감</strong>(앞으로 받을 금액↓, 노조 동의) vs <strong>반납</strong>(받은 금액 반납, 개별 동의 가능)</li>
+      </ul>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">8.9</span><h3 class="sec-title">감면 제도 모음 <span class="stars">★</span></h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>제도</th><th>감면율 / 기간</th><th>대상</th></tr></thead>
+        <tbody>
+          <tr><td><strong>중소기업 취업자 감면</strong></td><td>청년 90%/5년, 그 외 70%/3년</td><td>청년(15~34세), 60세↑, 장애인, 경력단절 여성·<mark>남성(2025.3.14~)</mark></td></tr>
+          <tr><td>중소기업 경영성과급</td><td>성과급 세금 50%</td><td>연봉 7천만원↓, 주60시간↑</td></tr>
+          <tr><td>외국인 우수인력 복귀</td><td>10년 50%</td><td>이공계 박사, 연구기관 입사</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>중소기업 취업자 감면 팁</strong>: 신청일 기준 적용 시작 → 아르바이트 신청 시 5년 카운팅 손해, 정식 취업 시 신청 권장. 군복무 기간만큼 청년 연령 가산. 사대보험 가입 필수.</p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">8.10</span><h3 class="sec-title">외국인 근로자 단일세율 (224~228p) <span class="stars">★★</span></h3></div>
+      <p>선택지: ① 내국인과 동일 연말정산 ② <strong>근로소득 × 19% 단일세율</strong>(분리과세). 총급여 <strong>1억 6,100만원 초과</strong> 시 단일세율 유리.</p>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>구분</th><th>옛 규정</th><th>현행</th></tr></thead>
+        <tbody>
+          <tr><td>적용 기간</td><td>5년</td><td class="red"><mark>20년</mark></td></tr>
+          <tr><td>시작점</td><td>입국일</td><td><strong>2014.1.1 이후 입사자</strong></td></tr>
+        </tbody>
+      </table></div>
+      <div class="box imp">
+        <div class="box-label">◆ 단일세율 시 사택 제공이익 (2024 개정)</div>
+        <p>2021년 복리후생 비과세 이동으로 사택 제공이익이 단일세율 계산에 포함되는 문제 → <strong>2024년부터 단일세율 적용 시 사택 제공이익 제외</strong>로 정리. 외국인 기술자 감면(10년 50%, 연구소만)과 단일세율은 중복 불가.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CHAPTER 9 -->
+<section class="chapter" id="ch9">
+  <div class="container">
+    <div class="chapter-marker reveal">
+      <div class="chapter-big-num">09</div>
+      <div class="chapter-head-text">
+        <div class="chapter-kicker">Simplified Table & Retirement · 간이세액 / 퇴직소득</div>
+        <h2 class="chapter-title">간이세액표와 퇴직소득</h2>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">9.1</span><h3 class="sec-title">상여 있을 때 간이세액 적용 (247p) <span class="stars">★★</span></h3></div>
+      <p>설정: 매월 급여 200만원, 2개월 1회 상여 200만원, 간이세액(300만원 기준) 16만원.</p>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>방법</th><th>처리</th></tr></thead>
+        <tbody>
+          <tr><td><strong>방법1 (사전 인지)</strong></td><td>(2개월 급여+상여)÷2 = 평균 300 → 매월 16만원</td></tr>
+          <tr><td><strong>방법2 (사후 정산)</strong></td><td>1개월 10만원 → 2개월차 32만원−10만원=22만원</td></tr>
+          <tr><td><strong>방법3 (지급대상기간)</strong></td><td>2개월+3개월 상여 동시 → (2+3)÷2=2.5 → 올림 3개월</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>간이세액표(244p)</strong>: 8세~20세 자녀 처리 방식 변경 — 옛날 자녀 수만큼 부양가족 수 추가 → 현재 실제 인원 + 별도 금액 차감.</p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">9.2</span><h3 class="sec-title">퇴직소득 정의 + IRP 이체 <span class="stars">★★</span></h3></div>
+      <p><strong>2013년 유권해석</strong>: 직원이 퇴직할 때 받는 돈은 무조건 퇴직소득(임원 제외). 연금으로 받으면 연금소득, 일시금으로 받으면 퇴직소득.</p>
+      <div class="box imp">
+        <div class="box-label">◆ 인센티브 → IRP 이체 (과세제외) ★★★</div>
+        <p>회사가 직원에게 선택권 부여: ① 급여 계좌(즉시 근로소득 과세) ② <strong>IRP 계좌</strong>(퇴직소득으로 이연, 사대보험 회피). 하이닉스·삼성전자 등 채택. 퇴직 시까지 과세 이연.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">9.3</span><h3 class="sec-title">임원 퇴직금 한도 — 역사 <span class="stars">★★★</span></h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>시기</th><th>한도</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td>~2011.12.31</td><td>한도 없음</td><td>정관 5배수 그대로 인정 → 법인세 회피</td></tr>
+          <tr><td>2012~2019</td><td><strong>3배수</strong></td><td>초과분 → 근로소득</td></tr>
+          <tr class="hl"><td>2020~현재</td><td><strong>2배수</strong></td><td>현재 적용</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box note">
+        <div class="box-label">◆ 임원 vs 직원</div>
+        <p>평균 기준: 직원 <strong>3개월 평균</strong> vs 임원 <strong>3년 평균</strong>(의사결정자라 급여 조작 방지). 정관 5배 규정해도 세법상 2배수까지만 퇴직소득, 초과분은 근로소득. 입사 3년 미만 임원은 그 기간만 평균.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">9.4</span><h3 class="sec-title">퇴직소득 계산 — 연분연승법 (285p) <span class="stars">★★★</span></h3></div>
+      <div class="formula">
+<span class="dim">[1]</span> 퇴직급여 = 퇴직소득금액 <span class="dim">(공제·비과세 없음)</span>
+    <span class="op">↓ − 근속연수공제</span>
+<span class="dim">[2]</span> <span class="op">× 12 ÷ 근속연수</span> = <span class="hl">환산급여</span>
+    <span class="op">↓ − 환산급여공제</span>
+<span class="dim">[3]</span> 과세표준 <span class="op">× 세율</span> = 환산산출세액
+    <span class="op">↓ × 근속연수 ÷ 12</span>
+<span class="dim">[4]</span> <span class="grn">산출세액 (퇴직소득세)</span></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>단계</th><th>예시 (10년 근무, 퇴직금 1억)</th></tr></thead>
+        <tbody>
+          <tr><td>퇴직소득금액</td><td>1억</td></tr>
+          <tr><td>− 근속연수공제(10년)</td><td>1,500만원</td></tr>
+          <tr><td>차감 후</td><td>8,500만원</td></tr>
+          <tr><td>× 12 ÷ 10 = 환산급여</td><td>1억 200만원</td></tr>
+          <tr><td>− 환산급여공제 → 과세표준 → 세율 → ×10÷12</td><td class="grn">최종 산출세액</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box">
+        <div class="box-label">◆ 왜 12배 곱하고 근속으로 나누나?</div>
+        <p>연분연승법 = 누진세 회피로 <strong>일반 근로자에게 유리</strong>. 12배 곱하기는 근속연수 짧은 임원 잡으려는 규정.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">9.5</span><h3 class="sec-title">퇴직 수입시기 + 분할수령 특례 <span class="stars">★★</span></h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>구분</th><th>퇴직일</th></tr></thead>
+        <tbody>
+          <tr><td><strong>세법상</strong></td><td>마지막 근무일 (마지막 금요일)</td></tr>
+          <tr><td><strong>노동법상 / 4대보험 자격상실일</strong></td><td>마지막 근무일 다음 날 (토요일)</td></tr>
+        </tbody>
+      </table></div>
+      <p>일반 퇴직: 퇴직한 날 / 중간정산: 최초 퇴직금 받는 날. <strong>분할 수령 시 첫 수령일 = 귀속시기 확정 → 원천징수시기 특례 적용</strong>(잔여분 1월 31일까지 신고).</p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">9.6</span><h3 class="sec-title">중간정산·임원승진 합산 정산 (297p) <span class="stars">★★</span></h3></div>
+      <div class="box note">
+        <div class="box-label">◆ 최종 정산 (법 개정)</div>
+        <p>과거 중간정산은 그대로 종결 → 현재 <strong>최종 퇴직 시 합산 정산 가능</strong>. 1.5억+1억=2.5억 재계산, 근속 10년 연장, 기납부 세액 차감. <strong>근속연수 길수록 유리</strong>. 선택사항(직원이 원천징수영수증 제출).</p>
+      </div>
+      <p><strong>종업원→임원 승진</strong>: 종업원 단계 퇴직금 정산하되, 세금 계산은 임원 최종 퇴직 시 합산(근속연수 통합 → 몇 천만원 절세).</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 10 -->
+<section class="chapter" id="ch10">
+  <div class="container">
+    <div class="chapter-marker reveal">
+      <div class="chapter-big-num">10</div>
+      <div class="chapter-head-text">
+        <div class="chapter-kicker">Business & Other Income · 3.3% / 기타소득</div>
+        <h2 class="chapter-title">사업소득·기타소득 원천징수</h2>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">10.1</span><h3 class="sec-title">사업소득 vs 기타소득 구분 (311p) <span class="stars">★★</span></h3></div>
+      <div class="flow">
+        <div class="flow-node">사람을 부리고<br>나오는 소득</div>
+        <div class="flow-arr">→</div>
+        <div class="flow-node accent">종속적<small>고용종속 ⭕</small></div>
+        <div class="flow-node">근로/퇴직</div>
+      </div>
+      <div class="flow">
+        <div class="flow-node grn">독립적<small>고용종속 ❌</small></div>
+        <div class="flow-arr">→</div>
+        <div class="flow-node">계속·반복적<small>→ 사업소득</small></div>
+        <div class="flow-node">우발·일시적<small>→ 기타소득</small></div>
+      </div>
+      <p><strong>구분 키워드</strong>: 근로 vs 사업 = <strong>종속적 vs 독립적</strong> / 사업 vs 기타 = <strong>계속·반복성</strong>.</p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">10.2</span><h3 class="sec-title">사업소득 3.3% 원천징수 대상 (316~319p) <span class="stars">★★★</span></h3></div>
+      <div class="box imp">
+        <div class="box-label">◆ 핵심: 모든 사업소득이 3.3% 아님</div>
+        <p>일반 개인 사업자 → 세금계산서 발행. <strong>특정 인적용역만 3.3%</strong>. 법상 용어 = "부가가치세 면제되는 인적용역", 통칭 "자유직업자".</p>
+      </div>
+      <p><strong>① 의료보건용역</strong>: 의사·치과·한의사·조산사·간호사(<strong>미용 목적 ❌</strong> — 쌍꺼풀·피부 시술), 약사(처방전 3.3%, 일반약 부가세). 수의사 — 가축 치료 면세, 애완동물 과세.</p>
+      <p><strong>② 부가세 면제 인적용역 (13가지)</strong> — 물적시설·근로자 없이 독립적 공급:</p>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>번호</th><th>대상</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>저술·작곡·조각·음악·무용·만담, <strong>배우·성우·연예인</strong></td></tr>
+          <tr><td>2~3</td><td>영화 스태프·촬영 스태프</td></tr>
+          <tr><td>4</td><td>음악·무용·요리·바둑 <strong>개인 교습</strong> (과외)</td></tr>
+          <tr><td>5</td><td><strong>직업운동가 (프로 선수)</strong></td></tr>
+          <tr><td>6~7</td><td>유흥 접대부 / 보험모집(FC)·저축 권유</td></tr>
+          <tr><td>8</td><td>저작자가 저작권 사용료 받는 것</td></tr>
+          <tr><td>9</td><td>조정·번역·고증·속기사</td></tr>
+          <tr><td class="hl">10</td><td class="hl"><strong>고용관계 없이 다수에게 강의 (강사)</strong></td></tr>
+          <tr><td>11~12</td><td>라디오·TV 해설 / 작명·점술</td></tr>
+          <tr><td class="hl">13</td><td class="hl"><strong>개인의 일의 성과에 따라 수당 받는 용역</strong></td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>10~13번</strong>은 간이지급명세서 매월 제출 대상.</p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">10.3</span><h3 class="sec-title">사업소득 귀속·원천징수시기 (320~322p) <span class="stars">★</span></h3></div>
+      <ul class="dlist">
+        <li><strong>귀속시기</strong>: 용역 대가 받기로 한 날 또는 용역 제공 완료일 중 <strong>빠른 날</strong></li>
+        <li><strong>원천징수 시기</strong>: 돈 주는 날</li>
+        <li><strong>연말정산 대상 사업소득</strong>: 보험모집인·방문판매원·음료품 배달원 → 원천징수시기 특례 적용</li>
+      </ul>
+      <div class="box note">
+        <div class="box-label">◆ 실무 권장</div>
+        <p>일반 사업소득은 <strong>돈 주는 날을 귀속시기로</strong> 잡기 권장(귀속·지급 분리 시 소득자 불편 — 환급 신청 시 의심). 예: 강사 수당은 연말정산·특례 대상 아님.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">10.4</span><h3 class="sec-title">기타소득의 정의와 종류 (341~342p) <span class="stars">★★</span></h3></div>
+      <p>이자·배당·사업·근로·연금·퇴직·양도 외 소득 중 소득세법상 <strong>기타소득 열거 항목</strong>. 결이 다른 소득의 집합.</p>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>번호</th><th>주요 항목</th></tr></thead>
+        <tbody>
+          <tr><td>1~4</td><td>상금·현상금·포상금 / 복권·경품 / 사행행위(강원랜드) / 경마</td></tr>
+          <tr><td>5</td><td>저작자가 아닌 자가 저작권 사용료 받는 것</td></tr>
+          <tr><td>6~7</td><td>일시 자산 대여 (제트스키 1번 ↔ 계속 시 사업)</td></tr>
+          <tr><td class="hl">8</td><td class="hl"><strong>에어비앤비</strong> (500만원 미만 사업자 미등록 가능)</td></tr>
+          <tr><td>9</td><td>공익 목적 지상권 (지하철 통과 보상)</td></tr>
+          <tr><td>10~11</td><td><strong>위약금·배상금·해약금</strong> / 습득물(로또 줍기)</td></tr>
+          <tr><td>17 / 24</td><td><strong>사례금</strong> / 뇌물</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>사업 vs 기타</strong> = 한 번 하느냐/계속 하느냐. 옥션·지마켓 1,200만원 기준, 에어비앤비 500만원 기준.</p>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">10.5</span><h3 class="sec-title">기타소득 과세최저한 + 지급명세서 함정 (363p) <span class="stars">★★</span></h3></div>
+      <p>과세최저한 = <strong>기타소득금액 5만원 이하</strong> → 세금 ❌. (필요경비 60%면 12.5만원, 80%면 25만원 수령 시 소득금액 5만원)</p>
+      <div class="box imp">
+        <div class="box-label">◆ 지급명세서 제출 의무 함정 ★★</div>
+        <p>필요경비 ❌ + 5만원 이하 → 원천징수 ❌, 지급명세서 ❌ / <strong>필요경비 60%·80% + 5만원 이하</strong> → 원천징수 ❌이지만 <mark>지급명세서 제출 ⭕ 필수!</mark> 세금 안 떼니 서류 안 받으면 연말 가산세 폭탄.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <div class="sec-head"><span class="sec-num">10.6</span><h3 class="sec-title">기타소득 필요경비 + 세율 (362~366p) <span class="stars">★</span></h3></div>
+      <div class="tbl tbl-scroll"><table>
+        <thead><tr><th>구분</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td>필요경비 80%</td><td>공익법인 <strong>다수의 수혜자 순위경쟁 입상 상금</strong> (진입장벽 없어야)</td></tr>
+          <tr><td>필요경비 60%</td><td>강의료·자문료 등 인적용역 대가</td></tr>
+          <tr><td>복권 3억 이하 / 초과</td><td>22% / 33% (무조건 분리과세)</td></tr>
+        </tbody>
+      </table></div>
+      <div class="case">
+        <div class="case-head"><span class="case-tag">CASE</span><span class="case-title">K-슈퍼스타 허각 1등 2억</span></div>
+        <div class="case-body"><p>필요경비 80% → 2억×80%=1.6억 차감 → 과세 4천만원 → 22% → 880만원. <strong>"다수의 수혜자"는 진입장벽 없어야</strong> 60/80% 적용. 회사 노래자랑(진입장벽 ⭕)은 22% 적용.</p></div>
+      </div>
+      <p><strong>간이지급명세서 대상(373p)</strong>: 기타소득 중 <strong>76번(사례금)·79번(고문료)</strong>만 매월 제출 = 필요경비 60% 인적용역. <strong>기타소득 원천징수 시기 = 돈 주는 날</strong>.</p>
+      <div class="box warn">
+        <div class="box-label">◆ 지급명세서 중복 배제</div>
+        <p>간이(0.25%) + 정규(1%) 둘 다 누락 시 → <strong>큰 것(1%) 하나만</strong> 부과.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ APPENDIX A: GLOSSARY ============ -->
+<div class="day-divider" id="glossary">
+  <div class="container">
+    <span class="day-divider-tag">APPENDIX A</span>
+    <h2 class="day-divider-title">핵심 <em>용어 사전</em></h2>
+    <p class="day-divider-sub">Glossary · 검색으로 빠르게 찾기</p>
+    <div class="day-divider-rule"></div>
+  </div>
+</div>
+<section class="appendix" style="padding-top:0;">
+  <div class="container">
+    <input type="text" class="gloss-search" id="glossSearch" placeholder="🔍 용어 검색 (예: 거주자, 연분연승, 3.3%, 사택...)">
+    <div class="glossary-grid" id="glossGrid">
+      <div class="gloss-item"><div class="gloss-term">거주자</div><div class="gloss-def">국내 주소를 두거나 183일 이상 거소를 둔 개인. 전세계 소득에 과세권.</div></div>
+      <div class="gloss-item"><div class="gloss-term">비거주자</div><div class="gloss-def">거주자가 아닌 개인. 국내원천소득에만 과세권.</div></div>
+      <div class="gloss-item"><div class="gloss-term">사업의 실질적 관리장소</div><div class="gloss-def">내국법인 판정 기준. 론스타 사건 계기로 신설. 본점이 해외라도 실질 관리가 국내면 내국법인.</div></div>
+      <div class="gloss-item"><div class="gloss-term">열거주의 (소득원천설)</div><div class="gloss-def">법에 규정된 소득만 과세. 소득세법이 채택.</div></div>
+      <div class="gloss-item"><div class="gloss-term">포괄주의 (순자산증가설)</div><div class="gloss-def">합법·불법 불문 소득 발생 시 과세. 법인세법이 채택.</div></div>
+      <div class="gloss-item"><div class="gloss-term">종합소득</div><div class="gloss-def">이자·배당·사업·근로·연금·기타 6가지를 합산해 누진과세.</div></div>
+      <div class="gloss-item"><div class="gloss-term">분류과세</div><div class="gloss-def">퇴직·양도소득을 별도 계산. 장기 누적 소득의 누진세 완화.</div></div>
+      <div class="gloss-item"><div class="gloss-term">소득금액</div><div class="gloss-def">총수입금액 − 필요경비. 이자·배당은 필요경비 인정 안 됨.</div></div>
+      <div class="gloss-item"><div class="gloss-term">원천징수의무자</div><div class="gloss-def">소득을 지급하며 세금을 떼는 자 (회사). 개인도 가능.</div></div>
+      <div class="gloss-item"><div class="gloss-term">원천납세의무자</div><div class="gloss-def">원래 세금을 낼 사람 (근로자·소득 귀속자).</div></div>
+      <div class="gloss-item"><div class="gloss-term">완납적 원천징수</div><div class="gloss-def">원천징수로 납세의무 종결 (예: 복권 당첨금).</div></div>
+      <div class="gloss-item"><div class="gloss-term">예납적 원천징수</div><div class="gloss-def">미리 떼고 추후 정산 (예: 근로소득 → 연말정산).</div></div>
+      <div class="gloss-item"><div class="gloss-term">원천징수시기 특례 (지급시기 의제)</div><div class="gloss-def">미지급 급여를 지급한 것으로 간주. 1~11월분 12/31 의제(1월 10일 신고), 12월분 익년 2월말 의제(3월 10일).</div></div>
+      <div class="gloss-item"><div class="gloss-term">소액부징수</div><div class="gloss-def">원천징수세액 1,000원 미만 시 징수 안 함(이자소득 제외). 사업소득 3.3%는 2024.7.1부터 적용.</div></div>
+      <div class="gloss-item"><div class="gloss-term">수정신고</div><div class="gloss-def">세액을 늘려 신고. 자동 경정 효력.</div></div>
+      <div class="gloss-item"><div class="gloss-term">경정청구</div><div class="gloss-def">세액을 줄여달라 청구. 세무서가 경정 결정.</div></div>
+      <div class="gloss-item"><div class="gloss-term">신고납부세목 / 정부부과세목</div><div class="gloss-def">자기결정(대부분) vs 정부결정(상속·증여·종부세 3가지).</div></div>
+      <div class="gloss-item"><div class="gloss-term">사업자단위 과세</div><div class="gloss-def">본점 사업자번호 하나로 모든 사업장 통합 관리. 지점은 종사업장 번호(부번).</div></div>
+      <div class="gloss-item"><div class="gloss-term">독립채산제</div><div class="gloss-def">본점·지점 손익 분리 운영. 원천세 각각 납부 가능.</div></div>
+      <div class="gloss-item"><div class="gloss-term">지급명세서 / 간이지급명세서</div><div class="gloss-def">연 1회(근로·퇴직·사업 3.10) vs 매월·반기 제출. 비과세 코드 기재.</div></div>
+      <div class="gloss-item"><div class="gloss-term">외국납부세액공제</div><div class="gloss-def">해외에서 낸 세금을 국내 세액에서 공제(이중과세 방지).</div></div>
+      <div class="gloss-item"><div class="gloss-term">납세조합</div><div class="gloss-def">해외 현지법인 급여 원천징수 대행. 을종→갑종 전환, 세액공제 5%.</div></div>
+      <div class="gloss-item"><div class="gloss-term">외투법인</div><div class="gloss-def">주주가 외국인인 내국법인. 한국법인·한국사업자(예: 한국IBM).</div></div>
+      <div class="gloss-item"><div class="gloss-term">중대한 이해관계의 중심지</div><div class="gloss-def">양국 거주자 판정 시 핵심 — 어디서 돈을 더 버느냐.</div></div>
+      <div class="gloss-item"><div class="gloss-term">과세제외 vs 비과세</div><div class="gloss-def">둘 다 세금 X. 과세제외는 적고(경조금·퇴직연금), 비과세는 많음(식대 등). 외국인 단일세율 시 과세제외는 빠지고 비과세는 포함.</div></div>
+      <div class="gloss-item"><div class="gloss-term">월정액 급여</div><div class="gloss-def">매달 고정적으로 받는 금액. 상여·부정기 급여 제외, 식대는 포함.</div></div>
+      <div class="gloss-item"><div class="gloss-term">인정상여</div><div class="gloss-def">직원 소득세 ⭕ 이나 법인 비용처리 ❌. 차량 운행 오기재·가지급금 등.</div></div>
+      <div class="gloss-item"><div class="gloss-term">연분연승법</div><div class="gloss-def">퇴직소득 계산법. 근속연수로 나누고 12배 곱해 누진세 완화.</div></div>
+      <div class="gloss-item"><div class="gloss-term">근속연수공제 / 환산급여공제</div><div class="gloss-def">퇴직소득 계산 단계의 공제. 근속 길수록 유리.</div></div>
+      <div class="gloss-item"><div class="gloss-term">IRP 이체</div><div class="gloss-def">인센티브를 퇴직연금 계좌로 받아 과세 이연 + 사대보험 회피.</div></div>
+      <div class="gloss-item"><div class="gloss-term">임원 퇴직금 한도</div><div class="gloss-def">2배수(2020~). 정관 초과분은 근로소득. 3년 평균.</div></div>
+      <div class="gloss-item"><div class="gloss-term">사택 제공이익</div><div class="gloss-def">회사 소유 사택은 무상·저가 모두 비과세, 임차 사택은 무상만 비과세.</div></div>
+      <div class="gloss-item"><div class="gloss-term">당좌대출 이자율</div><div class="gloss-def">법정 적정이자율 4.6%. 무차입·특수관계자만 차입 시 강제 적용.</div></div>
+      <div class="gloss-item"><div class="gloss-term">가중평균 차입이자율</div><div class="gloss-def">회사 차입금의 금액 가중평균 이자율. 대여금 적정이자 산정.</div></div>
+      <div class="gloss-item"><div class="gloss-term">자유직업자 (3.3%)</div><div class="gloss-def">부가세 면제 인적용역. 물적시설·근로자 없이 독립 공급(강사·연예인·프로선수 등 13종).</div></div>
+      <div class="gloss-item"><div class="gloss-term">과세최저한</div><div class="gloss-def">기타소득금액 5만원 이하 비과세. 단 필요경비 60/80% 대상은 지급명세서 제출 필수.</div></div>
+      <div class="gloss-item"><div class="gloss-term">필요경비 60% / 80%</div><div class="gloss-def">인적용역 60%, 공익 순위경쟁 입상 80%. 다수의 수혜자(진입장벽 없어야).</div></div>
+      <div class="gloss-item"><div class="gloss-term">단일세율 (외국인 19%)</div><div class="gloss-def">총급여 1.61억 초과 시 유리. 2014.1.1부터 20년 적용.</div></div>
+      <div class="gloss-item"><div class="gloss-term">A공익 코드</div><div class="gloss-def">A01 일반근로 / A02 중도퇴사 연말정산 / A03 일용직 / A04 계속근무 연말정산.</div></div>
+      <div class="gloss-item"><div class="gloss-term">근로내용확인신고서</div><div class="gloss-def">일용직 고용·산재보험 취득·상실 + 지급명세서 동시 처리. 미제출 시 과태료.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPENDIX B: INDEX ============ -->
+<div class="day-divider" id="index">
+  <div class="container">
+    <span class="day-divider-tag">APPENDIX B</span>
+    <h2 class="day-divider-title">교재 <em>페이지 색인</em></h2>
+    <p class="day-divider-sub">Index · 원천징수실무 교재 페이지 → 주제 매핑</p>
+    <div class="day-divider-rule"></div>
+  </div>
+</div>
+<section class="appendix" style="padding-top:0;">
+  <div class="container">
+    <div class="idx-search-wrap">
+      <input type="text" class="gloss-search" id="idxSearch" placeholder="🔍 페이지 또는 주제 검색 (예: 92, 식대, 퇴직, 사택...)">
+    </div>
+    <div class="tbl tbl-scroll">
+      <table class="idx-table" id="idxTable">
+        <thead><tr><th style="width:18%">교재 페이지</th><th style="width:42%">주제</th><th>비고 / 핵심</th></tr></thead>
+        <tbody>
+          <tr><td>92~94p</td><td>근로소득 비과세 열거</td><td>비과세 없으면 전부 과세</td></tr>
+          <tr><td>99~101p</td><td>국외근로소득 비과세</td><td>일반 100 / 원양·건설 500만원</td></tr>
+          <tr><td>103~106p</td><td>벽지수당·연구수당·취재수당</td><td>월 20만원, 공무원·교원·연구원</td></tr>
+          <tr><td>108p</td><td>성과인센티브 귀속시기</td><td>개인별 지급액 확정 시점</td></tr>
+          <tr><td>110~114p</td><td>생산직 야간근로수당 비과세</td><td>연 240만원, 2025 개정 260/3700</td></tr>
+          <tr><td>116~118p</td><td>직급보조비·식대</td><td>식권 정산 = 전액 비과세</td></tr>
+          <tr><td>119~120p</td><td>통근수당·자가운전보조금</td><td>월 20만원, 건강공단 추징 주의</td></tr>
+          <tr><td>122p</td><td>의료비 지원금</td><td>산업안전보건법 건강검진 비과세</td></tr>
+          <tr><td>125p</td><td>교육비 (본인/가족)</td><td>가족 학자금 무조건 총급여 합산</td></tr>
+          <tr><td>128p</td><td>출산·보육수당</td><td>2025 자녀 1명당 20만원</td></tr>
+          <tr><td>130p</td><td>어린이집·경조사비</td><td>회사 외 어린이집 지원금 비과세</td></tr>
+          <tr><td>132~136p</td><td>재해보상·단체보험</td><td>저축형 연 70만원 비과세</td></tr>
+          <tr><td>138~140p</td><td>사택 제공이익</td><td>소유 사택 저가 ⭕ / 임차 사택 저가 ❌</td></tr>
+          <tr><td>140~144p</td><td>주택자금 대여·인정이자</td><td>4.6% 또는 가중평균</td></tr>
+          <tr><td>144~146p</td><td>선택적 복지·임직원 할인</td><td>복지포인트 과세, 할인 MAX(20%,240만)</td></tr>
+          <tr><td>149~152p</td><td>통신비·스톡옵션</td><td>벤처 연2억/누적5억 비과세</td></tr>
+          <tr><td>153~160p</td><td>근로소득 각종 귀속시기</td><td>원칙 = 근로제공일</td></tr>
+          <tr><td>155p</td><td>사인 보너스/이적료</td><td>근로기간 동안 안분</td></tr>
+          <tr><td>161p</td><td>원천징수시기 특례</td><td>급여 대상기간 2개월 걸침</td></tr>
+          <tr><td>168~170p</td><td>파견근로자·휴직</td><td>—</td></tr>
+          <tr><td>178~185p</td><td>일용직 지급명세서·근로내용확인서</td><td>고용보험 신고 = 지급명세서 갈음</td></tr>
+          <tr><td>186p</td><td>합병 시 원천징수</td><td>중도정산 X, 종전근무지 합산</td></tr>
+          <tr><td>191p</td><td>임금 삭감 vs 반납</td><td>삭감 노조동의 / 반납 개별동의</td></tr>
+          <tr><td>193~202p</td><td>중소기업 취업자·경영성과급 감면</td><td>청년 90%/5년</td></tr>
+          <tr><td>206~213p</td><td>내일채움공제·외국인 우수인력</td><td>연구기관 10년 50%</td></tr>
+          <tr><td>215~228p</td><td>외국인 근로자 과세특례</td><td>단일세율 19%, 20년</td></tr>
+          <tr><td>231~232p</td><td>외국인 기술자 감면</td><td>연구소, 10년 50%, 단일세율과 중복불가</td></tr>
+          <tr><td>240p</td><td>해외 파견자 사례</td><td>국내원천 = 한국 땅 밟고 일함</td></tr>
+          <tr><td>242~247p</td><td>간이세액표·상여 적용</td><td>지급대상기간 계산</td></tr>
+          <tr><td>250~256p</td><td>간이지급명세서·서식 개정</td><td>상반기 지급/하반기 귀속</td></tr>
+          <tr><td>253~257p</td><td>지급명세서 비과세 코드</td><td>O 표시만 작성</td></tr>
+          <tr><td>264~279p</td><td>퇴직소득 정의·임원 한도</td><td>2배수, 3년 평균</td></tr>
+          <tr><td>277~278p</td><td>퇴직 수입시기</td><td>세법상 = 마지막 금요일</td></tr>
+          <tr><td>285~287p</td><td>퇴직소득 계산 (연분연승법)</td><td>근속연수공제·환산급여</td></tr>
+          <tr><td>296~297p</td><td>분할수령·임원승진 합산정산</td><td>최종 정산 유리</td></tr>
+          <tr><td>299p</td><td>환급세액 발생 처리</td><td>박교원 세무사 강조</td></tr>
+          <tr><td>311~322p</td><td>사업소득 3.3%·연말정산 대상</td><td>인적용역 13종</td></tr>
+          <tr><td>316~319p</td><td>의료보건용역·인적용역</td><td>미용 목적 제외</td></tr>
+          <tr><td>341~366p</td><td>기타소득 종류·필요경비·세율</td><td>과세최저한 5만원</td></tr>
+          <tr><td>362~363p</td><td>기타소득 세율·과세최저한</td><td>복권 22%/33%</td></tr>
+          <tr><td>369~373p</td><td>기타소득 원천징수·간이명세</td><td>76·79번 매월</td></tr>
+          <tr><td>403p</td><td>소득 종류별 원천징수 결정기준</td><td>근로=용역수행지, 이자=지급지</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPENDIX C: CHEATSHEET ============ -->
+<div class="day-divider" id="cheatsheet">
+  <div class="container">
+    <span class="day-divider-tag">APPENDIX C</span>
+    <h2 class="day-divider-title">빠른 <em>참조 치트시트</em></h2>
+    <p class="day-divider-sub">Quick Reference · 실무에서 바로 찾는 핵심 수치</p>
+    <div class="day-divider-rule"></div>
+  </div>
+</div>
+<section class="appendix" style="padding-top:0;">
+  <div class="container">
+    <div class="cheat-grid">
+
+      <div class="cheat-card">
+        <div class="cheat-card-head"><span class="ic">◆</span>원천징수 세율</div>
+        <div class="cheat-card-body">
+          <div class="cheat-row"><span class="k">이자소득 일반</span><span class="v red">14%</span></div>
+          <div class="cheat-row"><span class="k">비영업대금 이익</span><span class="v red">25%</span></div>
+          <div class="cheat-row"><span class="k">배당소득 일반</span><span class="v red">14%</span></div>
+          <div class="cheat-row"><span class="k">고배당기업(2025)</span><span class="v red">9%</span></div>
+          <div class="cheat-row"><span class="k">사업소득(인적용역)</span><span class="v red">3.3%</span></div>
+          <div class="cheat-row"><span class="k">유흥업 봉사료</span><span class="v red">5%</span></div>
+          <div class="cheat-row"><span class="k">외국인 단일세율</span><span class="v red">19%</span></div>
+          <div class="cheat-row"><span class="k">복권 3억↓ / 초과</span><span class="v red">22% / 33%</span></div>
+        </div>
+      </div>
+
+      <div class="cheat-card">
+        <div class="cheat-card-head"><span class="ic">◆</span>비과세 한도 (월)</div>
+        <div class="cheat-card-body">
+          <div class="cheat-row"><span class="k">식대 (현금)</span><span class="v grn">20만원</span></div>
+          <div class="cheat-row"><span class="k">식대 (현물·식권)</span><span class="v grn">전액</span></div>
+          <div class="cheat-row"><span class="k">자가운전보조금</span><span class="v grn">20만원</span></div>
+          <div class="cheat-row"><span class="k">벽지수당</span><span class="v grn">20만원</span></div>
+          <div class="cheat-row"><span class="k">연구·취재수당</span><span class="v grn">20만원</span></div>
+          <div class="cheat-row"><span class="k">출산·보육수당(자녀당)</span><span class="v grn">20만원</span></div>
+          <div class="cheat-row"><span class="k">생산직 야간(연)</span><span class="v grn">240만원</span></div>
+          <div class="cheat-row"><span class="k">국외근로 일반</span><span class="v grn">100만원</span></div>
+          <div class="cheat-row"><span class="k">국외 원양·건설</span><span class="v grn">500만원</span></div>
+        </div>
+      </div>
+
+      <div class="cheat-card">
+        <div class="cheat-card-head"><span class="ic">◆</span>제출·신고 기한</div>
+        <div class="cheat-card-body">
+          <div class="cheat-row"><span class="k">원천세 신고·납부</span><span class="v">익월 10일</span></div>
+          <div class="cheat-row"><span class="k">지급명세서(근로·퇴직·사업)</span><span class="v">3.10</span></div>
+          <div class="cheat-row"><span class="k">지급명세서(이자·배당)</span><span class="v">2월말</span></div>
+          <div class="cheat-row"><span class="k">간이(근로) 상반기</span><span class="v">7.31</span></div>
+          <div class="cheat-row"><span class="k">간이(사업·기타)</span><span class="v">매월</span></div>
+          <div class="cheat-row"><span class="k">1~11월 미지급 의제</span><span class="v">1.10</span></div>
+          <div class="cheat-row"><span class="k">12월 미지급 의제</span><span class="v">3.10</span></div>
+          <div class="cheat-row"><span class="k">반기납부 대상</span><span class="v">상시 20명↓</span></div>
+        </div>
+      </div>
+
+      <div class="cheat-card">
+        <div class="cheat-card-head"><span class="ic">◆</span>가산세</div>
+        <div class="cheat-card-body">
+          <div class="cheat-row"><span class="k">신고불성실</span><span class="v">10%</span></div>
+          <div class="cheat-row"><span class="k">부정 신고불성실</span><span class="v">40%</span></div>
+          <div class="cheat-row"><span class="k">납부지연(연)</span><span class="v">약 8.05%</span></div>
+          <div class="cheat-row"><span class="k">납부지연(일)</span><span class="v">22/10만</span></div>
+          <div class="cheat-row"><span class="k">지급명세서 미제출</span><span class="v">1%</span></div>
+          <div class="cheat-row"><span class="k">간이지급명세서</span><span class="v">0.25%</span></div>
+          <div class="cheat-row"><span class="k">원천세 납부지연 한도</span><span class="v">10%(≈319일)</span></div>
+          <div class="cheat-row"><span class="k">한도(일반/중소)</span><span class="v">1억/5천만</span></div>
+        </div>
+      </div>
+
+      <div class="cheat-card">
+        <div class="cheat-card-head"><span class="ic">◆</span>과세최저한·소액부징수</div>
+        <div class="cheat-card-body">
+          <div class="cheat-row"><span class="k">기타소득금액</span><span class="v grn">5만원↓</span></div>
+          <div class="cheat-row"><span class="k">복권 당첨금</span><span class="v grn">200만원↓</span></div>
+          <div class="cheat-row"><span class="k">일반 원천징수</span><span class="v grn">1,000원↓</span></div>
+          <div class="cheat-row"><span class="k">이자소득 소액부징수</span><span class="v red">미적용</span></div>
+          <div class="cheat-row"><span class="k">사업 3.3% 부징수</span><span class="v">2024.7.1~</span></div>
+        </div>
+      </div>
+
+      <div class="cheat-card">
+        <div class="cheat-card-head"><span class="ic">◆</span>퇴직·임원</div>
+        <div class="cheat-card-body">
+          <div class="cheat-row"><span class="k">임원 한도(현재)</span><span class="v red">2배수</span></div>
+          <div class="cheat-row"><span class="k">임원 한도(2012~19)</span><span class="v">3배수</span></div>
+          <div class="cheat-row"><span class="k">임원 평균</span><span class="v">3년</span></div>
+          <div class="cheat-row"><span class="k">직원 평균</span><span class="v">3개월</span></div>
+          <div class="cheat-row"><span class="k">세법상 퇴직일</span><span class="v">마지막 금요일</span></div>
+          <div class="cheat-row"><span class="k">4대보험 상실일</span><span class="v">다음날(토)</span></div>
+        </div>
+      </div>
+
+      <div class="cheat-card">
+        <div class="cheat-card-head"><span class="ic">◆</span>거주자·해외</div>
+        <div class="cheat-card-body">
+          <div class="cheat-row"><span class="k">거주자 기준</span><span class="v">183일↑</span></div>
+          <div class="cheat-row"><span class="k">거주자 과세권</span><span class="v grn">전세계</span></div>
+          <div class="cheat-row"><span class="k">비거주자 과세권</span><span class="v">국내원천</span></div>
+          <div class="cheat-row"><span class="k">근로소득 원천</span><span class="v">용역수행지</span></div>
+          <div class="cheat-row"><span class="k">이자소득 원천</span><span class="v">지급지</span></div>
+          <div class="cheat-row"><span class="k">납세조합 세액공제</span><span class="v grn">5%</span></div>
+          <div class="cheat-row"><span class="k">외국인 단일세율 유리</span><span class="v">1.61억↑</span></div>
+        </div>
+      </div>
+
+      <div class="cheat-card">
+        <div class="cheat-card-head"><span class="ic">◆</span>감면 제도</div>
+        <div class="cheat-card-body">
+          <div class="cheat-row"><span class="k">중기 취업 청년</span><span class="v grn">90%/5년</span></div>
+          <div class="cheat-row"><span class="k">중기 취업 그 외</span><span class="v grn">70%/3년</span></div>
+          <div class="cheat-row"><span class="k">중기 경영성과급</span><span class="v grn">50%</span></div>
+          <div class="cheat-row"><span class="k">외국인 우수인력</span><span class="v grn">50%/10년</span></div>
+          <div class="cheat-row"><span class="k">임직원 할인</span><span class="v grn">MAX(20%,240만)</span></div>
+          <div class="cheat-row"><span class="k">단체보험 저축형</span><span class="v grn">70만원</span></div>
+        </div>
+      </div>
+
+      <div class="cheat-card">
+        <div class="cheat-card-head"><span class="ic">◆</span>인정이자·대여</div>
+        <div class="cheat-card-body">
+          <div class="cheat-row"><span class="k">당좌대출 이자율</span><span class="v red">4.6%</span></div>
+          <div class="cheat-row"><span class="k">무차입·특수관계만</span><span class="v">4.6% 강제</span></div>
+          <div class="cheat-row"><span class="k">결혼 증여 면제</span><span class="v">1억(앞뒤2년)</span></div>
+          <div class="cheat-row"><span class="k">부모자식 증여공제</span><span class="v">5천만원</span></div>
+        </div>
+      </div>
+
+      <div class="cheat-card">
+        <div class="cheat-card-head"><span class="ic">◆</span>사업자 기준금액</div>
+        <div class="cheat-card-body">
+          <div class="cheat-row"><span class="k">에어비앤비 사업자등록</span><span class="v">500만원↑</span></div>
+          <div class="cheat-row"><span class="k">옥션·지마켓 관리</span><span class="v">1,200만원↑</span></div>
+          <div class="cheat-row"><span class="k">증빙불비 가산세</span><span class="v">2%(3만원↑)</span></div>
+          <div class="cheat-row"><span class="k">기타소득 필요경비</span><span class="v">60%/80%</span></div>
+        </div>
+      </div>
+
+      <div class="cheat-card">
+        <div class="cheat-card-head"><span class="ic">◆</span>5가지 핵심 (강사 강조)</div>
+        <div class="cheat-card-body">
+          <div class="cheat-row"><span class="k">① 거주자/비거주자</span><span class="v grn">과세권</span></div>
+          <div class="cheat-row"><span class="k">② 원천징수시기 특례</span><span class="v grn">의제</span></div>
+          <div class="cheat-row"><span class="k">③ 근로소득 귀속</span><span class="v grn">제공일</span></div>
+          <div class="cheat-row"><span class="k">④ 소득 구분</span><span class="v grn">근로/사업/기타</span></div>
+          <div class="cheat-row"><span class="k">⑤ 원천 판단</span><span class="v grn">8가지 소득</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-content">
+    <h2 class="footer-title">원천징수실무 <em>완전정리</em></h2>
+    <p style="max-width:560px;margin:0 auto;opacity:0.85;font-size:15px;">세무사 차재영·박교원 공저 「원천징수실무」 기반 · CFO Academy 2일 과정 종합 정리. 본 자료는 강의 내용을 학습용으로 재구성한 것이며, 실제 적용 시 최신 법령을 확인하시기 바랍니다.</p>
+    <div class="footer-meta">Withholding Tax Practice · Day 1-2 · 2026.05.21–22 · Compiled Reference</div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="맨 위로">↑</button>
+
+<script>
+// progress bar + nav + totop
+const pb = document.getElementById('progressBar');
+const totop = document.getElementById('totop');
+let lastScroll = 0;
+const nav = document.getElementById('topnav');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  const sc = window.scrollY;
+  pb.style.width = (sc / h * 100) + '%';
+  totop.classList.toggle('show', sc > 600);
+  // hide nav on scroll down, show on up
+  if (sc > lastScroll && sc > 300) { nav.style.transform = 'translateY(-100%)'; }
+  else { nav.style.transform = 'translateY(0)'; }
+  lastScroll = sc;
+});
+totop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// glossary search
+const gs = document.getElementById('glossSearch');
+const gItems = document.querySelectorAll('#glossGrid .gloss-item');
+gs.addEventListener('input', () => {
+  const q = gs.value.toLowerCase().trim();
+  gItems.forEach(it => {
+    const t = it.textContent.toLowerCase();
+    it.style.display = t.includes(q) ? '' : 'none';
+  });
+});
+
+// index search
+const ix = document.getElementById('idxSearch');
+const iRows = document.querySelectorAll('#idxTable tbody tr');
+ix.addEventListener('input', () => {
+  const q = ix.value.toLowerCase().trim();
+  iRows.forEach(r => {
+    const t = r.textContent.toLowerCase();
+    r.style.display = t.includes(q) ? '' : 'none';
+  });
+});
+</script>
+</body>
+</html>

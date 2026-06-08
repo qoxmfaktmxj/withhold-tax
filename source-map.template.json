@@ -1,0 +1,57 @@
+[
+  {
+    "id": "withholding.small-amount.personal-service-business-income",
+    "html_section": "3.5 / Appendix C",
+    "current_claim": "2024.7.1부터 사업소득 3.3%도 1,000원 미만 부징수 적용",
+    "status": "fix-required",
+    "recommended_claim": "거주자에게 지급되는 인적용역 사업소득은 2024.7.1 이후 지급분부터 1,000원 미만이어도 원천징수",
+    "source_type": "NTS",
+    "source_title": "국세청 원천징수 개요 - 소액부징수",
+    "as_of": "2026-06-08",
+    "risk": "high"
+  },
+  {
+    "id": "withholding.high-dividend-company-special-taxation",
+    "html_section": "3.3 / Appendix C",
+    "current_claim": "고배당기업 분리과세 9%, 2025년 신설",
+    "status": "fix-required",
+    "recommended_claim": "조특법 제104조의27 고배당기업 주식 배당소득 과세특례. 2026.1.1 이후 지급 배당분부터 적용. 단일 9%가 아니라 별도 누진 분리과세 구조로 정리",
+    "source_type": "LAW + 2026 tax update commentary",
+    "source_title": "조세특례제한법 제104조의27 및 2026 세제개편 해설",
+    "as_of": "2026-06-08",
+    "risk": "high"
+  },
+  {
+    "id": "payment-statement.simplified-employment-2026",
+    "html_section": "4.5 / Appendix B / Appendix C",
+    "current_claim": "상반기 1~5월 지급분, 하반기 6~12월 귀속분",
+    "status": "fix-required",
+    "recommended_claim": "2026년 기준 상용근로자 간이지급명세서는 반기 제출: 1~6월 지급분 7월 말, 7~12월 지급분 다음 해 1월 말. 월별 제출은 2027년 유예 항목으로 별도 표시",
+    "source_type": "NTS + official policy update",
+    "source_title": "국세청 지급명세서 제출기한, 2026 세법 변경 안내",
+    "as_of": "2026-06-08",
+    "risk": "high"
+  },
+  {
+    "id": "penalty.withholding-late-payment",
+    "html_section": "4.3 / Appendix C",
+    "current_claim": "MIN(A, B), 한도 10%, 319일",
+    "status": "revise-wording",
+    "recommended_claim": "국세청 공식식: 미납세액×3% + 미납세액×2.2/10,000×경과일수. 한도는 법령 문구를 그대로 표시",
+    "source_type": "NTS",
+    "source_title": "국세청 원천세 가산세",
+    "as_of": "2026-06-08",
+    "risk": "medium"
+  },
+  {
+    "id": "labor-tax.performance-bonus-wage-character",
+    "html_section": "6.3",
+    "current_claim": "성과급(PS)=임금 아님",
+    "status": "qualify-required",
+    "recommended_claim": "세법상 귀속시기와 노동법상 임금성을 분리. 임금성은 지급규정, 정기성, 지급의무에 따라 별도 판단",
+    "source_type": "legal-review-needed",
+    "source_title": "노동법 판례 및 사내 성과급 규정 검토 필요",
+    "as_of": "2026-06-08",
+    "risk": "medium"
+  }
+]
