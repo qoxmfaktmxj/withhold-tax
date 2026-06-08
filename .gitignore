@@ -26,3 +26,16 @@ yarn-error.log*
 # editor
 .idea
 .vscode
+
+# next-scaffold additions
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.pnpm-debug.log*
+*.tsbuildinfo
+next-env.d.ts
+
+# temp scaffold dir
+next-scaffold/
