@@ -1,3 +1,8 @@
+import factsRaw from '@/content/facts.json'
+import { loadFacts } from '@/lib/facts/store'
+import { factsToDocs } from '@/lib/search/facts-docs'
+import { Search } from '@/components/Search'
+
 const CHAPTERS = [
   { slug: 'ch1', title: 'Ch1 소득세 기본구조' },
   { slug: 'ch2', title: 'Ch2 법체계·세금분류' },
@@ -14,6 +19,7 @@ const CHAPTERS = [
 ]
 
 export default function Home() {
+  const docs = factsToDocs(loadFacts(factsRaw))
   return (
     <div>
       <section style={{ padding: 'var(--space-section) 0 var(--space-xl)' }}>
@@ -21,6 +27,7 @@ export default function Home() {
         <p style={{ color: 'var(--color-muted)', fontSize: 18 }}>출처·시행일이 명시된 사내 참고 자료. 2026 기준.</p>
         <p><a href="/updates-2026" style={{ color: 'var(--color-primary)' }}>→ 2026년 개정·시행 항목 보기</a></p>
       </section>
+      <Search docs={docs} />
       <h2>목차</h2>
       <ul style={{ lineHeight: 2, listStyle: 'none', padding: 0 }}>
         {CHAPTERS.map((c) => (
