@@ -11,7 +11,7 @@ export function lawLink(ref: string): LawLink {
   const m = ref.match(/^(.+?)\s*(제\d+조(?:의\d+)?)?$/)
   const lawName = (m?.[1] ?? ref).trim()
   const article = m?.[2]?.trim()
-  const base = `https://www.law.go.kr/법령/${lawName}`
-  const url = article ? `${base}/${article}` : base
+  const base = `https://www.law.go.kr/법령/${encodeURIComponent(lawName)}`
+  const url = article ? `${base}/${encodeURIComponent(article)}` : base
   return { text: ref, url }
 }
