@@ -118,6 +118,7 @@
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
+summary:focus-visible,
 [tabindex]:focus-visible {
   outline: 2px solid var(--oxblood);
   outline-offset: 2px;
@@ -698,13 +699,15 @@ pre,
 }
 
 .wt-citation-card-status--확정 {
-  color: #8fd98f;
-  border-color: #8fd98f;
+  /* muted sage on ink bg — printed verify mark, not neon */
+  color: #a8d4a8;
+  border-color: #a8d4a8;
 }
 
 .wt-citation-card-status--확인필요 {
-  color: #f5c97a;
-  border-color: #f5c97a;
+  /* warm buff on ink bg — gazette caution tone */
+  color: #d4b896;
+  border-color: #d4b896;
 }
 
 .wt-citation-card-body {
