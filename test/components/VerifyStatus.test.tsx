@@ -9,12 +9,13 @@ describe('VerifyStatus', () => {
   })
   it('강의기반 exposes a disclosure id for aria-describedby', () => {
     render(<VerifyStatus status="강의기반" />)
-    const el = screen.getByText(/강의기반/)
-    expect(el).toHaveAttribute('id')
+    // The id is on the outer wrapper span (default: vs-강의기반)
+    const wrapper = document.getElementById('vs-강의기반')
+    expect(wrapper).not.toBeNull()
   })
   it('descId prop overrides the default id', () => {
     render(<VerifyStatus status="강의기반" descId="vs-f_x" />)
-    const el = screen.getByText(/강의기반/)
-    expect(el).toHaveAttribute('id', 'vs-f_x')
+    const wrapper = document.getElementById('vs-f_x')
+    expect(wrapper).not.toBeNull()
   })
 })

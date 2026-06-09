@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import factsRaw from '@/content/facts.json'
 import { loadFacts, byChapter } from '@/lib/facts/store'
-import { availableChapterSlugs } from '@/lib/chapters'
+import { availableChapterSlugs, chapterTitle } from '@/lib/chapters'
 import { ChapterVerifySummary } from '@/components/ChapterVerifySummary'
 import { Fact } from '@/components/Fact'
 
@@ -29,15 +29,22 @@ export default async function ChapterPage({
 
   let MDX: (props: { components?: Record<string, unknown> }) => ReactNode
   try {
-    // Use relative path for webpack dynamic import context
     MDX = (await import(`../../../content/chapters/${slug}.mdx`)).default
   } catch {
     notFound()
   }
 
   return (
-    <article>
+    <article className="wt-article">
+      {/* Chapter title from CHAPTERS meta */}
+      <h1 style={{ marginBottom: 'var(--space-sm)' }}>
+        {chapterTitle(slug)}
+      </h1>
+
+      {/* Verify summary as refined meta line */}
       <ChapterVerifySummary facts={chFacts} />
+
+      {/* MDX content */}
       <MDX components={{ F }} />
     </article>
   )

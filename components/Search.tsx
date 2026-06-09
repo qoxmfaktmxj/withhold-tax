@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import { buildIndex, searchIndex, type Doc } from '@/lib/search/build-index'
+import { chapterTitle } from '@/lib/chapter-meta'
 
 interface SearchProps {
   docs: Doc[]
@@ -15,8 +16,11 @@ export function Search({ docs, availableChapters }: SearchProps) {
   const availableSet = useMemo(() => new Set(availableChapters), [availableChapters])
 
   return (
-    <div className="wt-search" style={{ margin: 'var(--space-xl) 0' }}>
-      <label htmlFor="fact-search" style={{ display: 'block', marginBottom: 8, fontWeight: 500 }}>
+    <div className="wt-search" style={{ margin: 'var(--space-xl) 0', maxWidth: 520 }}>
+      <label
+        htmlFor="fact-search"
+        style={{ display: 'block', marginBottom: 8, fontSize: 13, fontWeight: 600, color: 'var(--color-muted)' }}
+      >
         규정 검색
       </label>
       <input
@@ -25,56 +29,32 @@ export function Search({ docs, availableChapters }: SearchProps) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="예: 식대, 소액부징수, 비과세…"
-        style={{
-          width: '100%',
-          maxWidth: 480,
-          padding: '8px 12px',
-          border: '1px solid var(--color-hairline)',
-          borderRadius: 'var(--radius-md)',
-          background: 'var(--color-canvas)',
-          color: 'var(--color-ink)',
-          fontSize: 14,
-        }}
+        className="wt-search-input"
+        aria-label="원천징수 규정 검색"
+        aria-expanded={results.length > 0}
+        aria-owns="search-results-list"
       />
       {results.length > 0 && (
         <ul
-          style={{
-            listStyle: 'none',
-            padding: 0,
-            marginTop: 8,
-            maxWidth: 480,
-            border: '1px solid var(--color-hairline)',
-            borderRadius: 'var(--radius-md)',
-            background: 'var(--color-canvas)',
-          }}
+          id="search-results-list"
+          className="wt-search-results"
+          role="listbox"
+          aria-label="검색 결과"
         >
           {results.map((r) => (
-            <li key={r.id} style={{ borderTop: '1px solid var(--color-hairline)' }}>
+            <li key={r.id} className="wt-search-item" role="option">
               {availableSet.has(r.chapter) ? (
-                <a
-                  href={`/ch/${r.chapter}`}
-                  style={{
-                    display: 'block',
-                    padding: '8px 12px',
-                    color: 'var(--color-ink)',
-                    textDecoration: 'none',
-                    fontSize: 14,
-                  }}
-                >
-                  <span style={{ color: 'var(--color-muted)', fontSize: 12, marginRight: 8 }}>{r.chapter}</span>
-                  {r.title}
+                <a href={`/ch/${r.chapter}`}>
+                  <span style={{ color: 'var(--color-muted-soft)', fontSize: 11, marginRight: 8 }}>
+                    {chapterTitle(r.chapter)}
+                  </span>
+                  <strong style={{ color: 'var(--color-ink)', fontWeight: 500 }}>{r.title}</strong>
                 </a>
               ) : (
-                <span
-                  style={{
-                    display: 'block',
-                    padding: '8px 12px',
-                    color: 'var(--color-muted)',
-                    fontSize: 14,
-                  }}
-                >
-                  <span style={{ fontSize: 12, marginRight: 8 }}>{r.chapter}</span>
-                  {r.title} (작성 예정)
+                <span style={{ color: 'var(--color-muted)' }}>
+                  <span style={{ fontSize: 11, marginRight: 8 }}>{chapterTitle(r.chapter)}</span>
+                  {r.title}
+                  <span style={{ color: 'var(--color-muted-soft)', fontSize: 11, marginLeft: 6 }}>(작성 예정)</span>
                 </span>
               )}
             </li>

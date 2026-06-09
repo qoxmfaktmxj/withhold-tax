@@ -3,7 +3,7 @@ import { loadFacts, byChapter, dashboardFacts, reviewDue, chapterSummary } from 
 import type { Fact } from '@/lib/facts/schema'
 
 const f = (o: Partial<Fact>): Fact => ({
-  id: 'f_000001', slug: 's', chapter: 'ch3', claim: 'c', sourceType: 'NTS', sourceTitle: 't',
+  id: 'f_000001', slug: 's', title: '', chapter: 'ch3', claim: 'c', sourceType: 'NTS', sourceTitle: 't',
   lawRef: '', lawUrl: '', asOf: '2026-06-08', effectiveDate: '', verifyStatus: '확정',
   risk: 'low', changeType: '없음', previousValue: '',
   history: [{ date: '2026-06-08', author: 'kms', note: 'n' }], nextReviewBy: '',
