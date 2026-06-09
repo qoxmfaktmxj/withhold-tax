@@ -49,7 +49,7 @@
   --border-blue:       #bfdbfe;              /* sidebar border */
   --text-primary:      var(--gray-900);
   --text-secondary:    var(--gray-600);
-  --text-muted:        var(--gray-400);
+  --text-muted:        var(--gray-500);  /* gray-500 ~4.6:1 on white — AA pass */
   --accent:            var(--blue-600);
   --accent-hover:      var(--blue-700);
 
@@ -183,7 +183,7 @@ button:focus-visible,
 input:focus-visible,
 summary:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid var(--blue-500);
+  outline: 2px solid var(--blue-600);
   outline-offset: 2px;
   border-radius: var(--radius-xs);
 }
@@ -437,7 +437,7 @@ pre,
 .wt-chapter-num {
   font-family: var(--font-mono);
   font-size: 0.65rem;
-  color: var(--gray-400);
+  color: var(--gray-500);
   min-width: 38px;
   flex-shrink: 0;
   letter-spacing: 0.04em;
@@ -593,7 +593,7 @@ pre,
 
 .wt-search-input:focus,
 .wt-sidebar-search input[type="search"]:focus {
-  border-color: var(--blue-500);
+  border-color: var(--blue-600);
   box-shadow: 0 0 0 3px rgb(37 99 235 / .12);
 }
 
@@ -680,7 +680,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-search-item a:focus-visible {
-  outline: 2px solid var(--blue-500);
+  outline: 2px solid var(--blue-600);
   outline-offset: -2px;
 }
 
@@ -789,9 +789,8 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   display: flex;
   align-items: center;
   gap: 20px;
-  background: var(--white);
-  border: 1px solid var(--border-blue);
-  border-left: 4px solid var(--blue-600);
+  background: #f0f4ff;
+  border: 1px solid var(--blue-200);
   border-radius: var(--radius);
   padding: 16px 20px;
   margin: var(--space-lg) 0 var(--space-xl);
@@ -1024,7 +1023,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 .wt-chapter-card > * { position: relative; }
 
 .wt-chapter-card:focus-visible {
-  outline: 2px solid var(--blue-500);
+  outline: 2px solid var(--blue-600);
   outline-offset: 2px;
 }
 
@@ -1375,7 +1374,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 
 .wt-update-prev {
   font-size: 0.76rem;
-  color: var(--gray-400);
+  color: var(--gray-500);
   line-height: 1.55;
 }
 
