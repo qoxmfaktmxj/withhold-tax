@@ -1,27 +1,27 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Noto_Serif_KR, JetBrains_Mono } from 'next/font/google'
+import { Hanken_Grotesk, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { Disclaimer } from '@/components/Disclaimer'
 import { CHAPTERS, APPENDICES, availableChapterSlugs } from '@/lib/chapters'
 
 /* ── Fonts ────────────────────────────────────────────────────────────── */
-// Noto Serif KR: 명조 display — headlines, wordmark
-const serif = Noto_Serif_KR({
+// Hanken Grotesk: display / headlines — tight letter-spacing, weight 700/800
+const hanken = Hanken_Grotesk({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-serif',
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-hanken',
   display: 'swap',
 })
 
-// JetBrains Mono: law refs, numbers, kickers, labels
+// JetBrains Mono: law refs, citations, dates, code
 const mono = JetBrains_Mono({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-mono',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-jetbrains',
   display: 'swap',
 })
-// Note: Pretendard (body/UI sans) is loaded via @import in globals.css
+// Note: Pretendard Variable (Korean body) is loaded via @import in globals.css
 
 export const metadata: Metadata = {
   title: '원천징수 레퍼런스',
@@ -29,12 +29,12 @@ export const metadata: Metadata = {
 }
 
 /* ── Chapter number labels ────────────────────────────────────────────── */
-function chapterNumLabel(slug: string, index: number): string {
+function chapterNumLabel(slug: string): string {
   if (slug.startsWith('ch')) {
-    const n = slug.replace('ch', '')
-    return `제${n}장`
+    const n = slug.replace('ch', '').padStart(2, '0')
+    return `CH ${n}`
   }
-  return `부록`
+  return '부록'
 }
 
 export default function RootLayout({
@@ -45,11 +45,11 @@ export default function RootLayout({
   return (
     <html
       lang="ko"
-      className={`${serif.variable} ${mono.variable}`}
+      className={`${hanken.variable} ${mono.variable}`}
     >
       <body>
         <div className="wt-shell">
-          {/* ── Page top rule ──────────────────────────────────── */}
+          {/* ── 3px blue top accent bar ────────────────────────── */}
           <div className="wt-page-top-rule" aria-hidden="true" />
 
           <div className="wt-shell-body">
@@ -57,14 +57,25 @@ export default function RootLayout({
             <aside className="wt-sidebar" aria-label="사이드바 내비게이션">
               <div className="wt-sidebar-inner">
 
-                {/* Masthead — printed index style */}
+                {/* Wordmark */}
                 <div className="wt-sidebar-masthead">
-                  <Link href="/" className="wt-sidebar-masthead-title">
-                    원천징수 레퍼런스
-                  </Link>
-                  <span className="wt-sidebar-masthead-subtitle">
-                    Withholding Tax Reference
-                  </span>
+                  <div className="wt-sidebar-wordmark-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                      <line x1="16" y1="13" x2="8" y2="13"/>
+                      <line x1="16" y1="17" x2="8" y2="17"/>
+                      <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <Link href="/" className="wt-sidebar-masthead-title">
+                      원천징수 레퍼런스
+                    </Link>
+                    <span className="wt-sidebar-masthead-subtitle">
+                      2026 실무 참고자료
+                    </span>
+                  </div>
                 </div>
 
                 {/* 바로가기 */}
@@ -74,13 +85,19 @@ export default function RootLayout({
                     <ul className="wt-chapter-index">
                       <li>
                         <Link href="/updates-2026" className="wt-chapter-index-item">
-                          <span className="wt-chapter-num" style={{ color: 'var(--oxblood)' }}>NEW</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ color: 'var(--blue-600)', flexShrink: 0 }}>
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                            <polyline points="17 6 23 6 23 12"/>
+                          </svg>
                           <span className="wt-chapter-name">2026 개정 이력</span>
                         </Link>
                       </li>
                       <li>
                         <Link href="/review-due" className="wt-chapter-index-item">
-                          <span className="wt-chapter-num">검토</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ color: 'var(--blue-600)', flexShrink: 0 }}>
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                          </svg>
                           <span className="wt-chapter-name">검토 임박 항목</span>
                         </Link>
                       </li>
@@ -89,12 +106,12 @@ export default function RootLayout({
                 </div>
 
                 {/* 목차 */}
-                <div className="wt-sidebar-section">
+                <div className="wt-sidebar-section" style={{ marginTop: 6 }}>
                   <span className="wt-sidebar-section-label">목차</span>
                   <nav aria-label="챕터 목차">
                     <ul className="wt-chapter-index">
-                      {CHAPTERS.map((ch, i) => {
-                        const numLabel = chapterNumLabel(ch.slug, i)
+                      {CHAPTERS.map((ch) => {
+                        const numLabel = chapterNumLabel(ch.slug)
                         return available.has(ch.slug) ? (
                           <li key={ch.slug}>
                             <Link
@@ -106,7 +123,12 @@ export default function RootLayout({
                             </Link>
                           </li>
                         ) : (
-                          <li key={ch.slug} className="wt-chapter-index-item" style={{ cursor: 'default', opacity: 0.5 }}>
+                          <li
+                            key={ch.slug}
+                            className="wt-chapter-index-item"
+                            style={{ cursor: 'default', opacity: 0.5 }}
+                            aria-disabled="true"
+                          >
                             <span className="wt-chapter-num">{numLabel}</span>
                             <span className="wt-chapter-name">{ch.title}</span>
                           </li>
@@ -117,7 +139,7 @@ export default function RootLayout({
                 </div>
 
                 {/* 부록 */}
-                <div className="wt-sidebar-section">
+                <div className="wt-sidebar-section" style={{ marginTop: 6 }}>
                   <span className="wt-sidebar-section-label">부록</span>
                   <nav aria-label="부록">
                     <ul className="wt-chapter-index">
@@ -132,7 +154,12 @@ export default function RootLayout({
                             </Link>
                           </li>
                         ) : (
-                          <li key={ap.slug} className="wt-chapter-index-item" style={{ cursor: 'default', opacity: 0.5 }}>
+                          <li
+                            key={ap.slug}
+                            className="wt-chapter-index-item"
+                            style={{ cursor: 'default', opacity: 0.5 }}
+                            aria-disabled="true"
+                          >
                             <span className="wt-chapter-name">{ap.title}</span>
                           </li>
                         )
@@ -142,21 +169,21 @@ export default function RootLayout({
                 </div>
 
                 {/* 검증 범례 */}
-                <div className="wt-sidebar-section">
+                <div className="wt-sidebar-section" style={{ marginTop: 8 }}>
                   <span className="wt-sidebar-section-label">검증 범례</span>
-                  <div className="wt-legend">
-                    <div className="wt-legend-item">
-                      <span className="wt-seal wt-seal--확정" aria-hidden="true">✓</span>
-                      <span>확정 — 국세청 원문 대조</span>
-                    </div>
-                    <div className="wt-legend-item">
-                      <span className="wt-seal wt-seal--확인필요" aria-hidden="true">⚠</span>
-                      <span>확인필요 — 추가 검증 권장</span>
-                    </div>
-                    <div className="wt-legend-item">
-                      <span className="wt-seal wt-seal--강의기반" aria-hidden="true">·</span>
-                      <span>강의기반 — 출처 미확정</span>
-                    </div>
+                </div>
+                <div className="wt-legend">
+                  <div className="wt-legend-item">
+                    <span className="wt-seal wt-seal--확정" aria-hidden="true">✓ 확정</span>
+                    <span>법령 원문 교차 확인</span>
+                  </div>
+                  <div className="wt-legend-item">
+                    <span className="wt-seal wt-seal--확인필요" aria-hidden="true">⚠ 확인필요</span>
+                    <span>재검증 권장</span>
+                  </div>
+                  <div className="wt-legend-item">
+                    <span className="wt-seal wt-seal--강의기반" aria-hidden="true">· 강의기반</span>
+                    <span>강의 자료 기반</span>
                   </div>
                 </div>
 

@@ -7,9 +7,10 @@ import { Search } from '@/components/Search'
 
 /* ── Chapter number label helper ─────────────────────────────────────── */
 function chapterNumLabel(slug: string): string {
-  if (slug.startsWith('ch')) return `제${slug.replace('ch', '')}장`
-  if (slug === 'nonresident') return '부록'
-  if (slug === 'interest-dividend') return '부록'
+  if (slug.startsWith('ch')) {
+    const n = slug.replace('ch', '').padStart(2, '0')
+    return `CH ${n}`
+  }
   return '부록'
 }
 
@@ -23,112 +24,132 @@ export default function Home() {
     (f) => f.changeType !== '없음' && f.effectiveDate?.startsWith('2026')
   ).length
 
-  // 오늘 날짜 (서버 렌더)
-  const today = new Date()
-  const publishDate = `${today.getFullYear()}년 ${String(today.getMonth() + 1).padStart(2, '0')}월 ${String(today.getDate()).padStart(2, '0')}일`
-
   return (
     <div>
-      {/* ════════════ GAZETTE MASTHEAD ════════════ */}
+      {/* ════════════ WEBFLOW HERO ════════════ */}
       <header className="wt-gazette-masthead">
         <div className="wt-gazette-kicker">
-          CFO Academy &nbsp;·&nbsp; 원천징수 실무 &nbsp;·&nbsp; 第2026號
+          원천징수 실무 · 2026
         </div>
         <h1 className="wt-gazette-headline">
-          출처가 있는 원천징수 레퍼런스
+          출처가 있는<br />원천징수 레퍼런스
         </h1>
-        <div className="wt-gazette-dateline">
-          Published {publishDate} &nbsp;·&nbsp; Revision III &nbsp;·&nbsp; Internal Reference
-        </div>
+        <p className="wt-gazette-dateline">
+          법령 조문·시행일·검증상태가 명시된 사내 참고 자료.{' '}
+          국세청 재검증 전 빠르게 근거를 찾고 판단의 출발점으로 활용하세요.
+        </p>
       </header>
 
       <div style={{ padding: '28px var(--space-xxl) var(--space-xxl)' }}>
 
-        {/* ════════════ LEAD ════════════ */}
-        <p className="wt-lead-text">
-          법령 조문·시행일·검증상태가 명시된 사내 참고 자료입니다.
-          <strong>국세청 재검증 전 빠르게 근거를 찾으세요.</strong>
-          본 레퍼런스의 모든 항목은 소득세법·법인세법·조세특례제한법 원문과 대조하여
-          검증 등급을 부여하였으며, 개정 사항은 시행일 기준으로 즉시 반영됩니다.
-        </p>
-
         {/* ════════════ SEARCH ════════════ */}
         <Search docs={docs} availableChapters={[...available]} />
 
-        {/* ════════════ 2026 개정 NOTICE BLOCK ════════════ */}
+        {/* ════════════ 2026 개정 BAND ════════════ */}
         {updates2026Count > 0 && (
           <div className="wt-notice-block">
             <div className="wt-notice-inner">
               <span className="wt-notice-label">2026 개정·시행</span>
               <span className="wt-notice-text">
-                {updates2026Count}건의 변경 항목이 시행되었습니다 —
-                고배당기업 배당 과세특례 신설, 간이지급명세서 제출주기 유예 등
+                {updates2026Count}건의 변경 항목이 시행되었습니다
+                <span style={{ color: 'var(--gray-500)', fontWeight: 400 }}>
+                  {' '}— 고배당기업 배당 과세특례 신설, 간이지급명세서 제출주기 유예 등
+                </span>
               </span>
             </div>
             <Link href="/updates-2026" className="wt-notice-link">
-              개정 이력 전체 보기 →
+              개정 이력 보기 →
             </Link>
           </div>
         )}
 
         {/* ════════════ TRUST-MARK CITATION CARDS ════════════ */}
         <div className="wt-section-rule-heading">
-          <span className="wt-section-rule-text">인용 사례 · 규정 출처</span>
+          <span className="wt-section-rule-text">출처 표기 예시</span>
           <div className="wt-section-rule-line" />
         </div>
 
         <div className="wt-citation-cluster">
-          {/* Card 1: Verified — 비영업대금 25% (correct) */}
+          {/* Card 1: 확정 — 비영업대금 25% (실제 데이터) */}
           <div className="wt-citation-card">
             <div className="wt-citation-card-header">
-              <span className="wt-citation-card-kicker">
-                원천징수 세율 · 비영업대금 이익
-              </span>
+              <div>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '1.2rem',
+                    fontWeight: 800,
+                    color: 'var(--gray-900)',
+                    letterSpacing: '-0.025em',
+                    lineHeight: 1.3,
+                    marginBottom: 4,
+                  }}
+                >
+                  비영업대금 이익 원천징수세율{' '}
+                  <span style={{ color: 'var(--blue-600)' }}>25%</span>
+                </div>
+              </div>
               <span className="wt-citation-card-status wt-citation-card-status--확정">
                 ✓ 확정
               </span>
             </div>
-            <div className="wt-citation-card-body">
-              <p className="wt-citation-statement">
-                비영업대금 이익의 원천징수세율은{' '}
-                <span className="wt-citation-rate">25%</span>입니다.
-              </p>
-            </div>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: 12 }}>
+              비영업대금 이익(금전 대여에 따른 이자소득)에 대한 원천징수세율은 25%이며,
+              소득세법 제129조 제1항에 명시되어 있습니다.
+              지방소득세(2.5%)를 포함하면 실효 원천징수세율은 27.5%입니다.
+            </p>
             <div className="wt-citation-ref">
-              § 소득세법 제129조 제1항 제1호 나목 &nbsp;·&nbsp;
-              시행 2026.06 &nbsp;·&nbsp;
+              <span style={{ color: 'var(--blue-600)', fontWeight: 600 }}>§ 소득세법 제129조 제1항 제1호 나목</span>
+              <span style={{ margin: '0 6px', color: 'var(--gray-300)' }}>·</span>
+              시행 2026.06
+              <span style={{ margin: '0 6px', color: 'var(--gray-300)' }}>·</span>
               <span className="ref-verified">국세청 ✓확정</span>
-              &nbsp;— 국가법령정보센터 원문 대조 완료
+              <span style={{ margin: '0 6px', color: 'var(--gray-300)' }}>—</span>
+              국가법령정보센터 원문 대조 완료
             </div>
           </div>
 
           {/* Card 2: 확인필요 — 고배당 과세특례 */}
           <div className="wt-citation-card">
             <div className="wt-citation-card-header">
-              <span className="wt-citation-card-kicker">
-                배당소득 · 고배당기업 과세특례
-              </span>
+              <div>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '1.2rem',
+                    fontWeight: 800,
+                    color: 'var(--gray-900)',
+                    letterSpacing: '-0.025em',
+                    lineHeight: 1.3,
+                    marginBottom: 4,
+                  }}
+                >
+                  외국법인 국내 사업장 없는 경우 세율{' '}
+                  <span style={{ color: 'var(--blue-600)' }}>20%</span>
+                </div>
+              </div>
               <span className="wt-citation-card-status wt-citation-card-status--확인필요">
                 ⚠ 확인필요
               </span>
             </div>
-            <div className="wt-citation-card-body">
-              <p className="wt-citation-statement">
-                고배당기업 배당소득은 일반 배당소득세율
-                (14% → 20% → 25% → 30% 누진)이 적용되며,
-                과세특례 요건 충족 시 분리과세 가능합니다.
-              </p>
-            </div>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: 12 }}>
+              국내 사업장이 없는 외국법인의 국내원천소득에 대한 원천징수세율은 원칙적으로 20%이나,
+              조세조약이 체결된 국가의 경우 적용 세율이 상이할 수 있으므로
+              개별 조약 내용을 반드시 확인하세요.
+            </p>
             <div className="wt-citation-ref">
-              § 조세특례제한법 제17조의3 &nbsp;·&nbsp;
-              시행 2026.01 &nbsp;·&nbsp;
-              <span className="ref-caution">⚠확인필요</span>
-              &nbsp;— 시행령 세부 요건 확정 후 재검증 필요
+              <span style={{ color: 'var(--blue-600)', fontWeight: 600 }}>§ 법인세법 제98조 제1항</span>
+              <span style={{ margin: '0 6px', color: 'var(--gray-300)' }}>·</span>
+              시행 2026.01
+              <span style={{ margin: '0 6px', color: 'var(--gray-300)' }}>·</span>
+              <span className="ref-caution">⚠ 확인필요</span>
+              <span style={{ margin: '0 6px', color: 'var(--gray-300)' }}>—</span>
+              조세조약 우선 적용 여부 별도 확인 필요
             </div>
           </div>
         </div>
 
-        {/* ════════════ CHAPTER INDEX GRID ════════════ */}
+        {/* ════════════ CHAPTER GRID ════════════ */}
         <div className="wt-section-rule-heading">
           <span className="wt-section-rule-text">전체 장 목차</span>
           <div className="wt-section-rule-line" />
@@ -158,6 +179,7 @@ export default function Home() {
                 className="wt-chapter-card wt-chapter-card--unavailable"
                 aria-disabled="true"
                 role="listitem"
+                title="작성 예정"
               >
                 <span className="wt-chapter-number">{numLabel}</span>
                 <span className="wt-chapter-title">{ch.title}</span>
@@ -193,6 +215,7 @@ export default function Home() {
                 className="wt-chapter-card wt-chapter-card--unavailable"
                 aria-disabled="true"
                 role="listitem"
+                title="작성 예정"
               >
                 <span className="wt-chapter-title">{ap.title}</span>
               </div>
