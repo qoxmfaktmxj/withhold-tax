@@ -39,3 +39,6 @@ yarn-error.log*
 # temp scaffold dir
 next-scaffold/
 .gstack/
+
+# external tooling state/logs
+.omx/
