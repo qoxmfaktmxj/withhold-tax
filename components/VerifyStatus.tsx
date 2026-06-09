@@ -41,9 +41,9 @@ export function VerifyStatus({
           <span
             style={{
               display: 'block',
-              fontFamily: 'var(--font-mono, monospace)',
+              fontFamily: 'var(--font-mono)',
               fontSize: '0.68rem',
-              color: 'var(--ink-faint)',
+              color: 'var(--gray-500)',
               marginTop: 4,
               marginLeft: 4,
               lineHeight: 1.5,

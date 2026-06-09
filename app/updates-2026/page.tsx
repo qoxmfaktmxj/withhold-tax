@@ -6,7 +6,6 @@ export default function Page() {
   const facts = loadFacts(factsRaw)
   return (
     <div className="wt-article" style={{ paddingTop: 'var(--space-xl)' }}>
-      {/* Gazette page header */}
       <header className="wt-hero">
         <span className="wt-hero-eyebrow">개정 이력 · 2026</span>
         <h1>2026 원천징수 개정·시행</h1>

@@ -25,21 +25,21 @@ export function SourcePill({ sourceType, sourceTitle, asOf, lawRef, lawUrl }: Pr
       className="wt-citation"
     >
       {' '}
-      <span style={{ color: 'var(--oxblood)', marginRight: 2 }}>§</span>{' '}
+      <span style={{ color: 'var(--blue-600)', marginRight: 2, fontWeight: 600 }}>§</span>{' '}
       {href ? (
         <a href={href} target="_blank" rel="noreferrer">
           {lawRef || sourceTitle}
         </a>
       ) : (
-        <span>{lawRef || sourceTitle}</span>
+        <span style={{ color: 'var(--gray-600)' }}>{lawRef || sourceTitle}</span>
       )}
       {asOf && (
         <>
-          <span style={{ margin: '0 4px', color: 'var(--rule-heavy)' }}>·</span>
+          <span style={{ margin: '0 5px', color: 'var(--gray-300)' }}>·</span>
           <span>시행 {asOf.slice(0, 7).replace('-', '.')}</span>
         </>
       )}
-      <span style={{ margin: '0 4px', color: 'var(--rule-heavy)' }}>·</span>
+      <span style={{ margin: '0 5px', color: 'var(--gray-300)' }}>·</span>
       <span>{TYPE_LABEL[sourceType]}</span>
     </span>
   )

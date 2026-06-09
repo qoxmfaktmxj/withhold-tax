@@ -21,7 +21,6 @@ export default function Page() {
 
   return (
     <div className="wt-article" style={{ paddingTop: 'var(--space-xl)' }}>
-      {/* Gazette page header */}
       <header className="wt-hero">
         <span className="wt-hero-eyebrow">검토 일정</span>
         <h1>검토 임박 항목</h1>
@@ -34,11 +33,14 @@ export default function Page() {
       {items.length === 0 ? (
         <p
           style={{
-            fontFamily: 'var(--font-mono, monospace)',
+            fontFamily: 'var(--font-mono)',
             fontSize: '0.78rem',
-            color: 'var(--ink-faint)',
-            padding: 'var(--space-lg) 0',
-            borderTop: '1px solid var(--rule)',
+            color: 'var(--gray-400)',
+            padding: 'var(--space-lg)',
+            background: 'var(--white)',
+            border: '1px solid var(--border)',
+            borderRadius: 'var(--radius)',
+            boxShadow: 'var(--shadow-xs)',
           }}
         >
           검토 예정 항목 없음.
@@ -49,22 +51,23 @@ export default function Page() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: '120px 1fr auto',
+              gridTemplateColumns: '130px 1fr auto',
               gap: 'var(--space-lg)',
-              padding: '0 0 var(--space-sm)',
-              borderBottom: '2px solid var(--ink)',
+              padding: 'var(--space-sm) var(--space-lg)',
+              borderBottom: '1px solid var(--border)',
+              background: 'var(--gray-50)',
             }}
           >
             {['다음 검토일', '항목', '현재 상태'].map((h) => (
               <span
                 key={h}
-                className="wt-mono"
                 style={{
-                  fontSize: '0.6rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.2em',
-                  textTransform: 'uppercase',
-                  color: 'var(--ink-faint)',
+                  fontSize: '0.68rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.07em',
+                  textTransform: 'uppercase' as const,
+                  color: 'var(--gray-500)',
+                  fontFamily: 'var(--font-display)',
                 }}
               >
                 {h}
@@ -81,7 +84,7 @@ export default function Page() {
                   <span
                     className="wt-mono"
                     style={{
-                      color: isUrgent ? 'var(--caution)' : 'var(--ink-faint)',
+                      color: isUrgent ? 'var(--caution-text)' : 'var(--gray-500)',
                       fontWeight: isUrgent ? 600 : 400,
                       fontSize: '0.78rem',
                     }}
@@ -90,11 +93,11 @@ export default function Page() {
                   </span>
                   {isUrgent && (
                     <span
-                      className="wt-mono"
                       style={{
                         display: 'block',
+                        fontFamily: 'var(--font-mono)',
                         fontSize: '0.65rem',
-                        color: 'var(--caution)',
+                        color: 'var(--caution-text)',
                         marginTop: 2,
                       }}
                     >
@@ -105,21 +108,22 @@ export default function Page() {
                 <div>
                   <p
                     style={{
-                      fontFamily: 'var(--font-serif, serif)',
+                      fontFamily: 'var(--font-display)',
                       fontSize: '0.875rem',
                       fontWeight: 600,
-                      color: 'var(--ink)',
+                      color: 'var(--text-primary)',
                       margin: 0,
                       lineHeight: 1.4,
+                      letterSpacing: '-0.01em',
                     }}
                   >
                     {factDisplayTitle(f)}
                   </p>
                   <p
                     style={{
-                      fontFamily: 'var(--font-mono, monospace)',
+                      fontFamily: 'var(--font-mono)',
                       fontSize: '0.68rem',
-                      color: 'var(--ink-faint)',
+                      color: 'var(--gray-400)',
                       margin: '3px 0 0',
                       letterSpacing: '0.04em',
                     }}

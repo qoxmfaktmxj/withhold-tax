@@ -14,11 +14,11 @@ export function UpdatesDashboard({ facts }: { facts: Fact[] }) {
     return (
       <p
         style={{
-          fontFamily: 'var(--font-mono, monospace)',
+          fontFamily: 'var(--font-mono)',
           fontSize: '0.78rem',
-          color: 'var(--ink-faint)',
+          color: 'var(--gray-400)',
           padding: 'var(--space-lg) 0',
-          borderTop: '1px solid var(--rule)',
+          borderTop: '1px solid var(--border)',
         }}
       >
         개정 항목 없음.
@@ -34,16 +34,14 @@ export function UpdatesDashboard({ facts }: { facts: Fact[] }) {
             <th
               key={h}
               scope="col"
-              className="wt-mono"
               style={{
-                fontSize: '0.6rem',
-                fontWeight: 600,
-                letterSpacing: '0.2em',
+                fontSize: '0.68rem',
+                fontWeight: 700,
+                letterSpacing: '0.07em',
                 textTransform: 'uppercase',
-                color: 'var(--ink-faint)',
+                color: 'var(--gray-500)',
                 textAlign: i === 2 ? 'right' : 'left',
-                padding: '0 0 var(--space-sm)',
-                borderBottom: '2px solid var(--ink)',
+                fontFamily: 'var(--font-display)',
               }}
             >
               {h}
@@ -57,8 +55,10 @@ export function UpdatesDashboard({ facts }: { facts: Fact[] }) {
             {/* Left: title + citation */}
             <td>
               <p className="wt-update-title">{factDisplayTitle(f)}</p>
-              <VerifyStatus status={f.verifyStatus} descId={`vs-dash-${f.id}`} />
-              <div style={{ marginTop: 6 }}>
+              <div style={{ marginBottom: 4 }}>
+                <VerifyStatus status={f.verifyStatus} descId={`vs-dash-${f.id}`} />
+              </div>
+              <div>
                 <SourcePill
                   sourceType={f.sourceType}
                   sourceTitle={f.sourceTitle}
@@ -80,18 +80,20 @@ export function UpdatesDashboard({ facts }: { facts: Fact[] }) {
             </td>
 
             {/* Right: date + badge */}
-            <td className="wt-update-meta">
-              {f.effectiveDate && (
-                <span
-                  className="wt-mono"
-                  style={{ fontSize: '0.72rem', color: 'var(--ink-faint)' }}
-                >
-                  {f.effectiveDate}
+            <td>
+              <div className="wt-update-meta">
+                {f.effectiveDate && (
+                  <span
+                    className="wt-mono"
+                    style={{ fontSize: '0.72rem', color: 'var(--gray-400)' }}
+                  >
+                    {f.effectiveDate}
+                  </span>
+                )}
+                <span className={`wt-change-badge wt-change-badge--${f.changeType}`}>
+                  {f.changeType}
                 </span>
-              )}
-              <span className={`wt-change-badge wt-change-badge--${f.changeType}`}>
-                {f.changeType}
-              </span>
+              </div>
             </td>
           </tr>
         ))}
