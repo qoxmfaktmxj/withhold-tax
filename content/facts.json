@@ -121,7 +121,7 @@
     "sourceTitle": "국세기본법 제47조의3(과소신고·초과환급신고가산세) 제1항 제2호",
     "lawRef": "국세기본법 제47조의3 제1항 제2호",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C47%EC%A1%B0%EC%9D%983",
+    "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C47%EC%A1%B0%EC%9D%983",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -142,6 +142,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치1 1차출처 검증"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -155,7 +160,7 @@
     "sourceTitle": "국세기본법 제47조의3(과소신고·초과환급신고가산세) 제1항 제1호",
     "lawRef": "국세기본법 제47조의3 제1항 제1호",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C47%EC%A1%B0%EC%9D%983",
+    "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C47%EC%A1%B0%EC%9D%983",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -176,6 +181,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치1 1차출처 검증"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -223,7 +233,7 @@
     "sourceTitle": "소득세법 제81조의11(지급명세서 등 제출 불성실 가산세) 제1항",
     "lawRef": "소득세법 제81조의11 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C81%EC%A1%B0%EC%9D%9811",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C81%EC%A1%B0%EC%9D%9811",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -244,6 +254,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치1 1차출처 검증"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -257,7 +272,7 @@
     "sourceTitle": "소득세법 제81조의11(지급명세서 등 제출 불성실 가산세) 제1항",
     "lawRef": "소득세법 제81조의11 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C81%EC%A1%B0%EC%9D%9811",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C81%EC%A1%B0%EC%9D%9811",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -278,6 +293,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치1 1차출처 검증"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -325,7 +345,7 @@
     "sourceTitle": "소득세법 제81조의11(지급명세서 등 제출 불성실 가산세) 제1항",
     "lawRef": "소득세법 제81조의11 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C81%EC%A1%B0%EC%9D%9811",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C81%EC%A1%B0%EC%9D%9811",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -346,6 +366,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치1 1차출처 검증"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -359,7 +384,7 @@
     "sourceTitle": "국세기본법 제49조(가산세 한도) 제1항",
     "lawRef": "국세기본법 제49조 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C49%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C49%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -380,6 +405,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치1 1차출처 검증"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -393,7 +423,7 @@
     "sourceTitle": "국세기본법 제47조의5(원천징수 등 납부지연가산세) 표제",
     "lawRef": "국세기본법 제47조의5",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C47%EC%A1%B0%EC%9D%985",
+    "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C47%EC%A1%B0%EC%9D%985",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -414,6 +444,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치1 1차출처 검증 및 강의표현 교정"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -427,7 +462,7 @@
     "sourceTitle": "소득세법 제164조(지급명세서의 제출) 제1항",
     "lawRef": "소득세법 제164조 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C164%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C164%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -448,6 +483,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치1 1차출처 검증"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -461,7 +501,7 @@
     "sourceTitle": "소득세법 제164조(지급명세서의 제출) 제1항",
     "lawRef": "소득세법 제164조 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C164%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C164%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -482,6 +522,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치1 1차출처 검증"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -529,7 +574,7 @@
     "sourceTitle": "소득세법 제164조의3(간이지급명세서의 제출)",
     "lawRef": "소득세법 제164조의3 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C164%EC%A1%B0%EC%9D%983",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C164%EC%A1%B0%EC%9D%983",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -550,6 +595,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치1 1차출처 검증"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -563,7 +613,7 @@
     "sourceTitle": "소득세법 제135조(근로소득 원천징수시기에 대한 특례) 제1항·제2항",
     "lawRef": "소득세법 제135조 제1항·제2항",
     "subordinateLawRef": "소득세법 제164조의3(간이지급명세서 제출, 1월 말일 기한 연결) — 간이지급명세서 제출 시기는 별도",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C135%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C135%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -589,6 +639,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "재검증: 1차출처 확인 승격"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -602,7 +657,7 @@
     "sourceTitle": "지방세법 제103조의13(특별징수의무) 및 제89조(납세지 등)",
     "lawRef": "지방세법 제89조 제1항(개인지방소득세 납세지=소득세법 제6조·제7조 준용); 제103조의13(특별징수의무)",
     "subordinateLawRef": "지방세법 제89조 제2항(특별징수분 납세지: 근로·퇴직소득은 근무지, 그 밖은 지급지) — 소득종류별 납세지",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95/%EC%A0%9C89%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95/%EC%A0%9C89%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -628,6 +683,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "재검증: 1차출처 확인 승격"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -641,7 +701,7 @@
     "sourceTitle": "소득세법 제7조(원천징수 등의 경우의 납세지) 제1항 제3호·제4호",
     "lawRef": "소득세법 제7조 제1항 제3호(법인 본점·주사무소 원칙)·제4호(독립채산제 지점 사업장 소재지 예외 및 단서)",
     "subordinateLawRef": "소득세법 시행령 제5조(원천징수하는 소득세의 납세지) — 제7조 제1항 제4호 단서의 본점일괄납부 위임 구체조문, 항·호 인간 재확인 필요",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C7%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C7%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -667,6 +727,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "재검증: 1차출처 확인 승격"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -904,7 +969,7 @@
     "sourceTitle": "소득세법 제12조 제3호 너목 / 시행령 제17조 / 국세청 비과세 근로소득 안내",
     "lawRef": "소득세법 제12조 제3호 너목",
     "subordinateLawRef": "소득세법 시행령 제17조(생산직근로자가 받는 야간근로수당 등의 범위)",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C12%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C12%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -925,6 +990,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치1 1차출처 검증(casenote 제12조 제3호 너목 원문 + 국세청 안내 240만원 교차확인)"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1016,7 +1086,7 @@
     "sourceTitle": "국세청 예규 - 식권으로 지급한 식대의 비과세 해당 여부 / 현물+현금 식사대 과세",
     "lawRef": "소득세법 제12조 제3호 러목(해석)",
     "subordinateLawRef": "소득세법 시행령 제17조의2(식사대 범위)",
-    "lawUrl": "https://casenote.kr/%EA%B5%AD%EC%84%B8%EC%B2%AD/%EC%9B%90%EC%B2%9C%EC%84%B8%EA%B3%BC-190-a6a42d",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C12%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1037,6 +1107,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치1 검증: 국세청 예규(식권 현물간주·현물+현금 과세) casenote 교차확인"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1050,7 +1125,7 @@
     "sourceTitle": "국세청 예규 서면1팀-366(2008.3.20) 외 — 사이닝보너스(전속계약금) 근로기간 안분",
     "lawRef": "소득세법 제20조(근로소득), 제134조·제137조; 시행령 제49조(수입시기)",
     "subordinateLawRef": "소득세법 시행령 제49조(근로소득 수입시기) — 사이닝보너스 직접규정 없음, 실근거는 예규(서면1팀-366, 2008.3.20; 서면인터넷방문상담2팀-1738, 2006.9.11; 서이46012-11106, 2003.6.5)",
-    "lawUrl": "https://casenote.kr/%EA%B5%AD%EC%84%B8%EC%B2%AD/%EC%84%9C%EB%A9%B4%EC%9D%B8%ED%84%B0%EB%84%B7%EB%B0%A9%EB%AC%B8%EC%83%81%EB%8B%B41%ED%8C%80-366-009d66",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C20%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1076,6 +1151,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "재검증: 1차출처 확인 승격"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1089,7 +1169,7 @@
     "sourceTitle": "소득세법 제1조의2(정의) 제1항 제1호",
     "lawRef": "소득세법 제1조의2 제1항 제1호",
     "subordinateLawRef": "소득세법 시행령 제2조~제4조(주소·거소 및 거주기간 계산) — 거주기간 계산 세부는 별도",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C1%EC%A1%B0%EC%9D%982",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C1%EC%A1%B0%EC%9D%982",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1110,6 +1190,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1123,7 +1208,7 @@
     "sourceTitle": "소득세법 제1조의2(정의) 제1항 제2호",
     "lawRef": "소득세법 제1조의2 제1항 제2호",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C1%EC%A1%B0%EC%9D%982",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C1%EC%A1%B0%EC%9D%982",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1144,6 +1229,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1225,7 +1315,7 @@
     "sourceTitle": "소득세법 제4조(소득의 구분) 제1항",
     "lawRef": "소득세법 제4조 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C4%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C4%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1246,6 +1336,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1298,7 +1393,7 @@
     "sourceTitle": "소득세법 제55조(세율) / 지방세법(개인지방소득세 종합소득분 세율)",
     "lawRef": "소득세법 제55조 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C55%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C55%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1319,6 +1414,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1332,7 +1432,7 @@
     "sourceTitle": "소득세법 제55조(세율) 제1항 세율표",
     "lawRef": "소득세법 제55조 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C55%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C55%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1353,6 +1453,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 강의 오류 교정"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1366,7 +1471,7 @@
     "sourceTitle": "소득세법 제55조(세율) 제1항 세율표",
     "lawRef": "소득세법 제55조 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C55%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C55%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1387,6 +1492,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 강의 오류 교정"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1400,7 +1510,7 @@
     "sourceTitle": "소득세법 제16조(이자소득)·제17조(배당소득) 소득금액 계산",
     "lawRef": "소득세법 제16조 제2항; 제17조 제3항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C4%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C16%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1421,6 +1531,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1619,7 +1734,7 @@
     "sourceTitle": "국세기본법 제22조(납세의무의 확정) / 세법 교과서 통설",
     "lawRef": "국세기본법 제22조 제2항·제3항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C22%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C22%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1640,6 +1755,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1687,7 +1807,7 @@
     "sourceTitle": "국세기본법 제22조(납세의무의 확정) 제2항",
     "lawRef": "국세기본법 제22조 제2항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C22%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C22%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1708,6 +1828,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1721,7 +1846,7 @@
     "sourceTitle": "국세기본법 제45조(수정신고)",
     "lawRef": "국세기본법 제45조",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C45%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C45%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1742,6 +1867,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1755,7 +1885,7 @@
     "sourceTitle": "국세기본법 제45조의2(경정 등의 청구)",
     "lawRef": "국세기본법 제45조의2 제1항·제3항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C45%EC%A1%B0%EC%9D%982",
+    "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C45%EC%A1%B0%EC%9D%982",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1776,6 +1906,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1789,7 +1924,7 @@
     "sourceTitle": "국세기본법 제45조의3(기한 후 신고)",
     "lawRef": "국세기본법 제45조의3",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C45%EC%A1%B0%EC%9D%983",
+    "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C45%EC%A1%B0%EC%9D%983",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1810,6 +1945,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1891,7 +2031,7 @@
     "sourceTitle": "소득세법 제3조(과세소득의 범위)",
     "lawRef": "소득세법 제3조",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C3%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C3%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1912,6 +2052,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 1차출처 검증(소득세법 제3조)"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -1925,7 +2070,7 @@
     "sourceTitle": "소득세법 제119조(비거주자의 국내원천소득) 제7호 근로소득",
     "lawRef": "소득세법 제119조 제7호",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C119%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C119%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -1946,6 +2091,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 1차출처 검증(제119조 제7호 용역수행지 기준)"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -2129,7 +2279,7 @@
     "sourceTitle": "소득세법 시행령 제12조(실비변상적 급여) 제14호 / 국세청 비과세 근로소득 안내",
     "lawRef": "소득세법 제12조 제3호 자목(실비변상적 급여) 위임",
     "subordinateLawRef": "소득세법 시행령 제12조 제14호; 소득세법 시행규칙 제7조(벽지의 범위)",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C12%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C12%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -2150,6 +2300,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 1차출처 검증(시행령 제12조 제14호 20만원 + 시행규칙 제7조 벽지범위)"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -2163,7 +2318,7 @@
     "sourceTitle": "국세기본법 제47조의5(원천징수 등 납부지연가산세) 표제",
     "lawRef": "국세기본법 제47조의5",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C47%EC%A1%B0%EC%9D%985",
+    "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C47%EC%A1%B0%EC%9D%985",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -2184,6 +2339,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -2421,7 +2581,7 @@
     "sourceTitle": "소득세법 제12조 제3호 러목(식대)·너목(생산직 야간수당) / 시행령 제17조의2·제17조",
     "lawRef": "소득세법 제12조 제3호 러목; 제12조 제3호 너목",
     "subordinateLawRef": "소득세법 시행령 제17조의2(비과세 식사대 범위); 제17조(생산직 야간근로수당 범위·연 240만원)",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C12%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C12%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "2023-01-01",
     "appliesFrom": "2023-01-01",
@@ -2442,6 +2602,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -2625,7 +2790,7 @@
     "sourceTitle": "국세청 예규 서면1팀-357(2008.3.19) 연차수당 근로소득 귀속연도 / 소득세법 시행령 제49조(근로소득 수입시기)",
     "lawRef": "소득세법 시행령 제49조",
     "subordinateLawRef": "국세청 예규 서면1팀-357(2008.3.19); 서이46013-10441(2002.3.11) 미지급분 손금계상 시기",
-    "lawUrl": "https://casenote.kr/%EA%B5%AD%EC%84%B8%EC%B2%AD/%EC%9B%90%EC%B2%9C%EC%84%B8%EA%B3%BC-252-f13aad",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95%20%EC%8B%9C%ED%96%89%EB%A0%B9/%EC%A0%9C49%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -2651,6 +2816,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "재검증: 1차출처 확인 승격"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -2747,7 +2917,7 @@
     "sourceTitle": "소득세법 제12조(비과세소득) 제3호 머목(출산지원금 전액 비과세) / 기획재정부 2024 세법개정 보도자료",
     "lawRef": "소득세법 제12조 제3호 머목",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C12%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C12%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "2024-01-01",
     "appliesFrom": "2024-01-01",
@@ -2768,6 +2938,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 검증: 출산지원금 전액 비과세(2년·2회·2021출생·2024지급) easylaw/기재부/국세청 교차확인"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3136,7 +3311,7 @@
     "sourceTitle": "소득세법 제22조(퇴직소득) 제1항",
     "lawRef": "소득세법 제22조 제1항",
     "subordinateLawRef": "소득세법 시행령 제42조의2(현실적 퇴직의 범위)",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C22%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C22%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -3157,6 +3332,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 casenote 제22조 제1항 원문 확인"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3204,7 +3384,7 @@
     "sourceTitle": "소득세법 제22조(퇴직소득) 제3항",
     "lawRef": "소득세법 제22조 제3항",
     "subordinateLawRef": "소득세법 시행령 제42조의2(임원 퇴직소득 한도 계산) — 근속연수 월수계산 등",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C22%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C22%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "2020-01-01",
     "appliesFrom": "2020-01-01",
@@ -3225,6 +3405,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 casenote 제22조 제3항 + NTS 임원 퇴직소득금액 안내 교차확인"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3238,7 +3423,7 @@
     "sourceTitle": "소득세법 제14조(과세표준의 계산) 제6항 / 제48조(퇴직소득공제)",
     "lawRef": "소득세법 제14조 제6항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C48%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C14%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -3259,6 +3444,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 퇴직소득공제 구조(공제·비과세 없음) casenote 확인"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3272,7 +3462,7 @@
     "sourceTitle": "소득세법 제48조(퇴직소득공제) 제1항 제1호",
     "lawRef": "소득세법 제48조 제1항 제1호",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C48%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C48%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "2023-01-01",
     "appliesFrom": "2023-01-01",
@@ -3293,6 +3483,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 casenote 제48조 근속연수공제 표 원문 확인"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3306,7 +3501,7 @@
     "sourceTitle": "소득세법 제48조(퇴직소득공제) 제1항 제2호",
     "lawRef": "소득세법 제48조 제1항 제2호",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C48%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C48%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -3327,6 +3522,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 casenote 제48조 환산급여공제 표 원문 확인"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3340,7 +3540,7 @@
     "sourceTitle": "소득세법 제55조(세율) 제2항 / 제48조(퇴직소득공제)",
     "lawRef": "소득세법 제55조 제2항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C48%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C55%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -3361,6 +3561,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 casenote 제48조 환산급여 산식 + NTS 퇴직소득세 계산방법 교차확인"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3408,7 +3613,7 @@
     "sourceTitle": "소득세법 제147조(퇴직소득 원천징수시기에 대한 특례)",
     "lawRef": "소득세법 제147조 제1항·제2항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C147%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C147%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -3429,6 +3634,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 casenote 제147조 원문 확인, 원본 '1월31일 잔여분' 교정"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3442,7 +3652,7 @@
     "sourceTitle": "소득세법 제148조(퇴직소득에 대한 세액정산)",
     "lawRef": "소득세법 제148조",
     "subordinateLawRef": "소득세법 시행령 제203조(퇴직소득세액의 정산)",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C148%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C148%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -3463,6 +3673,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 casenote 제148조 + NTS 퇴직소득 세액정산 안내 교차확인"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3476,7 +3691,7 @@
     "sourceTitle": "소득세법 제129조(원천징수세율) 제1항 제3호 / 국세청 원천징수 안내",
     "lawRef": "소득세법 제129조 제1항 제3호",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C129%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C129%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -3497,6 +3712,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2: casenote 제129조 제1항 제3호 100분의3 원문 + NTS 3.3% 교차확인"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3617,7 +3837,7 @@
     "sourceTitle": "소득세법 제129조(원천징수세율) 제1항 제6호 / 국세청 기타소득 원천징수 안내",
     "lawRef": "소득세법 제129조 제1항 제6호",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C129%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C129%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -3638,6 +3858,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2: casenote 제129조 제1항 제6호 라목 20%·가목 3억초과 30% 원문 + NTS 22/33 교차확인"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3650,7 +3875,7 @@
     "sourceType": "LAW",
     "sourceTitle": "소득세법 제84조(기타소득의 과세최저한)",
     "lawRef": "소득세법 제84조",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C84%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C84%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "2023-01-01",
     "verifyStatus": "확정",
@@ -3667,6 +3892,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2: casenote 제84조 5만원/200만원/10만원 호별 원문 재확인, 본문 F 인용 연결"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ],
     "nextReviewBy": "2027-03-31",
@@ -3724,7 +3954,7 @@
     "sourceTitle": "소득세법 제1조의2(정의)",
     "lawRef": "소득세법 제1조의2 제1항",
     "subordinateLawRef": "소득세법 시행령 제2조(주소와 거소의 판정)·제4조(거주기간 계산)",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C1%EC%A1%B0%EC%9D%982",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C1%EC%A1%B0%EC%9D%982",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -3745,6 +3975,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3836,7 +4071,7 @@
     "sourceTitle": "소득세법 제119조(비거주자의 국내원천소득) / 법인세법 제93조(외국법인의 국내원천소득)",
     "lawRef": "소득세법 제119조; 법인세법 제93조",
     "subordinateLawRef": "소득세법 시행령·법인세법 시행령(인적용역·사업소득 등 범위) — 조문 확인 필요",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C119%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C119%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -3857,6 +4092,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3904,7 +4144,7 @@
     "sourceTitle": "소득세법 제156조(비거주자의 국내원천소득에 대한 원천징수의 특례) 제1항 / 법인세법 제98조",
     "lawRef": "소득세법 제156조 제1항; 법인세법 제98조 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C156%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C156%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -3925,6 +4165,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3938,7 +4183,7 @@
     "sourceTitle": "소득세법 제156조 제1항 / 법인세법 제98조 제1항",
     "lawRef": "소득세법 제156조 제1항; 법인세법 제98조 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C156%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C156%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -3959,6 +4204,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -3972,7 +4222,7 @@
     "sourceTitle": "소득세법 제156조 제1항 / 법인세법 제98조 제1항",
     "lawRef": "소득세법 제156조 제1항; 법인세법 제98조 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C156%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C156%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -3993,6 +4243,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -4006,7 +4261,7 @@
     "sourceTitle": "소득세법 제156조 제1항 / 법인세법 제98조 제1항",
     "lawRef": "소득세법 제156조 제1항; 법인세법 제98조 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C156%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C156%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -4027,6 +4282,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -4040,7 +4300,7 @@
     "sourceTitle": "소득세법 제156조 / 법인세법 제98조",
     "lawRef": "소득세법 제156조 제1항; 법인세법 제98조 제1항",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C156%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C156%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -4061,6 +4321,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -4108,7 +4373,7 @@
     "sourceTitle": "국제조세조정에 관한 법률 제3조(국제거래에 관한 실질과세) / 국세청 비거주자 원천징수 안내",
     "lawRef": "국제조세조정에 관한 법률 제3조 제1항(실질귀속자 과세) ; 각 조세조약 이자·배당·사용료 조항(beneficial owner)",
     "subordinateLawRef": "국제조세조정에 관한 법률 제3조 제2항(실질내용 우선)·제3항(우회거래)·제4항(입증책임 전환)",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EC%A0%9C%EC%A1%B0%EC%84%B8%EC%A1%B0%EC%A0%95%EC%97%90_%EA%B4%80%ED%95%9C_%EB%B2%95%EB%A5%A0/%EC%A0%9C3%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%A0%9C%EC%A1%B0%EC%84%B8%EC%A1%B0%EC%A0%95%EC%97%90%20%EA%B4%80%ED%95%9C%20%EB%B2%95%EB%A5%A0/%EC%A0%9C3%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -4134,6 +4399,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "재검증: 1차출처 확인 승격"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -4215,7 +4485,7 @@
     "sourceTitle": "지방세법 제103조의13(개인지방소득세 특별징수의무) / 제103조의29(법인지방소득세 특별징수의무)",
     "lawRef": "지방세법 제103조의13; 지방세법 제103조의29",
     "subordinateLawRef": "지방세법 시행령(특별징수 납세지·절차) — 조문 확인 필요",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95/%EC%A0%9C103%EC%A1%B0%EC%9D%9813",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95/%EC%A0%9C103%EC%A1%B0%EC%9D%9813",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -4236,6 +4506,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -4322,7 +4597,7 @@
     "sourceTitle": "소득세법 제129조(원천징수세율) 제1항 제1호 다목·제2호 나목",
     "lawRef": "소득세법 제129조 제1항 제1호 다목·제2호 나목",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C129%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C129%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -4343,6 +4618,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2: CaseNote 소득세법 제129조 조문 원문(14%) 직접 매칭"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -4356,7 +4636,7 @@
     "sourceTitle": "소득세법 제129조(원천징수세율) 제1항 제1호 나목",
     "lawRef": "소득세법 제129조 제1항 제1호 나목",
     "subordinateLawRef": "",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C129%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C129%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -4377,6 +4657,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2: CaseNote 소득세법 제129조 비영업대금 25% 원문 직접 매칭"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
@@ -4463,7 +4748,7 @@
     "sourceTitle": "소득세법 제17조(배당소득) 제1항 제5호 / 시행령 제26조의2 제4항(과세제외 손익)",
     "lawRef": "소득세법 제17조 제1항 제5호",
     "subordinateLawRef": "소득세법 시행령 제26조의2 제4항(집합투자기구로부터의 이익 중 직접취득 상장증권 매매·평가손익 과세제외) 및 적격 집합투자기구 요건",
-    "lawUrl": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C17%EC%A1%B0",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C17%EC%A1%B0",
     "asOf": "2026-06-09",
     "effectiveDate": "",
     "appliesFrom": "",
@@ -4489,6 +4774,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "재검증: 1차출처 확인 승격"
+      },
+      {
+        "date": "2026-06-09",
+        "author": "kms",
+        "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
     ]
   },
