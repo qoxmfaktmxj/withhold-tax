@@ -27,80 +27,75 @@ export function UpdatesDashboard({ facts }: { facts: Fact[] }) {
   }
 
   return (
-    <div className="wt-updates-list" role="list" aria-label="개정 항목 목록">
-      {/* Column headers */}
-      <div
-        role="row"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr auto',
-          gap: 'var(--space-lg)',
-          padding: '0 0 var(--space-sm)',
-          borderBottom: '2px solid var(--ink)',
-          marginBottom: 0,
-        }}
-      >
-        {['항목', '변경 전 → 2026 기준', '시행일 / 구분'].map((h, i) => (
-          <span
-            key={h}
-            className="wt-mono"
-            style={{
-              fontSize: '0.6rem',
-              fontWeight: 600,
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              color: 'var(--ink-faint)',
-              textAlign: i === 2 ? 'right' : 'left',
-            }}
-          >
-            {h}
-          </span>
-        ))}
-      </div>
+    <table className="wt-updates-table" aria-label="개정 항목 목록">
+      <thead>
+        <tr>
+          {['항목', '변경 전 → 2026 기준', '시행일 / 구분'].map((h, i) => (
+            <th
+              key={h}
+              scope="col"
+              className="wt-mono"
+              style={{
+                fontSize: '0.6rem',
+                fontWeight: 600,
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                color: 'var(--ink-faint)',
+                textAlign: i === 2 ? 'right' : 'left',
+                padding: '0 0 var(--space-sm)',
+                borderBottom: '2px solid var(--ink)',
+              }}
+            >
+              {h}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {items.map((f) => (
+          <tr key={f.id} className="wt-update-row">
+            {/* Left: title + citation */}
+            <td>
+              <p className="wt-update-title">{factDisplayTitle(f)}</p>
+              <VerifyStatus status={f.verifyStatus} descId={`vs-dash-${f.id}`} />
+              <div style={{ marginTop: 6 }}>
+                <SourcePill
+                  sourceType={f.sourceType}
+                  sourceTitle={f.sourceTitle}
+                  asOf={f.asOf}
+                  lawRef={f.lawRef}
+                  lawUrl={f.lawUrl}
+                />
+              </div>
+            </td>
 
-      {items.map((f) => (
-        <div key={f.id} role="listitem" className="wt-update-row">
-          {/* Left: title + citation */}
-          <div>
-            <p className="wt-update-title">{factDisplayTitle(f)}</p>
-            <VerifyStatus status={f.verifyStatus} descId={`vs-dash-${f.id}`} />
-            <div style={{ marginTop: 6 }}>
-              <SourcePill
-                sourceType={f.sourceType}
-                sourceTitle={f.sourceTitle}
-                asOf={f.asOf}
-                lawRef={f.lawRef}
-                lawUrl={f.lawUrl}
-              />
-            </div>
-          </div>
+            {/* Center: before → current */}
+            <td>
+              {f.previousValue && (
+                <p className="wt-update-prev">
+                  이전: {f.previousValue}
+                </p>
+              )}
+              <p className="wt-update-claim">{f.claim}</p>
+            </td>
 
-          {/* Center: before → current */}
-          <div>
-            {f.previousValue && (
-              <p className="wt-update-prev">
-                이전: {f.previousValue}
-              </p>
-            )}
-            <p className="wt-update-claim">{f.claim}</p>
-          </div>
-
-          {/* Right: date + badge */}
-          <div className="wt-update-meta">
-            {f.effectiveDate && (
-              <span
-                className="wt-mono"
-                style={{ fontSize: '0.72rem', color: 'var(--ink-faint)' }}
-              >
-                {f.effectiveDate}
+            {/* Right: date + badge */}
+            <td className="wt-update-meta">
+              {f.effectiveDate && (
+                <span
+                  className="wt-mono"
+                  style={{ fontSize: '0.72rem', color: 'var(--ink-faint)' }}
+                >
+                  {f.effectiveDate}
+                </span>
+              )}
+              <span className={`wt-change-badge wt-change-badge--${f.changeType}`}>
+                {f.changeType}
               </span>
-            )}
-            <span className={`wt-change-badge wt-change-badge--${f.changeType}`}>
-              {f.changeType}
-            </span>
-          </div>
-        </div>
-      ))}
-    </div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   )
 }

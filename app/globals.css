@@ -1111,26 +1111,37 @@ pre,
 }
 
 /* ══════════════════════════════════════════════════════════════════
-   UPDATES DASHBOARD — ruled rows
+   UPDATES DASHBOARD — ruled table rows
 ══════════════════════════════════════════════════════════════════ */
-.wt-updates-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+.wt-updates-table {
+  width: 100%;
+  border-collapse: collapse;
   margin: var(--space-lg) 0;
+  table-layout: auto;
 }
 
-.wt-update-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  gap: var(--space-lg);
-  padding: var(--space-lg) 0;
+.wt-updates-table thead th {
+  background: transparent;
+}
+
+.wt-update-row td {
+  padding: var(--space-lg) var(--space-sm) var(--space-lg) 0;
   border-bottom: 1px solid var(--rule);
-  align-items: start;
+  vertical-align: top;
 }
 
-.wt-update-row:first-child {
+.wt-update-row:first-child td {
   border-top: 1px solid var(--ink);
+}
+
+.wt-update-row td:nth-child(2) {
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+.wt-update-row td:last-child {
+  padding-right: 0;
+  text-align: right;
 }
 
 .wt-update-title {
