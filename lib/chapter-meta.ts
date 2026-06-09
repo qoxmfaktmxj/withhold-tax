@@ -15,7 +15,14 @@ export const CHAPTERS: { slug: string; title: string }[] = [
   { slug: 'interest-dividend', title: '이자·배당 원천징수' },
 ]
 
-const _titleMap = new Map(CHAPTERS.map((c) => [c.slug, c.title]))
+export const APPENDICES: { slug: string; title: string }[] = [
+  { slug: 'glossary',    title: '부록 A · 핵심 용어 사전' },
+  { slug: 'index',       title: '부록 B · 교재 페이지 색인' },
+  { slug: 'cheatsheet',  title: '부록 C · 빠른 참조 치트시트' },
+]
+
+const _allEntries = [...CHAPTERS, ...APPENDICES]
+const _titleMap = new Map(_allEntries.map((c) => [c.slug, c.title]))
 
 export function chapterTitle(slug: string): string {
   return _titleMap.get(slug) ?? slug

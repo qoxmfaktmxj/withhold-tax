@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Noto_Serif_KR, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { Disclaimer } from '@/components/Disclaimer'
-import { CHAPTERS, availableChapterSlugs } from '@/lib/chapters'
+import { CHAPTERS, APPENDICES, availableChapterSlugs } from '@/lib/chapters'
 
 /* ── Fonts ────────────────────────────────────────────────────────────── */
 // Noto Serif KR: 명조 display — headings, wordmark
@@ -75,6 +75,26 @@ export default function RootLayout({
                   ) : (
                     <span key={ch.slug} className="wt-nav-link--unavailable">
                       {ch.title}
+                    </span>
+                  )
+                )}
+              </nav>
+
+              {/* Appendices */}
+              <nav aria-label="부록">
+                <p className="wt-nav-section">부록</p>
+                {APPENDICES.map((ap) =>
+                  available.has(ap.slug) ? (
+                    <Link
+                      key={ap.slug}
+                      href={`/ch/${ap.slug}`}
+                      className="wt-nav-link"
+                    >
+                      {ap.title}
+                    </Link>
+                  ) : (
+                    <span key={ap.slug} className="wt-nav-link--unavailable">
+                      {ap.title}
                     </span>
                   )
                 )}

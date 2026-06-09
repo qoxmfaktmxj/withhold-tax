@@ -2,7 +2,7 @@ import Link from 'next/link'
 import factsRaw from '@/content/facts.json'
 import { loadFacts } from '@/lib/facts/store'
 import { factsToDocs } from '@/lib/search/facts-docs'
-import { availableChapterSlugs, CHAPTERS, chapterTitle } from '@/lib/chapters'
+import { availableChapterSlugs, CHAPTERS, APPENDICES, chapterTitle } from '@/lib/chapters'
 import { Search } from '@/components/Search'
 
 export default function Home() {
@@ -83,14 +83,14 @@ export default function Home() {
       <div style={{ marginTop: 'var(--space-xxl)' }}>
         <h2 style={{ marginBottom: 'var(--space-lg)', fontSize: '1.25rem' }}>목차</h2>
         <div className="wt-chapter-grid">
-          {CHAPTERS.map((ch, i) => {
+          {CHAPTERS.map((ch) => {
             const isAvailable = available.has(ch.slug)
             // Derive a short chapter number label
             const numLabel = ch.slug.startsWith('ch')
               ? `Ch ${ch.slug.replace('ch', '')}`
               : ch.slug === 'nonresident'
-              ? '부록 A'
-              : '부록 B'
+              ? '비거주자'
+              : '이자·배당'
 
             if (isAvailable) {
               return (
@@ -112,6 +112,42 @@ export default function Home() {
               >
                 <span className="wt-chapter-number">{numLabel}</span>
                 <span className="wt-chapter-title">{ch.title}</span>
+                <span
+                  className="wt-mono"
+                  style={{ fontSize: 10, color: 'var(--color-muted-soft)', marginTop: 6, display: 'block' }}
+                >
+                  작성 예정
+                </span>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* ── Appendices Grid ─────────────────────────────────── */}
+      <div style={{ marginTop: 'var(--space-xxl)' }}>
+        <h2 style={{ marginBottom: 'var(--space-lg)', fontSize: '1.25rem' }}>부록</h2>
+        <div className="wt-chapter-grid">
+          {APPENDICES.map((ap) => {
+            const isAvailable = available.has(ap.slug)
+            if (isAvailable) {
+              return (
+                <Link
+                  key={ap.slug}
+                  href={`/ch/${ap.slug}`}
+                  className="wt-chapter-card"
+                >
+                  <span className="wt-chapter-title">{ap.title}</span>
+                </Link>
+              )
+            }
+            return (
+              <div
+                key={ap.slug}
+                className="wt-chapter-card wt-chapter-card--unavailable"
+                aria-disabled="true"
+              >
+                <span className="wt-chapter-title">{ap.title}</span>
                 <span
                   className="wt-mono"
                   style={{ fontSize: 10, color: 'var(--color-muted-soft)', marginTop: 6, display: 'block' }}
