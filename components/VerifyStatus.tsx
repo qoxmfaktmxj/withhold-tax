@@ -27,12 +27,28 @@ export function VerifyStatus({
             title={m.note}
             aria-label={`검증상태: ${status}. ${m.note}`}
             className={`wt-seal ${m.cls}`}
-            style={{ cursor: 'pointer', listStyle: 'none', display: 'inline-flex', alignItems: 'center', gap: 3 }}
+            style={{
+              cursor: 'pointer',
+              listStyle: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 3,
+            }}
           >
             <span aria-hidden>{m.icon}</span>
             <span>{status}</span>
           </summary>
-          <span style={{ display: 'block', fontSize: 11, color: 'var(--color-muted)', marginTop: 4, marginLeft: 4 }}>
+          <span
+            style={{
+              display: 'block',
+              fontFamily: 'var(--font-mono, monospace)',
+              fontSize: '0.68rem',
+              color: 'var(--ink-faint)',
+              marginTop: 4,
+              marginLeft: 4,
+              lineHeight: 1.5,
+            }}
+          >
             {m.note}
           </span>
         </details>

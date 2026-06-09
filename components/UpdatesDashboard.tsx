@@ -11,7 +11,19 @@ function factDisplayTitle(f: Fact): string {
 export function UpdatesDashboard({ facts }: { facts: Fact[] }) {
   const items = dashboardFacts(facts)
   if (items.length === 0) {
-    return <p style={{ color: 'var(--color-muted)' }}>개정 항목 없음.</p>
+    return (
+      <p
+        style={{
+          fontFamily: 'var(--font-mono, monospace)',
+          fontSize: '0.78rem',
+          color: 'var(--ink-faint)',
+          padding: 'var(--space-lg) 0',
+          borderTop: '1px solid var(--rule)',
+        }}
+      >
+        개정 항목 없음.
+      </p>
+    )
   }
 
   return (
@@ -24,28 +36,26 @@ export function UpdatesDashboard({ facts }: { facts: Fact[] }) {
           gridTemplateColumns: '1fr 1fr auto',
           gap: 'var(--space-lg)',
           padding: '0 0 var(--space-sm)',
-          borderBottom: '1px solid var(--color-hairline)',
+          borderBottom: '2px solid var(--ink)',
           marginBottom: 0,
         }}
       >
-        <span
-          className="wt-mono"
-          style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-muted-soft)' }}
-        >
-          항목
-        </span>
-        <span
-          className="wt-mono"
-          style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-muted-soft)' }}
-        >
-          변경 전 → 2026 기준
-        </span>
-        <span
-          className="wt-mono"
-          style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-muted-soft)', textAlign: 'right' }}
-        >
-          시행일 / 구분
-        </span>
+        {['항목', '변경 전 → 2026 기준', '시행일 / 구분'].map((h, i) => (
+          <span
+            key={h}
+            className="wt-mono"
+            style={{
+              fontSize: '0.6rem',
+              fontWeight: 600,
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              color: 'var(--ink-faint)',
+              textAlign: i === 2 ? 'right' : 'left',
+            }}
+          >
+            {h}
+          </span>
+        ))}
       </div>
 
       {items.map((f) => (
@@ -78,7 +88,10 @@ export function UpdatesDashboard({ facts }: { facts: Fact[] }) {
           {/* Right: date + badge */}
           <div className="wt-update-meta">
             {f.effectiveDate && (
-              <span className="wt-mono" style={{ fontSize: 12.5, color: 'var(--color-muted)' }}>
+              <span
+                className="wt-mono"
+                style={{ fontSize: '0.72rem', color: 'var(--ink-faint)' }}
+              >
                 {f.effectiveDate}
               </span>
             )}

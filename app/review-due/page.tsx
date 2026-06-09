@@ -20,34 +20,52 @@ export default function Page() {
   const items = reviewDue(loadFacts(factsRaw))
 
   return (
-    <div className="wt-article">
-      <div className="wt-hero" style={{ paddingTop: 'var(--space-xxl)', paddingBottom: 'var(--space-xl)' }}>
+    <div className="wt-article" style={{ paddingTop: 'var(--space-xl)' }}>
+      {/* Gazette page header */}
+      <header className="wt-hero">
         <span className="wt-hero-eyebrow">검토 일정</span>
         <h1>검토 임박 항목</h1>
         <p className="wt-hero-lead">
-          다음 검토일 기준 정렬. 이 날짜 이전에 1차 출처를 재확인하세요.
+          다음 검토일 기준 정렬.
+          이 날짜 이전에 1차 출처를 재확인하세요.
         </p>
-      </div>
+      </header>
 
       {items.length === 0 ? (
-        <p style={{ color: 'var(--color-muted)' }}>검토 예정 항목 없음.</p>
+        <p
+          style={{
+            fontFamily: 'var(--font-mono, monospace)',
+            fontSize: '0.78rem',
+            color: 'var(--ink-faint)',
+            padding: 'var(--space-lg) 0',
+            borderTop: '1px solid var(--rule)',
+          }}
+        >
+          검토 예정 항목 없음.
+        </p>
       ) : (
         <div className="wt-review-list" role="list" aria-label="검토 예정 항목">
-          {/* Column header */}
+          {/* Column headers */}
           <div
             style={{
               display: 'grid',
               gridTemplateColumns: '120px 1fr auto',
               gap: 'var(--space-lg)',
               padding: '0 0 var(--space-sm)',
-              borderBottom: '1px solid var(--color-hairline)',
+              borderBottom: '2px solid var(--ink)',
             }}
           >
             {['다음 검토일', '항목', '현재 상태'].map((h) => (
               <span
                 key={h}
                 className="wt-mono"
-                style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-muted-soft)' }}
+                style={{
+                  fontSize: '0.6rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                  color: 'var(--ink-faint)',
+                }}
               >
                 {h}
               </span>
@@ -63,8 +81,9 @@ export default function Page() {
                   <span
                     className="wt-mono"
                     style={{
-                      color: isUrgent ? 'var(--color-check)' : 'var(--color-muted)',
+                      color: isUrgent ? 'var(--caution)' : 'var(--ink-faint)',
                       fontWeight: isUrgent ? 600 : 400,
+                      fontSize: '0.78rem',
                     }}
                   >
                     {f.nextReviewBy}
@@ -72,7 +91,12 @@ export default function Page() {
                   {isUrgent && (
                     <span
                       className="wt-mono"
-                      style={{ display: 'block', fontSize: 10, color: 'var(--color-check)', marginTop: 2 }}
+                      style={{
+                        display: 'block',
+                        fontSize: '0.65rem',
+                        color: 'var(--caution)',
+                        marginTop: 2,
+                      }}
                     >
                       {days > 0 ? `${days}일 후` : '기한 경과'}
                     </span>
@@ -82,16 +106,24 @@ export default function Page() {
                   <p
                     style={{
                       fontFamily: 'var(--font-serif, serif)',
-                      fontSize: 14,
-                      fontWeight: 500,
-                      color: 'var(--color-ink)',
+                      fontSize: '0.875rem',
+                      fontWeight: 600,
+                      color: 'var(--ink)',
                       margin: 0,
                       lineHeight: 1.4,
                     }}
                   >
                     {factDisplayTitle(f)}
                   </p>
-                  <p style={{ fontSize: 12, color: 'var(--color-muted)', margin: '3px 0 0' }}>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-mono, monospace)',
+                      fontSize: '0.68rem',
+                      color: 'var(--ink-faint)',
+                      margin: '3px 0 0',
+                      letterSpacing: '0.04em',
+                    }}
+                  >
                     {chapterTitle(f.chapter)}
                   </p>
                 </div>
