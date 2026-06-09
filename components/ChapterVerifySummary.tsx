@@ -3,6 +3,20 @@ import { chapterSummary } from '@/lib/facts/store'
 
 export function ChapterVerifySummary({ facts }: { facts: Fact[] }) {
   const s = chapterSummary(facts)
+
+  if (s.total === 0) {
+    return (
+      <p
+        className="wt-chapter-meta"
+        role="status"
+        aria-label="이 장의 검증 현황"
+        style={{ color: 'var(--color-muted-soft)', fontSize: '0.8125rem' }}
+      >
+        출처 검증 예정 — 본문은 강의 정리 기반입니다.
+      </p>
+    )
+  }
+
   return (
     <div className="wt-chapter-meta" role="status" aria-label="이 장의 검증 현황">
       <span className="wt-chapter-meta-item">
