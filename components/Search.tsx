@@ -81,7 +81,7 @@ export function Search({ docs, availableChapters }: SearchProps) {
                   {r.title}
                   <span
                     className="wt-mono"
-                    style={{ color: 'var(--rule-heavy)', fontSize: '0.65rem', marginLeft: 6 }}
+                    style={{ color: 'var(--label-muted)', fontSize: '0.65rem', marginLeft: 6 }}
                   >
                     (작성 예정)
                   </span>
