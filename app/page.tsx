@@ -64,7 +64,7 @@ export default function Home() {
                   display: 'inline-block',
                   padding: '10px 20px',
                   background: 'var(--color-coral)',
-                  color: '#fff',
+                  color: 'var(--color-on-dark)',
                   borderRadius: 'var(--radius-md)',
                   fontSize: 14,
                   fontWeight: 600,

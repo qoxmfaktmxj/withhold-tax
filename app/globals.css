@@ -38,6 +38,14 @@
   --color-check:           oklch(62.0% 0.135 68);   /* amber: 확인필요 */
   --color-lecture:         oklch(58.0% 0.010 68);   /* muted: 강의기반 */
 
+  /* --- Change badge tokens (신설/개정/폐지) --- */
+  --color-badge-new-bg:    oklch(92% 0.055 148);
+  --color-badge-new-fg:    oklch(38% 0.14 148);
+  --color-badge-rev-bg:    oklch(95% 0.04 72);
+  --color-badge-rev-fg:    oklch(42% 0.12 68);
+  --color-badge-del-bg:    oklch(94% 0.04 20);
+  --color-badge-del-fg:    oklch(40% 0.12 22);
+
   /* --- Hairlines --- */
   --color-hairline:        oklch(88.0% 0.018 72);
   --color-hairline-soft:   oklch(91.0% 0.014 72);
@@ -77,6 +85,16 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+/* ── Keyboard focus rings (Fix A) ────────────────────────────────────── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 html {
@@ -210,7 +228,7 @@ pre,
 
 .wt-nav-link {
   display: block;
-  padding: 6px var(--space-xs);
+  padding: var(--space-xs) var(--space-xs);
   font-size: 13.5px;
   font-weight: 500;
   color: var(--color-body);
@@ -234,7 +252,7 @@ pre,
 
 .wt-nav-link--unavailable {
   display: block;
-  padding: 6px var(--space-xs);
+  padding: var(--space-xs) var(--space-xs);
   font-size: 13.5px;
   color: var(--color-muted-soft);
   cursor: default;
@@ -420,13 +438,19 @@ pre,
   font-family: inherit;
   font-size: 13px;
   color: var(--color-ink);
-  outline: none;
   transition: border-color 150ms;
 }
 
 .wt-search-input:focus {
   border-color: var(--color-coral);
   box-shadow: 0 0 0 3px oklch(93% 0.030 40 / 0.6);
+  outline: none;
+}
+
+.wt-search-input:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
 }
 
 .wt-search-input::placeholder {
@@ -464,6 +488,12 @@ pre,
 .wt-search-item a:hover {
   background: var(--color-canvas-soft);
   color: var(--color-ink);
+}
+
+.wt-search-item a:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: -2px;
+  border-radius: var(--radius-xs);
 }
 
 /* ── ChapterVerifySummary meta line ──────────────────────────────────── */
@@ -556,6 +586,12 @@ pre,
   border-color: var(--color-hairline);
 }
 
+.wt-chapter-card:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 2px;
+  border-radius: var(--radius-lg);
+}
+
 .wt-chapter-card--unavailable {
   opacity: 0.55;
   cursor: default;
@@ -643,9 +679,9 @@ pre,
   letter-spacing: 0.04em;
 }
 
-.wt-change-badge--신설 { background: oklch(92% 0.055 148); color: oklch(38% 0.14 148); }
-.wt-change-badge--개정 { background: oklch(95% 0.04 72); color: oklch(42% 0.12 68); }
-.wt-change-badge--폐지 { background: oklch(94% 0.04 20); color: oklch(40% 0.12 22); }
+.wt-change-badge--신설 { background: var(--color-badge-new-bg); color: var(--color-badge-new-fg); }
+.wt-change-badge--개정 { background: var(--color-badge-rev-bg); color: var(--color-badge-rev-fg); }
+.wt-change-badge--폐지 { background: var(--color-badge-del-bg); color: var(--color-badge-del-fg); }
 .wt-change-badge--없음 { background: var(--color-surface-card); color: var(--color-muted); }
 
 /* ── Review due list ─────────────────────────────────────────────────── */
@@ -878,6 +914,6 @@ a:hover { text-decoration-color: currentColor; }
   a[href]::after {
     content: " (" attr(href) ")";
     font-size: 10px;
-    color: #666;
+    color: var(--color-muted);
   }
 }
