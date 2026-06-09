@@ -39,9 +39,7 @@ export function Search({ docs, availableChapters }: SearchProps) {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="조문·키워드 검색 — 예: 식대, 소액부징수…"
           aria-label="원천징수 규정 검색"
-          aria-expanded={results.length > 0}
-          aria-owns="search-results-list"
-          style={{ flex: 1, border: 'none', background: 'transparent', padding: '8px 12px', fontFamily: 'inherit', fontSize: '0.84rem', color: 'var(--ink)', outline: 'none' }}
+          style={{ flex: 1, border: 'none', background: 'transparent', padding: '8px 12px', fontFamily: 'inherit', fontSize: '0.84rem', color: 'var(--ink)' }}
         />
         {query && (
           <button
@@ -57,12 +55,11 @@ export function Search({ docs, availableChapters }: SearchProps) {
         <ul
           id="search-results-list"
           className="wt-search-results"
-          role="listbox"
           aria-label="검색 결과"
           style={{ maxWidth: 520 }}
         >
           {results.map((r) => (
-            <li key={r.id} className="wt-search-item" role="option">
+            <li key={r.id} className="wt-search-item">
               {availableSet.has(r.chapter) ? (
                 <a href={`/ch/${r.chapter}`}>
                   <span

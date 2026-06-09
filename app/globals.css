@@ -476,7 +476,15 @@ pre,
   font-family: 'Noto Sans KR', Pretendard, sans-serif;
   font-size: 0.78rem;
   color: var(--ink);
+}
+
+.wt-sidebar-search input:focus {
   outline: none;
+}
+
+.wt-sidebar-search input:focus-visible {
+  outline: 2px solid var(--oxblood);
+  outline-offset: 1px;
 }
 
 .wt-sidebar-search input::placeholder {
