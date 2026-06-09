@@ -92,7 +92,7 @@ export default function Page() {
                     {factDisplayTitle(f)}
                   </p>
                   <p style={{ fontSize: 12, color: 'var(--color-muted)', margin: '3px 0 0' }}>
-                    {f.chapter}
+                    {chapterTitle(f.chapter)}
                   </p>
                 </div>
                 <div>
