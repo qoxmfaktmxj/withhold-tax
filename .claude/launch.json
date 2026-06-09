@@ -12,6 +12,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "start"],
       "port": 3000
+    },
+    {
+      "name": "variants",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", ".gstack/variants", "-p", "4321", "--no-clipboard"],
+      "port": 4321
     }
   ]
 }
