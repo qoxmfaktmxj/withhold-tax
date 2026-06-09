@@ -5,9 +5,9 @@
     <tr><th>가산세 종류</th><th>계산식</th><th>비고</th></tr>
   </thead>
   <tbody>
-    <tr><td><strong>신고불성실</strong> (과소신고)</td><td>본세 × 10%</td><td>부정행위 40%</td></tr>
-    <tr><td><strong>납부지연</strong></td><td>본세 × 미납일수 × <span className="hl">22/100,000</span></td><td>연 약 8.05%</td></tr>
-    <tr><td><strong>제출 관련</strong></td><td>미제출금액 × 1%</td><td>—</td></tr>
+    <tr><td><strong>신고불성실</strong> (과소신고)</td><td><F id="f_c40001">본세 × 10%</F></td><td><F id="f_c40002">부정행위 40%</F></td></tr>
+    <tr><td><strong>납부지연</strong></td><td>본세 × 미납일수 × <span className="hl"><F id="f_c40003">22/100,000</F></span></td><td>연 약 8.05%</td></tr>
+    <tr><td><strong>제출 관련</strong></td><td><F id="f_c40004">미제출금액 × 1%</F></td><td>—</td></tr>
   </tbody>
 </Tbl>
 
@@ -18,13 +18,13 @@
     <tr><th>구분</th><th>미제출</th><th>지연제출</th><th>지연 기준</th></tr>
   </thead>
   <tbody>
-    <tr><td><strong>지급명세서</strong> (연)</td><td>1%</td><td>0.5%</td><td>3개월 이내</td></tr>
-    <tr><td><strong>간이지급명세서</strong> (근로 반기)</td><td>0.25%</td><td>0.125%</td><td className="red">3개월 이내</td></tr>
-    <tr><td><strong>간이지급명세서</strong> (사업·기타 매월)</td><td>0.25%</td><td>0.125%</td><td className="red">1개월 이내</td></tr>
+    <tr><td><strong>지급명세서</strong> (연)</td><td><F id="f_c40004">1%</F></td><td><F id="f_c40005">0.5%</F></td><td><F id="f_c40005">3개월 이내</F></td></tr>
+    <tr><td><strong>간이지급명세서</strong> (근로 반기)</td><td><F id="f_c40006">0.25%</F></td><td><F id="f_c40006">0.125%</F></td><td className="red"><F id="f_c40006">3개월 이내</F></td></tr>
+    <tr><td><strong>간이지급명세서</strong> (사업·기타 매월)</td><td><F id="f_c40006">0.25%</F></td><td><F id="f_c40006">0.125%</F></td><td className="red"><F id="f_c40007">1개월 이내</F></td></tr>
   </tbody>
 </Tbl>
 
-**가산세 한도**: 일반기업 **1억원** / 중소기업 **5천만원**
+**가산세 한도**: <F id="f_c40008">일반기업 **1억원** / 중소기업 **5천만원**</F>
 
 ## 4.3 원천세 납부지연 가산세 ★★
 
@@ -36,7 +36,7 @@ B = 본세 × 10% (한도)
 </Formula>
 
 <Box kind="imp" title="◆ 핵심 포인트">
-약 **319일** 지점에서 한도 10% 도달 → 그 이상 지연 시 더 늘어나지 않음. 작년 연말정산 수정신고는 **12월 안에 처리 권장**. 법 제목이 **"원천징수 등 납부지연 가산세"**로 "신고"라는 말 없음 → 원천세는 **납부만 하면 가산세 없음**.
+<F id="f_a00004">원천징수 납부지연 가산세는 미납세액 × 3% + 미납세액 × 미납일수 × 22/100,000(1일 10만분의22)으로 계산하며, '3% + 법정납부기한 다음날부터 납부고지일까지 기간분' 합계는 미납세액의 10%를 한도로 한다(전체 한도는 50%).</F> 약 **319일** 지점에서 한도 10% 도달 → 그 이상 지연 시 더 늘어나지 않음. 작년 연말정산 수정신고는 **12월 안에 처리 권장**. <F id="f_c40009">법 제목이 **"원천징수 등 납부지연 가산세"**로 "신고"라는 말이 없어, 원천세는 별도의 신고불성실 가산세 없이 납부지연 가산세만 적용된다.</F>
 </Box>
 
 ## 4.4 지급명세서 제출 기한 ★
@@ -46,10 +46,10 @@ B = 본세 × 10% (한도)
     <tr><th>소득 구분</th><th>제출 기한</th></tr>
   </thead>
   <tbody>
-    <tr><td className="hl"><strong>근로·퇴직·원천징수 대상 사업소득</strong></td><td className="red"><strong>3월 10일</strong></td></tr>
-    <tr><td><strong>이자·배당소득</strong></td><td><strong>2월 말일</strong></td></tr>
-    <tr><td>그 외</td><td>2월 말일</td></tr>
-    <tr><td>일용직 지급명세서</td><td>매월</td></tr>
+    <tr><td className="hl"><strong>근로·퇴직·원천징수 대상 사업소득</strong></td><td className="red"><strong><F id="f_c40010">3월 10일</F></strong></td></tr>
+    <tr><td><strong>이자·배당소득</strong></td><td><strong><F id="f_c40011">2월 말일</F></strong></td></tr>
+    <tr><td>그 외</td><td><F id="f_c40011">2월 말일</F></td></tr>
+    <tr><td>일용직 지급명세서</td><td><F id="f_c40012">매월</F></td></tr>
   </tbody>
 </Tbl>
 
@@ -64,19 +64,19 @@ B = 본세 × 10% (한도)
     <tr><th>제출 시기</th><th>기준</th><th>포함 기간</th></tr>
   </thead>
   <tbody>
-    <tr><td>상반기</td><td className="red"><strong>지급 기준</strong></td><td>1~5월 지급분 (5개월)</td></tr>
-    <tr><td>하반기</td><td className="red"><strong>귀속 기준</strong></td><td>6~12월 귀속분 (7개월)</td></tr>
+    <tr><td>상반기</td><td className="red"><strong>지급 기준</strong></td><td><F id="f_c40013">1~5월 지급분 (5개월)</F></td></tr>
+    <tr><td>하반기</td><td className="red"><strong>귀속 기준</strong></td><td><F id="f_c40013">6~12월 귀속분 (7개월)</F></td></tr>
   </tbody>
 </Tbl>
 
-**예시**: 1월 급여를 2월 5일 지급 → 상반기 분에 미포함(지급 기준). **12월 미지급 시 특례**: 12월 말일까지 미지급 → 12월 지급 의제 → 1월 말일까지 제출.
+**예시**: 1월 급여를 2월 5일 지급 → 상반기 분에 미포함(지급 기준). **12월 미지급 시 특례**: <F id="f_c40014">12월 말일까지 미지급 시 12월에 지급한 것으로 의제하여 1월 말일까지 제출한다.</F>
 
 ## 4.6 사업자단위 과세 사업자 ★
 
 본점 1개 + 지점 다수 → 원래는 각 사업장별 사업자등록. **사업자단위 과세 신청** 시 본점 사업자등록번호 하나로 통합 관리, 지점은 사업자등록 말소 → **종사업장 번호(부번)**로 관리.
 
 <CaseNote title="코레일 — 전국 800개 사업장 단위과세">
-모든 사업장에 개별 사업자등록을 내기 어려워 사업자단위 과세 활용. 단, **지방세는 사업장 소재지별 신고 필수**.
+모든 사업장에 개별 사업자등록을 내기 어려워 사업자단위 과세 활용. 단, <F id="f_c40015">지방소득세 특별징수분은 사업장(소득세 납세지) 소재지 관할 지방자치단체에 각각 신고·납부해야 한다.</F>
 </CaseNote>
 
 <Tbl scroll>
@@ -84,9 +84,9 @@ B = 본세 × 10% (한도)
     <tr><th>구분</th><th>국세</th><th>지방세</th></tr>
   </thead>
   <tbody>
-    <tr><td>사업장별 따로 신고</td><td>자유 (한 통이라 무관)</td><td className="red">필수 (지자체별)</td></tr>
+    <tr><td>사업장별 따로 신고</td><td>자유 (한 통이라 무관)</td><td className="red"><F id="f_c40015">필수 (지자체별)</F></td></tr>
     <tr><td>잘못 신고 시</td><td>가산세 없음</td><td className="red">가산세 발생 가능</td></tr>
   </tbody>
 </Tbl>
 
-**원천세 납세지**: 원칙 본점 납부, 예외로 **독립채산제**(본점/지점 손익 분리) 시 각각 납부 가능.
+**원천세 납세지**: <F id="f_c40016">원칙적으로 원천징수의무자의 본점·주사무소 소재지를 납세지로 하되, 독립채산제에 따라 독자적으로 회계사무를 처리하는 지점·영업소 등은 그 사업장 소재지를 납세지로 한다.</F>
