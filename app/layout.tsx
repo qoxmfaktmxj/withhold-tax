@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Hanken_Grotesk, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { Disclaimer } from '@/components/Disclaimer'
+import { CommandPalette } from '@/components/CommandPalette'
 import { CHAPTERS, APPENDICES, availableChapterSlugs } from '@/lib/chapters'
 
 /* ── Fonts ────────────────────────────────────────────────────────────── */
@@ -73,6 +74,11 @@ export default function RootLayout({
                       2026 실무 참고자료
                     </span>
                   </div>
+                </div>
+
+                {/* 전체 검색 (⌘K) */}
+                <div className="wt-sidebar-section">
+                  <CommandPalette />
                 </div>
 
                 {/* 바로가기 */}

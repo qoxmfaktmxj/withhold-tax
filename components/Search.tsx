@@ -127,7 +127,7 @@ export function Search({ docs, availableChapters }: SearchProps) {
           {results.map((r) => (
             <li key={r.id} className="wt-search-item">
               {availableSet.has(r.chapter) ? (
-                <a href={`/ch/${r.chapter}`}>
+                <a href={`/ch/${r.chapter}${r.sectionId ? `#${r.sectionId}` : ''}`}>
                   <span
                     className="wt-mono"
                     style={{
@@ -141,7 +141,7 @@ export function Search({ docs, availableChapters }: SearchProps) {
                     {chapterTitle(r.chapter)}
                   </span>
                   <strong style={{ color: 'var(--text-primary)', fontWeight: 500 }}>
-                    {r.title}
+                    {r.heading}
                   </strong>
                 </a>
               ) : (
@@ -152,13 +152,7 @@ export function Search({ docs, availableChapters }: SearchProps) {
                   >
                     {chapterTitle(r.chapter)}
                   </span>
-                  {r.title}
-                  <span
-                    className="wt-mono"
-                    style={{ color: 'var(--gray-400)', fontSize: '0.65rem', marginLeft: 6 }}
-                  >
-                    (작성 예정)
-                  </span>
+                  {r.heading}
                 </span>
               )}
             </li>

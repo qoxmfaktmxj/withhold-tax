@@ -5,6 +5,7 @@ import { loadFacts, byChapter } from '@/lib/facts/store'
 import { availableChapterSlugs, chapterTitle } from '@/lib/chapters'
 import { ChapterVerifySummary } from '@/components/ChapterVerifySummary'
 import { Fact } from '@/components/Fact'
+import { HashScroll } from '@/components/HashScroll'
 
 export function generateStaticParams() {
   return availableChapterSlugs().map((slug) => ({ slug }))
@@ -36,6 +37,7 @@ export default async function ChapterPage({
 
   return (
     <article className="wt-article">
+      <HashScroll />
       {/* Chapter title from CHAPTERS meta */}
       <h1 style={{ marginBottom: 'var(--space-sm)' }}>
         {chapterTitle(slug)}

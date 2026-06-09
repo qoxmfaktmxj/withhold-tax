@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import factsRaw from '@/content/facts.json'
 import { loadFacts } from '@/lib/facts/store'
-import { factsToDocs } from '@/lib/search/facts-docs'
+import type { Doc } from '@/lib/search/build-index'
+import searchData from '@/content/search-index.json'
 import { availableChapterSlugs, CHAPTERS, APPENDICES } from '@/lib/chapters'
 import { Search } from '@/components/Search'
 
@@ -16,7 +17,7 @@ function chapterNumLabel(slug: string): string {
 
 export default function Home() {
   const facts = loadFacts(factsRaw)
-  const docs = factsToDocs(facts)
+  const docs = searchData as Doc[]
   const available = new Set(availableChapterSlugs())
 
   // 2026 개정 항목 수
