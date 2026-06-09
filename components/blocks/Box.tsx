@@ -1,10 +1,26 @@
 import type { ReactNode } from 'react'
-const TONE = { imp: 'var(--color-primary)', note: 'var(--color-verified)', warn: 'var(--color-check)', tip: '#2c5f8a' } as const
-export function Box({ kind, title, children }: { kind: keyof typeof TONE; title?: string; children: ReactNode }) {
+
+const KIND_LABEL: Record<string, string> = {
+  imp:  '중요',
+  note: '참고',
+  warn: '주의',
+  tip:  '팁',
+}
+
+export function Box({
+  kind,
+  title,
+  children,
+}: {
+  kind: 'imp' | 'note' | 'warn' | 'tip'
+  title?: string
+  children: ReactNode
+}) {
   return (
-    <aside style={{ borderLeft: `3px solid ${TONE[kind]}`, background: 'var(--color-surface-card)',
-      padding: 'var(--space-md) var(--space-lg)', borderRadius: 'var(--radius-md)', margin: 'var(--space-md) 0' }}>
-      {title && <strong style={{ color: TONE[kind] }}>{title}</strong>}
+    <aside className={`wt-box wt-box--${kind}`} role="note">
+      <span className="wt-box-label">
+        {title || KIND_LABEL[kind] || kind}
+      </span>
       <div>{children}</div>
     </aside>
   )
