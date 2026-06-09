@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
 import { buildIndex, searchIndex, type Doc } from '@/lib/search/build-index'
 import { chapterTitle } from '@/lib/chapter-meta'
@@ -36,8 +37,12 @@ export function CommandPalette() {
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState('')
   const [active, setActive] = useState(0)
+  const [mounted, setMounted] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
   const listRef = useRef<HTMLUListElement>(null)
+
+  // portal target only exists after mount (avoids SSR document access)
+  useEffect(() => setMounted(true), [])
 
   const idx = useMemo(() => buildIndex(DOCS), [])
   const results = useMemo(
@@ -114,7 +119,7 @@ export function CommandPalette() {
           <line x1="21" y1="21" x2="16.65" y2="16.65" />
         </svg>
         <span className="wt-cmdk-trigger-label">전체 검색</span>
-        <kbd className="wt-cmdk-kbd">⌘K</kbd>
+        <kbd className="wt-cmdk-kbd">Ctrl K</kbd>
       </button>
 
       {/* Floating trigger — mobile only (sidebar hidden ≤640px) */}
@@ -125,7 +130,7 @@ export function CommandPalette() {
         </svg>
       </button>
 
-      {open && (
+      {open && mounted && createPortal(
         <div className="wt-cmdk-overlay" role="presentation" onMouseDown={() => setOpen(false)}>
           <div
             className="wt-cmdk-panel"
@@ -201,7 +206,8 @@ export function CommandPalette() {
               <span className="wt-cmdk-footer-count">{query.trim() ? `${results.length}건` : `${DOCS.length}개 섹션 색인`}</span>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   )

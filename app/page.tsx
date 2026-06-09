@@ -1,10 +1,7 @@
 import Link from 'next/link'
 import factsRaw from '@/content/facts.json'
 import { loadFacts } from '@/lib/facts/store'
-import type { Doc } from '@/lib/search/build-index'
-import searchData from '@/content/search-index.json'
 import { availableChapterSlugs, CHAPTERS, APPENDICES } from '@/lib/chapters'
-import { Search } from '@/components/Search'
 
 /* ── Chapter number label helper ─────────────────────────────────────── */
 function chapterNumLabel(slug: string): string {
@@ -17,7 +14,6 @@ function chapterNumLabel(slug: string): string {
 
 export default function Home() {
   const facts = loadFacts(factsRaw)
-  const docs = searchData as Doc[]
   const available = new Set(availableChapterSlugs())
 
   // 2026 개정 항목 수
@@ -42,9 +38,6 @@ export default function Home() {
       </header>
 
       <div style={{ padding: '28px var(--space-xxl) var(--space-xxl)' }}>
-
-        {/* ════════════ SEARCH ════════════ */}
-        <Search docs={docs} availableChapters={[...available]} />
 
         {/* ════════════ 2026 개정 BAND ════════════ */}
         {updates2026Count > 0 && (
