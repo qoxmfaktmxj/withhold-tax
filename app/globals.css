@@ -1,42 +1,883 @@
+/* ── Pretendard (body/UI sans) via CDN ───────────────────────────────── */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
 @import "tailwindcss";
 
+/* ── OKLCH Design Tokens ─────────────────────────────────────────────── */
 :root {
-  --color-primary: #cc785c; --color-primary-active: #a9583e;
-  --color-ink: #141413; --color-body: #3d3d3a; --color-muted: #6c6a64;
-  --color-canvas: #faf9f5; --color-surface-card: #efe9de;
-  --color-surface-dark: #181715; --color-on-dark: #faf9f5;
-  --color-hairline: #e6dfd8;
-  --color-verified: #5db872;   /* 확정 */
-  --color-check: #d4a017;      /* 확인필요 */
-  --color-lecture: #8e8b82;    /* 강의기반 */
-  --radius-md: 8px; --radius-lg: 12px; --radius-pill: 9999px;
-  --space-md: 16px; --space-lg: 24px; --space-xl: 32px; --space-section: 96px;
+  /* --- Canvas (warm cream) --- */
+  --color-canvas:          oklch(97.5% 0.008 70);   /* #faf9f5-like warm cream */
+  --color-canvas-soft:     oklch(95.5% 0.012 72);   /* slightly tinted */
+  --color-surface-card:    oklch(92.0% 0.016 74);   /* cream card bg */
+  --color-surface-warm:    oklch(89.0% 0.020 76);   /* deeper cream, section bg */
+  --color-surface-warm-strong: oklch(85.0% 0.024 76);
+
+  /* --- Navy reference surfaces --- */
+  --color-navy:            oklch(22.0% 0.030 255);  /* deep reference navy */
+  --color-navy-elevated:   oklch(28.0% 0.028 255);  /* slightly lighter navy */
+  --color-navy-soft:       oklch(32.0% 0.026 250);  /* table header etc */
+
+  /* --- Ink (warm near-black) --- */
+  --color-ink:             oklch(14.0% 0.008 70);   /* near-black, warm */
+  --color-body-strong:     oklch(22.0% 0.009 70);
+  --color-body:            oklch(35.0% 0.010 68);
+  --color-muted:           oklch(52.0% 0.010 68);
+  --color-muted-soft:      oklch(62.0% 0.010 68);
+
+  /* --- On-dark --- */
+  --color-on-dark:         oklch(97.5% 0.008 70);   /* cream-white on navy */
+  --color-on-dark-soft:    oklch(72.0% 0.010 70);   /* subdued on navy */
+
+  /* --- Coral (official seal accent — USE SPARINGLY) --- */
+  --color-coral:           oklch(62.0% 0.120 30);   /* #cc785c-like coral */
+  --color-coral-active:    oklch(52.0% 0.120 30);
+  --color-coral-tint:      oklch(93.0% 0.030 40);   /* soft coral tint bg */
+
+  /* --- Semantic status --- */
+  --color-verified:        oklch(53.0% 0.145 148);  /* green: 확정 */
+  --color-check:           oklch(62.0% 0.135 68);   /* amber: 확인필요 */
+  --color-lecture:         oklch(58.0% 0.010 68);   /* muted: 강의기반 */
+
+  /* --- Hairlines --- */
+  --color-hairline:        oklch(88.0% 0.018 72);
+  --color-hairline-soft:   oklch(91.0% 0.014 72);
+
+  /* --- Border radius --- */
+  --radius-xs:   4px;
+  --radius-sm:   6px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-pill: 9999px;
+
+  /* --- Spacing --- */
+  --space-xxs:      4px;
+  --space-xs:       8px;
+  --space-sm:       12px;
+  --space-md:       16px;
+  --space-lg:       24px;
+  --space-xl:       32px;
+  --space-xxl:      48px;
+  --space-section:  96px;
+
+  /* --- Layout --- */
+  --sidebar-width:  280px;
+  --content-max:    860px;   /* prose reading width inside content area */
 }
 
+/* ── Tailwind theme bridge ────────────────────────────────────────────── */
 @theme inline {
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+  --font-sans:  var(--font-sans);
+  --font-mono:  var(--font-mono);
   --font-serif: var(--font-serif);
+}
+
+/* ── Base reset & typography ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--color-canvas);
   color: var(--color-ink);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: Pretendard, var(--font-sans, system-ui), sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3 { font-family: var(--font-serif), serif; letter-spacing: -0.02em; font-weight: 400; }
-code, pre, .mono { font-family: var(--font-mono), ui-monospace, monospace; }
+/* ── Heading hierarchy (명조 serif display) ─────────────────────────── */
+h1,
+h2,
+h3,
+.wt-serif {
+  font-family: var(--font-serif, serif);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: var(--color-ink);
+}
 
-.wt-tbl { border-collapse: collapse; width: 100%; font-size: 14px; }
-.wt-tbl thead th { background: var(--color-surface-dark); color: var(--color-on-dark); padding: 8px 12px; text-align: left; }
-.wt-tbl td { border-top: 1px solid var(--color-hairline); padding: 8px 12px; }
-.wt-tbl tbody tr:nth-child(even) { background: var(--color-surface-card); }
-.wt-tbl td.hl { background: #ffe98a; } .wt-tbl td.red { color: var(--color-primary-active); } .wt-tbl td.grn { color: var(--color-verified); }
+h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 500; }
+h3 { font-size: 1.125rem; font-weight: 500; letter-spacing: -0.01em; }
+h4 { font-size: 1rem; font-weight: 600; color: var(--color-body-strong); }
 
+p {
+  color: var(--color-body);
+  line-height: 1.75;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+/* ── Monospace (law refs, numbers, code) ─────────────────────────────── */
+code,
+pre,
+.mono,
+.wt-mono {
+  font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
+  font-feature-settings: "tnum" 1, "ss01" 1;
+}
+
+/* ── App Shell ───────────────────────────────────────────────────────── */
+.wt-shell {
+  display: flex;
+  min-height: 100dvh;
+}
+
+/* Fixed left sidebar */
+.wt-sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  max-width: var(--sidebar-width);
+  background: var(--color-canvas-soft);
+  border-right: 1px solid var(--color-hairline);
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  /* subtle scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-hairline) transparent;
+}
+
+.wt-sidebar-inner {
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* Main content area — full remaining width */
+.wt-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.wt-content {
+  flex: 1;
+  padding: var(--space-xl) var(--space-xxl);
+  max-width: 100%;
+}
+
+/* Collapse sidebar at <960px (keep sidebar but shrink) */
+@media (max-width: 960px) {
+  .wt-sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+}
+
+/* ── Wordmark ────────────────────────────────────────────────────────── */
+.wt-wordmark {
+  font-family: var(--font-serif, serif);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  text-decoration: none;
+  line-height: 1.3;
+}
+
+.wt-wordmark:hover {
+  color: var(--color-coral);
+}
+
+/* ── Sidebar navigation ──────────────────────────────────────────────── */
+.wt-nav-section {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--color-muted-soft);
+  margin-bottom: var(--space-xs);
+  padding: 0 var(--space-xs);
+}
+
+.wt-nav-link {
+  display: block;
+  padding: 6px var(--space-xs);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--color-body);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background 150ms ease, color 150ms ease;
+  line-height: 1.4;
+}
+
+.wt-nav-link:hover {
+  background: var(--color-surface-card);
+  color: var(--color-ink);
+}
+
+.wt-nav-link.active,
+.wt-nav-link[aria-current="page"] {
+  color: var(--color-coral);
+  background: var(--color-coral-tint);
+  font-weight: 600;
+}
+
+.wt-nav-link--unavailable {
+  display: block;
+  padding: 6px var(--space-xs);
+  font-size: 13.5px;
+  color: var(--color-muted-soft);
+  cursor: default;
+  line-height: 1.4;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────── */
+.wt-tbl {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: var(--space-lg) 0;
+}
+
+.wt-tbl thead th {
+  background: var(--color-navy);
+  color: var(--color-on-dark);
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.wt-tbl thead th:first-child {
+  border-radius: var(--radius-sm) 0 0 0;
+}
+
+.wt-tbl thead th:last-child {
+  border-radius: 0 var(--radius-sm) 0 0;
+}
+
+.wt-tbl tbody td {
+  border-top: 1px solid var(--color-hairline-soft);
+  padding: 9px 14px;
+  color: var(--color-body);
+  vertical-align: top;
+}
+
+.wt-tbl tbody tr:nth-child(even) td {
+  background: var(--color-canvas-soft);
+}
+
+.wt-tbl tbody tr:hover td {
+  background: var(--color-surface-card);
+}
+
+/* Modifier cells */
+.wt-tbl td.hl  { background: oklch(95% 0.070 80); }
+.wt-tbl td.red { color: var(--color-coral-active); font-weight: 500; }
+.wt-tbl td.grn { color: var(--color-verified); font-weight: 500; }
+
+/* ── Callout blocks (Box) — NO border-left stripes ───────────────────── */
+/* Rule: full hairline border + tinted bg + small 명조 label top rule */
+.wt-box {
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin: var(--space-lg) 0;
+  position: relative;
+}
+
+.wt-box--imp {
+  background: var(--color-coral-tint);
+  border-color: oklch(88% 0.045 38);
+}
+
+.wt-box--note {
+  background: oklch(94.5% 0.025 148);
+  border-color: oklch(87% 0.050 148);
+}
+
+.wt-box--warn {
+  background: oklch(96% 0.040 72);
+  border-color: oklch(88% 0.060 72);
+}
+
+.wt-box--tip {
+  background: oklch(95% 0.018 240);
+  border-color: oklch(86% 0.035 240);
+}
+
+.wt-box-label {
+  font-family: var(--font-serif, serif);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.wt-box--imp   .wt-box-label { color: var(--color-coral-active); }
+.wt-box--note  .wt-box-label { color: var(--color-verified); }
+.wt-box--warn  .wt-box-label { color: oklch(50% 0.120 68); }
+.wt-box--tip   .wt-box-label { color: oklch(38% 0.090 240); }
+
+/* ── Trust marks ─────────────────────────────────────────────────────── */
+/* Citation line in mono small */
+.wt-citation {
+  display: inline;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  color: var(--color-muted);
+  white-space: normal;
+}
+
+.wt-citation a {
+  color: var(--color-muted);
+  text-decoration-color: var(--color-hairline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.wt-citation a:hover {
+  color: var(--color-body);
+  text-decoration-color: var(--color-muted);
+}
+
+/* Verify seal marks */
+.wt-seal {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.wt-seal--확정 {
+  color: var(--color-verified);
+}
+
+.wt-seal--확인필요 {
+  color: var(--color-check);
+}
+
+.wt-seal--강의기반 {
+  color: var(--color-lecture);
+}
+
+/* Lecture-based fact tinted bg */
+.wt-fact--lecture {
+  background: oklch(94.5% 0.008 68);
+  border-radius: var(--radius-xs);
+  padding: 0 3px;
+}
+
+/* ── Inline section markers ──────────────────────────────────────────── */
+.wt-section-rule {
+  border: none;
+  border-top: 1px solid var(--color-hairline);
+  margin: var(--space-xxl) 0 var(--space-xl);
+}
+
+/* ── Navy reference band ─────────────────────────────────────────────── */
+.wt-navy-band {
+  background: var(--color-navy);
+  color: var(--color-on-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xxl);
+  margin: var(--space-xl) 0;
+}
+
+.wt-navy-band h2,
+.wt-navy-band h3 {
+  color: var(--color-on-dark);
+}
+
+.wt-navy-band p {
+  color: var(--color-on-dark-soft);
+}
+
+/* ── Search input ────────────────────────────────────────────────────── */
+.wt-search-input {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--color-ink);
+  outline: none;
+  transition: border-color 150ms;
+}
+
+.wt-search-input:focus {
+  border-color: var(--color-coral);
+  box-shadow: 0 0 0 3px oklch(93% 0.030 40 / 0.6);
+}
+
+.wt-search-input::placeholder {
+  color: var(--color-muted-soft);
+}
+
+.wt-search-results {
+  margin-top: var(--space-xs);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  background: var(--color-canvas);
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+}
+
+.wt-search-item {
+  border-top: 1px solid var(--color-hairline-soft);
+}
+
+.wt-search-item:first-child {
+  border-top: none;
+}
+
+.wt-search-item a,
+.wt-search-item span {
+  display: block;
+  padding: 8px 12px;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--color-body);
+  line-height: 1.4;
+}
+
+.wt-search-item a:hover {
+  background: var(--color-canvas-soft);
+  color: var(--color-ink);
+}
+
+/* ── ChapterVerifySummary meta line ──────────────────────────────────── */
+.wt-chapter-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 12.5px;
+  color: var(--color-muted);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-hairline);
+  flex-wrap: wrap;
+}
+
+.wt-chapter-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono, monospace);
+}
+
+/* ── Verify status legend ────────────────────────────────────────────── */
+.wt-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11.5px;
+}
+
+.wt-legend-item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+/* ── Editorial hero ──────────────────────────────────────────────────── */
+.wt-hero {
+  padding: var(--space-section) 0 var(--space-xxl);
+  border-bottom: 1px solid var(--color-hairline);
+  margin-bottom: var(--space-xxl);
+}
+
+.wt-hero-eyebrow {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--color-coral);
+  margin-bottom: var(--space-md);
+  display: block;
+}
+
+.wt-hero h1 {
+  max-width: 20ch;
+  margin-bottom: var(--space-md);
+}
+
+.wt-hero-lead {
+  font-size: 1.0625rem;
+  color: var(--color-body);
+  max-width: 52ch;
+  line-height: 1.7;
+}
+
+/* ── Chapter index (editorial grid on home) ──────────────────────────── */
+.wt-chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
+  margin: var(--space-xl) 0;
+}
+
+.wt-chapter-card {
+  background: var(--color-canvas-soft);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-decoration: none;
+  color: var(--color-ink);
+  transition: background 150ms, border-color 150ms;
+  display: block;
+}
+
+.wt-chapter-card:hover {
+  background: var(--color-surface-card);
+  border-color: var(--color-hairline);
+}
+
+.wt-chapter-card--unavailable {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.wt-chapter-number {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted-soft);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.wt-chapter-title {
+  font-family: var(--font-serif, serif);
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-ink);
+}
+
+.wt-chapter-card--unavailable .wt-chapter-title {
+  color: var(--color-muted);
+}
+
+/* ── Updates dashboard editorial rows ───────────────────────────────── */
+.wt-updates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: var(--space-lg) 0;
+}
+
+.wt-update-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: var(--space-lg);
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-hairline-soft);
+  align-items: start;
+}
+
+.wt-update-row:first-child {
+  border-top: 1px solid var(--color-hairline);
+}
+
+.wt-update-title {
+  font-family: var(--font-serif, serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.wt-update-claim {
+  font-size: 13px;
+  color: var(--color-body);
+  line-height: 1.55;
+}
+
+.wt-update-prev {
+  font-size: 12px;
+  color: var(--color-muted);
+  line-height: 1.55;
+}
+
+.wt-update-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+  white-space: nowrap;
+}
+
+.wt-change-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.wt-change-badge--신설 { background: oklch(92% 0.055 148); color: oklch(38% 0.14 148); }
+.wt-change-badge--개정 { background: oklch(95% 0.04 72); color: oklch(42% 0.12 68); }
+.wt-change-badge--폐지 { background: oklch(94% 0.04 20); color: oklch(40% 0.12 22); }
+.wt-change-badge--없음 { background: var(--color-surface-card); color: var(--color-muted); }
+
+/* ── Review due list ─────────────────────────────────────────────────── */
+.wt-review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: var(--space-lg) 0;
+}
+
+.wt-review-row {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: var(--space-lg);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-hairline-soft);
+  align-items: center;
+}
+
+.wt-review-row:first-child {
+  border-top: 1px solid var(--color-hairline);
+}
+
+.wt-review-date {
+  font-family: var(--font-mono, monospace);
+  font-size: 12.5px;
+  color: var(--color-muted);
+}
+
+/* ── Article prose ───────────────────────────────────────────────────── */
+.wt-article {
+  max-width: var(--content-max);
+}
+
+.wt-article h1 {
+  margin-bottom: var(--space-sm);
+}
+
+.wt-article h2 {
+  margin-top: var(--space-xxl);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.wt-article h3 {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
+/* ── Compare block ───────────────────────────────────────────────────── */
+.wt-compare {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--space-md);
+  align-items: start;
+  margin: var(--space-lg) 0;
+}
+
+.wt-compare-side {
+  background: var(--color-surface-card);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-hairline);
+}
+
+.wt-compare-vs {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-muted-soft);
+  letter-spacing: 0.06em;
+  align-self: center;
+  padding-top: var(--space-md);
+}
+
+/* ── Formula (dark mono block) ───────────────────────────────────────── */
+.wt-formula {
+  background: var(--color-navy);
+  color: var(--color-on-dark);
+  padding: var(--space-lg) var(--space-xl);
+  border-radius: var(--radius-lg);
+  margin: var(--space-lg) 0;
+  font-family: var(--font-mono, monospace);
+  font-size: 13.5px;
+  line-height: 1.75;
+  overflow-x: auto;
+}
+
+/* ── CaseNote ────────────────────────────────────────────────────────── */
+.wt-casenote {
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  margin: var(--space-lg) 0;
+  background: var(--color-canvas-soft);
+}
+
+.wt-casenote-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+/* ── Stats block ─────────────────────────────────────────────────────── */
+.wt-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin: var(--space-lg) 0;
+}
+
+.wt-stat {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-hairline);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
+  min-width: 120px;
+}
+
+.wt-stat-value {
+  font-family: var(--font-mono, monospace);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-coral);
+  line-height: 1.2;
+}
+
+.wt-stat-label {
+  font-size: 12px;
+  color: var(--color-muted);
+  margin-top: 4px;
+}
+
+/* ── Flow block ──────────────────────────────────────────────────────── */
+.wt-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  align-items: center;
+  margin: var(--space-lg) 0;
+}
+
+.wt-flow-step {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-hairline);
+  padding: 6px 14px;
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  color: var(--color-body-strong);
+}
+
+.wt-flow-arrow {
+  color: var(--color-coral);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-mono, monospace);
+}
+
+/* ── CheatCard ───────────────────────────────────────────────────────── */
+.wt-cheatcard {
+  background: var(--color-navy);
+  color: var(--color-on-dark);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  margin: var(--space-lg) 0;
+}
+
+.wt-cheatcard h3 {
+  color: var(--color-on-dark);
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+}
+
+.wt-cheatcard p,
+.wt-cheatcard li {
+  color: var(--color-on-dark-soft);
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────── */
+.wt-footer {
+  background: var(--color-navy);
+  color: var(--color-on-dark-soft);
+  padding: var(--space-xl) var(--space-xxl);
+  margin-top: auto;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.wt-footer p {
+  color: var(--color-on-dark-soft);
+  margin: 0;
+}
+
+.wt-footer strong {
+  color: var(--color-on-dark);
+}
+
+/* ── Misc utilities ──────────────────────────────────────────────────── */
+.wt-divider {
+  border: none;
+  border-top: 1px solid var(--color-hairline);
+  margin: var(--space-xxl) 0;
+}
+
+.wt-text-muted  { color: var(--color-muted); }
+.wt-text-coral  { color: var(--color-coral); }
+.wt-text-ink    { color: var(--color-ink); }
+
+a { color: inherit; }
+a:hover { text-decoration-color: currentColor; }
+
+/* ── Print ───────────────────────────────────────────────────────────── */
 @media print {
-  header, footer nav, .wt-search { display: none !important; }
-  main { max-width: 100%; }
-  [role="note"][aria-label^="출처"], .wt-tbl { break-inside: avoid; }
-  a[href]::after { content: " (" attr(href) ")"; font-size: 10px; color: #666; }
+  .wt-sidebar,
+  .wt-footer nav,
+  .wt-search { display: none !important; }
+
+  .wt-shell { display: block; }
+  .wt-content { padding: 0; }
+
+  [role="note"][aria-label^="출처"],
+  .wt-tbl { break-inside: avoid; }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 10px;
+    color: #666;
+  }
 }
