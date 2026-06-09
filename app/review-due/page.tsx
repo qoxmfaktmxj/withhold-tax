@@ -20,7 +20,7 @@ export default function Page() {
   const items = reviewDue(loadFacts(factsRaw))
 
   return (
-    <div className="wt-article" style={{ paddingTop: 'var(--space-xl)' }}>
+    <div className="wt-article">
       <header className="wt-hero">
         <span className="wt-hero-eyebrow">검토 일정</span>
         <h1>검토 임박 항목</h1>

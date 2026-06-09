@@ -49,9 +49,6 @@ export default function RootLayout({
     >
       <body>
         <div className="wt-shell">
-          {/* ── 3px blue top accent bar ────────────────────────── */}
-          <div className="wt-page-top-rule" aria-hidden="true" />
-
           <div className="wt-shell-body">
             {/* ════════════════════════════ SIDEBAR ════════════════════════════ */}
             <aside className="wt-sidebar" aria-label="사이드바 내비게이션">

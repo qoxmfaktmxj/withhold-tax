@@ -253,13 +253,6 @@ pre,
   font-feature-settings: "tnum" 1, "ss01" 1;
 }
 
-/* ── Page top accent bar (3px blue) ──────────────────────────────── */
-.wt-page-top-rule {
-  height: 3px;
-  background: var(--blue-600);
-  width: 100%;
-  flex-shrink: 0;
-}
 
 /* ══════════════════════════════════════════════════════════════════
    APP SHELL
@@ -288,7 +281,7 @@ pre,
   border-right: 1px solid var(--border-blue);
   position: sticky;
   top: 0;
-  height: calc(100dvh - 3px);   /* 3px = top-bar */
+  height: 100dvh;
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
@@ -319,7 +312,7 @@ pre,
 
 .wt-content {
   flex: 1;
-  padding: 0 var(--space-xxl) var(--space-xxl);
+  padding: 64px var(--space-xxl) var(--space-xxl);
   max-width: 100%;
 }
 
@@ -690,7 +683,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 
 /* Hero — Webflow SaaS style */
 .wt-gazette-masthead {
-  padding: 40px var(--space-xxl) 0;
+  padding: 0 var(--space-xxl) 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1273,7 +1266,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
    EDITORIAL HERO (chapter pages / sub-pages)
 ══════════════════════════════════════════════════════════════════ */
 .wt-hero {
-  padding: var(--space-xl) 0 var(--space-lg);
+  padding: 0 0 var(--space-lg);
   border-bottom: 1px solid var(--border);
   margin-bottom: var(--space-xl);
 }
@@ -1521,7 +1514,9 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   font-family: var(--font-mono);
   font-size: 0.84rem;
   line-height: 1.85;
+  white-space: pre;
   overflow-x: auto;
+  max-width: 100%;
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
 }
