@@ -7,9 +7,24 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 const ROOT = process.cwd()
-const JSON_MODE = process.argv.includes('--json')
-const TODAY = new Date()
-TODAY.setHours(0, 0, 0, 0)
+const ARGS = process.argv.slice(2)
+const JSON_MODE = ARGS.includes('--json')
+const todayArgIndex = ARGS.indexOf('--today')
+const TODAY_INSTANT = todayArgIndex >= 0 && ARGS[todayArgIndex + 1] ? new Date(ARGS[todayArgIndex + 1]) : new Date()
+
+function formatKstDate(date) {
+  const parts = new Intl.DateTimeFormat('en', {
+    timeZone: 'Asia/Seoul',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).formatToParts(date)
+  const byType = Object.fromEntries(parts.map((p) => [p.type, p.value]))
+  return `${byType.year}-${byType.month}-${byType.day}`
+}
+
+const TODAY_KEY = formatKstDate(TODAY_INSTANT)
+const TODAY = new Date(TODAY_KEY + 'T00:00:00Z')
 
 const facts = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/facts.json'), 'utf8'))
 
@@ -75,13 +90,13 @@ flagged.sort((a, b) => {
 })
 
 if (JSON_MODE) {
-  console.log(JSON.stringify({ generated: TODAY.toISOString().slice(0, 10), total: facts.length, flagged }, null, 2))
+  console.log(JSON.stringify({ generated: TODAY_KEY, total: facts.length, flagged }, null, 2))
   process.exit(0)
 }
 
 // Table output
 console.log(`\n원천징수 레퍼런스 — Fact 신선도 점검`)
-console.log(`생성: ${TODAY.toISOString().slice(0, 10)}  |  전체 fact: ${facts.length}건  |  플래그: ${flagged.length}건\n`)
+console.log(`생성: ${TODAY_KEY}  |  전체 fact: ${facts.length}건  |  플래그: ${flagged.length}건\n`)
 console.log(`기준: ① asOf 경과 ${STALE_DAYS}일↑  ② nextReviewBy ${SOON_DAYS}일 이내  ③ verifyStatus 확인필요·강의기반\n`)
 
 if (flagged.length === 0) {

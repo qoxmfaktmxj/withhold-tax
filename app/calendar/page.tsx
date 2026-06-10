@@ -3,6 +3,7 @@ import { loadRules } from '@/lib/rules/engine'
 import factsRaw from '@/content/facts.json'
 import { loadFacts } from '@/lib/facts/store'
 import { VerifyStatus } from '@/components/VerifyStatus'
+import type { TaxRule } from '@/lib/rules/schema'
 
 export const metadata = { title: '신고·납부 캘린더 — 원천징수 레퍼런스' }
 
@@ -16,14 +17,8 @@ function freq(basis: string): '매월' | '반기' | '연 1회' | '기간' {
   return '연 1회'
 }
 
-export default function CalendarPage() {
-  const rules = loadRules(deadlinesRaw)
-  const monthly = rules.filter((r) => freq(String(r.formula.params.basis)) === '매월')
-  const halfYear = rules.filter((r) => freq(String(r.formula.params.basis)) === '반기')
-  const yearly = rules.filter((r) => freq(String(r.formula.params.basis)) === '연 1회')
-  const windows = rules.filter((r) => freq(String(r.formula.params.basis)) === '기간')
-
-  const Section = ({ title, items }: { title: string; items: typeof rules }) => (
+function CalendarSection({ title, items }: { title: string; items: TaxRule[] }) {
+  return (
     <>
       <h2>{title}</h2>
       <table className="wt-tbl" style={{ width: '100%' }}>
@@ -90,6 +85,14 @@ export default function CalendarPage() {
       </table>
     </>
   )
+}
+
+export default function CalendarPage() {
+  const rules = loadRules(deadlinesRaw)
+  const monthly = rules.filter((r) => freq(String(r.formula.params.basis)) === '매월')
+  const halfYear = rules.filter((r) => freq(String(r.formula.params.basis)) === '반기')
+  const yearly = rules.filter((r) => freq(String(r.formula.params.basis)) === '연 1회')
+  const windows = rules.filter((r) => freq(String(r.formula.params.basis)) === '기간')
 
   return (
     <article className="wt-article">
@@ -100,10 +103,10 @@ export default function CalendarPage() {
         30일·7일 전 + 경과 경고 3단계를 권장.
       </p>
 
-      <Section title="매월 반복" items={monthly} />
-      <Section title="반기" items={halfYear} />
-      <Section title="연 1회" items={yearly} />
-      <Section title="기간 규칙 (2026 신설)" items={windows} />
+      <CalendarSection title="매월 반복" items={monthly} />
+      <CalendarSection title="반기" items={halfYear} />
+      <CalendarSection title="연 1회" items={yearly} />
+      <CalendarSection title="기간 규칙 (2026 신설)" items={windows} />
 
       <p style={{ marginTop: 'var(--space-lg)', fontSize: '0.76rem', color: 'var(--gray-500)' }}>
         ⚠️ 사내 참고용. 영업일 보정·반기납부 승인 여부·사업장 단위 신고 구조는 회사 설정에 따라

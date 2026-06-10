@@ -14,13 +14,6 @@ const chTitle = {
 }
 const chOrder = ['ch1','ch2','ch3','ch4','ch5','ch6','ch7','ch8','ch9','ch10','nonresident','interest-dividend']
 
-function reason(f) {
-  if (f.verifyStatus === '강의기반') return '강의기반 — 공식 1차 출처 미확정'
-  if (NEW_CH.has(f.chapter)) return '신규 작성 장 — 원본 없이 1차출처 조사로 작성'
-  if (f.verifyStatus === '확인필요') return '확인필요 — 해석여지/시행시점/하위법령'
-  if (f.verifyStatus === '확정' && !f.primarySourceVerified) return '확정(2차 교차확인) — 1차 원문 직접확인 미완'
-  return ''
-}
 function priority(f) {
   if (f.verifyStatus === '강의기반') return 0
   if (NEW_CH.has(f.chapter)) return 0

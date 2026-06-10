@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import penaltyRulesRaw from '@/content/tax-rules/2026/penalty-rules.json'
-import { loadRules, pickRule, withholdingLatePenalty } from '@/lib/rules/engine'
+import { canAutoCalculate, loadRules, pickRule, withholdingLatePenalty } from '@/lib/rules/engine'
 
 const RULES = loadRules(penaltyRulesRaw)
 const KRW = (n: number) => n.toLocaleString('ko-KR') + '원'
@@ -42,6 +42,7 @@ export function PenaltyCalculator() {
     const rule = pickRule(RULES, 'wht_late_payment_penalty', dueDate)
     if (!rule) return null
     const daysLate = daysBetween(dueDate, payDate)
+    if (!canAutoCalculate(rule)) return { rule, daysLate, calc: null, unpaidTax }
     return { rule, daysLate, calc: withholdingLatePenalty(rule, { unpaidTax, daysLate }), unpaidTax }
   }, [unpaid, dueDate, payDate])
 
@@ -62,7 +63,31 @@ export function PenaltyCalculator() {
         </div>
       </div>
 
-      {result && (
+      {result && !result.calc && (
+        <div
+          style={{
+            marginTop: 18,
+            background: 'var(--caution-bg)',
+            border: '1px solid var(--caution-border)',
+            borderRadius: 'var(--radius)',
+            padding: '18px 20px',
+            maxWidth: 640,
+          }}
+        >
+          <p style={{ margin: 0, fontWeight: 800, color: 'var(--caution-text)' }}>
+            2026.7.1 이후 지정납부기한 도래분은 자동 계산을 중지합니다.
+          </p>
+          <p style={{ margin: '8px 0 0', fontSize: '0.82rem', color: 'var(--gray-600)', lineHeight: 1.65 }}>
+            개정 산식은 월할 이자·독촉비용·150만원 미만 면제·고지 시점 요소가 함께 들어갑니다.
+            현재 화면은 rule 선택과 경고만 제공하며, 실제 금액은 홈택스·납부고지서 또는 세무담당자 확인 기준으로 처리하세요.
+          </p>
+          <p style={{ margin: '10px 0 0', fontFamily: 'var(--font-mono)', fontSize: '0.76rem', color: 'var(--gray-500)' }}>
+            적용 rule: {result.rule.ruleId}@{result.rule.version} · 지연 일수 입력값: {result.daysLate}일
+          </p>
+        </div>
+      )}
+
+      {result && result.calc && (
         <div
           style={{
             marginTop: 18,

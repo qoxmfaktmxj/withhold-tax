@@ -174,7 +174,6 @@ export default function RootLayout({
                             key={ch.slug}
                             className="wt-chapter-index-item"
                             style={{ cursor: 'default', opacity: 0.5 }}
-                            aria-disabled="true"
                           >
                             <span className="wt-chapter-num">{numLabel}</span>
                             <span className="wt-chapter-name">{ch.title}</span>
@@ -205,7 +204,6 @@ export default function RootLayout({
                             key={ap.slug}
                             className="wt-chapter-index-item"
                             style={{ cursor: 'default', opacity: 0.5 }}
-                            aria-disabled="true"
                           >
                             <span className="wt-chapter-name">{ap.title}</span>
                           </li>

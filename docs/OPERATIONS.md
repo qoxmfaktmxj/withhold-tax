@@ -48,7 +48,7 @@
    └─ 해당 챕터 MDX 파일에서 fact 인용
 
 5. 테스트
-   └─ npm test  (스키마 검증 포함)
+   └─ npm test  (83 tests, 스키마 검증 포함)
 
 6. REVIEW-QUEUE 재생성
    └─ node scripts/gen-review-queue.mjs

@@ -44,6 +44,7 @@ export const TaxRuleSchema = z.object({
   inputs: z.array(RuleInput).default([]),
   formula: RuleFormula,
   rounding: RuleRounding.optional(),
+  calculationMode: z.enum(['automatic', 'manual-review']).default('automatic'),
   examples: z.array(RuleExample).default([]),
   warnings: z.array(z.string()).default([]),
 })

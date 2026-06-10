@@ -61,6 +61,16 @@ describe('facts ←→ sources integrity', () => {
     }
     expect(missing).toEqual([])
   })
+
+  it('primary-source-verified facts are linked to the source registry', () => {
+    const facts = FactsFileSchema.parse(factsRaw)
+    const missing = facts
+      .filter((f) => f.primarySourceVerified)
+      .filter((f) => f.sourceIds.length === 0)
+      .map((f) => f.id)
+
+    expect(missing).toEqual([])
+  })
 })
 
 describe('extended fact fields (backward compatible)', () => {

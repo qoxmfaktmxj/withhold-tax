@@ -54,6 +54,7 @@
       "expression": "기본 3% + 일할이자(고지 전) + [개정] 지정납부기한 후 월할 이자 + 독촉비용 — 10%/50% 한도 유지, 체납 150만원 미만 월할·독촉비용 면제, 기간 5년 상한",
       "params": { "baseRate": 0.03, "dailyRate": 0.00022, "innerCap": 0.1, "outerCap": 0.5 }
     },
+    "calculationMode": "manual-review",
     "examples": [],
     "warnings": [
       "본 계산기는 고지 전(법정납부기한~납부일) 일할 구간만 산정 — 지정납부기한 이후 월할 이자·독촉비용은 납부고지서 기준으로 별도 확인",

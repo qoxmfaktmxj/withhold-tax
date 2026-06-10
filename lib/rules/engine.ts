@@ -23,6 +23,10 @@ export function applyRounding(value: number, rounding: Rounding | undefined): nu
   return n * base
 }
 
+export function canAutoCalculate(rule: TaxRule): boolean {
+  return rule.calculationMode !== 'manual-review'
+}
+
 export interface RateResult {
   nationalTax: number
   localTax: number

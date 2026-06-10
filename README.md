@@ -143,7 +143,7 @@
 | 콘텐츠 | MDX 본문 + `facts.json`(zod 검증) 하이브리드, fact는 `<F id>`로 본문에 연결 |
 | 폰트 | Hanken Grotesk(디스플레이) · Pretendard(본문) · JetBrains Mono(인용) |
 | 검색 | MiniSearch (클라이언트, 빌드타임 인덱스) |
-| 테스트 | Vitest + @testing-library (45 tests) |
+| 테스트 | Vitest + @testing-library (83 tests) |
 | 배포 | Vercel (`git push` → 자동 빌드) |
 
 ---
@@ -154,7 +154,7 @@
 npm install
 npm run dev          # http://localhost:3000  (Windows: webpack 사용)
 npm run build        # 정적 빌드
-npm test             # 45 tests
+npm test             # 83 tests
 ```
 
 > Windows에서는 Turbopack 네이티브 바인딩 부재로 `dev`/`build`가 `--webpack`을 사용합니다. Vercel(Linux) 배포 시 `build:turbo`로 Turbopack 사용 가능.

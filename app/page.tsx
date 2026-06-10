@@ -196,7 +196,6 @@ export default function Home() {
               <div
                 key={ch.slug}
                 className="wt-chapter-card wt-chapter-card--unavailable"
-                aria-disabled="true"
                 role="listitem"
                 title="작성 예정"
               >
@@ -232,7 +231,6 @@ export default function Home() {
               <div
                 key={ap.slug}
                 className="wt-chapter-card wt-chapter-card--unavailable"
-                aria-disabled="true"
                 role="listitem"
                 title="작성 예정"
               >

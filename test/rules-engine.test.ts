@@ -5,6 +5,7 @@ import {
   applyRounding,
   applyRateRule,
   withholdingLatePenalty,
+  canAutoCalculate,
 } from '@/lib/rules/engine'
 import type { TaxRule } from '@/lib/rules/schema'
 
@@ -20,6 +21,7 @@ const rateRule: TaxRule = {
   inputs: [{ key: 'grossPayment', type: 'number', required: true, description: '지급 총액' }],
   formula: { type: 'rate-with-local', expression: '국세 3% + 지방소득세(국세의 10%)', params: { rate: 0.03, localRate: 0.1 } },
   rounding: { base: 10, method: 'floor' },
+  calculationMode: 'automatic',
   examples: [],
   warnings: [],
 }
@@ -44,6 +46,7 @@ const newPenalty: TaxRule = {
   effectiveFrom: '2026-07-01',
   effectiveTo: undefined,
   factIds: ['f_c40017'],
+  calculationMode: 'manual-review',
 }
 
 describe('pickRule (적용일 기준 버전 선택)', () => {
@@ -100,6 +103,13 @@ describe('withholdingLatePenalty — 현행 산식(2026.6.30까지)', () => {
   it('0일(기한 내)이면 0', () => {
     const r = withholdingLatePenalty(oldPenalty, { unpaidTax: 1_000_000, daysLate: 0 })
     expect(r.total).toBe(0)
+  })
+})
+
+describe('canAutoCalculate', () => {
+  it('blocks automatic amount calculation for manual-review rules', () => {
+    expect(canAutoCalculate(oldPenalty)).toBe(true)
+    expect(canAutoCalculate(newPenalty)).toBe(false)
   })
 })
 

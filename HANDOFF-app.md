@@ -11,7 +11,7 @@
 | 사용자 | 김민석 / 인사시스템(HR) 개발사 내부용(CS 근거·화면개발·연말정산 참고) / 응답 한국어 |
 | 저장소 | `C:\Users\kms\Desktop\dev\withhold-tax` · GitHub `origin: github.com/qoxmfaktmxj/withhold-tax` (main 푸시됨, 60커밋) |
 | 정체성 | **AI 재검증 루프 제거** — 모든 핵심 사실에 `§법령 조문 · 시행일 · 검증상태` |
-| 배포 | Vercel-ready (아직 미배포 — 보류) |
+| 배포 | Vercel-ready (현재 상태 반영 필요) |
 | 다음 | Vercel 배포 / 강의기반 3건 수기검토 / 2027 세법 재검증 |
 
 ## 1. 기술 스택 / 실행
@@ -19,13 +19,13 @@
 - Next.js 16 (App Router, **SSG**, DB 없음), TypeScript, Tailwind v4(OKLCH 토큰).
 - 콘텐츠: **MDX 본문 + `content/facts.json`(zod 검증)** 하이브리드. 사실은 `<F id>`로 본문에 연결.
 - 폰트: Hanken Grotesk(디스플레이) · Pretendard(본문, CDN @import) · JetBrains Mono(인용).
-- 검색: MiniSearch(클라이언트). 테스트: Vitest+RTL (45 tests).
+- 검색: MiniSearch(클라이언트). 테스트: Vitest+RTL (83 tests).
 
 ```bash
 npm install
 npm run dev      # http://localhost:3000  ※ Windows: webpack(--webpack) 사용
-npm run build    # 정적 빌드 (21 pages)
-npm test         # 45 tests
+npm run build    # 정적 빌드 (35 pages)
+npm test         # 83 tests
 ```
 
 ⚠️ **Windows 게이트** : Turbopack 네이티브 바인딩 부재 → `dev`/`build`가 `--webpack`. Vercel(Linux)은 `build:turbo`(=`next build`)로 Turbopack 사용 가능.
