@@ -1,0 +1,104 @@
+[
+  {
+    "id": "src_law_go_kr",
+    "type": "LAW",
+    "title": "국가법령정보센터 (현행 법령 원문)",
+    "publisher": "법제처",
+    "url": "https://www.law.go.kr",
+    "accessedAt": "2026-06-10",
+    "jurisdiction": "KR",
+    "reliability": "primary",
+    "notes": "법률·시행령·시행규칙 원문. 공개형 딥링크 /법령/{법령명}/{제N조} 사용."
+  },
+  {
+    "id": "src_law_open_api",
+    "type": "API",
+    "title": "국가법령정보 공동활용 OPEN API (DRF)",
+    "publisher": "법제처",
+    "url": "https://open.law.go.kr/LSO/main.do",
+    "accessedAt": "2026-06-10",
+    "jurisdiction": "KR",
+    "reliability": "primary",
+    "notes": "현행 시행본 조문 원문 검증에 사용. 산출물 링크에는 인증키가 들어가는 DRF URL 대신 공개형 law.go.kr 링크만 사용."
+  },
+  {
+    "id": "src_nts_withholding_guide",
+    "type": "NTS_GUIDE",
+    "title": "국세청 원천징수(연말정산) 안내 (개요·세율·신고납부기한·가산세)",
+    "publisher": "국세청",
+    "url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6442&cntntsId=7873",
+    "accessedAt": "2026-06-10",
+    "jurisdiction": "KR",
+    "reliability": "official-guide",
+    "notes": "원천징수의무자·대상소득·세율·기한·가산세 안내 페이지군."
+  },
+  {
+    "id": "src_taxlaw_nts",
+    "type": "TAX_RULING",
+    "title": "국세법령정보시스템 (예규·해석·판례)",
+    "publisher": "국세청",
+    "url": "https://taxlaw.nts.go.kr",
+    "accessedAt": "2026-06-10",
+    "jurisdiction": "KR",
+    "reliability": "official-guide",
+    "notes": "예규(서면·사전답변)·심사·심판 검색."
+  },
+  {
+    "id": "src_hometax",
+    "type": "NTS_FORM",
+    "title": "홈택스 (신고서·서식·제출 경로)",
+    "publisher": "국세청",
+    "url": "https://www.hometax.go.kr",
+    "accessedAt": "2026-06-10",
+    "jurisdiction": "KR",
+    "reliability": "official-guide",
+    "notes": "원천징수이행상황신고서·지급명세서·간이지급명세서 전자제출."
+  },
+  {
+    "id": "src_kacta_2026_tax_changes",
+    "type": "TAX_FIRM_REPORT",
+    "title": "2026 달라지는 세금제도 (e-book)",
+    "publisher": "한국세무사회",
+    "url": "https://www.kacta.or.kr/new_new/popup/download/2026%EB%8B%AC%EB%9D%BC%EC%A7%80%EB%8A%94%EC%84%B8%EA%B8%88%EC%A0%9C%EB%8F%84e_book.pdf",
+    "publishedAt": "2026-01-01",
+    "accessedAt": "2026-06-10",
+    "jurisdiction": "KR",
+    "reliability": "secondary",
+    "notes": "2025.12 통과 세법의 항목별 적용시기 요약. 부칙 적용례 직접 확인 전까지 적용시기 보조 출처."
+  },
+  {
+    "id": "src_kpmg_2025_tax_reform",
+    "type": "TAX_FIRM_REPORT",
+    "title": "2025 Tax Reform (국문 브리프)",
+    "publisher": "삼정KPMG",
+    "url": "https://assets.kpmg.com/content/dam/kpmgsites/kr/pdf/2026/tkc/korean-tax-brief/2025-Tax-Reform_KOR.pdf.coredownload.inline.pdf",
+    "publishedAt": "2025-12-23",
+    "accessedAt": "2026-06-10",
+    "jurisdiction": "KR",
+    "reliability": "secondary",
+    "notes": "2025.12.2 국회 통과·2025.12.23 공포 개정 세법 요약. 비거주자·외국법인 제한세율 신청서 제출의무 등."
+  },
+  {
+    "id": "src_casenote_mirror",
+    "type": "LAW",
+    "title": "casenote.kr 법령 미러",
+    "publisher": "casenote",
+    "url": "https://casenote.kr",
+    "accessedAt": "2026-06-09",
+    "jurisdiction": "KR",
+    "reliability": "secondary",
+    "notes": "law.go.kr 동적로딩 한계 시 교차확인용 2차 미러. 신규 근거 링크로는 사용하지 않음."
+  },
+  {
+    "id": "src_cfo_academy_lecture",
+    "type": "LECTURE",
+    "title": "CFO Academy 원천징수실무 (차재영·박교원, 2일 강의)",
+    "publisher": "CFO Academy",
+    "url": "",
+    "publishedAt": "2026-05-22",
+    "accessedAt": "2026-06-08",
+    "jurisdiction": "KR",
+    "reliability": "secondary",
+    "notes": "본 레퍼런스의 원천 콘텐츠. 수치·기한은 1차 출처로 재검증."
+  }
+]
