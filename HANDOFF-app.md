@@ -99,6 +99,17 @@ scripts/ gen-review-queue.mjs · validate-facts.ts
 3. **2027 세법 재검증**: facts의 `nextReviewBy: 2027-03-31` (매년 시행규칙 개정 후). 배치 재검증 Workflow 재사용 가능.
 4. **콘텐츠 추가 검증**: `확정 130`도 일부 `primarySourceVerified=false` → 시간되면 1차 원문 직접확인으로 격상.
 
-## 7. 세션 여정 요약
+## 7. 2026-06-10 사내 레퍼런스 고도화 배치 (외부 가이드 기반)
 
-`/office-hours`(무엇/왜 구상) → superpowers `writing-plans`(19태스크 계획) + 10 fact 파일럿(공수 실측) → `subagent-driven-development`(Task1~17 구현, 태스크별 spec+품질 2단 리뷰) → 콘텐츠 전량 포팅(Workflow 12장 병렬) → 디자인 3회 반복 → 세법 검증 3배치 + 재검증 → README/스크린샷 → main 병합·push.
+외부 개발 가이드(`docs/guides/withholding_tax_internal_reference_dev_guide.md`, ChatGPT 작성)를 기반으로 "세무 설명 사이트 → HR 제품 개발 기준서" 확장. **가이드의 세법 주장은 전수 1차 검증 후 반영**(국가법령정보 OPEN API, dossier: `docs/superpowers/plans/2026-06-10-p0-verification-dossier.md`).
+
+- **검증**: P0 9건 중 8건 법 원문 확정(분납 §144조의2②, 제한세율 제출의무 §156조의6④ 신설 2025.12.23, 가산세 §47조의4·5 월할·독촉비용, 종신연금 3%, 이연퇴직 50% 신설, 고배당 요건·2028 한시, 배당가산율 11%, 교육비 확대). 가이드 오류 2건 정정(퇴직연금 20년 "3%"→연금외수령의 50%, 보육 1명당은 2026 아닌 2025 기적용). 법인세법 측 제한세율 제출의무는 확인필요(watchlist).
+- **데이터**: facts 140(확정 137·1차확인 53), `content/sources.json`(신뢰도 3단), fact 스키마 확장(sourceIds·incomeType·implementationStatus·implementationImpact·appliesTo — 하위호환), `content/tax-rules/2026/*.json` 5종(zod·fact 연결·예제=테스트), `content/law-watchlist.json`.
+- **기능**: `/screen-guides` 8종(ScreenSpec·DevNote·TaxRisk), `/calculators` 2종(rule 기반·근거 fact 표시), `/calendar`(deadlines rule), `/sources`, updates-2026 watchlist 섹션.
+- **운영**: `.github/workflows/quality-gate.yml`, PR·issue 템플릿, `scripts/check-source-links.mjs`·`fact-freshness.mjs`(npm run check:links / check:freshness), `docs/OPERATIONS.md`(역할·연간 감시 일정).
+- **품질**: vitest 83, tsc 클린, 빌드 35페이지, Playwright 스모크(계산값 52,000/33,000원 검산 포함) 통과.
+- **잔여**: 화면가이드 본문의 Ctrl+K 검색 인덱스 편입(현재 챕터만 색인), 분납 신고서 표시방식·제한세율 서식(홈택스 확인), 법인세법 §98조의6 차기 시행본 확인, 디자인 개편(사용자가 별도 가이드 예정).
+
+## 8. 세션 여정 요약
+
+`/office-hours`(무엇/왜 구상) → superpowers `writing-plans`(19태스크 계획) + 10 fact 파일럿(공수 실측) → `subagent-driven-development`(Task1~17 구현, 태스크별 spec+품질 2단 리뷰) → 콘텐츠 전량 포팅(Workflow 12장 병렬) → 디자인 3회 반복 → 세법 검증 3배치 + 재검증 → README/스크린샷 → main 병합·push → **고도화 배치(2026-06-10): P0 검증·rule 엔진·화면가이드·계산기·캘린더·운영 자동화**.

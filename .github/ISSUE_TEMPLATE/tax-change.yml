@@ -1,0 +1,89 @@
+name: 세법 변경사항 반영
+description: 세법 개정·신설·폐지 내용을 레퍼런스에 반영 요청
+title: "[세법변경] "
+labels: ["tax-change"]
+body:
+  - type: input
+    id: change_title
+    attributes:
+      label: 변경 제목
+      description: 변경 내용을 한 줄로 요약하세요
+      placeholder: "예: 배당가산율 10% → 11% (2027.1.1 시행)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 변경 요약
+      description: 변경 내용과 기존 내용 대비 달라진 점을 설명하세요
+      placeholder: |
+        기존: ...
+        변경: ...
+        적용 시점: ...
+    validations:
+      required: true
+
+  - type: input
+    id: source_url
+    attributes:
+      label: 출처 URL
+      description: 국가법령정보센터·국세청·홈택스 등 1차 출처 URL
+      placeholder: "https://www.law.go.kr/..."
+    validations:
+      required: true
+
+  - type: input
+    id: law_ref
+    attributes:
+      label: 법령 조문
+      description: 법령명 + 조항 번호
+      placeholder: "예: 소득세법 제00조 제0항"
+    validations:
+      required: true
+
+  - type: input
+    id: effective_date
+    attributes:
+      label: 시행일
+      description: YYYY-MM-DD 형식
+      placeholder: "2027-01-01"
+    validations:
+      required: true
+
+  - type: input
+    id: applies_to
+    attributes:
+      label: 적용 대상
+      description: 어느 거래·기간부터 적용되는지 명시
+      placeholder: "예: 2027.1.1 이후 지급분 / 2027.1.1 이후 개시 사업연도"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact_areas
+    attributes:
+      label: 영향 영역
+      description: 변경이 영향을 미치는 영역을 모두 선택하세요
+      multiple: true
+      options:
+        - 콘텐츠 (본문 텍스트·설명)
+        - UI (화면 컴포넌트·레이아웃)
+        - 계산 (세율·공식·계산 로직)
+        - 신고/제출 (기한·서식·절차)
+        - 마이그레이션 (기존 데이터 정정)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: risk_level
+    attributes:
+      label: 위험도
+      description: 잘못 반영 시 사용자에게 미치는 영향
+      options:
+        - low (참고 정보 수준)
+        - medium (실무 적용 가능 오류)
+        - high (세액 계산·신고 기한 오류 가능)
+        - critical (중요 세율·법적 의무 오류)
+    validations:
+      required: true
