@@ -57,6 +57,31 @@ export default function Home() {
           </div>
         )}
 
+        {/* ════════════ TOOLS ════════════ */}
+        <div className="wt-section-rule-heading">
+          <span className="wt-section-rule-text">도구 · 개발 가이드</span>
+          <div className="wt-section-rule-line" />
+        </div>
+
+        <div className="wt-chapter-grid" role="list" aria-label="도구">
+          <Link href="/screen-guides" className="wt-chapter-card" role="listitem">
+            <span className="wt-chapter-number">GUIDE</span>
+            <span className="wt-chapter-title">화면 개발 가이드 (8종)</span>
+          </Link>
+          <Link href="/calculators" className="wt-chapter-card" role="listitem">
+            <span className="wt-chapter-number">CALC</span>
+            <span className="wt-chapter-title">가산세·사업소득 계산기</span>
+          </Link>
+          <Link href="/calendar" className="wt-chapter-card" role="listitem">
+            <span className="wt-chapter-number">DUE</span>
+            <span className="wt-chapter-title">신고·납부 캘린더</span>
+          </Link>
+          <Link href="/sources" className="wt-chapter-card" role="listitem">
+            <span className="wt-chapter-number">SRC</span>
+            <span className="wt-chapter-title">출처·신뢰도 목록</span>
+          </Link>
+        </div>
+
         {/* ════════════ TRUST-MARK CITATION CARDS ════════════ */}
         <div className="wt-section-rule-heading">
           <span className="wt-section-rule-text">출처 표기 예시</span>

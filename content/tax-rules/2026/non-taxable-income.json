@@ -1,0 +1,84 @@
+[
+  {
+    "ruleId": "meal_allowance_cap",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "식대 비과세(월 한도)",
+    "domain": "non-taxable",
+    "incomeType": "earned",
+    "effectiveFrom": "2023-01-01",
+    "factIds": ["f_a00008", "f_c60005"],
+    "inputs": [
+      { "key": "monthlyAmount", "type": "number", "required": true, "description": "월 식대 지급액(원)" }
+    ],
+    "formula": {
+      "type": "monthly-cap",
+      "expression": "월 20만원 이내 비과세(현물 식사 제공 시 식대 비과세 불가 — 중복 불가)",
+      "params": { "cap": 200000 }
+    },
+    "examples": [],
+    "warnings": ["현물 식사와 식대 중복 시 식대는 과세"]
+  },
+  {
+    "ruleId": "childcare_allowance_cap_per_child",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "출산·보육수당 비과세(자녀 1명당 월 한도)",
+    "domain": "non-taxable",
+    "incomeType": "earned",
+    "effectiveFrom": "2025-01-01",
+    "factIds": ["f_c80003"],
+    "inputs": [
+      { "key": "monthlyAmount", "type": "number", "required": true, "description": "월 보육수당 지급액(원)" },
+      { "key": "childrenUnder6", "type": "number", "required": true, "description": "과세기간 개시일 기준 6세 이하 자녀 수" }
+    ],
+    "formula": {
+      "type": "monthly-cap",
+      "expression": "해당 자녀 1명당 월 20만원 이내 비과세 — 한도 = 20만원 × 6세 이하 자녀 수",
+      "params": { "capPerChild": 200000 }
+    },
+    "examples": [],
+    "warnings": ["'자녀 1명당' 확대는 2025.1.1 이후 지급분(법률 제20615호)", "기업 출산지원금 전액 비과세(2년·2회)는 별개 항목(f_c80004)"]
+  },
+  {
+    "ruleId": "self_drive_allowance_cap",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "자가운전보조금 비과세(월 한도)",
+    "domain": "non-taxable",
+    "incomeType": "earned",
+    "effectiveFrom": "2018-01-01",
+    "factIds": ["f_a00009"],
+    "inputs": [
+      { "key": "monthlyAmount", "type": "number", "required": true, "description": "월 자가운전보조금(원)" }
+    ],
+    "formula": {
+      "type": "monthly-cap",
+      "expression": "본인 차량 업무 사용 + 실비 미수령 요건 충족 시 월 20만원 이내 비과세",
+      "params": { "cap": 200000 }
+    },
+    "examples": [],
+    "warnings": ["시내출장비 등 실비를 별도 수령하면 비과세 불가"]
+  },
+  {
+    "ruleId": "overseas_work_exemption",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "국외근로소득 비과세(월 한도)",
+    "domain": "non-taxable",
+    "incomeType": "earned",
+    "effectiveFrom": "2024-01-01",
+    "factIds": ["f_c50008", "f_c50009"],
+    "inputs": [
+      { "key": "monthlyAmount", "type": "number", "required": true, "description": "월 국외근로 보수(원)" },
+      { "key": "isSpecialSite", "type": "boolean", "required": true, "description": "원양어업 선박·국외 건설현장 등 해당 여부" }
+    ],
+    "formula": {
+      "type": "monthly-cap",
+      "expression": "일반 월 100만원, 원양어업 선박·국외 건설현장 등 월 500만원 이내 비과세",
+      "params": { "cap": 1000000, "capSpecial": 5000000 }
+    },
+    "examples": [],
+    "warnings": ["건설현장은 '지어지고 있는 상태'만 인정 — 완공 후 유지보수 제외", "단순 출장은 국외근로 비과세 대상 아님"]
+  }
+]

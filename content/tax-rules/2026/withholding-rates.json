@@ -1,0 +1,179 @@
+[
+  {
+    "ruleId": "resident_business_income_wht",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "거주자 사업소득(인적용역 등) 원천징수",
+    "domain": "withholding-rate",
+    "incomeType": "business",
+    "effectiveFrom": "2018-01-01",
+    "factIds": ["f_ca0001", "f_a00001"],
+    "inputs": [
+      { "key": "grossPayment", "type": "number", "required": true, "description": "지급 총액(원)" }
+    ],
+    "formula": {
+      "type": "rate-with-local",
+      "expression": "국세 = 지급액 × 3%, 지방소득세 = 국세 × 10% (합계 3.3%)",
+      "params": { "rate": 0.03, "localRate": 0.1 }
+    },
+    "rounding": { "base": 10, "method": "floor" },
+    "examples": [
+      {
+        "title": "사업소득 1,000,000원 지급",
+        "input": { "grossPayment": 1000000 },
+        "expected": { "nationalTax": 30000, "localTax": 3000, "total": 33000 }
+      },
+      {
+        "title": "사업소득 200,000원 지급",
+        "input": { "grossPayment": 200000 },
+        "expected": { "nationalTax": 6000, "localTax": 600, "total": 6600 }
+      }
+    ],
+    "warnings": [
+      "거주자 인적용역 사업소득은 2024.7.1 이후 지급분부터 세액 1,000원 미만이어도 원천징수(소액부징수 배제)",
+      "연말정산 대상 사업소득(보험모집인 등)은 별도 정산·2026 분납 규정 확인"
+    ]
+  },
+  {
+    "ruleId": "interest_dividend_general_wht",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "거주자 이자·배당 일반 원천징수",
+    "domain": "withholding-rate",
+    "incomeType": "interest-dividend",
+    "effectiveFrom": "2018-01-01",
+    "factIds": ["f_a00007"],
+    "inputs": [
+      { "key": "grossPayment", "type": "number", "required": true, "description": "지급 이자·배당액(원)" }
+    ],
+    "formula": {
+      "type": "rate-with-local",
+      "expression": "국세 = 지급액 × 14%, 지방소득세 = 국세 × 10% (합계 15.4%)",
+      "params": { "rate": 0.14, "localRate": 0.1 }
+    },
+    "rounding": { "base": 10, "method": "floor" },
+    "examples": [
+      {
+        "title": "이자 1,000,000원",
+        "input": { "grossPayment": 1000000 },
+        "expected": { "nationalTax": 140000, "localTax": 14000, "total": 154000 }
+      }
+    ],
+    "warnings": ["비영업대금의 이익은 25% 별도 rule", "금융소득 2천만원 초과 시 종합과세"]
+  },
+  {
+    "ruleId": "non_business_loan_interest_wht",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "비영업대금의 이익 원천징수",
+    "domain": "withholding-rate",
+    "incomeType": "interest",
+    "effectiveFrom": "2018-01-01",
+    "factIds": ["f_id0002"],
+    "inputs": [
+      { "key": "grossPayment", "type": "number", "required": true, "description": "지급 이자액(원)" }
+    ],
+    "formula": {
+      "type": "rate-with-local",
+      "expression": "국세 = 지급액 × 25%, 지방소득세 = 국세 × 10% (합계 27.5%)",
+      "params": { "rate": 0.25, "localRate": 0.1 }
+    },
+    "rounding": { "base": 10, "method": "floor" },
+    "examples": [
+      {
+        "title": "비영업대금 이자 1,000,000원",
+        "input": { "grossPayment": 1000000 },
+        "expected": { "nationalTax": 250000, "localTax": 25000, "total": 275000 }
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "ruleId": "other_income_general_wht",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "기타소득 일반 원천징수(필요경비 차감 후)",
+    "domain": "withholding-rate",
+    "incomeType": "other",
+    "effectiveFrom": "2018-01-01",
+    "factIds": ["f_ca0005", "f_ca0004"],
+    "inputs": [
+      { "key": "grossPayment", "type": "number", "required": true, "description": "기타소득금액(필요경비 차감 후, 원)" }
+    ],
+    "formula": {
+      "type": "rate-with-local",
+      "expression": "국세 = 기타소득금액 × 20%, 지방소득세 = 국세 × 10% (소득금액 기준 22%)",
+      "params": { "rate": 0.2, "localRate": 0.1 }
+    },
+    "rounding": { "base": 10, "method": "floor" },
+    "examples": [
+      {
+        "title": "기타소득금액 400,000원(강연료 100만원·필요경비 60%)",
+        "input": { "grossPayment": 400000 },
+        "expected": { "nationalTax": 80000, "localTax": 8000, "total": 88000 }
+      }
+    ],
+    "warnings": [
+      "복권 당첨금 3억원 초과분은 30%",
+      "기타소득금액 건별 5만원 이하 과세최저한 — 단 지급명세서 제출 여부 별도 확인"
+    ]
+  },
+  {
+    "ruleId": "nonresident_general_wht",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "비거주자·외국법인 국내원천 일반(조약 미적용)",
+    "domain": "withholding-rate",
+    "incomeType": "nonresident",
+    "effectiveFrom": "2018-01-01",
+    "factIds": ["f_nr0007"],
+    "inputs": [
+      { "key": "grossPayment", "type": "number", "required": true, "description": "지급액(원)" }
+    ],
+    "formula": {
+      "type": "rate",
+      "expression": "국세 = 지급액 × 20% (이자·배당·사용료 등 일반, 조약 미적용 시)",
+      "params": { "rate": 0.2 }
+    },
+    "rounding": { "base": 10, "method": "floor" },
+    "examples": [
+      {
+        "title": "사용료 10,000,000원(조약 미적용)",
+        "input": { "grossPayment": 10000000 },
+        "expected": { "nationalTax": 2000000 }
+      }
+    ],
+    "warnings": [
+      "조세조약 제한세율이 우선 — 제한세율 적용신청서·거주자증명서 필수",
+      "2026.1.1~ 원천징수의무자는 제한세율 신청서를 익년 2월 말까지 세무서 제출(소득세법 §156조의6④)",
+      "채권이자 14%, 선박 등 2%, 유가증권 양도 별도 — 소득유형별 세율 확인"
+    ]
+  },
+  {
+    "ruleId": "pension_lifetime_annuity_wht",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "사적연금 종신계약 연금소득 원천징수(2026 인하)",
+    "domain": "withholding-rate",
+    "incomeType": "pension",
+    "effectiveFrom": "2026-01-01",
+    "factIds": ["f_c90012"],
+    "inputs": [
+      { "key": "grossPayment", "type": "number", "required": true, "description": "연금 지급액(원)" }
+    ],
+    "formula": {
+      "type": "rate-with-local",
+      "expression": "국세 = 지급액 × 3% (종신계약, 종전 4%), 지방소득세 = 국세 × 10%",
+      "params": { "rate": 0.03, "localRate": 0.1 }
+    },
+    "rounding": { "base": 10, "method": "floor" },
+    "examples": [
+      {
+        "title": "종신연금 월 1,000,000원",
+        "input": { "grossPayment": 1000000 },
+        "expected": { "nationalTax": 30000, "localTax": 3000, "total": 33000 }
+      }
+    ],
+    "warnings": ["나이 기준 세율(70세 미만 5%/70~80세 4%/80세 이상 3%)과 경합 시 낮은 세율 적용"]
+  }
+]

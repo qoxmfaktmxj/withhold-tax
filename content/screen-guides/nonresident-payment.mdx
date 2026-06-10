@@ -1,0 +1,75 @@
+## 목적
+
+비거주자 또는 외국법인에게 국내원천소득을 지급할 때 조세조약 적용 여부, 제한세율 신청서 수령, 거주자증명서 보관, 실질귀속자 확인 등의 절차를 관리한다. 제출 기한(익년 2월 말) 자동 추적 및 미비 서류 알림을 제공한다.
+
+## 필수 필드
+
+<ScreenSpec fields={[
+  { key: 'payeeType', label: '대상자 유형', type: 'enum', required: true, source: 'manual', validation: '비거주자(개인)|외국법인' },
+  { key: 'residenceCountry', label: '거주지국 (조약 체결국)', type: 'string(ISO-3166)', required: true, source: 'manual' },
+  { key: 'incomeType', label: '소득 유형', type: 'enum', required: true, source: 'manual', validation: '이자|배당|사업|사용료|근로|기타' },
+  { key: 'paymentAmount', label: '지급액 (원)', type: 'integer', required: true, source: 'manual' },
+  { key: 'domesticTaxRate', label: '국내법 세율 (%)', type: 'decimal', required: true, source: 'rule', helpText: '조약 미적용 시 기본 세율' },
+  { key: 'treatyApplied', label: '조세조약 적용 여부', type: 'boolean', required: true, source: 'manual' },
+  { key: 'limitedTaxRate', label: '제한세율 (%)', type: 'decimal|null', required: false, source: 'manual', validation: '조약적용=true 시 필수' },
+  { key: 'treatyApplicationFormDate', label: '제한세율 신청서 수령일', type: 'date|null', required: false, source: 'manual', validation: '조약적용=true 시 필수' },
+  { key: 'residenceCertificateDate', label: '거주자증명서 수령일', type: 'date|null', required: false, source: 'manual' },
+  { key: 'beneficialOwnerConfirmed', label: '실질귀속자 확인 여부', type: 'boolean', required: true, source: 'manual' },
+  { key: 'taxOfficeFilingDate', label: '세무서 제출일', type: 'date|null', required: false, source: 'manual' },
+  { key: 'filingDeadline', label: '제출 기한', type: 'date', required: true, source: 'rule', helpText: '지급연도 익년 2월 말일' },
+  { key: 'attachments', label: '첨부 서류 목록', type: 'array<string>', required: false, source: 'manual', helpText: '신청서·증명서·실질귀속자확인서 등' },
+]} />
+
+## 판단·검증 규칙
+
+<DevNote title="제한세율 신청서 수령 필수">
+  <F id="f_nr0018">제한세율 신청서 제출 의무: 조세조약상 제한세율을 적용받으려면 지급자(원천징수의무자)가 소득 지급 전 또는 지급 시까지 비거주자·외국법인으로부터 제한세율 적용 신청서를 수령하고, 익년 2월 말일까지 관할 세무서에 제출해야 한다. 신청서 미수령 시 국내법 세율 적용.</F>
+</DevNote>
+
+<DevNote title="거주자증명서 보관">
+  <F id="f_nr0014">거주자증명서: 조세조약 적용 시 상대방 거주지국 과세당국이 발행한 거주자증명서를 원천징수의무자가 보관해야 한다. 증명서 없이 조약 적용 시 과세관청의 소급 과세 위험이 있다.</F>
+</DevNote>
+
+<DevNote title="비과세·면제 절차">
+  <F id="f_nr0013">비과세·면제 신청 절차: 비거주자·외국법인 소득에 대해 조세조약상 비과세 또는 면제를 적용하려면 소정의 신청서를 사전에 제출해야 하며, 절차 미이행 시 비과세·면제 혜택을 받지 못할 수 있다.</F>
+</DevNote>
+
+<TaxRisk level="high">
+  조세조약 적용으로 표시했으나 제한세율 신청서가 없으면 국내법 세율로 재계산 및 가산세가 발생한다. 신청서 수령일 필드가 null인 채로 <code>treatyApplied=true</code>이면 저장을 차단해야 한다.
+</TaxRisk>
+
+## 경고 조건
+
+<Tbl scroll>
+  <thead>
+    <tr><th>조건</th><th>심각도</th><th>화면 메시지</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>treatyApplied = true AND treatyApplicationFormDate IS NULL</td><td>오류 (저장 차단)</td><td>조세조약 적용 시 제한세율 신청서 수령일이 필수입니다. 저장할 수 없습니다.</td></tr>
+    <tr><td>today &gt; filingDeadline − 30일 AND taxOfficeFilingDate IS NULL</td><td>경고</td><td>세무서 제출 기한 30일 이내입니다. 서류 제출을 서두르세요.</td></tr>
+    <tr><td>today &gt; filingDeadline − 7일 AND taxOfficeFilingDate IS NULL</td><td>긴급</td><td>세무서 제출 기한 7일 이내입니다. 즉시 처리하세요.</td></tr>
+    <tr><td>today &gt; filingDeadline AND taxOfficeFilingDate IS NULL</td><td>오류</td><td>세무서 제출 기한이 경과하였습니다. 가산세 발생 가능성을 세무담당자와 확인하세요.</td></tr>
+    <tr><td>beneficialOwnerConfirmed = false</td><td>경고</td><td>실질귀속자 확인이 완료되지 않았습니다. 조약 혜택 적용 전 확인하세요.</td></tr>
+    <tr><td>residenceCertificateDate IS NULL AND treatyApplied = true</td><td>경고</td><td>거주자증명서 수령일이 없습니다. 보관 여부를 확인하세요.</td></tr>
+  </tbody>
+</Tbl>
+
+## 관련 법령·fact
+
+<F id="f_nr0007">비거주자·외국법인 국내원천소득 일반 세율: 국내 사업장 없는 비거주자·외국법인의 국내원천소득에 대한 원천징수세율은 원칙적으로 20%. 조세조약 우선 적용.</F>
+
+<F id="f_nr0015">지방소득세 특별징수: 비거주자·외국법인 원천징수 시 지방소득세(소득세의 10%)도 특별징수하여 관할 지자체에 납부해야 한다.</F>
+
+<F id="f_nr0016">신고 기한: 비거주자·외국법인 원천징수세액은 지급일이 속하는 달의 다음 달 10일까지 신고·납부.</F>
+
+<F id="f_nr0018">제한세율 신청서 익년 2월 말 제출: 제한세율 신청서는 지급연도의 익년 2월 말일까지 관할 세무서에 제출해야 한다.</F>
+
+## 개발 체크리스트
+
+- `treatyApplied=true AND treatyApplicationFormDate IS NULL` → 저장 완전 차단
+- 제출 기한 자동 계산: 지급연도 + 1년의 2월 말일 (윤년 고려)
+- 30일·7일·기한 경과 알림을 별도 알림 채널(이메일/슬랙)로 발송
+- 거주자증명서 파일 첨부 및 보관 이력 관리
+- 실질귀속자 확인 양식 링크 제공
+- 소득 유형별 국내법 세율 테이블 관리 (조약미적용 시 자동 적용)
+- 세무 면책: 조세조약 세율·절차는 국세청·법령 최신 내용으로 최종 확인 필요

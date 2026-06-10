@@ -1,0 +1,60 @@
+## 목적
+
+직원별 세무 처리에 필요한 기초 정보(거주자 구분, 외국인 여부, 부양가족 수, 원천징수 방식 등)를 관리한다. 이 화면의 데이터는 월 급여 원천징수, 연말정산, 비과세 한도 계산의 입력값이 된다.
+
+## 필수 필드
+
+<ScreenSpec fields={[
+  { key: 'residenceType', label: '거주자 구분', type: 'enum', required: true, source: 'manual', validation: '거주자|비거주자', helpText: '183일 기준 판단' },
+  { key: 'isForeigner', label: '내외국인', type: 'boolean', required: true, source: 'manual', validation: '내국인|외국인' },
+  { key: 'nationality', label: '국적', type: 'string(ISO-3166)', required: false, source: 'manual', validation: '외국인=필수' },
+  { key: 'stayType', label: '체류자격', type: 'string', required: false, source: 'manual', helpText: '외국인 전용 — 취업(E 계열) 등' },
+  { key: 'entryDate', label: '입국일', type: 'date', required: false, source: 'manual', validation: '외국인=필수 / 183일 카운트 기산점' },
+  { key: 'isHouseholder', label: '세대주 여부', type: 'boolean', required: true, source: 'manual' },
+  { key: 'dependentCount', label: '부양가족 수', type: 'integer(≥0)', required: true, source: 'manual', helpText: '본인 포함' },
+  { key: 'childUnder6Count', label: '6세 이하 자녀 수', type: 'integer(≥0)', required: false, source: 'manual', helpText: '보육수당 비과세 한도 계산용' },
+  { key: 'isDisabled', label: '장애인 여부', type: 'boolean', required: false, source: 'manual' },
+  { key: 'withholdingMethod', label: '원천징수 방식', type: 'enum', required: true, source: 'manual', validation: '80%|100%|120%', helpText: '간이세액표 배수 선택' },
+  { key: 'isYearEndTarget', label: '연말정산 대상', type: 'boolean', required: true, source: 'rule', helpText: '계속 근로 여부 기준 자동 판단' },
+]} />
+
+## 판단·검증 규칙
+
+<DevNote title="거주자 판단 규칙">
+  <strong>거주자 판단</strong>: 국내에 주소가 있거나 183일 이상 거소를 둔 개인. 외국인이라도 183일 이상 체류하면 거주자로 전환된다. 시스템은 입국일 기준 183일 도달 예상일을 자동 계산하여 알림을 제공해야 한다.
+</DevNote>
+
+<DevNote title="외국인 단일세율 옵션">
+  외국인 거주자는 종합소득세율 대신 단일세율(19%)을 선택할 수 있다. 선택 시 <code>withholdingMethod</code> 필드와 별도로 <code>foreignFlatRateElection</code> 플래그를 관리하고, 월 급여 계산 화면에 반영해야 한다.
+</DevNote>
+
+## 경고 조건
+
+<Tbl scroll>
+  <thead>
+    <tr><th>조건</th><th>심각도</th><th>화면 메시지</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>residenceType = 비거주자이면서 withholdingMethod = 80%|120%</td><td>오류</td><td>비거주자는 간이세액표 배수 적용 불가. 조세조약 세율 또는 국내법 세율 선택 필요.</td></tr>
+    <tr><td>isForeigner = true AND entryDate 없음</td><td>경고</td><td>외국인 직원의 입국일 미입력 — 거주자 판단 기산점 확인 필요.</td></tr>
+    <tr><td>isForeigner = true AND residenceType = 거주자 AND 거주자 판단 근거 메모 없음</td><td>정보</td><td>외국인 거주자 판단 근거(183일 계산, 주소 등록 등)를 기록해 두세요.</td></tr>
+    <tr><td>childUnder6Count &gt; 0</td><td>정보</td><td>6세 이하 자녀 입력됨 — 보육수당 비과세 항목 급여 마스터 연결 여부 확인하세요.</td></tr>
+  </tbody>
+</Tbl>
+
+## 관련 법령·fact
+
+<F id="f_c10001">거주자 판단 기준(183일): 소득세법 제1조의2에 따라 국내에 주소를 두거나 183일 이상 거소를 둔 개인은 거주자로 구분된다.</F>
+
+<F id="f_c60001">외국인 단일세율(19%): 외국인 거주자는 종합소득 과세 대신 근로소득에 대해 단일세율 19%를 선택 적용할 수 있다.</F>
+
+<F id="f_c80003">보육수당 비과세 한도: 6세 이하 자녀 1명당 월 20만 원까지 비과세.</F>
+
+## 개발 체크리스트
+
+- 거주자/비거주자 변경 시 월 급여 계산 화면에 즉시 반영되는지 확인
+- 183일 도달 예상일 자동 계산 및 30일 전 알림
+- 외국인 단일세율 선택 여부 저장 및 급여 계산 연동
+- 6세 이하 자녀 수 변경 시 급여 항목 마스터의 보육수당 한도 자동 갱신
+- 장애인 여부는 연말정산 소득공제 항목과 연동
+- 세무 면책: 모든 거주자 판단 수치는 소득세법·국세청 최신 예규로 최종 확인 필요

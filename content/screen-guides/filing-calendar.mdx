@@ -1,0 +1,79 @@
+## 목적
+
+원천세 신고·납부 및 각종 지급명세서 제출 기한을 월별로 표시하고, 30일·7일 전 알림을 제공한다. 반기납부 사업자와 매월 납부 사업자를 구분하여 표시한다.
+
+## 필수 필드
+
+<ScreenSpec fields={[
+  { key: 'businessType', label: '납부 주기', type: 'enum', required: true, source: 'manual', validation: '매월|반기(1월·7월)', helpText: '세무서 승인 반기납부 여부' },
+  { key: 'targetYearMonth', label: '기준 연월', type: 'YYYYMM', required: true, source: 'manual' },
+  { key: 'withholdingDueDate', label: '원천세 신고·납부 기한', type: 'date', required: true, source: 'rule', helpText: '해당 월 익월 10일' },
+  { key: 'simpleStatementDueDate', label: '간이지급명세서 제출 기한', type: 'date', required: true, source: 'rule' },
+  { key: 'annualStatementDueDate', label: '지급명세서 제출 기한', type: 'date', required: false, source: 'rule', helpText: '연 1회: 근로·사업 3월10일, 이자·배당 2월말' },
+  { key: 'treatyFormDueDate', label: '제한세율 신청서 제출 기한', type: 'date', required: false, source: 'rule', helpText: '지급연도 익년 2월말' },
+  { key: 'alertDays', label: '알림 기준일 (일 전)', type: 'integer[]', required: false, source: 'manual', validation: '[30, 7] 기본값' },
+]} />
+
+## 월별 기한 구조
+
+<Tbl scroll>
+  <thead>
+    <tr><th>월</th><th>항목</th><th>기한</th><th>근거</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>매월</td><td>원천세 신고·납부</td><td>익월 10일</td><td>소득세법 제128조 — 세무담당자 확인</td></tr>
+    <tr><td>매월</td><td>간이지급명세서 (사업·기타소득)</td><td>익월 말일</td><td>아래 <code>f_ca0006</code></td></tr>
+    <tr><td>1월·7월</td><td>원천세 신고·납부 (반기납부)</td><td>각 10일</td><td>소득세법 제128조 — 세무담당자 확인</td></tr>
+    <tr><td>7월</td><td>간이지급명세서 (근로소득 상반기 1~6월분)</td><td>7월 말일</td><td>아래 <code>f_c40006</code></td></tr>
+    <tr><td>익년 1월</td><td>간이지급명세서 (근로소득 하반기 7~12월분)</td><td>익년 1월 말일</td><td>아래 <code>f_c40006</code></td></tr>
+    <tr><td>2월</td><td>지급명세서 (이자·배당·기타)</td><td>2월 말일</td><td>아래 <code>f_c40011</code></td></tr>
+    <tr><td>3월</td><td>지급명세서 (근로·퇴직·원천징수 대상 사업소득)</td><td>3월 10일</td><td>아래 <code>f_c40010</code></td></tr>
+    <tr><td>매월</td><td>일용직 지급명세서</td><td>익월 말일</td><td>아래 <code>f_c40012</code></td></tr>
+    <tr><td>익년 2월</td><td>제한세율 신청서 (비거주자·외국법인)</td><td>익년 2월 말일</td><td>아래 <code>f_nr0018</code></td></tr>
+  </tbody>
+</Tbl>
+
+<DevNote title="반기납부 주의사항">
+  반기납부 승인을 받은 사업자는 1월(7~12월분)·7월(1~6월분)에만 원천세를 신고·납부한다. 단, 간이지급명세서 제출 주기는 반기납부 여부와 무관하게 동일하게 적용된다.
+</DevNote>
+
+<TaxRisk level="medium">
+  기한 오류(10일 → 10영업일 등)로 인한 납부지연 가산세를 방지하려면 캘린더가 공휴일을 자동으로 반영해야 한다. 기한일이 토·일·공휴일이면 다음 영업일로 자동 이월 처리해야 한다.
+</TaxRisk>
+
+## 경고 조건
+
+<Tbl scroll>
+  <thead>
+    <tr><th>조건</th><th>심각도</th><th>화면 메시지</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>today = deadline − 30일</td><td>정보</td><td>[기한명] 제출 기한 30일 전입니다.</td></tr>
+    <tr><td>today = deadline − 7일</td><td>경고</td><td>[기한명] 제출 기한 7일 전입니다. 서류를 준비하세요.</td></tr>
+    <tr><td>today &gt; deadline AND 미완료 항목 있음</td><td>긴급</td><td>[기한명] 기한이 경과하였습니다. 즉시 처리하세요.</td></tr>
+    <tr><td>businessType = 반기 AND 매월 신고 이력 존재</td><td>경고</td><td>반기납부 사업자이지만 매월 신고 이력이 있습니다. 납부 방식을 확인하세요.</td></tr>
+  </tbody>
+</Tbl>
+
+## 관련 법령·fact
+
+<F id="f_c40010">지급명세서 근로·퇴직·사업소득 제출 기한: 3월 10일.</F>
+
+<F id="f_c40011">지급명세서 이자·배당 등 제출 기한: 2월 말일.</F>
+
+<F id="f_c40012">일용직 지급명세서 제출 기한: 매월 익월 말일.</F>
+
+<F id="f_c40006">간이지급명세서(근로소득) 반기 제출: 상반기분(1~6월) 7월 말일, 하반기분(7~12월) 익년 1월 말일.</F>
+
+<F id="f_ca0006">간이지급명세서(사업·기타소득) 매월 제출: 지급 다음 달 말일까지 매월 제출.</F>
+
+<F id="f_nr0018">제한세율 신청서 익년 2월 말 제출 의무.</F>
+
+## 개발 체크리스트
+
+- 공휴일 자동 이월: 기한일이 토·일·법정 공휴일이면 다음 영업일로 표시
+- 반기납부 사업자 구분 플래그에 따라 캘린더 뷰 분기
+- 알림 발송: 30일·7일 전 이메일/슬랙 알림 스케줄 등록
+- 간이지급명세서(근로) 상반기: 1~6월, 하반기: 7~12월로 화면에 명확히 표시
+- 완료 처리 기능: 각 항목 제출 완료 시 체크 및 날짜 기록
+- 세무 면책: 기한·제출 주기는 소득세법·지방세법·국세청 고시로 최종 확인 필요
