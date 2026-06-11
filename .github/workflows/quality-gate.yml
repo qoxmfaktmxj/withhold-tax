@@ -40,6 +40,10 @@ jobs:
         run: npm run check:freshness
 
       - name: Check source links
+        # law.go.kr·nts.go.kr 등 한국 정부 사이트가 GitHub Actions 해외 러너 IP를
+        # 차단/지연시켜 TIMEOUT 발생 — CI에서는 보고만 하고 게이트는 막지 않는다.
+        # 엄격 검사는 로컬 `npm run qa`(한국 IP)에서 수행.
+        continue-on-error: true
         run: npm run check:links -- --strict
 
       - name: Build
