@@ -42,3 +42,9 @@ next-scaffold/
 
 # external tooling state/logs
 .omx/
+
+# QA/preview artifacts (루트 임시 캡처·브라우저 스냅샷·로그)
+.playwright-mcp/
+/withhold-tax-*.png
+/dev-log.txt
+/test-out*.txt
