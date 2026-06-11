@@ -12,13 +12,15 @@
 </div>
 
 <div align="center">
-  <img src="docs/screenshots/00-search.png" alt="전체 본문 검색 — 어디서든 ⌘K" width="900" />
+  <img src="docs/screenshots/search.png" alt="전체 본문 검색 — 어디서든 Ctrl+K" width="900" />
   <br/>
   <sub><strong>전체 본문 검색</strong> — 어느 페이지서든 <code>Ctrl+K</code>로 12개 장 전체를 검색하고, 결과를 누르면 <strong>해당 장의 정확한 섹션으로 바로 이동</strong>합니다.</sub>
 </div>
 
 <div align="center">
-  <img src="docs/screenshots/01-home.png" alt="홈" width="900" />
+  <img src="docs/screenshots/home.png" alt="홈 — 히어로 + 레퍼런스 상태 대시보드" width="900" />
+  <br/>
+  <sub><strong>레퍼런스 상태 대시보드</strong> — 전체 fact·1차 원문 확인·검토 임박·링크 오류를 홈에서 한눈에.</sub>
 </div>
 
 ---
@@ -38,7 +40,9 @@
 각 사실은 `<Fact>` 로 감싸여 **법률 인용 라인 + 검증상태 씰**과 함께 렌더됩니다. 장식이 아니라 신뢰의 본체입니다.
 
 <div align="center">
-  <img src="docs/screenshots/02-ch3-trust.png" alt="원천징수 핵심 — 출처 인용·검증상태" width="900" />
+  <img src="docs/screenshots/chapter-fact.png" alt="가산세·신고실무 — 수치마다 법령 인용·시행일·검증상태" width="900" />
+  <br/>
+  <sub>각 수치 옆 <code>§ 법령 조문 · 시행일 · ✓확정</code> 인용 라인과, 장 상단 <strong>이 장 검증: 확정 N · 확인필요 M · 강의기반 K</strong> 요약.</sub>
 </div>
 
 - **`§ 소득세법 제129조 제1항 · 시행 2026.06 · 국세청 ✓확정`** — 인용 라인이 모든 수치·세율·기한 옆에.
@@ -56,28 +60,24 @@
 `facts.json`에서 개정·신설 항목을 자동 수집. 변경 전 → 2026 기준 → 시행일 → 출처를 한 화면에.
 
 <div align="center">
-  <img src="docs/screenshots/05-updates.png" alt="2026 개정·시행 이력" width="900" />
+  <img src="docs/screenshots/updates-2026.png" alt="2026 개정·시행 이력" width="900" />
 </div>
 
 ### 검토 임박 항목 — 재검토 큐
 `nextReviewBy` 기준 정렬. 매년 시행규칙 개정 후 무엇을 다시 봐야 하는지.
 
-<div align="center">
-  <img src="docs/screenshots/06-review-due.png" alt="검토 임박 항목" width="900" />
-</div>
-
 ### 검증된 표·콜아웃 — 가산세·신고실무
-원본 강의의 표·비교·수식·콜아웃을 React 컴포넌트로 이식하고, 핵심 수치마다 인용을 연결.
-
-<div align="center">
-  <img src="docs/screenshots/03-ch4-penalty.png" alt="가산세·신고실무" width="900" />
-</div>
+원본 강의의 표·비교·수식·콜아웃을 React 컴포넌트로 이식하고, 핵심 수치마다 인용을 연결(위 가산세·신고실무 캡처 참조).
 
 ### HR 화면 개발 가이드 (8종) — 세무 지식을 화면·필드·검증으로 번역
 직원 세무 프로필 · 급여항목 마스터 · 월 급여 원천징수 · 연말정산 · 사업소득 지급/정산 · 비거주자 지급 · 신고 캘린더 · 가산세 계산기 — 화면별 **필드 명세(ScreenSpec) + 검증 규칙 + 경고 조건 + 근거 fact**를 제공합니다. `/screen-guides`
 
-### rule 기반 계산기 · 신고 캘린더
-`content/tax-rules/2026/*.json`(zod 검증, fact 연결 필수)을 데이터로 쓰는 **납부지연가산세 계산기**(3%+22/100,000·10% 한도·2026.7.1 개정 분기)와 **사업소득 3.3% 계산기**(국세·지방세 분리). 모든 결과에 적용 rule 버전과 근거 fact 인용이 붙습니다. 신고·납부 기한은 `/calendar`에서 주기별로 확인.
+### rule 기반 계산기 · 신고 캘린더 — 실무 검산 도구 8종
+`content/tax-rules/2026/*.json`(zod 검증, fact 연결 필수)을 데이터로 쓰는 검산 도구들 — **납부지연가산세 계산기**(3%+22/100,000·10% 한도·2026.7.1 개정 분기), **사업소득 3.3% 계산기**(국세·지방세 분리), 월 급여 원천징수·비과세 한도·퇴직소득·비거주자 지급 체크 등. 모든 결과에 적용 rule 버전과 근거 fact 인용이 붙습니다. 신고·납부 기한은 `/calendar`에서 주기별로 확인.
+
+<div align="center">
+  <img src="docs/screenshots/tools.png" alt="실무 도구 허브 — 검산 도구 8종" width="900" />
+</div>
 
 ### 그 외
 - **전체 본문 검색(Ctrl+K)** · **인쇄**(출처 배지·시행일 유지) · **사이드바 색인** · **출처 신뢰도 목록**(`/sources`) · **법령 감시 목록**(watchlist, 2027 배당가산율 등).
@@ -88,16 +88,9 @@
 
 원본 강의 **10개 장 + 부록 3종**에, 원본에 없던 **신규 2개 장**(비거주자·외국법인 / 이자·배당)을 1차 출처로 새로 조사·작성해 추가했습니다.
 
-| | |
-|---|---|
-| <img src="docs/screenshots/04-ch1-basics.png" alt="소득세 기본구조" width="430" /> | <img src="docs/screenshots/10-ch6-exemption.png" alt="근로소득 비과세" width="430" /> |
-| **CH1 소득세 기본구조** | **CH6 근로소득 비과세 I** |
-| <img src="docs/screenshots/07-nonresident.png" alt="비거주자·외국법인" width="430" /> | <img src="docs/screenshots/08-interest-dividend.png" alt="이자·배당" width="430" /> |
-| **비거주자·외국법인 원천징수** (신규) | **이자·배당 원천징수** (신규) |
-| <img src="docs/screenshots/09-glossary.png" alt="용어 사전" width="430" /> | |
-| **부록 A · 핵심 용어 사전** | |
-
-전체 챕터: 소득세 기본구조 · 법체계·세금분류 · 원천징수 핵심 · 가산세·신고실무 · 거주자·해외파견 · 근로소득 비과세 I/II · 신고서 작성·검증 · 간이세액·퇴직소득 · 사업·기타소득 · 비거주자·외국법인 · 이자·배당 / 부록 용어사전·색인·치트시트.
+- **CH1~10**: 소득세 기본구조 · 법체계·세금분류 · 원천징수 핵심 · 가산세·신고실무 · 거주자·해외파견 · 근로소득 비과세 I/II · 신고서 작성·검증 · 간이세액·퇴직소득 · 사업·기타소득
+- **신규 2장**: 비거주자·외국법인 원천징수 · 이자·배당 원천징수 (1차 출처 기반 신규 조사)
+- **부록**: A 핵심 용어사전 · B 교재 페이지 색인 · C 빠른 참조 치트시트
 
 ---
 
@@ -124,7 +117,7 @@
 }
 ```
 
-**현재 검증 현황: 140개 사실 중 `확정 137` · `강의기반 3` · `확인필요 0`** (1차 원문 직접확인 53건).
+**현재 검증 현황: 141개 사실 중 `확정 138` · `강의기반 3` · `확인필요 0`** (1차 원문 직접확인 54건).
 2026-06-10 배치: 2025.12.23 공포 개정세법의 P0 항목 7건(사업소득 연말정산 분납 §144조의2②, 제한세율 신청서 세무서 제출의무 §156조의6④, 납부지연가산세 개정 §47조의4·5, 종신연금 3%, 이연퇴직 70/60/50%, 배당가산율 11%, 교육비 공제 확대)을 **국가법령정보 OPEN API로 현행 조문 원문을 직접 확인**해 추가했습니다.
 1차 출처로 확정할 수 없는 항목(입법관행·계산 추정치·강의 항목번호 오인 가능)은 억지로 확정하지 않고 정직하게 `강의기반`으로 둡니다 — 그게 이 시스템의 신뢰성입니다.
 
@@ -143,7 +136,7 @@
 | 콘텐츠 | MDX 본문 + `facts.json`(zod 검증) 하이브리드, fact는 `<F id>`로 본문에 연결 |
 | 폰트 | Hanken Grotesk(디스플레이) · Pretendard(본문) · JetBrains Mono(인용) |
 | 검색 | MiniSearch (클라이언트, 빌드타임 인덱스) |
-| 테스트 | Vitest + @testing-library (83 tests) |
+| 테스트 | Vitest + @testing-library (225 tests) |
 | 배포 | Vercel (`git push` → 자동 빌드) |
 
 ---
@@ -154,7 +147,7 @@
 npm install
 npm run dev          # http://localhost:3000  (Windows: webpack 사용)
 npm run build        # 정적 빌드
-npm test             # 83 tests
+npm test             # 225 tests
 ```
 
 > Windows에서는 Turbopack 네이티브 바인딩 부재로 `dev`/`build`가 `--webpack`을 사용합니다. Vercel(Linux) 배포 시 `build:turbo`로 Turbopack 사용 가능.
