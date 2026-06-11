@@ -117,7 +117,7 @@ export default function RootLayout({
                 </div>
 
                 {/* 운영 문서 */}
-                <div className="wt-sidebar-section" style={{ marginTop: 6 }}>
+                <div className="wt-sidebar-section" style={{ marginTop: 6, display: 'none' }}>
                   <span className="wt-sidebar-section-label">운영</span>
                   <nav aria-label="운영 메뉴">
                     <ul className="wt-chapter-index">
@@ -135,7 +135,7 @@ export default function RootLayout({
                 </div>
 
                 {/* 개발자 문서 */}
-                <div className="wt-sidebar-section" style={{ marginTop: 6 }}>
+                <div className="wt-sidebar-section" style={{ marginTop: 6, display: 'none' }}>
                   <span className="wt-sidebar-section-label">개발자</span>
                   <nav aria-label="개발자 메뉴">
                     <ul className="wt-chapter-index">
