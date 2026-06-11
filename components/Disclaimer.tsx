@@ -15,7 +15,7 @@ export function Disclaimer() {
       </span>
       <span
         style={{
-          fontFamily: "'Noto Sans KR', Pretendard, sans-serif",
+          fontFamily: "'Pretendard Variable', Pretendard, sans-serif",
           fontSize: '0.82rem',
           color: 'var(--ink-faint)',
         }}

@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import factsRaw from '@/content/facts.json'
+import referenceHealthRaw from '@/content/reference-health.json'
 import { loadFacts } from '@/lib/facts/store'
+import { getReferenceConfidenceSummary } from '@/lib/facts/confidence'
 import { availableChapterSlugs, CHAPTERS, APPENDICES } from '@/lib/chapters'
 
 /* ── Chapter number label helper ─────────────────────────────────────── */
@@ -12,6 +14,12 @@ function chapterNumLabel(slug: string): string {
   return '부록'
 }
 
+function daysUntil(from: string, to: string): number {
+  const fromDate = new Date(`${from}T00:00:00Z`)
+  const toDate = new Date(`${to}T00:00:00Z`)
+  return Math.ceil((toDate.getTime() - fromDate.getTime()) / 86400000)
+}
+
 export default function Home() {
   const facts = loadFacts(factsRaw)
   const available = new Set(availableChapterSlugs())
@@ -20,6 +28,21 @@ export default function Home() {
   const updates2026Count = facts.filter(
     (f) => f.changeType !== '없음' && f.effectiveDate?.startsWith('2026')
   ).length
+  const lastLawCheck = facts.map((f) => f.asOf).sort().at(-1) ?? ''
+  const confidence = getReferenceConfidenceSummary(facts)
+  const referenceStatus = [
+    { label: '전체 fact', value: String(confidence.total) },
+    { label: '1차 원문 확인', value: String(confidence.primarySourceVerified) },
+    { label: '원문 미확인', value: String(confidence.primarySourceUnverified) },
+    {
+      label: '검토 임박',
+      value: String(
+        facts.filter((f) => f.nextReviewBy && lastLawCheck && daysUntil(lastLawCheck, f.nextReviewBy) <= 60).length
+      ),
+    },
+    { label: '링크 오류', value: String(referenceHealthRaw.linkErrors) },
+    { label: '마지막 법령 점검', value: lastLawCheck },
+  ]
 
   return (
     <div>
@@ -57,6 +80,46 @@ export default function Home() {
           </div>
         )}
 
+        {/* ════════════ REFERENCE STATUS ════════════ */}
+        <div className="wt-section-rule-heading">
+          <span className="wt-section-rule-text">레퍼런스 상태</span>
+          <div className="wt-section-rule-line" />
+        </div>
+
+        <div
+          role="list"
+          aria-label="레퍼런스 상태"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+            gap: 'var(--space-sm)',
+            marginBottom: 'var(--space-xl)',
+          }}
+        >
+          {referenceStatus.map((item) => (
+            <div
+              key={item.label}
+              role="listitem"
+              aria-label={`${item.label} ${item.value}`}
+              style={{
+                background: 'var(--white)',
+                border: '1px solid var(--border)',
+                borderRadius: 'var(--radius-sm)',
+                boxShadow: 'var(--shadow-xs)',
+                padding: '10px 12px',
+                minHeight: 64,
+              }}
+            >
+              <div style={{ fontSize: '0.72rem', color: 'var(--gray-500)', marginBottom: 4 }}>
+                {item.label}
+              </div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '1rem', fontWeight: 800 }}>
+                {item.value}
+              </div>
+            </div>
+          ))}
+        </div>
+
         {/* ════════════ TOOLS ════════════ */}
         <div className="wt-section-rule-heading">
           <span className="wt-section-rule-text">도구 · 개발 가이드</span>
@@ -64,13 +127,9 @@ export default function Home() {
         </div>
 
         <div className="wt-chapter-grid" role="list" aria-label="도구">
-          <Link href="/screen-guides" className="wt-chapter-card" role="listitem">
-            <span className="wt-chapter-number">GUIDE</span>
-            <span className="wt-chapter-title">화면 개발 가이드 (8종)</span>
-          </Link>
-          <Link href="/calculators" className="wt-chapter-card" role="listitem">
-            <span className="wt-chapter-number">CALC</span>
-            <span className="wt-chapter-title">가산세·사업소득 계산기</span>
+          <Link href="/tools" className="wt-chapter-card" role="listitem">
+            <span className="wt-chapter-number">TOOL</span>
+            <span className="wt-chapter-title">실무 도구</span>
           </Link>
           <Link href="/calendar" className="wt-chapter-card" role="listitem">
             <span className="wt-chapter-number">DUE</span>
@@ -185,6 +244,7 @@ export default function Home() {
                   key={ch.slug}
                   href={`/ch/${ch.slug}`}
                   className="wt-chapter-card"
+                  data-cat={ch.cat}
                   role="listitem"
                 >
                   <span className="wt-chapter-number">{numLabel}</span>
@@ -196,6 +256,7 @@ export default function Home() {
               <div
                 key={ch.slug}
                 className="wt-chapter-card wt-chapter-card--unavailable"
+                data-cat={ch.cat}
                 role="listitem"
                 title="작성 예정"
               >
