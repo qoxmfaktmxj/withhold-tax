@@ -31,7 +31,10 @@
     "supersededRefs": "",
     "appliesFrom": "2024-07-01",
     "sunsetDate": "",
-    "reviewerId": "kms"
+    "reviewerId": "kms",
+    "sourceIds": [
+      "src_nts_withholding_guide"
+    ]
   },
   {
     "id": "f_a00002",
@@ -70,7 +73,10 @@
     "supersededRefs": "동일 조번호 폐지 구 고배당기업 과세특례(14~35%)와 신구 구분 필요",
     "appliesFrom": "2026-01-01",
     "sunsetDate": "한시규정 종료일 부칙 확인 필요(출처 간 2028 vs 2029 불일치)",
-    "reviewerId": "kms"
+    "reviewerId": "kms",
+    "sourceIds": [
+      "src_law_go_kr"
+    ]
   },
   {
     "id": "f_a00004",
@@ -151,6 +157,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -190,6 +199,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -224,6 +236,9 @@
         "author": "kms",
         "note": "배치1 1차출처 검증"
       }
+    ],
+    "sourceIds": [
+      "src_lawnb_secondary"
     ]
   },
   {
@@ -263,6 +278,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -302,6 +320,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -336,6 +357,9 @@
         "author": "kms",
         "note": "배치1 1차출처 검증"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -375,6 +399,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -414,6 +441,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -453,6 +483,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -492,6 +525,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -531,6 +567,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -565,6 +604,9 @@
         "author": "kms",
         "note": "배치1 1차출처 검증"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -604,6 +646,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -789,6 +834,9 @@
         "author": "kms",
         "note": "재검증: 1차출처 확인 승격"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -902,6 +950,9 @@
         "author": "kms",
         "note": "배치1 1차출처 검증(현물 전액/현금 20만원 교차확인)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -941,6 +992,9 @@
         "author": "kms",
         "note": "배치1 1차출처 검증"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -1059,6 +1113,9 @@
         "author": "kms",
         "note": "재검증: 1차출처 확인 승격"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1098,6 +1155,9 @@
         "author": "kms",
         "note": "재검증: 1차출처 확인 승격"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1137,6 +1197,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1181,6 +1244,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1220,6 +1286,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1259,6 +1328,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1293,6 +1365,9 @@
         "author": "kms",
         "note": "배치2"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1327,6 +1402,9 @@
         "author": "kms",
         "note": "배치2"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1366,6 +1444,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1447,6 +1528,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1486,6 +1570,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1525,6 +1612,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1564,6 +1654,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1608,6 +1701,9 @@
         "author": "kms",
         "note": "심층재조사: reframe"
       }
+    ],
+    "sourceIds": [
+      "src_casenote_mirror"
     ]
   },
   {
@@ -1684,6 +1780,9 @@
         "author": "kms",
         "note": "배치2"
       }
+    ],
+    "sourceIds": [
+      "src_klri_law_info"
     ]
   },
   {
@@ -1718,6 +1817,9 @@
         "author": "kms",
         "note": "배치2"
       }
+    ],
+    "sourceIds": [
+      "src_klri_law_info"
     ]
   },
   {
@@ -1752,6 +1854,9 @@
         "author": "kms",
         "note": "배치2"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1791,6 +1896,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1825,6 +1933,9 @@
         "author": "kms",
         "note": "배치2(종부세 신고선택 보충 fact 신설, mdx F id=f_c20006b)"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -1864,6 +1975,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1903,6 +2017,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1942,6 +2059,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -1981,6 +2101,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -2015,6 +2138,9 @@
         "author": "kms",
         "note": "배치2 1차출처 검증(시행령 제3조 100% 직간접출자 LBOX 인용 + 국세 예규 다수 교차확인)"
       }
+    ],
+    "sourceIds": [
+      "src_lbox_mirror"
     ]
   },
   {
@@ -2049,6 +2175,9 @@
         "author": "kms",
         "note": "배치2 1차출처 검증(시행령 제3조)"
       }
+    ],
+    "sourceIds": [
+      "src_lbox_mirror"
     ]
   },
   {
@@ -2088,6 +2217,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -2127,6 +2259,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -2161,6 +2296,9 @@
         "author": "kms",
         "note": "배치2 검증·교정: 5%→3% 인하(2025.1.1 이후 징수분, 2027.12.31까지) 다수 2차 일치, casenote 구판 5% 표시로 원문 재확인 잔존"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -2195,6 +2333,9 @@
         "author": "kms",
         "note": "배치2 1차출처 검증(제57조 한도산식·10년 이월)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -2229,6 +2370,9 @@
         "author": "kms",
         "note": "배치2 검증: OECD 모델 제4조 4단계 순서 법조 해설 다수 일치, 개별조약 확인 권고"
       }
+    ],
+    "sourceIds": [
+      "src_lawtimes_tax_article"
     ]
   },
   {
@@ -2263,6 +2407,9 @@
         "author": "kms",
         "note": "배치2 1차출처 검증(시행령 제16조 100만원 + 국세청 안내)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -2297,6 +2444,9 @@
         "author": "kms",
         "note": "배치2 검증: 원양·건설 500만원·2024 상향 국세청/WebSearch 일치, 시행령 호수·부칙 재확인 잔존"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -2336,6 +2486,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -2375,6 +2528,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -2409,6 +2565,9 @@
         "author": "kms",
         "note": "배치2"
       }
+    ],
+    "sourceIds": [
+      "src_moef_tax_release"
     ]
   },
   {
@@ -2453,6 +2612,9 @@
         "author": "kms",
         "note": "심층재조사: keep"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -2608,6 +2770,9 @@
         "author": "kms",
         "note": "배치2"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -2647,6 +2812,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -2681,6 +2849,9 @@
         "author": "kms",
         "note": "배치2"
       }
+    ],
+    "sourceIds": [
+      "src_samili_tax_news"
     ]
   },
   {
@@ -2715,6 +2886,9 @@
         "author": "kms",
         "note": "배치2"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -2749,6 +2923,9 @@
         "author": "kms",
         "note": "배치2"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -2783,6 +2960,9 @@
         "author": "kms",
         "note": "배치2"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -2817,6 +2997,9 @@
         "author": "kms",
         "note": "배치2"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -2992,6 +3175,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3026,6 +3212,9 @@
         "author": "kms",
         "note": "배치2 검증: 시행령 제17조의4 연 70만원 국세청 안내 교차확인, 모법 호번호 추정"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -3060,6 +3249,9 @@
         "author": "kms",
         "note": "배치2 검증: 시행령 제38조 제1항 제6호 비과세 대상(비출자·소액주주1%·종업원) 판례/국세청 교차확인"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3094,6 +3286,9 @@
         "author": "kms",
         "note": "배치2 검증: 임차사택 일부부담 시 사택 제외(과세) 국세청 안내 교차확인"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3128,6 +3323,9 @@
         "author": "kms",
         "note": "배치2 검증: 당좌대출이자율 4.6%(시행규칙 제43조 제2항, 시행령 제89조) 국세청 예규 교차확인"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3204,6 +3402,9 @@
         "author": "kms",
         "note": "배치2 검증: 비과세 제16조의2(2억/누적5억), 분납 제16조의3, 양도전환 제16조의4 국세청/casenote 교차확인"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3238,6 +3439,9 @@
         "author": "kms",
         "note": "배치2 검증: 제30조 90%/5년·70%/3년·200만원 한도·2026.12.31 취업기한 국세청 안내 교차확인"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -3282,6 +3486,9 @@
         "author": "kms",
         "note": "심층재조사: reframe"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3316,6 +3523,9 @@
         "author": "kms",
         "note": "배치2 검증: 19%·20년(2023귀속분)·최초근로제공일 기산 국세청/한국세정신문 교차확인, 시작점 본문 보정"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3350,6 +3560,9 @@
         "author": "kms",
         "note": "배치2 NTS 간이세액표 안내 교차확인(자녀 정액차감)"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -3389,6 +3602,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3423,6 +3639,9 @@
         "author": "kms",
         "note": "배치2 NTS 퇴직소득세 이연 안내 교차확인"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -3462,6 +3681,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3501,6 +3723,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3540,6 +3765,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3579,6 +3807,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3618,6 +3849,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3652,6 +3886,9 @@
         "author": "kms",
         "note": "배치2 시행령 제50조 수입시기 NTS·LBOX 교차확인"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -3691,6 +3928,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3730,6 +3970,9 @@
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3806,6 +4049,9 @@
         "author": "kms",
         "note": "배치2: 부가세법 제26조제1항제15호·시행령 제42조 근거 확인, 13개 항목번호는 강의분류로 호 매칭 확인필요"
       }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
     ]
   },
   {
@@ -3882,6 +4128,9 @@
         "author": "kms",
         "note": "배치2: NTS 안내 60%/80% 대상 교차확인, 시행령 제87조 호 번호 확인권장"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -4005,6 +4254,9 @@
         "author": "kms",
         "note": "배치2: NTS 간이지급명세서(기타소득) 안내가 제21조제1항제19호 한정 확인, 강의 '사례금 포함' 오류 교정"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -4654,6 +4906,9 @@
         "author": "kms",
         "note": "배치2"
       }
+    ],
+    "sourceIds": [
+      "src_nts_withholding_guide"
     ]
   },
   {
@@ -4940,6 +5195,9 @@
         "author": "kms",
         "note": "배치2: 2천만원·14% 메커니즘 2차 교차확인, 법조문 원문 직접매칭 미완으로 확정·primary false"
       }
+    ],
+    "sourceIds": [
+      "src_standardchartered_tax_info"
     ]
   },
   {
@@ -5021,6 +5279,9 @@
         "author": "kms",
         "note": "재검증: 1차출처 확인 승격"
       }
+    ],
+    "sourceIds": [
+      "src_kimchang_tax_newsletter"
     ]
   },
   {
@@ -5217,15 +5478,16 @@
     "slug": "nonresident.treaty.reduced-rate-application-filing",
     "chapter": "nonresident",
     "title": "제한세율 적용신청서 세무서 제출의무(신설)",
-    "claim": "원천징수의무자는 비거주자(실질귀속자) 또는 국외투자기구로부터 제출받은 조세조약 제한세율 적용신청서등과 국외투자기구 신고서를 해당 국내원천소득 지급일이 속하는 연도의 다음 연도 2월 말일까지 납세지 관할 세무서장에게 제출하여야 한다(소득세법 제156조의6 제4항, 신설 2025.12.23). 종전에는 원천징수의무자 보관 의무 중심이었다.",
+    "claim": "원천징수의무자는 비거주자(실질귀속자)·외국법인(실질귀속자) 또는 국외투자기구로부터 제출받은 조세조약 제한세율 적용신청서등과 국외투자기구 신고서를 해당 국내원천소득 지급일이 속하는 연도의 다음 연도 2월 말일까지 납세지 관할 세무서장에게 제출하여야 한다(소득세법 제156조의6 제4항, 법인세법 제98조의6 제4항, 신설 2025.12.23). 종전에는 원천징수의무자 보관 의무 중심이었다. 단, 법인세법 제98조의6 제4항은 원천징수의무자가 휴업하거나 폐업한 경우 휴업일 또는 폐업일이 속하는 달의 다음다음 달 말일까지 제출하도록 정한다.",
     "sourceType": "LAW",
-    "sourceTitle": "소득세법 제156조의6(비거주자 조세조약 제한세율 적용 신청) 제4항 — OPEN API 현행본 원문 확인",
+    "sourceTitle": "소득세법 제156조의6 제4항 / 법인세법 제98조의6 제4항 — 국가법령정보센터 조문 원문 확인",
     "sourceIds": [
       "src_law_open_api",
+      "src_law_go_kr",
       "src_kpmg_2025_tax_reform"
     ],
-    "lawRef": "소득세법 제156조의6 제4항",
-    "lawUrl": "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C156%EC%A1%B0%EC%9D%986",
+    "lawRef": "소득세법 제156조의6 제4항; 법인세법 제98조의6 제4항",
+    "lawUrl": "https://www.law.go.kr/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900181515",
     "effectiveDate": "2026-01-01",
     "appliesFrom": "2026-01-01",
     "appliesTo": "2026.1.1 이후 지급분 관련 제한세율 적용신청서(원천징수의무자)",
@@ -5233,8 +5495,8 @@
     "risk": "critical",
     "changeType": "신설",
     "previousValue": "원천징수의무자가 신청서를 제출받아 보관(세무서 제출의무 없음)",
-    "confidenceScore": 88,
-    "scopeLimitations": "소득세법(비거주자 개인) 측은 §156조의6④ 원문 확인. 외국법인(법인세법 제98조의6) 측은 현행본(시행 2026.01.02)에 동일 제출의무 조항 미확인 — KPMG 보고서만 근거이므로 법인세법 차기 시행본·부칙 확인 필요. 제출 서식·홈택스 경로 미확인. 적용시기는 KPMG 기준.",
+    "confidenceScore": 95,
+    "scopeLimitations": "소득세법 §156조의6④와 법인세법 §98조의6④ 공식 조문을 확인했다. 본 fact는 원천징수의무자의 신청서 등 제출 의무와 기한 구조만 다루며, 개별 조약 제한세율, 제출 서식, 홈택스 제출 경로, 휴업·폐업 시 개인분 대응 기한은 별도 운영 확인 대상이다.",
     "implementationImpact": {
       "content": true,
       "ui": true,
@@ -5247,6 +5509,11 @@
         "date": "2026-06-10",
         "author": "kms",
         "note": "2026 P0: OPEN API로 §156조의6④ 신설(2025.12.23) 원문 확인 후 등록. 법인세법 측은 확인필요로 유보"
+      },
+      {
+        "date": "2026-06-10",
+        "author": "kms",
+        "note": "G060: 국가법령정보센터에서 법인세법 §98조의6④ 신설 문구와 익년 2월 말 제출의무 확인"
       }
     ]
   },
@@ -5259,7 +5526,7 @@
     "localTaxRef": "",
     "supersededRefs": "",
     "sunsetDate": "",
-    "subordinateLawRef": "",
+    "subordinateLawRef": "국세기본법 시행령 제27조의4 제2항(월 1만분의 67)",
     "implementationStatus": "content_done",
     "id": "f_c40017",
     "slug": "ch04.late-payment-penalty.2026-07-revision",
@@ -5267,9 +5534,10 @@
     "title": "납부지연가산세 산정방법 개정(2026.7.1)",
     "claim": "2025.12.23 개정 국세기본법은 납부지연가산세 산정에 ① 지정납부기한 다음 날부터 납부일까지 경과한 개월 수 기준의 월할 이자 가산(제47조의4 제1항 제1호의2 신설), ② 지정납부기한 미납세액의 3% 고정 가산(같은 항 제3호 신설), ③ 국세징수법 제10조에 따른 독촉 비용 포함(제4호), ④ 체납 국세가 납부고지서별·세목별 150만원 미만이면 월할·독촉비용 가산 면제(제8항), ⑤ 기간 5년 상한(제7항)을 도입했다. 원천징수 등 납부지연가산세(제47조의5)에도 월할 이자·독촉비용 요소가 추가되었으며 기존 한도(미납세액의 3%+일할이자 합계 10%, 전체 50%)는 유지된다. 2026.7.1 이후 지정납부기한이 도래하는 분부터 적용된다.",
     "sourceType": "LAW",
-    "sourceTitle": "국세기본법 제47조의4·제47조의5(개정 2025.12.23) — OPEN API 현행본(시행 2026.06.02) 원문 확인",
+    "sourceTitle": "국세기본법 제47조의4·제47조의5 및 국세기본법 시행령 제27조의4(개정이유)",
     "sourceIds": [
       "src_law_open_api",
+      "src_law_go_kr",
       "src_kacta_2026_tax_changes"
     ],
     "lawRef": "국세기본법 제47조의4 ; 국세기본법 제47조의5",
@@ -5281,8 +5549,8 @@
     "risk": "high",
     "changeType": "개정",
     "previousValue": "일할 이자(22/100,000) 중심 산정, 독촉비용 미포함, 면제기준 150만원 미만 조항 이전 체계",
-    "confidenceScore": 88,
-    "scopeLimitations": "조문 내용은 OPEN API 원문 확인. 적용시기(2026.7.1)와 경과조치는 한국세무사회 자료 기준 — 부칙 직접 확인 권장. 가산세 계산기는 2026.7.1 전후 분기 처리 필요. 지방소득세 특별징수 가산세(지방세기본법)는 별도 체계.",
+    "confidenceScore": 92,
+    "scopeLimitations": "조문 내용은 OPEN API 원문 확인. 국세기본법 시행령 개정이유에서 지정납부기한 이후 월 단위 이자율(월 1만분의 67)을 공식 확인. 적용시기(2026.7.1)와 경과조치는 한국세무사회 자료와 시행령 개정이유가 일치하나 부칙 문언은 직접 확인 권장. 지방소득세 특별징수 가산세(지방세기본법)는 별도 체계.",
     "implementationImpact": {
       "content": true,
       "ui": true,
@@ -5295,6 +5563,11 @@
         "date": "2026-06-10",
         "author": "kms",
         "note": "2026 P0: OPEN API로 §47조의4·47조의5 개정(2025.12.23) 원문 확인 후 등록"
+      },
+      {
+        "date": "2026-06-10",
+        "author": "kms",
+        "note": "G081: 국가법령정보센터 시행령 개정이유로 지정납부기한 이후 월할 이자율 1만분의 67 확인, 계산기 세부 산출 필드와 연결"
       }
     ]
   },
@@ -5487,6 +5760,53 @@
         "date": "2026-06-10",
         "author": "kms",
         "note": "2026 P0: OPEN API로 §59조의4③ 개정(2025.12.23) 원문 확인 후 등록"
+      }
+    ]
+  },
+  {
+    "asOf": "2026-06-10",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
+    "reviewerId": "kms",
+    "nextReviewBy": "2027-03-31",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "sunsetDate": "",
+    "subordinateLawRef": "",
+    "implementationStatus": "tests_done",
+    "id": "f_yas001",
+    "slug": "year-end-settlement.employee.installment",
+    "chapter": "ch7",
+    "title": "근로소득 연말정산 추가납부세액 분납",
+    "claim": "근로소득 연말정산 결과 추가 징수하여야 하는 세액이 10만원을 초과하면 원천징수의무자는 해당 과세기간의 다음 연도 2월분부터 4월분의 근로소득을 지급할 때까지 추가 납부세액을 나누어 원천징수할 수 있다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제137조(근로소득세액의 연말정산) 제4항 — 국가법령정보센터 현행 법령 원문 확인",
+    "sourceIds": [
+      "src_law_go_kr"
+    ],
+    "lawRef": "소득세법 제137조 제4항",
+    "lawUrl": "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C137%EC%A1%B0",
+    "effectiveDate": "",
+    "appliesFrom": "",
+    "appliesTo": "근로소득 연말정산 결과 추가 납부세액이 10만원을 초과하는 원천징수",
+    "incomeType": "earned",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "화면 가이드에서 소득세법 제137조 근거를 세무담당자 확인 필요 항목으로만 표시",
+    "confidenceScore": 96,
+    "scopeLimitations": "소득세법 제137조 제4항의 10만원 초과 기준과 2월분부터 4월분 지급 시까지 분납 가능 문구를 국가법령정보센터 현행 조문으로 확인. 원천징수이행상황신고서 표시 방식, 홈택스 입력 경로, 사내 급여 공제 반영 절차는 별도 서식·운영 검증 필요.",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": true,
+      "migration": false
+    },
+    "history": [
+      {
+        "date": "2026-06-10",
+        "author": "kms",
+        "note": "G087: 국가법령정보센터 소득세법 §137④ 원문 확인 후 연말정산 화면 가이드와 분납 스케줄러 fact 연결"
       }
     ]
   }

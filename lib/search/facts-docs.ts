@@ -10,9 +10,11 @@ import type { Doc } from './build-index'
 export function factsToDocs(facts: Fact[]): Doc[] {
   return facts.map((f) => ({
     id: f.id,
+    kind: 'fact',
     chapter: f.chapter,
     sectionId: '',
     heading: f.title || chapterTitle(f.chapter),
     text: f.claim,
+    href: `/ch/${f.chapter}`,
   }))
 }

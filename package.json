@@ -12,8 +12,10 @@
     "build:turbo": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --maxWorkers=1 --no-file-parallelism",
     "test:watch": "vitest",
+    "qa": "npm run lint && npm run typecheck && npm test && npm run check:freshness && npm run check:links -- --strict",
     "check:links": "node scripts/check-source-links.mjs",
     "check:freshness": "node scripts/fact-freshness.mjs",
     "gen:queue": "node scripts/gen-review-queue.mjs"

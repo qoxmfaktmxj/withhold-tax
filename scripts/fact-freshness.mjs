@@ -82,7 +82,7 @@ for (const f of facts) {
 }
 
 // Sort: risk high first, then by nextReviewBy ascending
-const riskOrder = { high: 0, medium: 1, low: 2 }
+const riskOrder = { critical: 0, high: 1, medium: 2, low: 3 }
 flagged.sort((a, b) => {
   const rd = (riskOrder[a.risk] ?? 3) - (riskOrder[b.risk] ?? 3)
   if (rd !== 0) return rd

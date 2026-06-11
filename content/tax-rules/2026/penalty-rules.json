@@ -47,17 +47,35 @@
     "factIds": ["f_c40017"],
     "inputs": [
       { "key": "unpaidTax", "type": "number", "required": true, "description": "미납·과소납부 세액(원)" },
-      { "key": "daysLate", "type": "number", "required": true, "description": "법정납부기한 다음 날부터 납부일까지 일수(고지 전 구간)" }
+      { "key": "daysLate", "type": "number", "required": true, "description": "법정납부기한 다음 날부터 납부일까지 일수(고지 전 구간)" },
+      { "key": "noticeDate", "type": "date", "required": false, "description": "납부고지일" },
+      { "key": "designatedDueDate", "type": "date", "required": false, "description": "납부고지서상 지정납부기한" },
+      { "key": "demandCost", "type": "number", "required": false, "description": "독촉비용(고지서·우편 고시 기준 입력)" }
     ],
     "formula": {
       "type": "penalty-late-wht",
       "expression": "기본 3% + 일할이자(고지 전) + [개정] 지정납부기한 후 월할 이자 + 독촉비용 — 10%/50% 한도 유지, 체납 150만원 미만 월할·독촉비용 면제, 기간 5년 상한",
-      "params": { "baseRate": 0.03, "dailyRate": 0.00022, "innerCap": 0.1, "outerCap": 0.5 }
+      "params": {
+        "baseRate": 0.03,
+        "dailyRate": 0.00022,
+        "monthlyRate": 0.0067,
+        "innerCap": 0.1,
+        "outerCap": 0.5,
+        "smallTaxExemption": 1500000,
+        "maxPostDesignatedMonths": 60
+      }
     },
     "calculationMode": "manual-review",
-    "examples": [],
+    "examples": [
+      {
+        "title": "미납 2,000,000원·고지 전 30일·지정납부기한 후 3개월·독촉비용 2,500원",
+        "input": { "unpaidTax": 2000000, "daysLate": 30, "designatedDueDate": "2026-08-20", "paymentDate": "2026-11-20", "demandCost": 2500 },
+        "expected": { "basePenalty": 60000, "preNoticeDailyPenalty": 13200, "postDesignatedMonthlyPenalty": 40200, "demandCost": 2500, "total": 115900, "manualReviewRequired": true }
+      }
+    ],
     "warnings": [
-      "본 계산기는 고지 전(법정납부기한~납부일) 일할 구간만 산정 — 지정납부기한 이후 월할 이자·독촉비용은 납부고지서 기준으로 별도 확인",
+      "지정납부기한 후 월할 이자율은 월 1만분의 67",
+      "독촉비용은 고지서·우편 고시 기준 금액을 입력하고 수동 검토",
       "2026.7.1 전후 분기 적용(경과조치 있음) — 세무담당자 확인 필수"
     ]
   },
@@ -69,17 +87,38 @@
     "domain": "penalty",
     "incomeType": "all",
     "effectiveFrom": "2019-01-01",
-    "factIds": ["f_c40004", "f_c40005", "f_c40008"],
+    "factIds": ["f_c40004", "f_c40005", "f_c40006", "f_c40008"],
     "inputs": [
       { "key": "amount", "type": "number", "required": true, "description": "미제출·지연제출 지급금액(원)" },
-      { "key": "late", "type": "boolean", "required": true, "description": "지연제출(3개월 이내) 여부" }
+      { "key": "statementType", "type": "enum", "required": true, "description": "지급명세서(연) 또는 간이지급명세서" },
+      { "key": "submissionStatus", "type": "enum", "required": true, "description": "미제출 또는 지연제출" },
+      { "key": "companySize", "type": "enum", "required": true, "description": "일반기업 또는 중소기업" }
     ],
     "formula": {
       "type": "custom",
-      "expression": "미제출 = 지급금액 × 1%, 지연제출(3개월 이내) = 지급금액 × 0.5% — 한도: 일반기업 1억원·중소기업 5천만원",
-      "params": { "missRate": 0.01, "lateRate": 0.005 }
+      "expression": "지급명세서 미제출 = 지급금액 × 1%, 지연제출 = 지급금액 × 0.5%; 간이지급명세서 미제출 = 지급금액 × 0.25%, 지연제출 = 지급금액 × 0.125% — 한도: 일반기업 1억원·중소기업 5천만원",
+      "params": {
+        "missRate": 0.01,
+        "lateRate": 0.005,
+        "simpleMissRate": 0.0025,
+        "simpleLateRate": 0.00125,
+        "generalCap": 100000000,
+        "smeCap": 50000000
+      }
     },
-    "examples": [],
-    "warnings": ["간이지급명세서는 0.25%/0.125% 별도(f_c40006)"]
+    "calculationMode": "manual-review",
+    "examples": [
+      {
+        "title": "지급명세서 미제출 10,000,000원",
+        "input": { "amount": 10000000, "statementType": "annual", "submissionStatus": "missing", "companySize": "general" },
+        "expected": { "total": 100000, "capApplied": false }
+      },
+      {
+        "title": "간이지급명세서 지연제출 10,000,000원",
+        "input": { "amount": 10000000, "statementType": "simplified", "submissionStatus": "late", "companySize": "general" },
+        "expected": { "total": 12500, "capApplied": false }
+      }
+    ],
+    "warnings": ["간이지급명세서 지연제출 경감기간은 소득 유형과 귀속연도별 특례를 별도 확인"]
   }
 ]

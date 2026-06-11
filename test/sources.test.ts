@@ -71,6 +71,15 @@ describe('facts ←→ sources integrity', () => {
 
     expect(missing).toEqual([])
   })
+
+  it('every content fact is linked to at least one registered source', () => {
+    const facts = FactsFileSchema.parse(factsRaw)
+    const missing = facts
+      .filter((f) => f.sourceIds.length === 0)
+      .map((f) => f.id)
+
+    expect(missing).toEqual([])
+  })
 })
 
 describe('extended fact fields (backward compatible)', () => {
@@ -95,8 +104,8 @@ describe('extended fact fields (backward compatible)', () => {
     }
     const f = FactsFileSchema.parse([legacy])[0]
     expect(f.sourceIds).toEqual([])
-    expect(f.incomeType).toBe('')
-    expect(f.implementationStatus).toBe('content_done')
+    expect(f.incomeType).toBe('all')
+    expect(f.implementationStatus).toBe('not_started')
     expect(f.implementationImpact).toEqual({
       content: true,
       ui: false,

@@ -1,0 +1,33 @@
+{
+  "screenId": "business-income-payment",
+  "title": "사업소득 지급",
+  "fields": [
+    { "key": "payeeId", "label": "대상자 ID", "type": "string", "required": true, "source": "employee", "helpText": "직원 또는 외부 용역자" },
+    { "key": "hasBusinessRegistration", "label": "사업자등록 여부", "type": "boolean", "required": true, "source": "manual" },
+    { "key": "isPersonalService", "label": "인적용역 여부", "type": "boolean", "required": true, "source": "manual", "helpText": "소득세법상 인적용역 해당 여부" },
+    { "key": "paymentAmount", "label": "지급액 (원)", "type": "integer", "required": true, "source": "manual" },
+    { "key": "incomeTaxRate", "label": "소득세율 (%)", "type": "decimal", "required": true, "source": "rule", "validation": "3.0 고정(인적용역)", "helpText": "소득세 3%" },
+    { "key": "localTaxRate", "label": "지방소득세율 (%)", "type": "decimal", "required": true, "source": "rule", "validation": "0.3 고정", "helpText": "소득세의 10%" },
+    { "key": "withheldIncomeTax", "label": "원천징수 소득세 (원)", "type": "integer", "required": true, "source": "rule" },
+    { "key": "withheldLocalTax", "label": "원천징수 지방소득세 (원)", "type": "integer", "required": true, "source": "rule" },
+    { "key": "paymentDate", "label": "지급일", "type": "date", "required": true, "source": "manual" },
+    { "key": "filingMonth", "label": "신고 월", "type": "YYYYMM", "required": true, "source": "rule", "helpText": "지급일 익월 10일까지 신고" },
+    { "key": "isYearEndTarget", "label": "연말정산 대상", "type": "boolean", "required": true, "source": "rule", "helpText": "계속 용역자 여부" },
+    { "key": "additionalTaxAfterSettlement", "label": "연말정산 추가납부세액 (원)", "type": "integer|null", "required": false, "source": "rule" },
+    { "key": "installmentEnabled", "label": "분납 적용", "type": "boolean", "required": false, "source": "rule" },
+    { "key": "installmentSchedule", "label": "분납 계획", "type": "array<{month,amount}>", "required": false, "source": "rule" }
+  ],
+  "ruleIds": [
+    "resident_business_income_wht",
+    "monthly_wht_filing",
+    "simplified_statement_business_other_monthly",
+    "business_yas_installment_window"
+  ],
+  "factIds": [
+    "f_a00001",
+    "f_ca0001",
+    "f_ca0006",
+    "f_ca0007"
+  ]
+}
+

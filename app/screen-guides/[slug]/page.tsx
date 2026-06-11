@@ -4,10 +4,11 @@ import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import factsRaw from '@/content/facts.json'
 import { loadFacts } from '@/lib/facts/store'
-import { screenGuideTitle } from '@/lib/screen-guides'
+import { getScreenGuideSpec, screenGuideTitle } from '@/lib/screen-guides'
 import { Fact } from '@/components/Fact'
 import { HashScroll } from '@/components/HashScroll'
 import { ScreenSpec } from '@/components/guides/ScreenSpec'
+import { StructuredScreenSpec } from '@/components/guides/StructuredScreenSpec'
 import { DevNote } from '@/components/guides/DevNote'
 import { TaxRisk } from '@/components/guides/TaxRisk'
 
@@ -34,6 +35,7 @@ export default async function ScreenGuideDetailPage({
 }) {
   const { slug } = await params
   if (!availableScreenGuideSlugs().includes(slug)) notFound()
+  const structuredSpec = getScreenGuideSpec(slug)
 
   const facts = loadFacts(factsRaw)
   const factMap = Object.fromEntries(facts.map((f) => [f.id, f]))
@@ -52,6 +54,7 @@ export default async function ScreenGuideDetailPage({
     <article className="wt-article">
       <HashScroll />
       <h1 style={{ marginBottom: 'var(--space-sm)' }}>{screenGuideTitle(slug)}</h1>
+      {structuredSpec && <StructuredScreenSpec spec={structuredSpec} />}
       <MDX
         components={{
           F,

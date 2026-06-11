@@ -1,0 +1,31 @@
+{
+  "screenId": "pay-item-master",
+  "title": "급여항목 세무속성",
+  "fields": [
+    { "key": "itemCode", "label": "항목 코드", "type": "string", "required": true, "source": "manual", "validation": "중복 불가" },
+    { "key": "itemName", "label": "항목명", "type": "string", "required": true, "source": "manual" },
+    { "key": "isTaxable", "label": "과세 여부", "type": "boolean", "required": true, "source": "manual", "helpText": "false = 비과세" },
+    { "key": "taxExemptType", "label": "비과세 유형", "type": "enum|null", "required": false, "requiredWhen": "isTaxable === false", "source": "manual", "validation": "isTaxable=false 시 필수", "helpText": "식대/보육/출산/교통비/기타", "blocking": true },
+    { "key": "monthlyLimit", "label": "월 한도 (원)", "type": "integer|null", "required": false, "source": "manual", "helpText": "비과세 상한. null = 무제한" },
+    { "key": "isChildBasedLimit", "label": "자녀 수 기반 한도", "type": "boolean", "required": false, "source": "rule", "helpText": "보육수당 등 자녀 1명당 한도 적용 여부" },
+    { "key": "annualLimit", "label": "연간 한도 (원)", "type": "integer|null", "required": false, "source": "manual" },
+    { "key": "inPaymentStatement", "label": "지급명세서 반영", "type": "boolean", "required": true, "source": "manual" },
+    { "key": "inSimpleStatement", "label": "간이지급명세서 반영", "type": "boolean", "required": true, "source": "manual" },
+    { "key": "inSocialInsurance", "label": "사회보험 보수 포함", "type": "boolean", "required": true, "source": "manual", "helpText": "국민연금·건강보험 보수월액 산정 포함 여부" },
+    { "key": "effectiveFrom", "label": "적용 시작일", "type": "date", "required": true, "source": "manual" },
+    { "key": "effectiveTo", "label": "적용 종료일", "type": "date|null", "required": false, "source": "manual", "helpText": "null = 현재 적용 중" },
+    { "key": "relatedFactId", "label": "관련 Fact ID", "type": "string|null", "required": false, "source": "manual", "helpText": "근거 법령 연결용" }
+  ],
+  "ruleIds": [
+    "meal_allowance_cap",
+    "childcare_allowance_cap_per_child",
+    "self_drive_allowance_cap",
+    "overseas_work_exemption"
+  ],
+  "factIds": [
+    "f_a00008",
+    "f_c80003",
+    "f_c80004"
+  ]
+}
+

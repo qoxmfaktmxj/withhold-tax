@@ -33,6 +33,31 @@ describe('FactSchema', () => {
     expect(r.sunsetDate).toBe('')
     expect(r.reviewerId).toBe('')
     expect(r.appliesFrom).toBe('')
+    expect(r.incomeType).toBe('all')
+    expect(r.implementationStatus).toBe('not_started')
+  })
+
+  it('accepts only canonical incomeType enum values', () => {
+    for (const incomeType of [
+      'all',
+      'earned',
+      'daily_worker',
+      'business',
+      'other',
+      'retirement',
+      'pension',
+      'interest',
+      'dividend',
+      'interest_dividend',
+      'nonresident',
+      'foreign_corporation',
+      'local_income_tax',
+    ]) {
+      expect(() => FactSchema.parse({ ...valid, incomeType })).not.toThrow()
+    }
+
+    expect(() => FactSchema.parse({ ...valid, incomeType: 'interest-dividend' })).toThrow()
+    expect(() => FactSchema.parse({ ...valid, incomeType: '' })).toThrow()
   })
 
   // confidenceScore 정수 범위 검증

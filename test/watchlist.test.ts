@@ -49,7 +49,24 @@ describe('WatchItem schema', () => {
     ).toThrow()
   })
 
-  it('rejects status other than watching', () => {
+  it('accepts lifecycle statuses beyond simple watching', () => {
+    for (const status of ['watching', 'confirmed', 'implemented', 'released', 'deferred', 'not_applicable']) {
+      expect(() =>
+        WatchItemSchema.parse({
+          watchId: `watch_${status}`,
+          title: `${status} 상태`,
+          expectedEffectiveDate: '2027-01-01',
+          status,
+          owner: 'kms',
+          nextCheckDate: '2026-12-01',
+          impact: ['content'],
+          relatedFactIds: [],
+        })
+      ).not.toThrow()
+    }
+  })
+
+  it('rejects unsupported status values', () => {
     expect(() =>
       WatchItemSchema.parse({
         watchId: 'watch_bad_status',
@@ -96,9 +113,9 @@ describe('WatchItem schema', () => {
 })
 
 describe('content/law-watchlist.json 시드 파싱', () => {
-  it('3개 시드 항목을 파싱한다', () => {
+  it('2개 시드 항목을 파싱한다', () => {
     const items = loadWatchlist(watchlistRaw)
-    expect(items).toHaveLength(3)
+    expect(items).toHaveLength(2)
   })
 
   it('WatchlistFileSchema로 파싱 성공', () => {
@@ -111,11 +128,14 @@ describe('content/law-watchlist.json 시드 파싱', () => {
     expect(new Set(ids).size).toBe(ids.length)
   })
 
-  it('모든 항목의 status가 watching이다', () => {
+  it('시드 항목의 status는 lifecycle enum 안에 있고 확인된 항목을 구분한다', () => {
     const items = loadWatchlist(watchlistRaw)
+    const allowed = new Set(['watching', 'confirmed', 'implemented', 'released', 'deferred', 'not_applicable'])
+
     for (const item of items) {
-      expect(item.status).toBe('watching')
+      expect(allowed.has(item.status)).toBe(true)
     }
+    expect(items.map((item) => item.status)).toContain('confirmed')
   })
 
   it('watch_2027_dividend_grossup 항목이 존재한다', () => {
@@ -124,6 +144,11 @@ describe('content/law-watchlist.json 시드 파싱', () => {
     expect(item).toBeDefined()
     expect(item?.expectedEffectiveDate).toBe('2027-01-01')
     expect(item?.impact).toContain('calculation')
+  })
+
+  it('확인 완료된 법인세법 제한세율 제출의무 항목은 watchlist에 남기지 않는다', () => {
+    const items = loadWatchlist(watchlistRaw)
+    expect(items.find((i) => i.watchId === 'watch_2026_corp_treaty_filing')).toBeUndefined()
   })
 })
 

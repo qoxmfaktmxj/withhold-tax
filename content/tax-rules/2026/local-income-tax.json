@@ -20,8 +20,8 @@
     "examples": [
       {
         "title": "원천세 30,000원",
-        "input": { "grossPayment": 30000 },
-        "expected": { "nationalTax": 3000 }
+        "input": { "nationalTax": 30000 },
+        "expected": { "localTax": 3000 }
       }
     ],
     "warnings": [

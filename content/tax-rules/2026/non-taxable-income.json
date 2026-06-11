@@ -16,7 +16,19 @@
       "expression": "월 20만원 이내 비과세(현물 식사 제공 시 식대 비과세 불가 — 중복 불가)",
       "params": { "cap": 200000 }
     },
-    "examples": [],
+    "examples": [
+      {
+        "title": "월 식대 250,000원",
+        "input": { "monthlyAmount": 250000, "months": 1 },
+        "expected": {
+          "monthlyCap": 200000,
+          "periodCap": 200000,
+          "grossAmount": 250000,
+          "nonTaxableAmount": 200000,
+          "taxableAmount": 50000
+        }
+      }
+    ],
     "warnings": ["현물 식사와 식대 중복 시 식대는 과세"]
   },
   {
@@ -37,7 +49,19 @@
       "expression": "해당 자녀 1명당 월 20만원 이내 비과세 — 한도 = 20만원 × 6세 이하 자녀 수",
       "params": { "capPerChild": 200000 }
     },
-    "examples": [],
+    "examples": [
+      {
+        "title": "보육수당 자녀 2명, 월 500,000원",
+        "input": { "monthlyAmount": 500000, "childrenUnder6": 2, "months": 1 },
+        "expected": {
+          "monthlyCap": 400000,
+          "periodCap": 400000,
+          "grossAmount": 500000,
+          "nonTaxableAmount": 400000,
+          "taxableAmount": 100000
+        }
+      }
+    ],
     "warnings": ["'자녀 1명당' 확대는 2025.1.1 이후 지급분(법률 제20615호)", "기업 출산지원금 전액 비과세(2년·2회)는 별개 항목(f_c80004)"]
   },
   {
@@ -57,7 +81,19 @@
       "expression": "본인 차량 업무 사용 + 실비 미수령 요건 충족 시 월 20만원 이내 비과세",
       "params": { "cap": 200000 }
     },
-    "examples": [],
+    "examples": [
+      {
+        "title": "자가운전보조금 월 150,000원",
+        "input": { "monthlyAmount": 150000, "months": 1 },
+        "expected": {
+          "monthlyCap": 200000,
+          "periodCap": 200000,
+          "grossAmount": 150000,
+          "nonTaxableAmount": 150000,
+          "taxableAmount": 0
+        }
+      }
+    ],
     "warnings": ["시내출장비 등 실비를 별도 수령하면 비과세 불가"]
   },
   {
@@ -78,7 +114,19 @@
       "expression": "일반 월 100만원, 원양어업 선박·국외 건설현장 등 월 500만원 이내 비과세",
       "params": { "cap": 1000000, "capSpecial": 5000000 }
     },
-    "examples": [],
+    "examples": [
+      {
+        "title": "국외 건설현장 월 6,000,000원",
+        "input": { "monthlyAmount": 6000000, "isSpecialSite": true, "months": 1 },
+        "expected": {
+          "monthlyCap": 5000000,
+          "periodCap": 5000000,
+          "grossAmount": 6000000,
+          "nonTaxableAmount": 5000000,
+          "taxableAmount": 1000000
+        }
+      }
+    ],
     "warnings": ["건설현장은 '지어지고 있는 상태'만 인정 — 완공 후 유지보수 제외", "단순 출장은 국외근로 비과세 대상 아님"]
   }
 ]

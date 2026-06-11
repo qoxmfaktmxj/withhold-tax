@@ -85,12 +85,12 @@ export function CommandPalette() {
   }, [safeActive])
 
   const go = useCallback(
-    (chapter: string, sectionId: string) => {
-      const url = `/ch/${chapter}${sectionId ? `#${sectionId}` : ''}`
+    (doc: Doc) => {
+      const url = doc.href || `/ch/${doc.chapter}${doc.sectionId ? `#${doc.sectionId}` : ''}`
       closePalette()
       // scroll:false stops App Router's scroll-to-top; <HashScroll> on the chapter
       // page does the actual scroll-to-section (on mount + hashchange).
-      router.push(url, { scroll: !sectionId })
+      router.push(url, { scroll: !doc.sectionId })
     },
     [closePalette, router]
   )
@@ -105,7 +105,7 @@ export function CommandPalette() {
     } else if (e.key === 'Enter') {
       e.preventDefault()
       const r = results[safeActive]
-      if (r) go(r.chapter, r.sectionId)
+      if (r) go(r)
     } else if (e.key === 'Escape') {
       e.preventDefault()
       closePalette()
@@ -181,7 +181,7 @@ export function CommandPalette() {
                       onMouseEnter={() => setActive(i)}
                       onMouseDown={(e) => {
                         e.preventDefault()
-                        go(r.chapter, r.sectionId)
+                        go(r)
                       }}
                     >
                       <div className="wt-cmdk-item-top">

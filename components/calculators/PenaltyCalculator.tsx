@@ -2,10 +2,11 @@
 
 import { useMemo, useState } from 'react'
 import penaltyRulesRaw from '@/content/tax-rules/2026/penalty-rules.json'
-import { canAutoCalculate, loadRules, pickRule, withholdingLatePenalty } from '@/lib/rules/engine'
+import { loadRules, pickRule, withholdingLatePenalty } from '@/lib/rules/engine'
 
 const RULES = loadRules(penaltyRulesRaw)
 const KRW = (n: number) => n.toLocaleString('ko-KR') + '원'
+type NoticeStatus = 'before_notice' | 'after_notice'
 
 function daysBetween(a: string, b: string): number {
   const ms = new Date(b + 'T00:00:00Z').getTime() - new Date(a + 'T00:00:00Z').getTime()
@@ -35,16 +36,36 @@ export function PenaltyCalculator() {
   const [unpaid, setUnpaid] = useState('1000000')
   const [dueDate, setDueDate] = useState('2026-01-10')
   const [payDate, setPayDate] = useState('2026-04-20')
+  const [noticeStatus, setNoticeStatus] = useState<NoticeStatus>('before_notice')
+  const [noticeDate, setNoticeDate] = useState('2026-08-10')
+  const [designatedDueDate, setDesignatedDueDate] = useState('2026-08-20')
+  const [demandCost, setDemandCost] = useState('0')
 
   const result = useMemo(() => {
     const unpaidTax = Number(unpaid.replace(/[^0-9]/g, '')) || 0
     if (!unpaidTax || !dueDate || !payDate || payDate < dueDate) return null
-    const rule = pickRule(RULES, 'wht_late_payment_penalty', dueDate)
+    const ruleDate = noticeStatus === 'after_notice' && designatedDueDate ? designatedDueDate : dueDate
+    const rule = pickRule(RULES, 'wht_late_payment_penalty', ruleDate)
     if (!rule) return null
     const daysLate = daysBetween(dueDate, payDate)
-    if (!canAutoCalculate(rule)) return { rule, daysLate, calc: null, unpaidTax }
-    return { rule, daysLate, calc: withholdingLatePenalty(rule, { unpaidTax, daysLate }), unpaidTax }
-  }, [unpaid, dueDate, payDate])
+    const calc = withholdingLatePenalty(rule, {
+      unpaidTax,
+      daysLate,
+      legalDueDate: dueDate,
+      paymentDate: payDate,
+      noticeDate: noticeStatus === 'after_notice' ? noticeDate : undefined,
+      designatedDueDate: noticeStatus === 'after_notice' ? designatedDueDate : undefined,
+      demandCost: noticeStatus === 'after_notice' ? Number(demandCost.replace(/[^0-9]/g, '')) || 0 : undefined,
+    })
+    const billReviewRequired = noticeStatus === 'after_notice' || calc.manualReviewRequired
+    return {
+      rule,
+      daysLate,
+      calc,
+      unpaidTax,
+      billReviewRequired,
+    }
+  }, [unpaid, dueDate, payDate, noticeStatus, noticeDate, designatedDueDate, demandCost])
 
   return (
     <div>
@@ -61,33 +82,58 @@ export function PenaltyCalculator() {
           <label htmlFor="pc-pay" style={label}>실제 납부(예정)일</label>
           <input id="pc-pay" style={field} type="date" value={payDate} onChange={(e) => setPayDate(e.target.value)} />
         </div>
+        <div>
+          <label htmlFor="pc-notice" style={label}>고지 전/후 여부</label>
+          <select
+            id="pc-notice"
+            style={field}
+            value={noticeStatus}
+            onChange={(e) => setNoticeStatus(e.target.value as NoticeStatus)}
+          >
+            <option value="before_notice">고지 전 자진납부</option>
+            <option value="after_notice">고지 후 납부</option>
+          </select>
+        </div>
       </div>
 
-      {result && !result.calc && (
+      {noticeStatus === 'after_notice' && (
         <div
-          style={{
-            marginTop: 18,
-            background: 'var(--caution-bg)',
-            border: '1px solid var(--caution-border)',
-            borderRadius: 'var(--radius)',
-            padding: '18px 20px',
-            maxWidth: 640,
-          }}
+          style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14, maxWidth: 640, marginTop: 14 }}
         >
-          <p style={{ margin: 0, fontWeight: 800, color: 'var(--caution-text)' }}>
-            2026.7.1 이후 지정납부기한 도래분은 자동 계산을 중지합니다.
-          </p>
-          <p style={{ margin: '8px 0 0', fontSize: '0.82rem', color: 'var(--gray-600)', lineHeight: 1.65 }}>
-            개정 산식은 월할 이자·독촉비용·150만원 미만 면제·고지 시점 요소가 함께 들어갑니다.
-            현재 화면은 rule 선택과 경고만 제공하며, 실제 금액은 홈택스·납부고지서 또는 세무담당자 확인 기준으로 처리하세요.
-          </p>
-          <p style={{ margin: '10px 0 0', fontFamily: 'var(--font-mono)', fontSize: '0.76rem', color: 'var(--gray-500)' }}>
-            적용 rule: {result.rule.ruleId}@{result.rule.version} · 지연 일수 입력값: {result.daysLate}일
-          </p>
+          <div>
+            <label htmlFor="pc-notice-date" style={label}>납부고지일</label>
+            <input
+              id="pc-notice-date"
+              style={field}
+              type="date"
+              value={noticeDate}
+              onChange={(e) => setNoticeDate(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="pc-designated-due" style={label}>지정납부기한</label>
+            <input
+              id="pc-designated-due"
+              style={field}
+              type="date"
+              value={designatedDueDate}
+              onChange={(e) => setDesignatedDueDate(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="pc-demand-cost" style={label}>독촉비용</label>
+            <input
+              id="pc-demand-cost"
+              style={field}
+              inputMode="numeric"
+              value={demandCost}
+              onChange={(e) => setDemandCost(e.target.value)}
+            />
+          </div>
         </div>
       )}
 
-      {result && result.calc && (
+      {result && (
         <div
           style={{
             marginTop: 18,
@@ -112,6 +158,12 @@ export function PenaltyCalculator() {
                 <td style={{ textAlign: 'right' }}>{result.daysLate}일</td>
               </tr>
               <tr>
+                <td style={{ padding: '4px 0', color: 'var(--gray-600)' }}>고지 전/후</td>
+                <td style={{ textAlign: 'right' }}>
+                  {noticeStatus === 'after_notice' ? '고지 후 납부' : '고지 전 자진납부'}
+                </td>
+              </tr>
+              <tr>
                 <td style={{ padding: '4px 0', color: 'var(--gray-600)' }}>기본 가산(3%)</td>
                 <td style={{ textAlign: 'right' }}>{KRW(result.calc.basePenalty)}</td>
               </tr>
@@ -119,12 +171,40 @@ export function PenaltyCalculator() {
                 <td style={{ padding: '4px 0', color: 'var(--gray-600)' }}>이자 가산(22/100,000 × 일수)</td>
                 <td style={{ textAlign: 'right' }}>{KRW(result.calc.dailyPenalty)}</td>
               </tr>
+              {result.rule.effectiveFrom >= '2026-07-01' && (
+                <>
+                  <tr>
+                    <td style={{ padding: '4px 0', color: 'var(--gray-600)' }}>고지 전 일할 이자</td>
+                    <td style={{ textAlign: 'right' }}>{KRW(result.calc.preNoticeDailyPenalty)}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '4px 0', color: 'var(--gray-600)' }}>지정납부기한 후 월할 이자</td>
+                    <td style={{ textAlign: 'right' }}>{KRW(result.calc.postDesignatedMonthlyPenalty)}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '4px 0', color: 'var(--gray-600)' }}>독촉비용 반영액</td>
+                    <td style={{ textAlign: 'right' }}>{KRW(result.calc.demandCost)}</td>
+                  </tr>
+                </>
+              )}
               {result.calc.capApplied && (
                 <tr>
                   <td style={{ padding: '4px 0', color: 'var(--gray-600)' }}>한도 적용(미납세액×10%)</td>
                   <td style={{ textAlign: 'right', color: 'var(--blue-700)' }}>{KRW(result.calc.capAmount)}</td>
                 </tr>
               )}
+              <tr>
+                <td style={{ padding: '4px 0', color: 'var(--gray-600)' }}>10% 한도 여부</td>
+                <td style={{ textAlign: 'right' }}>{result.calc.capApplied ? '적용' : '미적용'}</td>
+              </tr>
+              <tr>
+                <td style={{ padding: '4px 0', color: 'var(--gray-600)' }}>전체 50% 한도</td>
+                <td style={{ textAlign: 'right' }}>{KRW(result.calc.outerCapAmount)} 별도 검토</td>
+              </tr>
+              <tr>
+                <td style={{ padding: '4px 0', color: 'var(--gray-600)' }}>고지서 확인</td>
+                <td style={{ textAlign: 'right' }}>{result.billReviewRequired ? '수동 검토' : '고지 전 추정'}</td>
+              </tr>
               <tr style={{ borderTop: '1px solid var(--border)' }}>
                 <td style={{ padding: '8px 0 0', fontWeight: 700 }}>예상 납부지연가산세</td>
                 <td style={{ textAlign: 'right', padding: '8px 0 0', fontWeight: 800, fontSize: '1.05rem', color: 'var(--blue-700)' }}>
@@ -139,12 +219,20 @@ export function PenaltyCalculator() {
               </tr>
             </tbody>
           </table>
-          {dueDate >= '2026-07-01' && (
+          {result.rule.effectiveFrom >= '2026-07-01' && (
             <p style={{ margin: '10px 0 0', fontSize: '0.78rem', color: 'var(--caution-text)' }}>
-              2026.7.1 이후 지정납부기한 도래분 — 개정 산식(월할 이자·독촉비용)이 적용됩니다. 본 결과는 고지 전
-              일할 구간 추정치이며 고지 이후 금액은 고지서 기준입니다.
+              2026.7.1 이후 지정납부기한 도래분 — 개정 산식(지정납부기한 후 월 1만분의 67, 독촉비용, 150만원
+              미만 면제)이 반영됩니다. 고지 이후 금액은 납부고지서 기준으로 수동 검토하세요.
             </p>
           )}
+          {result.billReviewRequired && (
+            <p style={{ margin: '10px 0 0', fontSize: '0.78rem', color: 'var(--caution-text)' }}>
+              고지 후 납부 구간은 납부고지서 기준 확인이 필요합니다.
+            </p>
+          )}
+          <p style={{ margin: '10px 0 0', fontSize: '0.78rem', color: 'var(--gray-600)' }}>
+            지방소득세 특별징수 가산세는 별도 체계로 확인하세요.
+          </p>
         </div>
       )}
       {!result && (

@@ -1,0 +1,119 @@
+{
+  "screenId": "nonresident-payment",
+  "title": "비거주자 지급",
+  "fields": [
+    {
+      "key": "payeeType",
+      "label": "대상자 유형",
+      "type": "enum",
+      "required": true,
+      "source": "manual",
+      "validation": "비거주자(개인)|외국법인"
+    },
+    {
+      "key": "residenceCountry",
+      "label": "거주지국 (조약 체결국)",
+      "type": "string(ISO-3166)",
+      "required": true,
+      "source": "manual"
+    },
+    {
+      "key": "incomeType",
+      "label": "소득 유형",
+      "type": "enum",
+      "required": true,
+      "source": "manual",
+      "validation": "이자|배당|사업|사용료|근로|기타"
+    },
+    {
+      "key": "paymentAmount",
+      "label": "지급액 (원)",
+      "type": "integer",
+      "required": true,
+      "source": "manual"
+    },
+    {
+      "key": "domesticTaxRate",
+      "label": "국내법 세율 (%)",
+      "type": "decimal",
+      "required": true,
+      "source": "rule",
+      "helpText": "조약 미적용 시 기본 세율"
+    },
+    {
+      "key": "treatyApplied",
+      "label": "조세조약 적용 여부",
+      "type": "boolean",
+      "required": true,
+      "source": "manual"
+    },
+    {
+      "key": "limitedTaxRate",
+      "label": "제한세율 (%)",
+      "type": "decimal|null",
+      "required": false,
+      "requiredWhen": "treatyApplied === true",
+      "source": "manual",
+      "validation": "조약적용=true 시 필수"
+    },
+    {
+      "key": "treatyApplicationFormDate",
+      "label": "제한세율 신청서 수령일",
+      "type": "date|null",
+      "required": false,
+      "requiredWhen": "treatyApplied === true",
+      "source": "manual",
+      "validation": "조약적용=true 시 필수",
+      "blocking": true
+    },
+    {
+      "key": "residenceCertificateDate",
+      "label": "거주자증명서 수령일",
+      "type": "date|null",
+      "required": false,
+      "source": "manual"
+    },
+    {
+      "key": "beneficialOwnerConfirmed",
+      "label": "실질귀속자 확인 여부",
+      "type": "boolean",
+      "required": true,
+      "source": "manual"
+    },
+    {
+      "key": "taxOfficeFilingDate",
+      "label": "세무서 제출일",
+      "type": "date|null",
+      "required": false,
+      "source": "manual"
+    },
+    {
+      "key": "filingDeadline",
+      "label": "제출 기한",
+      "type": "date",
+      "required": true,
+      "source": "rule",
+      "helpText": "지급연도 익년 2월 말일"
+    },
+    {
+      "key": "attachments",
+      "label": "첨부 서류 목록",
+      "type": "array<string>",
+      "required": false,
+      "source": "manual",
+      "helpText": "신청서·증명서·실질귀속자확인서 등"
+    }
+  ],
+  "ruleIds": [
+    "nonresident_general_wht",
+    "treaty_reduced_rate_application_filing"
+  ],
+  "factIds": [
+    "f_nr0018",
+    "f_nr0014",
+    "f_nr0015",
+    "f_nr0013",
+    "f_nr0007",
+    "f_nr0016"
+  ]
+}

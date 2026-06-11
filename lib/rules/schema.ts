@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { IncomeType } from '@/lib/facts/schema'
 
 const ymd = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'YYYY-MM-DD')
 
@@ -15,7 +16,15 @@ export const RuleInput = z.object({
 })
 
 export const RuleFormula = z.object({
-  type: z.enum(['rate', 'rate-with-local', 'penalty-late-wht', 'monthly-cap', 'date-rule', 'custom']),
+  type: z.enum([
+    'rate',
+    'rate-with-local',
+    'penalty-late-wht',
+    'monthly-cap',
+    'date-rule',
+    'year-end-installment-amount',
+    'custom',
+  ]),
   expression: z.string(), // 사람용 산식 설명
   params: z.record(z.string(), z.union([z.number(), z.string()])).default({}),
 })
@@ -37,7 +46,7 @@ export const TaxRuleSchema = z.object({
   calendarYear: z.number().int(),
   name: z.string().min(1),
   domain: z.string().min(1), // withholding-rate | penalty | deadline | non-taxable | local-income-tax
-  incomeType: z.string().min(1),
+  incomeType: IncomeType,
   effectiveFrom: ymd,
   effectiveTo: ymd.optional(), // 없으면 계속 유효
   factIds: z.array(z.string()).min(1),

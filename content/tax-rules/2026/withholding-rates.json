@@ -40,7 +40,7 @@
     "calendarYear": 2026,
     "name": "거주자 이자·배당 일반 원천징수",
     "domain": "withholding-rate",
-    "incomeType": "interest-dividend",
+    "incomeType": "interest_dividend",
     "effectiveFrom": "2018-01-01",
     "factIds": ["f_a00007"],
     "inputs": [
@@ -145,7 +145,7 @@
     ],
     "warnings": [
       "조세조약 제한세율이 우선 — 제한세율 적용신청서·거주자증명서 필수",
-      "2026.1.1~ 원천징수의무자는 제한세율 신청서를 익년 2월 말까지 세무서 제출(소득세법 §156조의6④)",
+      "2026.1.1~ 원천징수의무자는 제한세율 신청서를 익년 2월 말까지 세무서 제출(소득세법 §156조의6④, 법인세법 §98조의6④)",
       "채권이자 14%, 선박 등 2%, 유가증권 양도 별도 — 소득유형별 세율 확인"
     ]
   },
@@ -175,5 +175,26 @@
       }
     ],
     "warnings": ["나이 기준 세율(70세 미만 5%/70~80세 4%/80세 이상 3%)과 경합 시 낮은 세율 적용"]
+  },
+  {
+    "ruleId": "deferred_retirement_pension_reduction_review",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "이연퇴직소득 연금수령 원천징수 감면 수동검토",
+    "domain": "withholding-rate",
+    "incomeType": "retirement",
+    "effectiveFrom": "2026-01-01",
+    "factIds": ["f_c90013"],
+    "inputs": [
+      { "key": "baseRetirementTaxRate", "type": "number", "required": true, "description": "연금외수령 원천징수세율" },
+      { "key": "actualAnnuityYear", "type": "number", "required": true, "description": "연금 실제 수령연차" }
+    ],
+    "formula": {
+      "type": "custom",
+      "expression": "연금 실제 수령연차 10년 이하 70%, 10년 초과 20년 이하 60%, 20년 초과 50% 감면율 적용 여부 수동검토",
+      "params": {}
+    },
+    "calculationMode": "manual-review",
+    "warnings": ["연금 수령연차 산정과 연금외수령 세율은 퇴직연금 지급자료로 최종 확인"]
   }
 ]

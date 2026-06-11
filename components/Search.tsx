@@ -126,8 +126,8 @@ export function Search({ docs, availableChapters }: SearchProps) {
         >
           {results.map((r) => (
             <li key={r.id} className="wt-search-item">
-              {availableSet.has(r.chapter) ? (
-                <a href={`/ch/${r.chapter}${r.sectionId ? `#${r.sectionId}` : ''}`}>
+              {availableSet.has(r.chapter) || r.href ? (
+                <a href={r.href || `/ch/${r.chapter}${r.sectionId ? `#${r.sectionId}` : ''}`}>
                   <span
                     className="wt-mono"
                     style={{

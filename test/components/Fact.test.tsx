@@ -10,7 +10,7 @@ const data: FactData = {
   history: [{ date: '2026-06-08', author: 'kms', note: 'n' }], nextReviewBy: '',
   primarySourceVerified: false, confidenceScore: 0, subordinateLawRef: '', scopeLimitations: '',
   localTaxRef: '', supersededRefs: '', appliesFrom: '', sunsetDate: '', reviewerId: '',
-  sourceIds: [], incomeType: '', appliesTo: '', implementationStatus: 'content_done',
+  sourceIds: [], incomeType: 'all', appliesTo: '', implementationStatus: 'content_done',
   implementationImpact: { content: true, ui: false, calculation: false, reporting: false, migration: false },
 }
 

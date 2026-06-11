@@ -1,0 +1,27 @@
+{
+  "screenId": "penalty-calculator",
+  "title": "가산세 산정",
+  "fields": [
+    { "key": "taxType", "label": "세목", "type": "enum", "required": true, "source": "manual", "validation": "소득세|법인세|지방소득세|기타" },
+    { "key": "legalDueDate", "label": "법정납부기한", "type": "date", "required": true, "source": "manual", "helpText": "원칙적으로 익월 10일" },
+    { "key": "designatedDueDate", "label": "지정납부기한 (고지서)", "type": "date|null", "required": false, "source": "manual", "helpText": "고지 납부 시 고지서상 기한" },
+    { "key": "actualPaymentDate", "label": "실제 납부일", "type": "date", "required": true, "source": "manual" },
+    { "key": "taxAssessmentDate", "label": "고지일", "type": "date|null", "required": false, "source": "manual" },
+    { "key": "unpaidAmount", "label": "미납세액 (원)", "type": "integer", "required": true, "source": "manual" },
+    { "key": "includeLocalTax", "label": "지방소득세 포함", "type": "boolean", "required": false, "source": "manual", "helpText": "포함 시 소득세 미납액의 10% 별도 계산" },
+    { "key": "isAfter20260701", "label": "2026.7.1 이후 지정납부기한 도래", "type": "boolean", "required": true, "source": "rule", "helpText": "개정 산식 적용 여부 자동 판단" },
+    { "key": "penaltyAmount", "label": "납부지연 가산세 (원)", "type": "integer", "required": true, "source": "rule", "helpText": "계산 결과" },
+    { "key": "appliedFormula", "label": "적용 산식", "type": "string", "required": true, "source": "rule", "helpText": "현행 또는 2026.7 개정" },
+    { "key": "limitAmount", "label": "한도 적용액 (원)", "type": "integer", "required": true, "source": "rule" },
+    { "key": "companySizeLimit", "label": "기업 규모별 최대 한도 (원)", "type": "integer", "required": false, "source": "rule", "helpText": "일반 1억 / 중소 5천만" }
+  ],
+  "ruleIds": [
+    "wht_late_payment_penalty",
+    "payment_statement_penalty"
+  ],
+  "factIds": [
+    "f_a00004",
+    "f_c40017",
+    "f_c40008"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "screenId": "filing-calendar",
+  "title": "신고·제출 일정",
+  "fields": [
+    { "key": "businessType", "label": "납부 주기", "type": "enum", "required": true, "source": "manual", "validation": "매월|반기(1월·7월)", "helpText": "세무서 승인 반기납부 여부" },
+    { "key": "targetYearMonth", "label": "기준 연월", "type": "YYYYMM", "required": true, "source": "manual" },
+    { "key": "withholdingDueDate", "label": "원천세 신고·납부 기한", "type": "date", "required": true, "source": "rule", "helpText": "해당 월 익월 10일" },
+    { "key": "simpleStatementDueDate", "label": "간이지급명세서 제출 기한", "type": "date", "required": true, "source": "rule" },
+    { "key": "annualStatementDueDate", "label": "지급명세서 제출 기한", "type": "date", "required": false, "source": "rule", "helpText": "연 1회: 근로·사업 3월10일, 이자·배당 2월말" },
+    { "key": "treatyFormDueDate", "label": "제한세율 신청서 제출 기한", "type": "date", "required": false, "source": "rule", "helpText": "지급연도 익년 2월말" },
+    { "key": "alertDays", "label": "알림 기준일 (일 전)", "type": "integer[]", "required": false, "source": "manual", "validation": "[30, 7] 기본값" }
+  ],
+  "ruleIds": [
+    "monthly_wht_filing",
+    "payment_statement_earned_retire_business",
+    "payment_statement_others",
+    "payment_statement_daily_worker",
+    "simplified_statement_earned_halfyear",
+    "simplified_statement_business_other_monthly",
+    "treaty_reduced_rate_application_filing"
+  ],
+  "factIds": [
+    "f_c40010",
+    "f_c40011",
+    "f_c40012",
+    "f_c40006",
+    "f_ca0006",
+    "f_nr0018"
+  ]
+}
+

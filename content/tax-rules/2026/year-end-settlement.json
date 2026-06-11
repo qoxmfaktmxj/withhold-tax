@@ -1,0 +1,128 @@
+[
+  {
+    "ruleId": "business_yas_installment_amount",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "사업소득 연말정산 추가납부세액 분납 금액",
+    "domain": "year-end-settlement",
+    "incomeType": "business",
+    "effectiveFrom": "2026-01-01",
+    "factIds": ["f_ca0007"],
+    "inputs": [
+      { "key": "incomeType", "type": "enum", "required": true, "description": "연말정산 대상 소득 유형" },
+      { "key": "settlementYear", "type": "number", "required": true, "description": "귀속연도" },
+      { "key": "additionalTax", "type": "number", "required": true, "description": "연말정산 추가 납부세액" }
+    ],
+    "formula": {
+      "type": "year-end-installment-amount",
+      "expression": "추가 납부세액 10만원 초과 시 다음 연도 2월분부터 4월분 사업소득 지급 시까지 균등 분납",
+      "params": { "threshold": 100000, "startMonth": 2, "installmentCount": 3 }
+    },
+    "calculationMode": "automatic",
+    "examples": [
+      {
+        "title": "150,000원 추가 납부세액",
+        "input": { "incomeType": "business", "settlementYear": 2026, "additionalTax": 150000 },
+        "expected": {
+          "status": "available",
+          "threshold": 100000,
+          "installments": [
+            { "year": 2027, "month": 2, "amount": 50000 },
+            { "year": 2027, "month": 3, "amount": 50000 },
+            { "year": 2027, "month": 4, "amount": 50000 }
+          ]
+        }
+      },
+      {
+        "title": "100,000원 추가 납부세액",
+        "input": { "incomeType": "business", "settlementYear": 2026, "additionalTax": 100000 },
+        "expected": { "status": "not_available", "threshold": 100000, "reason": "threshold_not_exceeded", "installments": [] }
+      }
+    ],
+    "warnings": ["분납 가능 여부와 원천징수이행상황신고서 반영 방식은 최신 서식 기준으로 최종 확인"]
+  },
+  {
+    "ruleId": "employee_yas_installment_amount",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "근로소득 연말정산 추가납부세액 분납 금액",
+    "domain": "year-end-settlement",
+    "incomeType": "earned",
+    "effectiveFrom": "2026-01-01",
+    "factIds": ["f_yas001"],
+    "inputs": [
+      { "key": "incomeType", "type": "enum", "required": true, "description": "연말정산 대상 소득 유형" },
+      { "key": "settlementYear", "type": "number", "required": true, "description": "귀속연도" },
+      { "key": "additionalTax", "type": "number", "required": true, "description": "연말정산 추가 납부세액" }
+    ],
+    "formula": {
+      "type": "year-end-installment-amount",
+      "expression": "추가 징수세액 10만원 초과 시 다음 연도 2월분부터 4월분 근로소득 지급 시까지 균등 분납",
+      "params": { "threshold": 100000, "startMonth": 2, "installmentCount": 3 }
+    },
+    "calculationMode": "automatic",
+    "examples": [
+      {
+        "title": "150,000원 추가 징수세액",
+        "input": { "incomeType": "earned", "settlementYear": 2026, "additionalTax": 150000 },
+        "expected": {
+          "status": "available",
+          "threshold": 100000,
+          "installments": [
+            { "year": 2027, "month": 2, "amount": 50000 },
+            { "year": 2027, "month": 3, "amount": 50000 },
+            { "year": 2027, "month": 4, "amount": 50000 }
+          ]
+        }
+      },
+      {
+        "title": "100,000원 추가 징수세액",
+        "input": { "incomeType": "earned", "settlementYear": 2026, "additionalTax": 100000 },
+        "expected": { "status": "not_available", "threshold": 100000, "reason": "threshold_not_exceeded", "installments": [] }
+      }
+    ],
+    "warnings": ["근로소득 원천징수이행상황신고서 반영 방식은 최신 서식 기준으로 최종 확인"]
+  },
+  {
+    "ruleId": "education_expense_credit_2026_review",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "교육비 세액공제 확대 수동검토",
+    "domain": "year-end-settlement",
+    "incomeType": "earned",
+    "effectiveFrom": "2026-01-01",
+    "factIds": ["f_c70014"],
+    "inputs": [
+      { "key": "educationExpense", "type": "number", "required": false, "description": "교육비 세액공제 대상액" },
+      { "key": "dependentProfile", "type": "string", "required": false, "description": "교육비 대상자 정보" }
+    ],
+    "formula": {
+      "type": "custom",
+      "expression": "2026년 교육비 세액공제 소득요건 폐지 및 예능학원 포함 여부는 공제 항목별 수동검토",
+      "params": {}
+    },
+    "calculationMode": "manual-review",
+    "warnings": ["공제율·한도·대상 교육기관은 최신 소득세법·시행령·국세청 안내로 최종 확인"]
+  },
+  {
+    "ruleId": "dividend_gross_up_adjustment_2027_review",
+    "version": "2027.1.0",
+    "calendarYear": 2027,
+    "name": "배당가산율 11% 적용 수동검토",
+    "domain": "year-end-settlement",
+    "incomeType": "dividend",
+    "effectiveFrom": "2027-01-01",
+    "factIds": ["f_id0012"],
+    "inputs": [
+      { "key": "grossDividend", "type": "number", "required": true, "description": "종합과세 대상 배당소득" },
+      { "key": "taxYear", "type": "number", "required": true, "description": "귀속연도" }
+    ],
+    "formula": {
+      "type": "custom",
+      "expression": "2027.1.1 이후 지급받는 소득분부터 배당가산율 11% 적용 여부 수동검토",
+      "params": {}
+    },
+    "calculationMode": "manual-review",
+    "warnings": ["적용시기는 부칙과 지급일 기준을 최종 확인"]
+  }
+]

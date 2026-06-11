@@ -4,6 +4,15 @@ import { loadFacts } from '@/lib/facts/store'
 import { loadWatchlist } from '@/lib/watchlist'
 import { UpdatesDashboard } from '@/components/UpdatesDashboard'
 
+const statusLabel = {
+  watching: '감시 중',
+  confirmed: '확인 완료',
+  implemented: '구현 완료',
+  released: '배포 완료',
+  deferred: '보류',
+  not_applicable: '적용 제외',
+}
+
 export default function Page() {
   const facts = loadFacts(factsRaw)
   const watchlist = loadWatchlist(watchlistRaw)
@@ -28,6 +37,7 @@ export default function Page() {
         <thead>
           <tr>
             <th>항목</th>
+            <th>상태</th>
             <th>예정 시행</th>
             <th>다음 확인일</th>
             <th>영향</th>
@@ -40,6 +50,7 @@ export default function Page() {
                 {w.title}
                 <div style={{ fontSize: '0.74rem', color: 'var(--gray-500)', marginTop: 3 }}>{w.notes}</div>
               </td>
+              <td style={{ whiteSpace: 'nowrap' }}>{statusLabel[w.status]}</td>
               <td style={{ whiteSpace: 'nowrap' }}>{w.expectedEffectiveDate}</td>
               <td style={{ whiteSpace: 'nowrap' }}>{w.nextCheckDate}</td>
               <td style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem' }}>{w.impact.join(', ')}</td>

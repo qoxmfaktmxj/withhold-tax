@@ -112,6 +112,83 @@
     "notes": "정부 보도자료·정책 설명 교차확인용."
   },
   {
+    "id": "src_lawnb_secondary",
+    "type": "LAW",
+    "title": "Lawnb legal database mirror",
+    "publisher": "Lawnb",
+    "url": "https://www.lawnb.com",
+    "accessedAt": "2026-06-11",
+    "jurisdiction": "KR",
+    "reliability": "secondary",
+    "notes": "Secondary legal database used only for cross-checking when official links are dynamic."
+  },
+  {
+    "id": "src_klri_law_info",
+    "type": "LAW",
+    "title": "KLRI e-Law legal system guide",
+    "publisher": "Korea Legislation Research Institute",
+    "url": "https://elaw.klri.re.kr/kor_service/struct.do",
+    "accessedAt": "2026-06-11",
+    "jurisdiction": "KR",
+    "reliability": "secondary",
+    "notes": "Secondary legal-system guide for hierarchy and delegated legislation explanations."
+  },
+  {
+    "id": "src_lawtimes_tax_article",
+    "type": "LAW",
+    "title": "LawTimes tax article archive",
+    "publisher": "LawTimes",
+    "url": "https://www.lawtimes.co.kr",
+    "accessedAt": "2026-06-11",
+    "jurisdiction": "KR",
+    "reliability": "secondary",
+    "notes": "Legal news/commentary used for cross-checking treaty residence explanations."
+  },
+  {
+    "id": "src_moef_tax_release",
+    "type": "NTS_GUIDE",
+    "title": "Ministry of Economy and Finance tax release",
+    "publisher": "MOEF",
+    "url": "https://www.moef.go.kr",
+    "accessedAt": "2026-06-11",
+    "jurisdiction": "KR",
+    "reliability": "official-guide",
+    "notes": "Official tax-policy release and attachment source for tax reform/form-change references."
+  },
+  {
+    "id": "src_samili_tax_news",
+    "type": "TAX_FIRM_REPORT",
+    "title": "Samili tax news",
+    "publisher": "Samili",
+    "url": "https://www.samili.com",
+    "accessedAt": "2026-06-11",
+    "jurisdiction": "KR",
+    "reliability": "secondary",
+    "notes": "Secondary tax news and commentary used for cross-checking."
+  },
+  {
+    "id": "src_standardchartered_tax_info",
+    "type": "TAX_FIRM_REPORT",
+    "title": "Standard Chartered Korea tax information",
+    "publisher": "Standard Chartered Korea",
+    "url": "https://www.standardchartered.co.kr",
+    "accessedAt": "2026-06-11",
+    "jurisdiction": "KR",
+    "reliability": "secondary",
+    "notes": "Secondary financial/tax information used for cross-checking."
+  },
+  {
+    "id": "src_kimchang_tax_newsletter",
+    "type": "TAX_FIRM_REPORT",
+    "title": "Kim & Chang tax newsletter",
+    "publisher": "Kim & Chang",
+    "url": "https://www.kimchang.com",
+    "accessedAt": "2026-06-11",
+    "jurisdiction": "KR",
+    "reliability": "secondary",
+    "notes": "Secondary tax/legal newsletter used for cross-checking reform explanations."
+  },
+  {
     "id": "src_cfo_academy_lecture",
     "type": "LECTURE",
     "title": "CFO Academy 원천징수실무 (차재영·박교원, 2일 강의)",

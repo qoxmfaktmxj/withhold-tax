@@ -8,7 +8,7 @@ on:
 
 jobs:
   validate:
-    name: Lint · Test · Build
+    name: Verify Reference App
     runs-on: ubuntu-latest
 
     steps:
@@ -24,12 +24,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Generate search index
+        run: npm run gen:search
+
       - name: Lint
         run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
 
       - name: Test
         run: npm test
 
+      - name: Check fact freshness
+        run: npm run check:freshness
+
+      - name: Check source links
+        run: npm run check:links -- --strict
+
       - name: Build
-        # prebuild는 gen-search-index(검색 인덱스) + zod 스키마 검증을 겸함
         run: npm run build

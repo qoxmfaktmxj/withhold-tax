@@ -1,5 +1,5 @@
 import deadlinesRaw from '@/content/tax-rules/2026/deadlines.json'
-import { loadRules } from '@/lib/rules/engine'
+import { calculateDeadline, loadRules, type DeadlineResult } from '@/lib/rules/engine'
 import factsRaw from '@/content/facts.json'
 import { loadFacts } from '@/lib/facts/store'
 import { VerifyStatus } from '@/components/VerifyStatus'
@@ -17,6 +17,39 @@ function freq(basis: string): '매월' | '반기' | '연 1회' | '기간' {
   return '연 1회'
 }
 
+function sampleInput(rule: TaxRule): Record<string, unknown> {
+  const basis = String(rule.formula.params.basis)
+  if (basis === 'payment_month') return { paymentDate: '2026-01-25' }
+  if (basis === 'half_year') return { taxYear: 2026, half: 'H1' }
+  if (basis === 'tax_year' || basis === 'next_year_months') return { taxYear: 2026 }
+  return { baseDate: '2026-01-01' }
+}
+
+function ScheduleSummary({ result }: { result: DeadlineResult }) {
+  return (
+    <div style={{ minWidth: 210 }}>
+      <div style={{ fontWeight: 700 }}>법정 기한 {result.dueDate}</div>
+      <div style={{ color: 'var(--blue-700)', fontWeight: 700 }}>조정 기한 {result.adjustedDueDate}</div>
+      {result.periodLabel && <div style={{ color: 'var(--gray-600)', fontSize: '0.74rem' }}>{result.periodLabel}</div>}
+      <div
+        style={{
+          marginTop: 5,
+          fontFamily: 'var(--font-mono)',
+          fontSize: '0.7rem',
+          color: 'var(--gray-600)',
+          lineHeight: 1.55,
+        }}
+      >
+        D-30 {result.reminderDates.d30}
+        <br />
+        D-7 {result.reminderDates.d7}
+        <br />
+        D-1 {result.reminderDates.d1}
+      </div>
+    </div>
+  )
+}
+
 function CalendarSection({ title, items }: { title: string; items: TaxRule[] }) {
   return (
     <>
@@ -25,7 +58,7 @@ function CalendarSection({ title, items }: { title: string; items: TaxRule[] }) 
         <thead>
           <tr>
             <th>항목</th>
-            <th>기한</th>
+            <th>산출 일정</th>
             <th>근거</th>
           </tr>
         </thead>
@@ -33,6 +66,7 @@ function CalendarSection({ title, items }: { title: string; items: TaxRule[] }) 
           {items.map((r) => {
             const f = FACTS[r.factIds[0]]
             const isNew = r.effectiveFrom >= '2026-01-01'
+            const schedule = calculateDeadline(r, sampleInput(r))
             return (
               <tr key={`${r.ruleId}@${r.version}`}>
                 <td>
@@ -60,7 +94,12 @@ function CalendarSection({ title, items }: { title: string; items: TaxRule[] }) 
                     </div>
                   )}
                 </td>
-                <td>{r.formula.expression}</td>
+                <td>
+                  <ScheduleSummary result={schedule} />
+                  <div style={{ marginTop: 6, fontSize: '0.73rem', color: 'var(--gray-500)' }}>
+                    {r.formula.expression}
+                  </div>
+                </td>
                 <td>
                   {f ? (
                     <span style={{ whiteSpace: 'nowrap' }}>
