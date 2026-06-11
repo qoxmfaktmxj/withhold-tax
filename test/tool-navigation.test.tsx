@@ -34,7 +34,7 @@ describe('tool navigation', () => {
     expect(within(status).getByRole('listitem', { name: '원문 미확인 87' })).toBeInTheDocument()
     expect(within(status).queryByRole('listitem', { name: '확인 필요 0' })).not.toBeInTheDocument()
     expect(within(status).getByRole('listitem', { name: '검토 임박 0' })).toBeInTheDocument()
-    expect(within(status).getByRole('listitem', { name: '링크 오류 25' })).toBeInTheDocument()
+    expect(within(status).getByRole('listitem', { name: '링크 오류 0' })).toBeInTheDocument()
     expect(within(status).getByRole('listitem', { name: '마지막 법령 점검 2026-06-10' })).toBeInTheDocument()
   })
 

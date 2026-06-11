@@ -37,7 +37,22 @@ export function isLawGovKr(url) {
 }
 
 export function parseArgs(argv = process.argv.slice(2)) {
-  return { strict: argv.includes('--strict') }
+  return { strict: argv.includes('--strict'), write: argv.includes('--write') }
+}
+
+/** Build reference-health.json snapshot from URL check results (excludes POLICY rows). */
+export function buildHealthSnapshot(urlResults, { now = new Date() } = {}) {
+  const ok = urlResults.filter((r) => r.result === 'ok').length
+  const redirect = urlResults.filter((r) => r.result === 'redirect').length
+  const errors = urlResults.filter((r) => r.result === 'fail').length
+  return {
+    linkCheckedAt: now.toISOString().slice(0, 10),
+    linkCheckCommand: 'npm run check:links',
+    linkTotal: urlResults.length,
+    linkOk: ok,
+    linkRedirect: redirect,
+    linkErrors: errors,
+  }
 }
 
 function safeJsonParse(text) {
@@ -299,7 +314,7 @@ export function printReport(results) {
 }
 
 async function runFromCli(argv = process.argv.slice(2)) {
-  const { strict } = parseArgs(argv)
+  const { strict, write } = parseArgs(argv)
   const facts = safeJsonParse(fs.readFileSync(path.join(process.cwd(), 'content/facts.json'), 'utf8'))
   const sources = safeJsonParse(fs.readFileSync(path.join(process.cwd(), 'content/sources.json'), 'utf8'))
   const policyResults = validateReferenceUrlPolicy({ facts, sources }).map((issue) =>
@@ -313,8 +328,17 @@ async function runFromCli(argv = process.argv.slice(2)) {
   const urls = collectSourceUrls({ root: process.cwd() })
   console.log(`Check targets: ${urls.length} URLs (concurrency ${CONCURRENCY}, timeout ${TIMEOUT_MS / 1000}s)\n`)
 
-  const results = [...policyResults, ...(await runChecks(urls))]
+  const urlResults = await runChecks(urls)
+  const results = [...policyResults, ...urlResults]
   printReport(results)
+
+  if (write) {
+    const snapshot = buildHealthSnapshot(urlResults)
+    const out = path.join(process.cwd(), 'content/reference-health.json')
+    fs.writeFileSync(out, JSON.stringify(snapshot, null, 2) + '\n', 'utf8')
+    console.log(`\n[--write] updated ${out}: ok ${snapshot.linkOk} / redirect ${snapshot.linkRedirect} / errors ${snapshot.linkErrors}`)
+  }
+
   process.exit(getExitCode(results, { strict }))
 }
 

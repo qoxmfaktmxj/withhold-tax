@@ -17,6 +17,7 @@
     "test:watch": "vitest",
     "qa": "npm run lint && npm run typecheck && npm test && npm run check:freshness && npm run check:links -- --strict",
     "check:links": "node scripts/check-source-links.mjs",
+    "check:links:write": "node scripts/check-source-links.mjs --write",
     "check:freshness": "node scripts/fact-freshness.mjs",
     "gen:queue": "node scripts/gen-review-queue.mjs"
   },
