@@ -97,7 +97,7 @@ export function EmployeeLocalTaxCalculator() {
         </div>
         <div>
           <label htmlFor="elt-month" style={label}>급여 지급월(YYYY-MM)</label>
-          <input id="elt-month" style={field} inputMode="numeric" placeholder="2026-05" value={paymentMonth} onChange={(e) => setPaymentMonth(e.target.value)} />
+          <input id="elt-month" type="month" style={field} placeholder="2026-05" value={paymentMonth} onChange={(e) => setPaymentMonth(e.target.value)} />
         </div>
       </div>
 

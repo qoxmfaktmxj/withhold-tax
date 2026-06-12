@@ -6,9 +6,7 @@ import { RuleBasis } from '@/components/calculators/RuleBasis'
 export const metadata = { title: '종업원분 주민세 계산기 — 원천징수 레퍼런스' }
 
 export default function EmployeeLocalTaxPage() {
-  const rule = loadRules(employeeLocalTaxRulesRaw).find(
-    (r) => r.ruleId === 'employee_local_tax' && r.version === '2026.1.0'
-  )!
+  const rule = loadRules(employeeLocalTaxRulesRaw).find((r) => r.ruleId === 'employee_local_tax')
 
   return (
     <article className="wt-article">
@@ -20,7 +18,7 @@ export default function EmployeeLocalTaxPage() {
         실무 참조용이며 최종 확인은 법령·위택스가 우선합니다.
       </p>
       <EmployeeLocalTaxCalculator />
-      <RuleBasis rule={rule} />
+      {rule && <RuleBasis rule={rule} />}
     </article>
   )
 }

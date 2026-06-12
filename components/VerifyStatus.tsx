@@ -17,13 +17,14 @@ export function VerifyStatus({
   descId?: string
 }) {
   const m = MAP[status]
-  const id = descId ?? `vs-${status}`
 
   // <details>는 MDX 문단(<p>) 안에서 invalid nesting → hydration 실패.
   // 모든 상태를 span + title/aria-label로 통일해 본문 어디서든 안전하게 렌더.
+  // id는 호출부가 descId를 줄 때만 부여 — 고정 fallback id는 같은 페이지에
+  // 동일 status 배지가 여러 개일 때 중복 DOM id를 만든다.
   return (
     <span
-      id={id}
+      id={descId}
       title={m.note}
       aria-label={`검증상태: ${status}. ${m.note}`}
       className={`wt-seal ${m.cls}`}

@@ -6,7 +6,7 @@ import { RuleBasis } from '@/components/calculators/RuleBasis'
 export const metadata = { title: '임원퇴직금 한도 계산기 — 원천징수 레퍼런스' }
 
 export default function ExecutiveSeveranceLimitPage() {
-  const rule = loadRules(retirementRulesRaw).find((r) => r.ruleId === 'executive_severance_limit')!
+  const rule = loadRules(retirementRulesRaw).find((r) => r.ruleId === 'executive_severance_limit')
 
   return (
     <article className="wt-article">
@@ -17,7 +17,7 @@ export default function ExecutiveSeveranceLimitPage() {
         2011.12.31 이전 근속분(한도 없음·안분 규정)은 미반영인 실무 참조용 도구이며, 최종 확인은 법령·홈택스가 우선합니다.
       </p>
       <ExecutiveSeveranceLimitCalculator />
-      <RuleBasis rule={rule} />
+      {rule && <RuleBasis rule={rule} />}
     </article>
   )
 }
