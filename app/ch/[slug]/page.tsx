@@ -32,7 +32,8 @@ export default async function ChapterPage({
   let MDX: (props: { components?: Record<string, unknown> }) => ReactNode
   try {
     MDX = (await import(`../../../content/chapters/${slug}.mdx`)).default
-  } catch {
+  } catch (err) {
+    console.error(`[chapter-mdx] import failed for ${slug}:`, err)
     notFound()
   }
 

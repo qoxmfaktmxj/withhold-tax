@@ -7,26 +7,52 @@
     "domain": "withholding-rate",
     "incomeType": "business",
     "effectiveFrom": "2018-01-01",
-    "factIds": ["f_ca0001", "f_a00001"],
+    "factIds": [
+      "f_ca0001",
+      "f_a00001"
+    ],
     "inputs": [
-      { "key": "grossPayment", "type": "number", "required": true, "description": "지급 총액(원)" }
+      {
+        "key": "grossPayment",
+        "type": "number",
+        "required": true,
+        "description": "지급 총액(원)"
+      }
     ],
     "formula": {
       "type": "rate-with-local",
       "expression": "국세 = 지급액 × 3%, 지방소득세 = 국세 × 10% (합계 3.3%)",
-      "params": { "rate": 0.03, "localRate": 0.1 }
+      "params": {
+        "rate": 0.03,
+        "localRate": 0.1
+      }
     },
-    "rounding": { "base": 10, "method": "floor" },
+    "rounding": {
+      "base": 10,
+      "method": "floor"
+    },
     "examples": [
       {
         "title": "사업소득 1,000,000원 지급",
-        "input": { "grossPayment": 1000000 },
-        "expected": { "nationalTax": 30000, "localTax": 3000, "total": 33000 }
+        "input": {
+          "grossPayment": 1000000
+        },
+        "expected": {
+          "nationalTax": 30000,
+          "localTax": 3000,
+          "total": 33000
+        }
       },
       {
         "title": "사업소득 200,000원 지급",
-        "input": { "grossPayment": 200000 },
-        "expected": { "nationalTax": 6000, "localTax": 600, "total": 6600 }
+        "input": {
+          "grossPayment": 200000
+        },
+        "expected": {
+          "nationalTax": 6000,
+          "localTax": 600,
+          "total": 6600
+        }
       }
     ],
     "warnings": [
@@ -42,24 +68,46 @@
     "domain": "withholding-rate",
     "incomeType": "interest_dividend",
     "effectiveFrom": "2018-01-01",
-    "factIds": ["f_a00007"],
+    "factIds": [
+      "f_a00007"
+    ],
     "inputs": [
-      { "key": "grossPayment", "type": "number", "required": true, "description": "지급 이자·배당액(원)" }
+      {
+        "key": "grossPayment",
+        "type": "number",
+        "required": true,
+        "description": "지급 이자·배당액(원)"
+      }
     ],
     "formula": {
       "type": "rate-with-local",
       "expression": "국세 = 지급액 × 14%, 지방소득세 = 국세 × 10% (합계 15.4%)",
-      "params": { "rate": 0.14, "localRate": 0.1 }
+      "params": {
+        "rate": 0.14,
+        "localRate": 0.1
+      }
     },
-    "rounding": { "base": 10, "method": "floor" },
+    "rounding": {
+      "base": 10,
+      "method": "floor"
+    },
     "examples": [
       {
         "title": "이자 1,000,000원",
-        "input": { "grossPayment": 1000000 },
-        "expected": { "nationalTax": 140000, "localTax": 14000, "total": 154000 }
+        "input": {
+          "grossPayment": 1000000
+        },
+        "expected": {
+          "nationalTax": 140000,
+          "localTax": 14000,
+          "total": 154000
+        }
       }
     ],
-    "warnings": ["비영업대금의 이익은 25% 별도 rule", "금융소득 2천만원 초과 시 종합과세"]
+    "warnings": [
+      "비영업대금의 이익은 25% 별도 rule",
+      "금융소득 2천만원 초과 시 종합과세"
+    ]
   },
   {
     "ruleId": "non_business_loan_interest_wht",
@@ -69,21 +117,40 @@
     "domain": "withholding-rate",
     "incomeType": "interest",
     "effectiveFrom": "2018-01-01",
-    "factIds": ["f_id0002"],
+    "factIds": [
+      "f_id0002"
+    ],
     "inputs": [
-      { "key": "grossPayment", "type": "number", "required": true, "description": "지급 이자액(원)" }
+      {
+        "key": "grossPayment",
+        "type": "number",
+        "required": true,
+        "description": "지급 이자액(원)"
+      }
     ],
     "formula": {
       "type": "rate-with-local",
       "expression": "국세 = 지급액 × 25%, 지방소득세 = 국세 × 10% (합계 27.5%)",
-      "params": { "rate": 0.25, "localRate": 0.1 }
+      "params": {
+        "rate": 0.25,
+        "localRate": 0.1
+      }
     },
-    "rounding": { "base": 10, "method": "floor" },
+    "rounding": {
+      "base": 10,
+      "method": "floor"
+    },
     "examples": [
       {
         "title": "비영업대금 이자 1,000,000원",
-        "input": { "grossPayment": 1000000 },
-        "expected": { "nationalTax": 250000, "localTax": 25000, "total": 275000 }
+        "input": {
+          "grossPayment": 1000000
+        },
+        "expected": {
+          "nationalTax": 250000,
+          "localTax": 25000,
+          "total": 275000
+        }
       }
     ],
     "warnings": []
@@ -96,21 +163,41 @@
     "domain": "withholding-rate",
     "incomeType": "other",
     "effectiveFrom": "2018-01-01",
-    "factIds": ["f_ca0005", "f_ca0004"],
+    "factIds": [
+      "f_ca0005",
+      "f_ca0004"
+    ],
     "inputs": [
-      { "key": "grossPayment", "type": "number", "required": true, "description": "기타소득금액(필요경비 차감 후, 원)" }
+      {
+        "key": "grossPayment",
+        "type": "number",
+        "required": true,
+        "description": "기타소득금액(필요경비 차감 후, 원)"
+      }
     ],
     "formula": {
       "type": "rate-with-local",
       "expression": "국세 = 기타소득금액 × 20%, 지방소득세 = 국세 × 10% (소득금액 기준 22%)",
-      "params": { "rate": 0.2, "localRate": 0.1 }
+      "params": {
+        "rate": 0.2,
+        "localRate": 0.1
+      }
     },
-    "rounding": { "base": 10, "method": "floor" },
+    "rounding": {
+      "base": 10,
+      "method": "floor"
+    },
     "examples": [
       {
         "title": "기타소득금액 400,000원(강연료 100만원·필요경비 60%)",
-        "input": { "grossPayment": 400000 },
-        "expected": { "nationalTax": 80000, "localTax": 8000, "total": 88000 }
+        "input": {
+          "grossPayment": 400000
+        },
+        "expected": {
+          "nationalTax": 80000,
+          "localTax": 8000,
+          "total": 88000
+        }
       }
     ],
     "warnings": [
@@ -126,21 +213,37 @@
     "domain": "withholding-rate",
     "incomeType": "nonresident",
     "effectiveFrom": "2018-01-01",
-    "factIds": ["f_nr0007"],
+    "factIds": [
+      "f_nr0007"
+    ],
     "inputs": [
-      { "key": "grossPayment", "type": "number", "required": true, "description": "지급액(원)" }
+      {
+        "key": "grossPayment",
+        "type": "number",
+        "required": true,
+        "description": "지급액(원)"
+      }
     ],
     "formula": {
       "type": "rate",
       "expression": "국세 = 지급액 × 20% (이자·배당·사용료 등 일반, 조약 미적용 시)",
-      "params": { "rate": 0.2 }
+      "params": {
+        "rate": 0.2
+      }
     },
-    "rounding": { "base": 10, "method": "floor" },
+    "rounding": {
+      "base": 10,
+      "method": "floor"
+    },
     "examples": [
       {
         "title": "사용료 10,000,000원(조약 미적용)",
-        "input": { "grossPayment": 10000000 },
-        "expected": { "nationalTax": 2000000 }
+        "input": {
+          "grossPayment": 10000000
+        },
+        "expected": {
+          "nationalTax": 2000000
+        }
       }
     ],
     "warnings": [
@@ -157,24 +260,45 @@
     "domain": "withholding-rate",
     "incomeType": "pension",
     "effectiveFrom": "2026-01-01",
-    "factIds": ["f_c90012"],
+    "factIds": [
+      "f_c90012"
+    ],
     "inputs": [
-      { "key": "grossPayment", "type": "number", "required": true, "description": "연금 지급액(원)" }
+      {
+        "key": "grossPayment",
+        "type": "number",
+        "required": true,
+        "description": "연금 지급액(원)"
+      }
     ],
     "formula": {
       "type": "rate-with-local",
       "expression": "국세 = 지급액 × 3% (종신계약, 종전 4%), 지방소득세 = 국세 × 10%",
-      "params": { "rate": 0.03, "localRate": 0.1 }
+      "params": {
+        "rate": 0.03,
+        "localRate": 0.1
+      }
     },
-    "rounding": { "base": 10, "method": "floor" },
+    "rounding": {
+      "base": 10,
+      "method": "floor"
+    },
     "examples": [
       {
         "title": "종신연금 월 1,000,000원",
-        "input": { "grossPayment": 1000000 },
-        "expected": { "nationalTax": 30000, "localTax": 3000, "total": 33000 }
+        "input": {
+          "grossPayment": 1000000
+        },
+        "expected": {
+          "nationalTax": 30000,
+          "localTax": 3000,
+          "total": 33000
+        }
       }
     ],
-    "warnings": ["나이 기준 세율(70세 미만 5%/70~80세 4%/80세 이상 3%)과 경합 시 낮은 세율 적용"]
+    "warnings": [
+      "나이 기준 세율(70세 미만 5%/70~80세 4%/80세 이상 3%)과 경합 시 낮은 세율 적용"
+    ]
   },
   {
     "ruleId": "deferred_retirement_pension_reduction_review",
@@ -184,10 +308,22 @@
     "domain": "withholding-rate",
     "incomeType": "retirement",
     "effectiveFrom": "2026-01-01",
-    "factIds": ["f_c90013"],
+    "factIds": [
+      "f_c90013"
+    ],
     "inputs": [
-      { "key": "baseRetirementTaxRate", "type": "number", "required": true, "description": "연금외수령 원천징수세율" },
-      { "key": "actualAnnuityYear", "type": "number", "required": true, "description": "연금 실제 수령연차" }
+      {
+        "key": "baseRetirementTaxRate",
+        "type": "number",
+        "required": true,
+        "description": "연금외수령 원천징수세율"
+      },
+      {
+        "key": "actualAnnuityYear",
+        "type": "number",
+        "required": true,
+        "description": "연금 실제 수령연차"
+      }
     ],
     "formula": {
       "type": "custom",
@@ -195,6 +331,133 @@
       "params": {}
     },
     "calculationMode": "manual-review",
-    "warnings": ["연금 수령연차 산정과 연금외수령 세율은 퇴직연금 지급자료로 최종 확인"]
+    "warnings": [
+      "연금 수령연차 산정과 연금외수령 세율은 퇴직연금 지급자료로 최종 확인"
+    ]
+  },
+  {
+    "ruleId": "daily_worker_wht",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "일용근로소득 원천징수(일 15만원 공제·6%·근로소득세액공제 55%)",
+    "domain": "withholding-rate",
+    "incomeType": "daily_worker",
+    "effectiveFrom": "2019-01-01",
+    "factIds": [
+      "f_dw0021",
+      "f_dw0022",
+      "f_dw0023",
+      "f_dw0024",
+      "f_dw0002",
+      "f_dw0003",
+      "f_dw0004",
+      "f_dw0005",
+      "f_dw0006",
+      "f_dw0019",
+      "f_dw0020"
+    ],
+    "inputs": [
+      {
+        "key": "dailyWage",
+        "type": "number",
+        "required": true,
+        "description": "일당(원)"
+      },
+      {
+        "key": "workDays",
+        "type": "number",
+        "required": true,
+        "description": "근무일수(일)"
+      },
+      {
+        "key": "paymentMethod",
+        "type": "enum",
+        "required": true,
+        "description": "지급방식: per_day(일별 지급) | lump_sum(월 일괄 지급)"
+      }
+    ],
+    "formula": {
+      "type": "custom",
+      "expression": "일세액 = MAX(0, 일당 − 150,000) × 6% × (1 − 55%) — 원미만 절사. 세액 1,000원 미만은 소액부징수(일괄지급 시 일별 세액 합계액 기준 판단). 지방소득세 = 징수 소득세 × 10%(10원 미만 절사)",
+      "params": {
+        "dailyDeduction": 150000,
+        "rate": 0.06,
+        "taxCreditRate": 0.55,
+        "smallSumThreshold": 1000,
+        "localRate": 0.1
+      }
+    },
+    "rounding": {
+      "base": 10,
+      "method": "floor"
+    },
+    "calculationMode": "manual-review",
+    "examples": [
+      {
+        "title": "일당 187,000원 1일 — 일세액 999원 → 소액부징수 (강의 사례 1)",
+        "input": {
+          "dailyWage": 187000,
+          "workDays": 1,
+          "paymentMethod": "per_day"
+        },
+        "expected": {
+          "dailyIncomeTax": 999,
+          "smallSumApplied": true,
+          "withheldIncomeTax": 0,
+          "withheldLocalTax": 0,
+          "netPay": 187000
+        }
+      },
+      {
+        "title": "일당 190,000원 1일 — 1,080원 징수 (강의 사례 2)",
+        "input": {
+          "dailyWage": 190000,
+          "workDays": 1,
+          "paymentMethod": "per_day"
+        },
+        "expected": {
+          "dailyIncomeTax": 1080,
+          "smallSumApplied": false,
+          "withheldIncomeTax": 1080,
+          "withheldLocalTax": 100,
+          "netPay": 188820
+        }
+      },
+      {
+        "title": "일당 170,000원 1일 — 결정세액 540원 → 소액부징수 (강의 슬라이드 145)",
+        "input": {
+          "dailyWage": 170000,
+          "workDays": 1,
+          "paymentMethod": "lump_sum"
+        },
+        "expected": {
+          "dailyIncomeTax": 540,
+          "smallSumApplied": true,
+          "withheldIncomeTax": 0
+        }
+      },
+      {
+        "title": "일당 187,000원 × 5일 월 일괄 지급 — 합계 4,995원 ≥ 1,000원 → 징수",
+        "input": {
+          "dailyWage": 187000,
+          "workDays": 5,
+          "paymentMethod": "lump_sum"
+        },
+        "expected": {
+          "calculatedTotalIncomeTax": 4995,
+          "smallSumApplied": false,
+          "withheldIncomeTax": 4995,
+          "withheldLocalTax": 490,
+          "netPay": 929515
+        }
+      }
+    ],
+    "warnings": [
+      "세액 1,000원 미만은 소액부징수 — 일정기간 단위 일괄지급 시 일별 징수세액의 합계액 기준으로 판단",
+      "일당 15만원 이하·소액부징수로 납부세액이 없어도 원천징수이행상황신고서(A03)에 지급인원·지급금액 기재",
+      "지급명세서는 지급일이 속하는 달의 다음 달 말일까지 제출(근로내용확인신고서 제출 시 갈음 가능)",
+      "지방소득세 특별징수(소득세의 10%·10원 미만 절사)는 지방세법 별도 체계 — 고지·신고 서식 기준 확인",
+      "전용 계산기(lib/daily-worker/check.ts)로 자동 계산 — 엔진 일반 계산(calculateRule)은 미지원(custom)"
+    ]
   }
 ]

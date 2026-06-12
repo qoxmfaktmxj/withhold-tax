@@ -94,6 +94,42 @@ export const TOOL_PRIORITIES: ToolPriority[] = [
     status: 'available',
     summary: '공식 산출 퇴직소득세와 실제 원천징수 소득세·지방소득세 차이 검산',
   },
+  {
+    id: 'daily-worker-tax',
+    tier: 'P0',
+    rank: 10,
+    title: '일용근로 원천징수 세액 계산기',
+    route: '/tools/daily-worker-tax',
+    status: 'available',
+    summary: '일당·근무일수 입력 → 일용근로 소득세·지방소득세, 소액부징수(1,000원 미만) 판정',
+  },
+  {
+    id: 'employee-local-tax',
+    tier: 'P0',
+    rank: 11,
+    title: '종업원분 주민세 계산기',
+    route: '/tools/employee-local-tax',
+    status: 'available',
+    summary: '면세점(월평균 1.5억) 판정 → 과세표준 → 2026 신설 공제(장기근속·육아휴직 대체인력) 반영 세액',
+  },
+  {
+    id: 'executive-severance-limit',
+    tier: 'P1',
+    rank: 12,
+    title: '임원퇴직금 한도 계산기',
+    route: '/tools/executive-severance-limit',
+    status: 'available',
+    summary: '2019 이전 3배수·2020 이후 2배수 구간별 한도와 한도 초과분(근로소득 전환액) 산출',
+  },
+  {
+    id: 'reverse-net-pay',
+    tier: 'P1',
+    rank: 13,
+    title: '세후→세전 역산 계산기',
+    route: '/tools/reverse-net-pay',
+    status: 'available',
+    summary: '희망 월 실수령액 입력 → 필요 세전 급여 역산(연 환산 근사, 4대보험·소득세 공제 체인)',
+  },
 ]
 
 export function getToolPriority(id: string) {

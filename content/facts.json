@@ -5809,5 +5809,3094 @@
         "note": "G087: 국가법령정보센터 소득세법 §137④ 원문 확인 후 연말정산 화면 가이드와 분납 스케줄러 fact 연결"
       }
     ]
+  },
+  {
+    "id": "f_si0001",
+    "slug": "ch09.social-insurance.national-pension-rate-2026",
+    "title": "2026년 국민연금 보험료율 9.5%(근로자 4.75%)",
+    "chapter": "ch9",
+    "claim": "2026년 국민연금 보험료율은 합계 9.5%로 인상(근로자 4.75% / 사용자 4.75%, ▲0.5%p). 국민연금법 전면 개정('25.3.20. 공포)에 따라 2026년 9.5%에서 매년 0.5%p씩 인상되어 2033년 13%에 도달하는 단계적 인상의 첫해이다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "2026년 상반기 개정세법 프리뷰특강(CFO Academy) Slide 99·101 — 공단 고시·법령 원문 미대조",
+    "lawRef": "국민연금법 제88조(연금보험료의 부과·징수 등), 국민연금법 전면 개정('25.3.20. 공포)",
+    "lawUrl": "https://www.law.go.kr/법령/국민연금법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-01-01",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "개정",
+    "previousValue": "합계 9.0%(근로자 4.5% / 사용자 4.5%)",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "세후→세전 역산 계산기(reverse-net-pay) 근거 fact 신규 등록 — 개정세법특강 Slide 99·101 기준, lib/reverse-net-pay 상수(0.0475)와 일치 확인"
+      }
+    ],
+    "nextReviewBy": "2026-07-31",
+    "primarySourceVerified": false,
+    "confidenceScore": 70,
+    "subordinateLawRef": "",
+    "scopeLimitations": "사업장가입자 기준. 지역가입자·임의가입자 부과 체계는 별도.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "2026-01-01",
+    "sunsetDate": "",
+    "reviewerId": "kms",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_si0002",
+    "slug": "ch09.social-insurance.national-pension-base-cap-2026",
+    "title": "국민연금 기준소득월액 상한 637만원·하한 40만원(2026.7.1~)",
+    "chapter": "ch9",
+    "claim": "국민연금 기준소득월액 상·하한은 2026년 7월부터 상한 637만원(▲20만원)·하한 40만원(▲1만원)으로 조정된다(종전 상한 617만원·하한 39만원). 계산기는 2026년 귀속분에 637만/40만을 적용한다. 한백택스 원본 코드는 2026년분에 659만/41만을 적용하나 이는 타임라인이 1년 빠른 오류로 의심되어 미채택.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "2026년 상반기 개정세법 프리뷰특강(CFO Academy) Slide 100 — 공단 고시(기준소득월액 조정 고시) 원문 미대조",
+    "lawRef": "국민연금법 시행령 제5조(기준소득월액 및 적용기간), 보건복지부 고시",
+    "lawUrl": "https://www.law.go.kr/법령/국민연금법시행령",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-07-01",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "개정",
+    "previousValue": "상한 617만원·하한 39만원 / (한백택스 원본) 2026년분 659만원·41만원",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "세후→세전 역산 계산기(reverse-net-pay) 근거 fact 신규 등록 — 한백택스 원본(659만/41만)과 차이 있음, 개정세법특강 Slide 100(637만/40만) 채택"
+      }
+    ],
+    "nextReviewBy": "2026-07-31",
+    "primarySourceVerified": false,
+    "confidenceScore": 65,
+    "subordinateLawRef": "",
+    "scopeLimitations": "상·하한 적용기간은 매년 7월~익년 6월. 2026.1~6월분은 종전 상한(617만)이 적용되나 계산기는 연중 637만 단일 적용으로 단순화 — 상한 초과 고소득 구간에서 상반기 오차 발생.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "2026-07-01",
+    "sunsetDate": "",
+    "reviewerId": "kms",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_si0003",
+    "slug": "ch09.social-insurance.health-insurance-rate-2026",
+    "title": "2026년 건강보험료율 7.19%(근로자 3.595%)",
+    "chapter": "ch9",
+    "claim": "2026년 건강보험 보험료율은 합계 7.19%(근로자 3.595%)로 인상(▲0.10%p, 종전 합계 7.09%·근로자 3.545%). 보수월액 상한 127,725,730원·하한 280,389원.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "2026년 상반기 개정세법 프리뷰특강(CFO Academy) Slide 99~100 — 공단 고시·법령 원문 미대조",
+    "lawRef": "국민건강보험법 제73조(보험료율 등), 국민건강보험법 시행령",
+    "lawUrl": "https://www.law.go.kr/법령/국민건강보험법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-01-01",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "개정",
+    "previousValue": "합계 7.09%(근로자 3.545%)",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "세후→세전 역산 계산기(reverse-net-pay) 근거 fact 신규 등록 — lib/reverse-net-pay 상수(0.03595)와 일치 확인. 보수월액 상·하한은 계산기 미반영(단순화)"
+      }
+    ],
+    "nextReviewBy": "2026-07-31",
+    "primarySourceVerified": false,
+    "confidenceScore": 70,
+    "subordinateLawRef": "",
+    "scopeLimitations": "직장가입자 보수월액보험료 기준. 소득월액보험료(보수 외 소득)는 별도. 계산기는 보수월액 상·하한 미반영.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "2026-01-01",
+    "sunsetDate": "",
+    "reviewerId": "kms",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_si0004",
+    "slug": "ch09.social-insurance.long-term-care-rate-2026",
+    "title": "2026년 장기요양보험료율 — 건강보험료의 13.14%",
+    "chapter": "ch9",
+    "claim": "2026년 장기요양보험료율은 건강보험료의 13.14%로 인상(▲0.19%p, 종전 12.95%). 근로자 부담 장기요양보험료 = 본인 부담 건강보험료 × 13.14%.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "2026년 상반기 개정세법 프리뷰특강(CFO Academy) Slide 99 — 공단 고시·법령 원문 미대조",
+    "lawRef": "노인장기요양보험법 제9조(장기요양보험료의 산정), 노인장기요양보험법 시행령",
+    "lawUrl": "https://www.law.go.kr/법령/노인장기요양보험법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-01-01",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "개정",
+    "previousValue": "건강보험료의 12.95%",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "세후→세전 역산 계산기(reverse-net-pay) 근거 fact 신규 등록 — lib/reverse-net-pay 상수(0.1314)와 일치 확인"
+      }
+    ],
+    "nextReviewBy": "2026-07-31",
+    "primarySourceVerified": false,
+    "confidenceScore": 70,
+    "subordinateLawRef": "",
+    "scopeLimitations": "건강보험료에 연동되는 부가 요율. 건강보험료율 변경 시 함께 재검토 필요.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "2026-01-01",
+    "sunsetDate": "",
+    "reviewerId": "kms",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_si0005",
+    "slug": "ch09.social-insurance.employment-insurance-rate-2026",
+    "title": "2026년 고용보험 실업급여 요율 1.8% 동결(근로자 0.9%)",
+    "chapter": "ch9",
+    "claim": "2026년 고용보험 실업급여 보험료율은 합계 1.8%(근로자 0.9%)로 동결. 고용안정·직업능력개발사업 보험료(사업주 전액 부담)는 근로자 공제 대상이 아니므로 실수령액 계산에는 근로자 부담 0.9%만 반영한다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "2026년 상반기 개정세법 프리뷰특강(CFO Academy) Slide 99 — 공단 고시·법령 원문 미대조",
+    "lawRef": "고용보험 및 산업재해보상보험의 보험료징수 등에 관한 법률 제14조, 같은 법 시행령 제12조",
+    "lawUrl": "https://www.law.go.kr/법령/고용보험및산업재해보상보험의보험료징수등에관한법률",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-01-01",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "세후→세전 역산 계산기(reverse-net-pay) 근거 fact 신규 등록 — lib/reverse-net-pay 상수(0.009)와 일치 확인"
+      }
+    ],
+    "nextReviewBy": "2026-07-31",
+    "primarySourceVerified": false,
+    "confidenceScore": 70,
+    "subordinateLawRef": "",
+    "scopeLimitations": "65세 이후 신규 고용 등 실업급여 보험료 면제 대상은 미반영.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "2026-01-01",
+    "sunsetDate": "",
+    "reviewerId": "kms",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_si0006",
+    "slug": "ch09.reverse-net-pay.earned-income-deduction",
+    "title": "근로소득공제 — 총급여 구간별 70%~2%, 한도 2,000만원(소득세법 §47)",
+    "chapter": "ch9",
+    "claim": "근로소득공제는 총급여액 구간별로 500만원 이하 70%, 1,500만원 이하 350만원+초과분 40%, 4,500만원 이하 750만원+초과분 15%, 1억원 이하 1,200만원+초과분 5%, 1억원 초과 1,475만원+초과분 2%를 적용하며 공제 한도는 2,000만원이다. 역산 계산기는 월 과세급여×12를 총급여로 보아 이 공제를 적용한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제47조(근로소득공제) — 강의 교재 인용 기반, 법령 원문 미대조",
+    "lawRef": "소득세법 제47조",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "세후→세전 역산 계산기(reverse-net-pay) 소득세 근사 체인 근거 fact 신규 등록 — lib earnedIncomeDeduction 구간·한도와 일치 확인"
+      }
+    ],
+    "nextReviewBy": "2026-07-31",
+    "primarySourceVerified": false,
+    "confidenceScore": 75,
+    "subordinateLawRef": "",
+    "scopeLimitations": "연 환산 근사용. 일용근로자 공제(일 15만원)와 별개이며, 실제 연말정산은 입사·퇴사월 안분 등 반영 필요.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "",
+    "sunsetDate": "",
+    "reviewerId": "kms",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_si0007",
+    "slug": "ch09.reverse-net-pay.earned-income-tax-credit",
+    "title": "근로소득세액공제 — 산출세액 55%/30%, 총급여별 한도 74만~20만원(소득세법 §59)",
+    "chapter": "ch9",
+    "claim": "근로소득세액공제는 산출세액 130만원 이하분의 55%, 초과분의 30%를 공제하되 총급여 3,300만원 이하 74만원, 7,000만원 이하 74만~66만원(체감), 1.2억원 이하 66만~50만원, 1.2억원 초과 50만~20만원의 한도를 적용한다. 역산 계산기 소득세 근사 체인의 마지막 단계.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제59조(근로소득세액공제) — 강의 교재 인용 기반, 법령 원문 미대조",
+    "lawRef": "소득세법 제59조",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "세후→세전 역산 계산기(reverse-net-pay) 소득세 근사 체인 근거 fact 신규 등록 — lib earnedIncomeTaxCredit 산식·한도와 일치 확인"
+      }
+    ],
+    "nextReviewBy": "2026-07-31",
+    "primarySourceVerified": false,
+    "confidenceScore": 75,
+    "subordinateLawRef": "",
+    "scopeLimitations": "연 환산 근사용. 한도 체감 구간 산식(총급여 초과분×0.8%/0.5% 차감)은 법문과 표현 차이가 있을 수 있어 원문 대조 필요.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "",
+    "sunsetDate": "",
+    "reviewerId": "kms",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_si0008",
+    "slug": "ch09.reverse-net-pay.progressive-tax-brackets",
+    "title": "종합소득 기본세율 6~45% 8구간(소득세법 §55) + 지방소득세 10%",
+    "chapter": "ch9",
+    "claim": "종합소득 과세표준에 적용하는 기본세율은 1,400만원 이하 6%부터 10억원 초과 45%까지 8구간 누진세율이다(누진공제: 126만/576만/1,544만/1,994만/2,594만/3,594만/6,594만원). 개인지방소득세는 소득세 산출세액의 10% 수준. 역산 계산기는 과세표준(총급여−근로소득공제−인적공제 150만×인원−연금보험료공제)에 이 세율을 적용해 연세액을 구하고 12로 나눈다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제55조(세율)·제50조(기본공제)·제51조의3(연금보험료공제), 지방세법 제92조 — 강의 교재 인용 기반, 법령 원문 미대조",
+    "lawRef": "소득세법 제55조, 제50조, 제51조의3, 지방세법 제92조",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "세후→세전 역산 계산기(reverse-net-pay) 소득세 근사 체인 근거 fact 신규 등록 — lib progressiveIncomeTax 8구간·누진공제와 일치 확인"
+      }
+    ],
+    "nextReviewBy": "2026-07-31",
+    "primarySourceVerified": false,
+    "confidenceScore": 75,
+    "subordinateLawRef": "",
+    "scopeLimitations": "간이세액표가 아닌 연말정산 방식 연 환산 근사. 특별소득공제·세액공제(보험료·의료비·신용카드 등)는 미반영이므로 실제 결정세액보다 과대 추정될 수 있음.",
+    "localTaxRef": "지방세법 제92조(개인지방소득세 과세표준과 세율)",
+    "supersededRefs": "",
+    "appliesFrom": "",
+    "sunsetDate": "",
+    "reviewerId": "kms",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0021",
+    "slug": "daily-worker.wht.daily-tax-formula",
+    "title": "일용근로 원천징수 산식(일 15만원 공제·6%·세액공제 55%)",
+    "chapter": "daily-worker",
+    "claim": "일용근로소득 원천징수세액은 [일급여 − 150,000원(일 근로소득공제)] × 6%(세율)에서 산출세액의 55%(근로소득세액공제)를 차감해 계산한다. 즉 (일당 − 150,000) × 6% × (1 − 55%). 강의 사례: 일급여 187,000원 → 999원(소액부징수), 190,000원 → 1,080원(징수 대상).",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법(근로소득공제·세율·근로소득세액공제) — CFO Academy 강의 슬라이드 108~109·145 인용 조문, 법령 원문 미대조",
+    "lawRef": "소득세법 제134조제3항, 제59조, 제47조(강의 슬라이드 근거 표기: §47조의2·§134③·§59)",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "일용근로 세액 계산기(daily-worker-tax) 근거 fact 신규 등록 — 강의 슬라이드 105~116·144~146 기준"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0022",
+    "slug": "daily-worker.wht.small-sum-non-collection",
+    "title": "소액부징수 1,000원 미만 — 일괄지급 시 일별 세액 합계액 기준",
+    "chapter": "daily-worker",
+    "claim": "일용근로자의 원천징수세액은 근로소득을 지급할 때마다 계산하며, 세액이 1,000원 미만이면 소득세가 없는 것으로 보아 소득세란에 0으로 표기한다(소액부징수). 급여를 일정기간 단위로 일괄지급하는 경우에는 일괄지급액에 대한 일별 징수세액의 합계액을 기준으로 소액부징수 해당 여부를 판단한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제86조(소액 부징수) — CFO Academy 강의 슬라이드 109~110·145 인용, 법령 원문 미대조",
+    "lawRef": "소득세법 제86조",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "일용근로 세액 계산기(daily-worker-tax) 근거 fact 신규 등록 — 일괄지급 합계 기준 판정은 슬라이드 110·145 동일 서술"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0023",
+    "slug": "daily-worker.scope.three-months",
+    "title": "소득세법상 일용근로자 범위(일반 3개월·건설 1년 미만)",
+    "chapter": "daily-worker",
+    "claim": "소득세법상 일용근로자란 근로를 제공한 날 또는 시간에 따라 근로대가를 계산해 지급받는 근로자로서, 근로계약에 따라 일정한 고용주에게 3개월(건설공사 종사자는 1년) 이상 계속하여 고용되어 있지 않은 자를 말한다. 노동법·사회보험법의 일용 개념(통상 1개월 미만 고용)과는 별개 기준이다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법·시행령(일용근로자 범위) — CFO Academy 강의 슬라이드 106~107·113·146 인용, 법령 원문 미대조",
+    "lawRef": "소득세법 제14조제3항제2호, 소득세법 시행령 제20조제1항",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "일용근로 세액 계산기(daily-worker-tax) 적용범위 fact 신규 등록"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0024",
+    "slug": "daily-worker.wht.separate-taxation",
+    "title": "일용근로소득 분리과세 — 원천징수로 납세의무 종결",
+    "chapter": "daily-worker",
+    "claim": "일용근로소득은 원천징수로 납세의무가 종결되는 분리과세 대상으로, 연말정산 등 별도 정산 절차가 없다. 일반 근로소득(간이세액표 원천징수 후 연말정산·중도정산)과 구분된다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제14조제3항제2호(분리과세) — CFO Academy 강의 슬라이드 112·144 인용, 법령 원문 미대조",
+    "lawRef": "소득세법 제14조제3항제2호",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "일용근로 세액 계산기(daily-worker-tax) 근거 fact 신규 등록"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0025",
+    "slug": "daily-worker.filing.wht-return-a03",
+    "title": "원천징수이행상황신고서 일용근로(A03) — 다음달 10일, 세액 없어도 기재",
+    "chapter": "daily-worker",
+    "claim": "원천징수의무자는 일용근로자의 근로소득을 지급할 때 소득세를 원천징수하고, 원천징수이행상황신고서의 일용근로(A03)란에 지급인원·지급금액·원천징수세액을 기재하여 지급한 달의 다음달 10일까지 관할 세무서장에게 제출한다. 일당이 15만원 이하이거나 소액부징수로 납부할 세액이 없는 경우에도 지급인원·지급금액은 포함하여 작성한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법·시행령(원천징수 신고) — CFO Academy 강의 슬라이드 111 인용, 법령 원문 미대조",
+    "lawRef": "소득세법 제128조, 소득세법 시행령 제185조",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "일용근로 세액 계산기(daily-worker-tax) 신고 절차 fact 신규 등록 — rule warning 근거"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": true,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_lt0021",
+    "slug": "employee-local-tax.definition",
+    "title": "종업원분 주민세 정의·납세의무자",
+    "chapter": "employee-local-tax",
+    "claim": "종업원분 주민세는 지방자치단체에 소재한 사업소 종업원의 급여총액을 과세표준으로 하여 사업주(사업소를 둔 자)에게 부과하는 주민세이며, 다른 주민세(개인분·사업소분)와 달리 매월 신고·납부한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제74조 제3호·제8호 — CFO 아카데미 원천징수실무 강의 PPT(Slide 40~41) 인용, 법령 원문 미확인",
+    "lawRef": "지방세법 제74조",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "종업원분 주민세 계산기(employee-local-tax) 신설 — PPT 전사본 Slide 40~41 기반 등록"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "appliesTo": "지방자치단체에 사업소를 둔 사업주(법인·개인사업자)",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": false,
+      "reporting": true,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_lt0022",
+    "slug": "employee-local-tax.tax-base",
+    "title": "종업원분 과세표준 — 그 달의 급여총액",
+    "chapter": "employee-local-tax",
+    "claim": "종업원분 주민세 과세표준은 종업원에게 지급한 그 달의 급여 총액이며, 봉급·임금·상여금·성과급 등 명칭 불문 근로의 대가를 포함하고 소득세법 제12조 제3호의 비과세 근로소득(월 20만원 이내 식대·자가운전보조금 등)과 퇴직금은 제외한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의2 — CFO 아카데미 원천징수실무 강의 PPT(Slide 44) 인용, 법령 원문 미확인",
+    "lawRef": "지방세법 제84조의2",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "종업원분 주민세 계산기(employee-local-tax) 신설 — PPT 전사본 Slide 44 기반 등록"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "appliesTo": "사업소별 그 달의 종업원 급여총액",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_lt0023",
+    "slug": "employee-local-tax.standard-rate",
+    "title": "종업원분 표준세율 0.5%",
+    "chapter": "employee-local-tax",
+    "claim": "종업원분 주민세 표준세율은 종업원 급여총액의 0.5%(1천분의 5)다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의3 제1항 — CFO 아카데미 원천징수실무 강의 PPT(Slide 45) 인용, 법령 원문 미확인",
+    "lawRef": "지방세법 제84조의3 제1항",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "종업원분 주민세 계산기(employee-local-tax) 신설 — PPT 전사본 Slide 45 기반 등록"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "appliesTo": "종업원분 주민세 과세표준",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_lt0024",
+    "slug": "employee-local-tax.ordinance-rate-range",
+    "title": "조례에 의한 세율 가감(0.25%~0.75%)",
+    "chapter": "employee-local-tax",
+    "claim": "지방자치단체의 장은 조례로 종업원분 표준세율(0.5%)의 100분의 50 범위에서 가감할 수 있어 실제 적용 세율은 0.25%~0.75%가 될 수 있으며, 대부분의 지자체는 표준세율 0.5%를 그대로 적용한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의3 제2항 — CFO 아카데미 원천징수실무 강의 PPT(Slide 45) 인용, 법령 원문 미확인",
+    "lawRef": "지방세법 제84조의3 제2항",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "종업원분 주민세 계산기(employee-local-tax) 신설 — PPT 전사본 Slide 45 기반 등록"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "appliesTo": "사업소 소재지 지자체 조례에 따른 세율 적용",
+    "scopeLimitations": "사업소 소재지 시·군·구 조례별 실제 세율은 위택스·지자체 고시로 개별 확인 필요",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_lt0025",
+    "slug": "employee-local-tax.exemption-threshold",
+    "title": "면세점 — 월평균 급여총액 1억 5천만원 이하",
+    "chapter": "employee-local-tax",
+    "claim": "신고 대상 월을 포함한 직전 12개월간 해당 사업소의 월평균 급여총액이 1억 5천만원 이하이면 종업원분 주민세가 면세되며(월 1인 평균임금 300만원 × 50명 기준), 면세점 적용 시 별도 신고의무가 없다. 휴·폐업 등 영업일 15일 미만인 달은 월평균 산정에서 제외하고, 신설 사업소는 개시일이 속하는 달부터 신고 대상 월까지로 월평균을 산정한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의4 — CFO 아카데미 원천징수실무 강의 PPT(Slide 46) 인용, 법령 원문 미확인",
+    "lawRef": "지방세법 제84조의4",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "종업원분 주민세 계산기(employee-local-tax) 신설 — PPT 전사본 Slide 46 기반 등록"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "appliesTo": "직전 12개월(신고 대상 월 포함) 월평균 급여총액 1억 5천만원 이하 사업소",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_lt0026",
+    "slug": "employee-local-tax.filing-deadline",
+    "title": "신고납부 기한 — 다음 달 10일·사업소별 신고",
+    "chapter": "employee-local-tax",
+    "claim": "종업원분 주민세는 급여를 지급한 달의 다음 달 10일까지 사업소 소재지 관할 시·군·구에 사업소별로 매월 신고·납부한다(예: 2026년 5월분 급여 지급 → 2026년 6월 10일까지). 누락 시 매월 가산세가 누적된다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의6 — CFO 아카데미 원천징수실무 강의 PPT(Slide 52) 인용, 법령 원문 미확인",
+    "lawRef": "지방세법 제84조의6",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "종업원분 주민세 계산기(employee-local-tax) 신설 — PPT 전사본 Slide 52 기반 등록"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "appliesTo": "면세점을 초과하는 모든 사업소(본사·지점 등 사업소별 각각 신고)",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": true,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_lt0027",
+    "slug": "employee-local-tax.sme-employment-deduction",
+    "title": "중소기업 고용지원 공제(50명 초과 추가고용분)",
+    "chapter": "employee-local-tax",
+    "claim": "중소기업기본법 제2조의 중소기업으로서 해당 월 종업원 수가 50명을 초과하면 (신고한 달의 종업원 수 − 직전연도 월평균 종업원 수) × 월 적용급여액(해당 월 급여총액 ÷ 해당 월 종업원 수)을 종업원분 과세표준에서 공제한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의5 — CFO 아카데미 원천징수실무 강의 PPT(Slide 49) 인용, 법령 원문 미확인",
+    "lawRef": "지방세법 제84조의5",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "종업원분 주민세 계산기(employee-local-tax) 신설 — PPT 전사본 Slide 49 기반 등록"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "appliesTo": "해당 월 종업원 수 50명 초과 중소기업",
+    "scopeLimitations": "계산기에서는 별도 계산값을 기타 공제액으로 직접 입력하는 방식으로만 반영",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_lt0028",
+    "slug": "employee-local-tax.long-service-allowance-deduction-2026",
+    "title": "2026 신설 — 장기근속수당 과세표준 공제",
+    "chapter": "employee-local-tax",
+    "claim": "2026.1.1 이후 신고분부터 장기근속수당 지급분에 대해 1인당 월 급여액의 10% 범위에서 월 최대 36만원, 즉 MIN(1인 월 급여 × 10%, 360,000원)을 종업원분 과세표준에서 공제한다(적용 첫 신고: 2026.2.10, 1월분). 근거는 지방세법 일부개정(2025.12.30. 본회의 통과)이다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO 아카데미 원천징수실무 강의 PPT(Slide 50) — 2026 개정 지방세법·행정안전부 발표 인용",
+    "lawRef": "지방세법 일부개정(2025.12.30. 본회의 통과 — 강의 기준)",
+    "lawUrl": "",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-01-01",
+    "verifyStatus": "강의기반",
+    "risk": "high",
+    "changeType": "신설",
+    "previousValue": "장기근속수당에 대한 종업원분 과세표준 공제 없음",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "종업원분 주민세 계산기(employee-local-tax) 신설 — PPT 전사본 Slide 50 기반 등록, 공포 법령 원문 확인 필요"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "appliesFrom": "2026-01-01",
+    "appliesTo": "2026.1.1 이후 신고분의 장기근속수당 지급분",
+    "scopeLimitations": "강의 PPT만 근거. 공포된 개정 지방세법 조문 번호·시행령 위임사항(장기근속수당의 정의·근속연수 요건 등) 원문 확인 필요",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_lt0029",
+    "slug": "employee-local-tax.childcare-replacement-deduction-2026",
+    "title": "2026 신설 — 육아휴직 대체인력 급여 전액 공제",
+    "chapter": "employee-local-tax",
+    "claim": "2026년부터 육아휴직 대체인력에게 지급한 급여는 종업원분 주민세 과세표준에서 전액 공제된다(2025년까지는 대체인력 급여가 과세표준에 포함되어 사업주 부담이 증가했음). 근거는 2026 개정 지방세법·행정안전부 발표다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO 아카데미 원천징수실무 강의 PPT(Slide 51) — 2026 개정 지방세법·행정안전부 발표 인용",
+    "lawRef": "지방세법 일부개정(2025.12.30. 본회의 통과 — 강의 기준)",
+    "lawUrl": "",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-01-01",
+    "verifyStatus": "강의기반",
+    "risk": "high",
+    "changeType": "신설",
+    "previousValue": "육아휴직 대체인력 급여가 종업원분 과세표준에 포함",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "종업원분 주민세 계산기(employee-local-tax) 신설 — PPT 전사본 Slide 51 기반 등록, 공포 법령 원문 확인 필요"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "appliesFrom": "2026-01-01",
+    "appliesTo": "2026년부터 육아휴직 대체인력에게 지급한 급여",
+    "scopeLimitations": "강의 PPT만 근거. 공포된 개정 지방세법 조문 번호와 대체인력 인정 요건(고용보험법상 육아휴직 등) 원문 확인 필요",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_lt0030",
+    "slug": "employee-local-tax.comprehensive-case-2026",
+    "title": "강의 종합사례 — 2026 신설 공제 적용 검증치",
+    "chapter": "employee-local-tax",
+    "claim": "강의 종합사례(㈜한백테크, 중소기업, 종업원 55명·직전연도 월평균 50명): 2026년 5월 급여총액 180,000,000원에서 육아휴직 대체인력 공제 15,000,000원(5명 × 300만원), 장기근속수당 공제 3,600,000원(10명 × 36만원), 중소기업 고용지원 공제 약 14,940,000원을 차감한 과세표준 146,460,000원에 세율 0.5%를 적용하여 세액 732,300원이 산출된다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO 아카데미 원천징수실무 강의 PPT(Slide 54) — 종합 사례",
+    "lawRef": "지방세법 제84조의2~제84조의6, 2026 신설 공제",
+    "lawUrl": "",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "강의기반",
+    "risk": "low",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "종업원분 주민세 계산기(employee-local-tax) 신설 — PPT 전사본 Slide 54 기반 등록, 계산기 회귀 테스트 기준값"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "appliesTo": "계산기 회귀 테스트 기준 사례(중소기업 고용지원 공제는 강의의 '약 14,940,000원'을 그대로 입력값으로 사용)",
+    "scopeLimitations": "중소기업 고용지원 공제액은 강의에서 '약' 표기된 근사치로, §84의5 산식 재계산 시 차이가 날 수 있음",
+    "implementationStatus": "tests_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_ex0001",
+    "slug": "ch09.executive-severance.limit-excess-earned-income",
+    "title": "임원 퇴직소득 한도초과액은 근로소득 과세",
+    "chapter": "ch9",
+    "claim": "법인 임원(대표이사·등기이사·감사 등)에게 지급하는 퇴직소득금액이 소득세법 제22조 제3항의 한도를 초과하는 경우, 그 초과 금액은 퇴직소득이 아닌 근로소득으로 과세한다. 2012년 이후 근로제공분부터 적용된다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제22조 제3항(퇴직소득) — 강의 Slide 270·448 정리",
+    "lawRef": "소득세법 제22조 제3항",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2012-01-01",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "임원퇴직금 한도 계산기 신설 — 강의 PPT Slide 270·448 기반, 법령 원문 직접 확인 전"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_law_go_kr",
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "retirement",
+    "implementationStatus": "rule_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_ex0002",
+    "slug": "ch09.executive-severance.limit-formula",
+    "title": "임원퇴직소득 한도 산식: 연평균환산액×1/10×근속연수×배수",
+    "chapter": "ch9",
+    "claim": "임원 퇴직소득 한도는 '연평균환산액 × 1/10 × 근속연수(근속월수÷12) × 배수(2 또는 3배)'로 계산한다. 연평균환산액은 퇴직일(또는 구간 종료일)부터 소급한 직전 3년간 총급여 합계를 3으로 나눈 금액이다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제22조 제3항 한도 산식 — 강의 Slide 273 정리",
+    "lawRef": "소득세법 제22조 제3항, 소득세법 시행령 제42조의2",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2012-01-01",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "임원퇴직금 한도 계산기 신설 — 강의 PPT Slide 273·448 기반, 법령 원문 직접 확인 전"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_law_go_kr",
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "retirement",
+    "implementationStatus": "rule_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_ex0003",
+    "slug": "ch09.executive-severance.multiplier-history",
+    "title": "한도 배수 변천: 2012~2019 3배수 → 2020~ 2배수",
+    "chapter": "ch9",
+    "claim": "임원 퇴직소득 한도 배수는 2012.1.1~2019.12.31 근속분에 3배수, 2020.1.1 이후 근속분에 2배수를 적용한다(2020.1.1 시행 한도 강화). 2011.12.31 이전 근속분은 한도가 없다. 임원의 근무기간을 구간별로 구분해 각각 한도를 계산한 뒤 합산하며, 단순히 현행 2배수만 적용하면 세무상 불이익이 발생할 수 있다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제22조 제3항 및 부칙(2019.12.31 개정) — 강의 Slide 272·448 정리",
+    "lawRef": "소득세법 제22조 제3항, 소득세법 부칙(2019.12.31 개정)",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2020-01-01",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "개정",
+    "previousValue": "2012.1.1~2019.12.31 근속분: 3배수 한도",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "임원퇴직금 한도 계산기 신설 — 강의 PPT Slide 272·448 기반, 부칙 원문 직접 확인 전"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_law_go_kr",
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "retirement",
+    "implementationStatus": "rule_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_ex0004",
+    "slug": "ch09.executive-severance.service-months-roundup",
+    "title": "근속연수는 월수 계산, 1개월 미만은 1개월 올림",
+    "chapter": "ch9",
+    "claim": "임원 퇴직소득 한도 계산의 근속연수는 해당 구간의 근무기간을 개월 수로 계산하고(근속월수÷12), 1개월 미만의 기간은 1개월로 올림 처리한다.",
+    "sourceType": "EDICT",
+    "sourceTitle": "소득세법 시행령 제42조의2(퇴직소득의 범위·한도 계산) — 강의 Slide 273 정리",
+    "lawRef": "소득세법 시행령 제42조의2",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법시행령",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2012-01-01",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "임원퇴직금 한도 계산기 신설 — 강의 PPT Slide 273 기반, 시행령 원문 직접 확인 전"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_law_go_kr",
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "retirement",
+    "implementationStatus": "rule_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_ex0005",
+    "slug": "ch09.executive-severance.avg-annual-salary",
+    "title": "구간별 연평균환산액 계산 기준",
+    "chapter": "ch9",
+    "claim": "3배수 구간(2012~2019)의 연평균환산액은 2019.12.31 포함 직전 3년('17.1.1~'19.12.31) 총급여 합계 ÷ 3으로, 2배수 구간(2020~퇴직일)은 퇴직일 소급 직전 3년 총급여 합계 ÷ 3으로 계산한다. 해당 구간 근무기간이 3년 미만이면 실제 기간의 급여로 연환산하며, 각 구간별로 연평균환산액을 별도 계산한다.",
+    "sourceType": "EDICT",
+    "sourceTitle": "소득세법 시행령 제42조의2 연평균환산액 — 강의 Slide 276 정리",
+    "lawRef": "소득세법 시행령 제42조의2",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법시행령",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2020-01-01",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "임원퇴직금 한도 계산기 신설 — 강의 PPT Slide 276 기반, 시행령 원문 직접 확인 전"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_law_go_kr",
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "retirement",
+    "implementationStatus": "rule_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_ex0006",
+    "slug": "ch09.executive-severance.gross-salary-scope",
+    "title": "한도 계산용 총급여의 범위",
+    "chapter": "ch9",
+    "claim": "한도 계산의 총급여(소득세법 제20조 제1항 제1호·제2호)에는 급여(기본급·직책수당 등)·상여금·인정상여·성과급·주식매수선택권 행사이익이 포함되고, 비과세소득(식대·자가운전보조금 등), 법인세법 시행령 제43조에 따른 손금불산입 급여, 퇴직소득 자체, 공적연금 관련 일시금은 제외된다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 — 임원퇴직소득 한도: 총급여액의 범위(Slide 274)",
+    "lawRef": "소득세법 제20조 제1항 제1호·제2호, 법인세법 시행령 제43조",
+    "lawUrl": "",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "강의기반",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "임원퇴직금 한도 계산기 신설 — 강의 PPT Slide 274 기반(교재 p.264)"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "retirement",
+    "implementationStatus": "rule_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_ex0007",
+    "slug": "ch09.executive-severance.pre-2012-no-limit",
+    "title": "2011.12.31 이전 근속분은 한도 없음(안분 규정)",
+    "chapter": "ch9",
+    "claim": "2011.12.31 이전 근속분에는 임원 퇴직소득 한도가 적용되지 않아 퇴직급여 지급규정에 따라 지급받은 금액이 전액 인정되거나 안분 계산한다. 한도 적용 대상 퇴직금은 전체 퇴직소득금액에서 '2011.12.31 퇴직을 가정한 퇴직소득금액'을 차감한 금액이다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 — 근무기간별 계산 구조(Slide 275·301)",
+    "lawRef": "소득세법 제22조 제3항, 소득세법 부칙(2012.1.1 적용 경과규정)",
+    "lawUrl": "",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2012-01-01",
+    "verifyStatus": "강의기반",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "임원퇴직금 한도 계산기 신설 — 강의 PPT Slide 275·301 기반(교재 p.278·280). 계산기는 이 구간 미반영"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "retirement",
+    "implementationStatus": "rule_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_ex0008",
+    "slug": "ch09.executive-severance.excess-taxation-effect",
+    "title": "한도 이내 분류과세 vs 초과분 종합과세",
+    "chapter": "ch9",
+    "claim": "한도 이내 금액은 퇴직소득으로 분류과세되어(다른 소득과 합산하지 않음) 환산급여 방식으로 세액을 계산하고, 한도 초과액은 퇴직연도의 근로소득에 합산되어 종합소득세 누진세율(최고세율 45%, 10억 초과분)이 적용되어 세 부담이 크게 증가한다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 — 한도초과액의 과세 처리(Slide 278·282)",
+    "lawRef": "소득세법 제14조, 제20조, 제22조",
+    "lawUrl": "",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "강의기반",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "임원퇴직금 한도 계산기 신설 — 강의 PPT Slide 278·282 기반(교재 p.280·299)"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "retirement",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_ex0009",
+    "slug": "ch09.executive-severance.separate-from-corporate-tax",
+    "title": "법인세법 손금산입 한도와는 별개 규정",
+    "chapter": "ch9",
+    "claim": "법인세법상 임원 퇴직급여 손금산입 한도(법인세법 시행령 제44조)와 소득세법상 임원 퇴직소득 한도(소득세법 제22조 제3항)는 별개의 규정이다. 정관·지급규정이 있으면 그에 따른 금액이 손금산입되지만, 임원 개인의 소득구분(퇴직소득 vs 근로소득)은 소득세법 한도로 별도 판단한다. 지급규정이 없으면 손금 한도는 직전 1년 총급여 × 1/10 × 근속연수이다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 — 법인세 손금산입과의 관계(Slide 283)",
+    "lawRef": "법인세법 시행령 제44조, 소득세법 제22조 제3항",
+    "lawUrl": "",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "강의기반",
+    "risk": "low",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "임원퇴직금 한도 계산기 신설 — 강의 PPT Slide 283 기반(교재 p.281)"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "retirement",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_ex0010",
+    "slug": "ch09.executive-severance.executive-scope",
+    "title": "적용 대상 임원의 범위",
+    "chapter": "ch9",
+    "claim": "임원 퇴직소득 한도의 적용 대상은 법인의 임원(대표이사·등기이사·감사 등)이며, 임원의 범위는 법인세법 시행령 제43조(집행임원 포함)를 따른다. 사용인에서 임원이 된 때 퇴직금을 지급받지 않은 경우 사용인 기간을 근속연수에 합산할 수 있다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 — 임원퇴직소득 한도의 개요(Slide 270·276·448)",
+    "lawRef": "법인세법 시행령 제43조, 소득세법 제22조 제3항",
+    "lawUrl": "",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "강의기반",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "임원퇴직금 한도 계산기 신설 — 강의 PPT Slide 270·276·448 기반(교재 p.281·332)"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "retirement",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_cs0001",
+    "slug": "cheatsheet.service-charge.withholding-rate-5pct",
+    "title": "봉사료(음식·숙박) 원천징수세율 5%",
+    "chapter": "cheatsheet",
+    "claim": "음식·숙박업 등의 사업자가 용역 대가와 구분하여 기재한 봉사료를 지급하는 경우 봉사료 수입금액에 대한 원천징수세율은 5%다(소득세법 제129조 제1항 제8호, 원천징수의무는 같은 법 제127조 제1항 제8호). 강의 종합표(Slide 500) 기준.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO아카데미 원천징수실무 강의 PPT Slide 500 (전 소득 원천징수세율 종합표)",
+    "lawRef": "소득세법 제129조 제1항 제8호; 제127조 제1항 제8호",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C129%EC%A1%B0",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "low",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "치트시트 보강(Slide 500): 봉사료 5% 강의 전사 기준 등록, 법조문(소법 §129①8) 원문 확인 필요"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "scopeLimitations": "원천징수 대상 봉사료 요건(공급가액 대비 구분기재 봉사료 비율 기준 등)은 시행령에 위임 — law.go.kr 원문 확인 필요. 지방소득세 별도(소득세액의 10%).",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "business"
+  },
+  {
+    "id": "f_cs0002",
+    "slug": "cheatsheet.non-real-name.financial-income-45-90",
+    "title": "비실명 금융소득 원천징수세율 45%·금융실명법 위반 90%",
+    "chapter": "cheatsheet",
+    "claim": "실지명의가 확인되지 아니하는 비실명 이자·배당소득의 원천징수세율은 45%이고(소득세법 제129조 제2항), 금융실명거래 및 비밀보장에 관한 법률 제5조에 따른 비실명 금융자산 소득은 90%를 적용한다. 강의 종합표(Slide 500) 기준.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO아카데미 원천징수실무 강의 PPT Slide 500 (전 소득 원천징수세율 종합표)",
+    "lawRef": "소득세법 제129조 제2항; 금융실명거래 및 비밀보장에 관한 법률 제5조",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C129%EC%A1%B0",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "치트시트 보강(Slide 500): 비실명 45%·금실명법 위반 90% 강의 전사 기준 등록, 두 조문(소법 §129②·금실명법 §5) 적용 경계 원문 확인 필요"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "scopeLimitations": "45%(소법)와 90%(금융실명법 §5)의 적용 경계(실명전환의무 위반 여부 등) 구분은 법령 원문·예규 확인 필요. 지방소득세 별도.",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "interest_dividend"
+  },
+  {
+    "id": "f_cs0003",
+    "slug": "cheatsheet.nonresident-entertainer.special-20pct",
+    "title": "비거주 연예인 등 용역 특례 원천징수세율 20%",
+    "chapter": "cheatsheet",
+    "claim": "비거주 연예인·운동가가 외국법인(국외 연예·체육 용역 제공 법인)을 통해 국내에서 제공하는 용역의 대가를 그 외국법인에 지급하는 경우 지급금액의 20%를 원천징수하는 특례가 적용된다(소득세법 제156조의5). 강의 종합표(Slide 500) 기준.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO아카데미 원천징수실무 강의 PPT Slide 500 (전 소득 원천징수세율 종합표)",
+    "lawRef": "소득세법 제156조의5",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C156%EC%9D%985%EC%A1%B0",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "치트시트 보강(Slide 500): 비거주연예인 특례 20% 강의 전사 기준 등록, 소법 §156의5 원문(적용요건·조약 관계) 확인 필요"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "scopeLimitations": "조세조약(연예인 조항)과의 적용 관계, 외국법인 경유 지급 구조 요건은 조문·조약 원문 확인 필요. 비거주자 일반세율 20%(소법 §156, f_nr0007)와는 별개 특례.",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "nonresident"
+  },
+  {
+    "id": "f_cs0004",
+    "slug": "cheatsheet.withholding.semiannual-payment-special",
+    "title": "원천세 반기별 납부 특례(7.10·익년 1.10)",
+    "chapter": "cheatsheet",
+    "claim": "상시고용인원 20명 이하 등 요건을 갖춘 소규모 원천징수의무자가 관할 세무서장의 승인(또는 국세청장 지정)을 받으면 원천징수세액을 반기별로 납부할 수 있으며, 상반기(1~6월) 징수분은 7월 10일까지, 하반기(7~12월) 징수분은 다음 해 1월 10일까지 신고·납부한다(소득세법 제128조 제2항). 강의 체크리스트(Slide 501) 기준.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO아카데미 원천징수실무 강의 PPT Slide 501 (원천징수 7단계 절차)",
+    "lawRef": "소득세법 제128조 제2항",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C128%EC%A1%B0",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "low",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "치트시트 보강(Slide 501): 반기납부 1.10·7.10 강의 전사 기준 등록, 승인요건(상시고용 20명 이하·종교단체 등)은 시행령 원문 확인 필요"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "scopeLimitations": "반기납부 승인요건(직전연도 상시고용인원 20명 이하, 금융·보험업 제외 등)은 소득세법 시행령 위임사항 — 원문 확인 필요. 승인 없이는 매월(다음 달 10일) 납부 원칙.",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_dw0001",
+    "slug": "daily-worker.definition.tax-law",
+    "title": "소득세법상 일용근로자 정의 — 3개월(건설 1년) 미만 계속고용",
+    "chapter": "daily-worker",
+    "claim": "소득세법상 일용근로자란 근로를 제공한 날 또는 시간에 따라 급여(근로대가)를 계산하여 지급받는 근로자로서, 근로계약에 따라 동일(일정한) 고용주에게 3개월(건설공사에 종사하는 자는 1년) 이상 계속하여 고용되어 있지 않은 자를 말한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법·시행령(일용근로자 범위) — CFO Academy 원천징수실무 통합본 Slide 106~107 인용 조문, 법령 원문 미대조",
+    "lawRef": "소득세법 제14조제3항제2호, 소득세법 시행령 제20조제1항",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법시행령",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0002",
+    "slug": "daily-worker.calc.daily-deduction-150k",
+    "title": "일용근로소득 근로소득공제 — 1일 15만원",
+    "chapter": "daily-worker",
+    "claim": "일용근로소득 원천징수세액 계산 시 일급여액에서 1일 15만원의 근로소득공제를 차감한다(소득세법 제47조제2항). 일당이 15만원 이하이면 공제만으로 과세표준이 0이 되어 원천징수할 소득세가 없다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제47조(근로소득공제) — CFO Academy 원천징수실무 통합본 Slide 108·145 인용(슬라이드 근거 표기 §47조의2는 오기 추정), 법령 원문 미대조",
+    "lawRef": "소득세법 제47조제2항",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0003",
+    "slug": "daily-worker.calc.rate-6pct",
+    "title": "일용근로소득 원천징수세율 — 6% 단일세율",
+    "chapter": "daily-worker",
+    "claim": "일용근로소득에 대한 원천징수세율은 6% 단일세율이다(소득세법 제129조제1항제4호 단서). 일반 근로소득의 기본세율(간이세액표) 원천징수와 구분된다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제129조(원천징수세율) — CFO Academy 원천징수실무 통합본 Slide 108·120 인용, 법령 원문 미대조",
+    "lawRef": "소득세법 제129조제1항제4호 단서",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0004",
+    "slug": "daily-worker.calc.tax-credit-55pct",
+    "title": "일용근로소득 근로소득세액공제 — 산출세액의 55%",
+    "chapter": "daily-worker",
+    "claim": "일용근로소득의 원천징수 시 산출세액의 55%를 근로소득세액공제로 차감한다(소득세법 제59조제3항). 산식: 원천징수세액 = (일당 − 150,000원) × 6% × (1 − 55%).",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제59조(근로소득세액공제) — CFO Academy 원천징수실무 통합본 Slide 108~109·145 인용, 법령 원문 미대조",
+    "lawRef": "소득세법 제59조제3항",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0005",
+    "slug": "daily-worker.small-sum.under-1000",
+    "title": "소액부징수 — 결정세액 1,000원 미만이면 징수하지 않고 소득세란 0 기재",
+    "chapter": "daily-worker",
+    "claim": "일용근로자의 원천징수세액은 근로소득을 지급할 때마다 계산하며, 결정세액이 1,000원 미만이면 소득세를 징수하지 않는다(소액부징수, 소득세법 제86조). 이 경우에도 신고서·지급명세서에 총지급액·비과세소득은 기재하되 소득세란에는 「0」으로 표기한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제86조(소액 부징수) — CFO Academy 원천징수실무 통합본 Slide 110·129 인용, 법령 원문 미대조",
+    "lawRef": "소득세법 제86조",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": true,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0006",
+    "slug": "daily-worker.small-sum.lump-sum-aggregate",
+    "title": "일괄지급 시 소액부징수 판단 — 일별 징수세액의 합계액 기준",
+    "chapter": "daily-worker",
+    "claim": "일용근로자 급여를 일정기간 단위로 일괄지급하는 경우, 소액부징수 해당 여부는 일괄지급액에 대한 일별 징수세액의 합계액을 기준으로 판단한다. 즉 매일 지급한 것으로 간주해 일별 세액을 계산한 뒤 그 합계가 1,000원 이상인지를 본다(예: 일별 세액 999원 × 5일 = 4,995원 ≥ 1,000원 → 전액 원천징수 대상).",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 통합본 Slide 110·145 — 소득세법 §86 관련 실무 판정 기준(예규·해석 원문 미대조)",
+    "lawRef": "소득세법 제86조(소액 부징수) 관련 실무 해설",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "강의기반",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0007",
+    "slug": "daily-worker.case.187k-999won",
+    "title": "경계사례 — 일당 187,000원의 일별 세액 999원은 소액부징수",
+    "chapter": "daily-worker",
+    "claim": "강의 사례: 일급여 187,000원이면 (187,000 − 150,000) × 6% = 2,220원, 2,220 − (2,220 × 55%) = 999원으로 1,000원 미만이어서 소액부징수에 해당해 납부할 세액이 없다. 반면 일급여 190,000원이면 1,080원으로 원천징수 대상이다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 통합본 Slide 109 — 계산 사례(근거: 소득세법 §86·§134·§59)",
+    "lawRef": "소득세법 제86조(소액 부징수) 적용 사례",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "강의기반",
+    "risk": "low",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0008",
+    "slug": "daily-worker.insurance.fine-3m",
+    "title": "고용정보 미신고 시 사업주 과태료 — 300만원 이하",
+    "chapter": "daily-worker",
+    "claim": "일용근로자 고용정보(근로내용확인신고)를 미신고하면 사업주에게 300만원 이하의 과태료가 부과된다. 일용근로자의 월별보험료는 근로내용확인신고서로 산정·부과되므로 보수총액 신고 시 일용근로자 보수총액도 일반근로자와 동일하게 정산·신고해야 한다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 통합본 Slide 123 — 과태료 근거 조문(고용보험법 §118 추정) 원문 미대조",
+    "lawRef": "고용보험법 제118조(과태료) 추정 — 조문 인간 확인 필요",
+    "lawUrl": "https://www.law.go.kr/법령/고용보험법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "강의기반",
+    "risk": "low",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0009",
+    "slug": "daily-worker.filing.wht-return-10th",
+    "title": "원천세 신고·납부 — 다음달 10일, A03란에 세액 없어도 인원·금액 기재",
+    "chapter": "daily-worker",
+    "claim": "원천징수의무자는 일용근로자의 근로소득을 지급할 때 소득세를 원천징수하고, 원천징수한 소득세를 지급한 달의 다음달 10일까지 신고·납부하며, 원천징수이행상황신고서의 일용근로(A03)란에 지급인원·지급금액·원천징수세액을 기재해 관할 세무서장에게 제출한다. 일당 15만원 이하이거나 소액부징수로 납부세액이 없는 경우에도 지급인원·지급금액은 포함하여 작성한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법·시행령(원천징수 신고·납부) — CFO Academy 원천징수실무 통합본 Slide 111 인용, 법령 원문 미대조",
+    "lawRef": "소득세법 제128조, 소득세법 시행령 제185조",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": true,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0010",
+    "slug": "daily-worker.filing.payment-statement-monthly",
+    "title": "일용근로소득 지급명세서 — 다음달 말일 매월 제출, 12.31 미지급분은 익년 1월말",
+    "chapter": "daily-worker",
+    "claim": "일용근로소득 지급명세서는 지급일이 속하는 달의 다음 달 말일까지 매월 제출한다(소득세법 제164조). 해당 연도 귀속 일용근로소득을 12월 31일까지 지급하지 않은 경우에도 다음 연도 1월 말일까지 지급명세서를 제출해야 한다(이때 지급월은 12월로 기재).",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제164조(지급명세서의 제출) — CFO Academy 원천징수실무 통합본 Slide 112·127·146 인용, 법령 원문 미대조",
+    "lawRef": "소득세법 제164조, 소득세법 시행령 제213조",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": true,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0011",
+    "slug": "daily-worker.filing.deemed-submission",
+    "title": "근로내용확인신고서 제출 시 지급명세서 제출 의제",
+    "chapter": "daily-worker",
+    "claim": "「고용보험법 시행령」 제7조제1항 후단에 따라 근로내용확인신고서를 고용노동부장관에게 제출한 경우에는 일용근로소득 지급명세서를 제출한 것으로 본다(소득세법 시행령 제213조제4항). 의제를 적용받으려면 근로내용확인신고서에 사업자등록번호와 국세청 일용근로소득 신고 항목(지급월·총지급액·원천징수액 등)을 함께 기재해야 한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 시행령·고용보험법 시행령(지급명세서 제출 의제) — CFO Academy 원천징수실무 통합본 Slide 112·118~119·139 인용, 법령 원문 미대조",
+    "lawRef": "고용보험법 시행령 제7조제1항 후단, 소득세법 시행령 제213조제4항",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법시행령",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": true,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0012",
+    "slug": "daily-worker.penalty.payment-statement-025",
+    "title": "지급명세서 가산세 — 미제출·불분명 0.25%, 1개월 내 지연제출 0.125%",
+    "chapter": "daily-worker",
+    "claim": "일용근로소득 지급명세서를 미제출하거나 불분명하게 제출하면 지급금액의 0.25%의 가산세가 부과되고, 제출기한 경과 후 1개월 이내 지연제출 시에는 지연제출분에 한해 1/2이 경감된 0.125%가 적용된다(소득세법 제81조의11). 주민등록번호·과세소득 등을 사실과 다르게 제출하는 경우에도 가산세가 부과될 수 있다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제81조의11(지급명세서 제출 불성실 가산세) — CFO Academy 원천징수실무 통합본 Slide 112·135 인용, 법령 원문 미대조",
+    "lawRef": "소득세법 제81조의11",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": true,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0013",
+    "slug": "daily-worker.tax.separate-taxation",
+    "title": "일용근로소득 분리과세 — 원천징수로 납세의무 종결",
+    "chapter": "daily-worker",
+    "claim": "일용근로소득은 분리과세 대상으로 원천징수로 납세의무가 종결되며 별도 정산(연말정산·중도정산) 절차가 없다(소득세법 제14조제3항제2호). 일반(상용) 근로소득의 간이세액표 원천징수 후 연말정산 구조와 구분된다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제14조제3항제2호(분리과세) — CFO Academy 원천징수실무 통합본 Slide 112·144 인용, 법령 원문 미대조",
+    "lawRef": "소득세법 제14조제3항제2호",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0014",
+    "slug": "daily-worker.definition.employment-insurance",
+    "title": "고용보험법상 일용근로자 — 1개월 미만 동안 고용되는 자",
+    "chapter": "daily-worker",
+    "claim": "고용보험법상 일용근로자는 1개월 미만 동안 고용되는 자를 말한다(고용보험법 제2조제6호). 소득세법상 동일 고용주에게 3개월(건설업 1년) 미만 고용 기준과는 기간 기준 자체가 다르므로, 같은 근로자라도 제도별 지위가 달라질 수 있다.",
+    "sourceType": "LAW",
+    "sourceTitle": "고용보험법 제2조제6호(일용근로자 정의) — CFO Academy 원천징수실무 통합본 Slide 113~115 인용, 법령 원문 미대조",
+    "lawRef": "고용보험법 제2조제6호",
+    "lawUrl": "https://www.law.go.kr/법령/고용보험법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0015",
+    "slug": "daily-worker.insurance.national-pension-criteria",
+    "title": "국민연금 — 1개월 이상 + 월 8일·60시간·소득 220만원 기준 충족 시 적용대상",
+    "chapter": "daily-worker",
+    "claim": "일용근로자는 국민연금 사업장가입자에서 원칙 적용제외이나, 1개월 이상 근로하면서 월 8일 이상 또는 월 60시간 이상 또는 월소득 220만원 이상이면 사업장가입자 적용대상이 된다(국민연금법 시행령 제2조). 기준 금액은 고시·시행령 개정으로 변동될 수 있다.",
+    "sourceType": "LAW",
+    "sourceTitle": "국민연금법 시행령 제2조(일용·단시간 근로자의 가입 기준) — CFO Academy 원천징수실무 통합본 Slide 113 인용, 법령·고시 원문 미대조",
+    "lawRef": "국민연금법 시행령 제2조",
+    "lawUrl": "https://www.law.go.kr/법령/국민연금법시행령",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0016",
+    "slug": "daily-worker.insurance.employment-insurance-applies",
+    "title": "고용보험 — 1개월 미만 고용 일용근로자도 당연 적용",
+    "chapter": "daily-worker",
+    "claim": "1개월 미만 동안 고용되는 일용근로자(일일단위 또는 1개월 미만 근로계약 포함)는 고용보험 당연 적용 대상이다. 산재보험(1일 단위 또는 근로일에 따라 일당으로 임금을 받는 자)도 당연 적용이며, 국민연금·건강보험은 원칙 적용제외라는 점과 대비된다.",
+    "sourceType": "LAW",
+    "sourceTitle": "고용보험법 제2조제6호 등(일용근로자 적용) — CFO Academy 원천징수실무 통합본 Slide 113 인용, 법령 원문 미대조",
+    "lawRef": "고용보험법 제2조제6호, 산재보험법 제5조",
+    "lawUrl": "https://www.law.go.kr/법령/고용보험법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0017",
+    "slug": "daily-worker.filing.work-confirmation-15th",
+    "title": "근로내용확인신고서 — 고용한 달의 다음달 15일까지, 근무월별 각각 신고",
+    "chapter": "daily-worker",
+    "claim": "사업주는 일용근로자에 대하여 근로내용확인신고서를 고용한 달의 다음 달 15일까지 근로복지공단에 제출해야 하며(고용정보 신고 대체), 근무월이 다른 경우 각각 신고해야 한다. 건설업·벌목업은 고용보험만 작성하여 신고한다(강의 기준).",
+    "sourceType": "LAW",
+    "sourceTitle": "고용보험법 시행령 제7조제1항(일용근로자 신고 기한) — CFO Academy 원천징수실무 통합본 Slide 117 인용, 법령 원문 미대조",
+    "lawRef": "고용보험법 시행령 제7조제1항",
+    "lawUrl": "https://www.law.go.kr/법령/고용보험법시행령",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": true,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0018",
+    "slug": "daily-worker.definition.labor-law",
+    "title": "노동법상 일용근로자 — 계약형태(1일 단위·1개월 미만) 기준, 학설·행정해석 판단",
+    "chapter": "daily-worker",
+    "claim": "근로기준법에는 일용근로자의 직접 정의가 없으며, 근로계약기간이 1일 단위 또는 1개월 미만인지(계약형태)로 판단하고 학설·행정해석에 따른다. 임금의 산정·지급형태가 일급·시급이라는 이유만으로 일용근로자가 되는 것이 아니며, 일일단위 근로계약 형태로 채용되었다면 실제 근로일수가 1개월 이상이어도 일용근로자로 간주한다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 통합본 Slide 106·115 — 근로기준법상 직접 정의 부재, 학설·행정해석 기반 실무 해설",
+    "lawRef": "근로기준법(직접 정의 없음) — 학설·행정해석",
+    "lawUrl": "https://www.law.go.kr/법령/근로기준법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "강의기반",
+    "risk": "low",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0019",
+    "slug": "daily-worker.calc.effective-rate-27",
+    "title": "실효세율 2.7% 약식 계산 — 지급명세서 서식 작성방법 명시",
+    "chapter": "daily-worker",
+    "claim": "일용근로소득 원천징수세액은 6% × (1 − 55%) = 6% × 45% = 실효 2.7%(0.027)로 약식 계산할 수 있으며, 이 약식 계산은 일용근로소득 지급명세서 서식 작성방법에 명시되어 있다(예: (200,000원 − 150,000원) × 0.027 = 1,350원).",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 시행규칙 별지 제24호서식(3)·(4) 작성방법 — CFO Academy 원천징수실무 통합본 Slide 129·134 인용, 서식 원문 미대조",
+    "lawRef": "소득세법 시행규칙 별지 제24호서식(3)·(4) 작성방법",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법시행규칙",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_dw0020",
+    "slug": "daily-worker.local-tax.10pct",
+    "title": "지방소득세(특별징수분) — 소득세의 10%",
+    "chapter": "daily-worker",
+    "claim": "일용근로소득 원천징수 시 지방소득세(특별징수분)는 소득세의 10%를 적용한다. 일용근로소득 지급명세서·근로내용확인신고서의 지방소득세란에도 소득세의 10%를 적는다(서식 작성방법 명시).",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법(개인지방소득세 특별징수)·소득세법 시행규칙 별지 제24호서식 작성방법 — CFO Academy 원천징수실무 통합본 Slide 121·129·134 인용, 법령 원문 미대조",
+    "lawRef": "지방세법 제103조의13(특별징수 의무) — 조문 인간 확인 필요",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 PPT S105~146 기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "daily_worker",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_lt0001",
+    "slug": "employee-local-tax.definition",
+    "title": "종업원분 주민세 정의·납세의무자",
+    "chapter": "employee-local-tax",
+    "claim": "주민세 종업원분은 지방자치단체에 소재한 사업소 종업원의 급여총액을 과세표준으로 하여 사업주(사업소를 둔 자)에게 부과하는 주민세다(지방세법 제74조 제3호). 납세의무자는 종업원이 아니라 사업주(법인·개인사업자)다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제74조(정의) — CFO Academy 종업원분 주민세 강의 슬라이드 40·55",
+    "lawRef": "지방세법 제74조 제3호, 제75조",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT(2026 원천징수 실무 통합본) Slide 40 기반 신규 작성, 법령 원문 미확인"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0002",
+    "slug": "employee-local-tax.three-categories",
+    "title": "주민세 3분류 (개인분·사업소분·종업원분)",
+    "chapter": "employee-local-tax",
+    "claim": "주민세는 ① 개인분(주소를 둔 개인, 정액 — 지자체 조례, 매년 8.16~8.31 납기) ② 사업소분(사업소를 둔 사업주, 사업소 연면적 기준, 과세기준일 7.1·납기 매년 8.1~8.31) ③ 종업원분(사업주, 그 달의 종업원 급여총액, 매월 다음 달 10일)으로 나뉜다(지방세법 제74조·제79조 등). 종업원분만 연 1회가 아닌 매월 신고·납부 의무가 있다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제74조·제79조 — CFO Academy 강의 슬라이드 41",
+    "lawRef": "지방세법 제74조, 제79조, 제84조의2~제84조의6",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 41 비교표 기반 신규 작성, 법령 원문 미확인"
+      },
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "사업소분 납기 정정: 7.1~8.31 → 과세기준일 7.1·납기 8.1~8.31 (통합본 S36 원문 기준, 지방세법 §83 대조 필요)"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0003",
+    "slug": "employee-local-tax.filing-deadline",
+    "title": "종업원분 신고기한 — 매월 다음 달 10일",
+    "chapter": "employee-local-tax",
+    "claim": "종업원분 주민세는 급여를 지급한 달의 다음 달 10일까지 매월 신고·납부한다(지방세법 제84조의6). 예: 2026년 5월분 급여 지급 → 2026년 6월 10일까지 신고·납부.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의6(신고 및 납부) — CFO Academy 강의 슬라이드 40·52",
+    "lawRef": "지방세법 제84조의6",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 40·52 기반 신규 작성, 법령 원문 미확인"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0004",
+    "slug": "employee-local-tax.business-place",
+    "title": "사업소의 정의",
+    "chapter": "employee-local-tax",
+    "claim": "사업소는 인적 및 물적 설비를 갖추고 계속하여 사업 또는 사무가 이루어지는 장소다(지방세법 제74조 제4호). 본사·지사·공장·영업소는 각각 별도 사업소이며, 같은 건물 내 부서·팀은 별도 사업소가 아니다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제74조 제4호 — CFO Academy 강의 슬라이드 43",
+    "lawRef": "지방세법 제74조 제4호",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 43 기반 신규 작성, 법령 원문 미확인"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0005",
+    "slug": "employee-local-tax.employee-scope",
+    "title": "종업원의 정의와 범위",
+    "chapter": "employee-local-tax",
+    "claim": "종업원은 급여 지급 여부와 상관없이 사업주와의 모든 고용계약에 따라 사업에 종사하는 자다(지방세법 제74조 제8호, 동법 시행령 제78조의3). 정규직·계약직·파트타임·일용직, 임원(이사·감사), 외국인 근로자를 포함하며, 파견근로자는 사용사업주의 종업원으로 본다. 도급계약 수급인의 직원은 도급인의 종업원이 아니다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제74조 제8호·시행령 제78조의3 — CFO Academy 강의 슬라이드 43",
+    "lawRef": "지방세법 제74조 제8호, 동법 시행령 제78조의3",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 43 기반 신규 작성, 시행령 조문 번호 원문 미확인"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0006",
+    "slug": "employee-local-tax.tax-base",
+    "title": "과세표준 — 그 달의 종업원 급여총액",
+    "chapter": "employee-local-tax",
+    "claim": "종업원분 과세표준은 종업원에게 지급한 그 달의 급여총액이다(지방세법 제84조의2). 소득세법 제20조의 근로소득에 해당하면 봉급·임금·상여금·각종 수당·성과급(PI·PS)·연차수당 등 명칭 불문 포함하고, 소득세법 제12조 제3호의 비과세 근로소득(식대 월 20만원 이내, 자가운전보조금 월 20만원 이내, 일·숙직비 등)과 4대보험 사업주 부담분, 퇴직금·퇴직위로금(퇴직소득)은 제외한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의2, 소득세법 제12조 제3호·제20조 — CFO Academy 강의 슬라이드 44",
+    "lawRef": "지방세법 제84조의2, 소득세법 제12조 제3호·제20조",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 44 기반 신규 작성, 법령 원문 미확인"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned"
+  },
+  {
+    "id": "f_lt0007",
+    "slug": "employee-local-tax.standard-rate",
+    "title": "표준세율 0.5%와 조례 가감 범위",
+    "chapter": "employee-local-tax",
+    "claim": "종업원분 표준세율은 과세표준의 0.5%(1천분의 5)이며, 지방자치단체의 장은 조례로 표준세율의 100분의 50 범위에서 가감할 수 있어 실제 적용 가능 범위는 0.25%~0.75%다(지방세법 제84조의3). 강의 기준으로 대부분의 지자체는 표준세율 0.5%를 그대로 적용한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의3(세율) — CFO Academy 강의 슬라이드 45",
+    "lawRef": "지방세법 제84조의3",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 45 기반 신규 작성, 법령 원문·지자체 조례 미확인"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0008",
+    "slug": "employee-local-tax.exemption-threshold",
+    "title": "면세점 — 월평균 급여총액 1억 5천만원",
+    "chapter": "employee-local-tax",
+    "claim": "해당 월을 포함한 직전 12개월의 종업원 급여총액 월평균이 1억 5천만원 이하이면 종업원분 주민세가 면세된다(지방세법 제84조의4). 월 1인 평균임금 300만원 × 50명 = 1억 5천만원이 기준선 비유로 제시된다. 면세점 이하이면 별도 신고의무는 없으나 매월 면세점 판정은 필요하다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의4(면세점) — CFO Academy 강의 슬라이드 46",
+    "lawRef": "지방세법 제84조의4",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 46 기반 신규 작성, 법령 원문 미확인"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0009",
+    "slug": "employee-local-tax.average-calculation",
+    "title": "면세점 월평균 산정 방법",
+    "chapter": "employee-local-tax",
+    "claim": "면세점 판정용 월평균 급여총액은 신고 대상 월을 포함한 직전 12개월 누계를 12로 나눠 산정한다. 휴·폐업 등으로 영업한 날이 15일 미만인 달은 산정에서 제외하고, 신설 사업소는 개시일이 속하는 달부터 신고 대상 월까지의 월평균으로 판정한다(지방세법 제84조의4).",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의4 — CFO Academy 강의 슬라이드 46",
+    "lawRef": "지방세법 제84조의4",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 46 기반 신규 작성, 산정 세부(15일 미만 월 제외 등)는 법령·시행령 원문 확인 필요"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0010",
+    "slug": "employee-local-tax.sme-deduction",
+    "title": "중소기업 고용지원 공제",
+    "chapter": "employee-local-tax",
+    "claim": "「중소기업기본법」 제2조의 중소기업이 해당 월 종업원 수 50명을 초과하는 경우, 공제액 = (신고한 달의 종업원 수 - 직전연도 월평균 종업원 수) × 월 적용급여액을 과세표준에서 공제한다. 월 적용급여액 = 해당 월의 종업원 급여총액 ÷ 해당 월의 종업원 수(지방세법 제84조의5). 강의 예제: 직전 월평균 50명 중소기업이 5월 종업원 70명·급여총액 2.1억원이면 월 적용급여액 300만원, 공제 20명 × 300만원 = 6,000만원, 과세표준 1.5억원, 세액 750,000원(공제 전 105만원 대비 35만원 절세).",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의5(과세표준 공제), 중소기업기본법 제2조 — CFO Academy 강의 슬라이드 49",
+    "lawRef": "지방세법 제84조의5, 중소기업기본법 제2조",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 49 기반 신규 작성, 법령 원문 미확인"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0011",
+    "slug": "employee-local-tax.long-service-deduction-2026",
+    "title": "2026 신설 — 장기근속수당 과세표준 공제",
+    "chapter": "employee-local-tax",
+    "claim": "숙련 인력 이직 방지를 위한 장기근속수당 과세표준 공제가 2026년 신설됐다. 공제 한도는 1인당 MIN(월 급여액 × 10%, 360,000원) — 월 최대 36만원. 장기근속수당 지급분이 대상이며 2026.1.1 이후 신고분부터 적용, 첫 적용 신고는 2026.2.10(1월분). 근거는 지방세법 일부개정(2025.12.30 본회의 통과)·행정안전부 발표로 강의에서 소개됐으며 개정 조문 번호는 미확인. 강의 예시: 100명 × 36만원 × 12개월 × 0.5% = 연 216만원 절세 효과.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 강의 — 2026 개정 지방세법·행정안전부 발표 인용 (슬라이드 50)",
+    "lawRef": "지방세법 일부개정(2025.12.30 본회의 통과, 조문 번호 미확인)",
+    "lawUrl": "",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-01-01",
+    "verifyStatus": "강의기반",
+    "risk": "high",
+    "changeType": "신설",
+    "previousValue": "2025년까지 장기근속수당에 대한 과세표준 공제 없음",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 50 기반 신규 작성. 개정 법률 공포번호·조문 확인 전이므로 강의기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0012",
+    "slug": "employee-local-tax.parental-leave-deduction-2026",
+    "title": "2026 신설 — 육아휴직 대체인력 급여 공제",
+    "chapter": "employee-local-tax",
+    "claim": "일·가정 양립 지원을 위해 육아휴직 대체인력에게 지급한 급여를 종업원분 과세표준에서 전액 공제하는 제도가 2026년부터 신설됐다(지방세법 일부개정 — 강의 기준, 조문 번호 미확인). 2025년까지는 대체인력 급여가 과세표준에 포함되어 사업주 부담이 증가했으나, 2026년부터 대체인력 급여 전액 공제로 종업원분 부담이 사실상 제로화된다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 강의 — 2026 개정 지방세법·행정안전부 발표 인용 (슬라이드 51)",
+    "lawRef": "지방세법 일부개정(2026년 시행, 조문 번호 미확인)",
+    "lawUrl": "",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-01-01",
+    "verifyStatus": "강의기반",
+    "risk": "high",
+    "changeType": "신설",
+    "previousValue": "2025년까지 육아휴직 대체인력 급여 과세표준 포함(공제 없음)",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 51 기반 신규 작성. 개정 법률 공포번호·조문 확인 전이므로 강의기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0013",
+    "slug": "employee-local-tax.filing-place",
+    "title": "납세지 — 사업소 소재지 관할, 사업소별 각각 신고",
+    "chapter": "employee-local-tax",
+    "claim": "종업원분 주민세의 납세지는 사업소 소재지 관할 시·군·구이며, 본사·지점 등 사업소별로 각각 신고한다(지방세법 제84조의6). 본사 일괄 신고 대상이 아니다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의6 — CFO Academy 강의 슬라이드 52",
+    "lawRef": "지방세법 제84조의6",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 52 기반 신규 작성, 법령 원문 미확인"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0014",
+    "slug": "employee-local-tax.penalty-nonfiling",
+    "title": "무신고 가산세 20% (부정 40%)",
+    "chapter": "employee-local-tax",
+    "claim": "종업원분 주민세를 무신고하면 산출세액의 20%(부정무신고는 40%)의 무신고 가산세가 부과된다(지방세기본법 제53조).",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세기본법 제53조(무신고가산세) — CFO Academy 강의 슬라이드 53",
+    "lawRef": "지방세기본법 제53조",
+    "lawUrl": "https://www.law.go.kr/법령/지방세기본법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 53 가산세표 기반 신규 작성, 법령 원문 미확인"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0015",
+    "slug": "employee-local-tax.penalty-late-filing-relief",
+    "title": "기한후 신고 가산세 감면 (50%/30%/20%)",
+    "chapter": "employee-local-tax",
+    "claim": "법정신고기한 경과 후 기한후 신고 시 무신고 가산세가 감면된다: 1개월 이내 50% 감면(실효 10%, 부정 20%), 1~3개월 30% 감면(14%, 부정 28%), 3~6개월 20% 감면(16%, 부정 32%) — 강의 가산세표 기준(지방세기본법 제53조~제55조 및 가산세 감면 규정, 정확한 감면 조문 번호는 원문 확인 필요).",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세기본법 가산세 감면 규정 — CFO Academy 강의 슬라이드 53",
+    "lawRef": "지방세기본법 제53조~제55조(강의 인용 기준, 감면 조문 별도 확인 필요)",
+    "lawUrl": "https://www.law.go.kr/법령/지방세기본법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 53 가산세표 기반 신규 작성, 감면율·조문 원문 미확인"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0016",
+    "slug": "employee-local-tax.penalty-underreporting",
+    "title": "과소신고 가산세 10% (부정 40%)",
+    "chapter": "employee-local-tax",
+    "claim": "종업원분 주민세를 과소신고하면 과소신고세액의 10%(부정 과소신고는 40%)의 과소신고 가산세가 부과된다(지방세기본법 제54조).",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세기본법 제54조(과소신고가산세) — CFO Academy 강의 슬라이드 53",
+    "lawRef": "지방세기본법 제54조",
+    "lawUrl": "https://www.law.go.kr/법령/지방세기본법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 53 가산세표 기반 신규 작성, 법령 원문 미확인"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0017",
+    "slug": "employee-local-tax.penalty-late-payment",
+    "title": "납부지연 가산세 일 0.022%",
+    "chapter": "employee-local-tax",
+    "claim": "종업원분 주민세 미납 시 미납세액 × 1일 0.022%(연 약 8.03%)의 납부지연 가산세가 부과된다(지방세기본법 제55조).",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세기본법 제55조(납부지연가산세) — CFO Academy 강의 슬라이드 53",
+    "lawRef": "지방세기본법 제55조",
+    "lawUrl": "https://www.law.go.kr/법령/지방세기본법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 53 가산세표 기반 신규 작성, 법령 원문 미확인"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0018",
+    "slug": "employee-local-tax.5year-assessment-warning",
+    "title": "실무 경고 — 5년치 일괄 추징 빈번",
+    "chapter": "employee-local-tax",
+    "claim": "종업원분은 매월 신고 세목이므로 누락 시 매월 가산세가 누적되며, 지방자치단체 점검에서 5년치를 일괄 추징당하는 사례가 실무에서 빈번하다(강의 기준 실무 경험칙).",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 강의 — 실무 사례 (슬라이드 41·53)",
+    "lawRef": "",
+    "lawUrl": "",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "강의기반",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 53 실무 멘트 기반 신규 작성"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0019",
+    "slug": "employee-local-tax.comprehensive-case-2026",
+    "title": "종합 사례 — 2026 신설 공제 적용 계산",
+    "chapter": "employee-local-tax",
+    "claim": "강의 종합 사례(사례 기업·중소기업, 종업원 55명·직전연도 월평균 50명, 2026년 5월 급여총액 180,000,000원, 육아휴직 대체인력 5명 합계 1,500만원, 장기근속수당 지급 10명): 급여총액 180,000,000원 - 육아휴직 대체인력 공제 15,000,000원 - 장기근속수당 공제 3,600,000원(10명 × 36만원) - 중소기업 고용지원 공제 약 14,940,000원 = 과세표준 146,460,000원, 세액 = 146,460,000 × 0.5% = 732,300원.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 강의 — 종합 사례 (슬라이드 54, 사명 익명화)",
+    "lawRef": "지방세법 제84조의2~제84조의6, 2026 신설 공제",
+    "lawUrl": "",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-01-01",
+    "verifyStatus": "강의기반",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 54 계산 사례 그대로 전사(사명만 '사례 기업'으로 익명화). 중소기업 공제액은 슬라이드 표기 '약 14,940,000원' 유지"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_lt0020",
+    "slug": "employee-local-tax.wetax-filing",
+    "title": "위택스·서울ETAX 전자신고",
+    "chapter": "employee-local-tax",
+    "claim": "종업원분 주민세 신고서 작성·신고·납부는 위택스(WETAX) 또는 서울ETAX(서울 소재 사업소)를 통해 전자적으로 할 수 있다(강의 기준 신고 채널 안내).",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 강의 — 신고납부 절차 (슬라이드 52)",
+    "lawRef": "",
+    "lawUrl": "",
+    "asOf": "2026-06-11",
+    "effectiveDate": "",
+    "verifyStatus": "강의기반",
+    "risk": "low",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "PPT Slide 52 신고 절차 기반 신규 작성"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all"
+  },
+  {
+    "id": "f_u26001",
+    "slug": "ch09.simplified-tax.child-credit-2026-revision",
+    "title": "간이세액표 자녀세액공제분 개정(2026.3.1, 정액 차감액 인상)",
+    "chapter": "ch9",
+    "claim": "근로소득 간이세액표 적용 시 8세 이상 20세 이하 자녀 수별 정액 차감액이 인상되어 2026.3.1 이후 원천징수하는 분부터 적용된다: 1명 12,500원 → 20,830원(+8,330원), 2명 29,160원 → 45,830원(+16,670원), 3명 이상 29,160원+2명 초과 1명당 25,000원 → 45,830원+2명 초과 1명당 33,330원(강의자료 예시: 3명 79,160원, 4명 112,490원). 간이세액표(소득세법 시행규칙 별표2)도 전면 개정되어 원천징수의무자는 즉시 반영해야 한다.",
+    "sourceType": "EDICT",
+    "sourceTitle": "소득세법 시행령 별표2·시행규칙 별표2(근로소득 간이세액표) 개정 — CFO Academy 2026 개정세법특강 Slide 35~36 전사 기준",
+    "lawRef": "소득세법 제134조 제1항; 소득세법 시행령 제194조·별표2; 소득세법 시행규칙 별표2",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법시행규칙",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-03-01",
+    "appliesFrom": "2026-03-01",
+    "appliesTo": "2026.3.1 이후 원천징수하는 분",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "개정",
+    "previousValue": "1명 12,500원 / 2명 29,160원 / 3명 이상 29,160원+2명 초과 1명당 25,000원 (2024.2.29 개정 간이세액표)",
+    "scopeLimitations": "차감액(20,830/45,830/+33,330원)은 강의 PPT(개정세법특강 S35~36) 전사 수치 기준이며 시행규칙 별표2 원문은 직접 미확인. 기존 f_c90001(종전 정액 차감 방식·금액)과 연계 — 본 fact 확정 시 f_c90001 갱신 필요.",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "2026 개정세법특강 S35~36 전사 기준 등록. 시행규칙 별표2 원문 확인 전이므로 확인필요"
+      },
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "계산 룰 미구현 — content 반영만, 룰 연계는 후속 작업"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_u26002",
+    "slug": "ch06.production-worker.occupation-scope-2026-03",
+    "title": "생산직 및 관련직 범위 확대(2026.3.1, 소득칙 별표2의2 전면 정비)",
+    "chapter": "ch6",
+    "claim": "야간근로수당 등 비과세 대상 생산직 및 관련직의 범위가 소득세법 시행규칙 별표2의2 개정으로 확대되어 2026.3.1 이후 발생하는 소득분부터 적용된다: ① 돌봄서비스 종사자는 아이돌봄서비스 외에 노인장기요양 종사자 추가, ② 배달·운전 직종은 포괄 규정에서 택배원·퀵서비스·음식배달 등으로 구체화, ③ 별표2의2 직종 목록은 한국표준직업분류 기반으로 전면 정비.",
+    "sourceType": "EDICT",
+    "sourceTitle": "소득세법 시행규칙 별표2의2(비과세 생산직 및 관련직 범위) 개정 — CFO Academy 2026 개정세법특강 Slide 14 전사 기준",
+    "lawRef": "소득세법 제12조 제3호; 소득세법 시행령 제17조; 소득세법 시행규칙 별표2의2",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법시행규칙",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-03-01",
+    "appliesFrom": "2026-03-01",
+    "appliesTo": "2026.3.1 이후 발생하는 소득분",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "개정",
+    "previousValue": "돌봄서비스는 아이돌봄서비스 종사자만 해당, 배달·운전은 포괄 규정(세부 직종 미열거), 별표2의2는 광업·제조업 생산직·어업 중심",
+    "scopeLimitations": "직종 확대 내역은 강의 PPT(S14) 전사 기준이며 별표2의2 개정 원문은 직접 미확인. 금액 기준 상향(월정액급여 260만/직전 총급여 3,700만, '26.1.1 적용분)은 기존 f_c60003에 등록되어 본 fact에서 제외. 현행 직종 범위 일반 서술은 f_c60004 참조.",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "2026 개정세법특강 S14 전사 기준 등록(직종 확대 부분만). 금액 기준은 f_c60003 중복으로 제외"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_u26003",
+    "slug": "ch08.parental-leave-allowance.exemption-expansion-2026",
+    "title": "육아휴직수당 비과세 대상·한도 확대(2026.1.1)",
+    "chapter": "ch8",
+    "claim": "육아휴직수당 등 비과세가 확대된다(소득세법 제12조, 소득세법 시행령 제10조의2): ① 비과세 대상에 「사립학교교직원 연금법」 제60조의4에 따라 교직원으로 보는 사람이 소속기관의 정관 또는 규칙에 따라 지급받는 육아휴직수당이 추가되며 2026.1.1 이후 지급받는 분부터 적용, ② 「사립학교법」에 따라 임명된 사무직원이 학교의 정관 등에 따라 지급받는 육아휴직수당의 비과세 한도가 월 150만원 이하에서 휴직일~3개월 월 250만원 / 4~6개월 월 200만원 / 7개월~ 월 160만원으로 확대되며 영 시행일이 속하는 과세기간에 지급받는 분부터 적용. 고용보험법에 따른 실업급여·육아휴직급여 등과 국가공무원법 등에 따른 육아휴직수당은 종전대로 한도 없이 비과세.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제12조·소득세법 시행령 제10조의2(육아휴직수당등 비과세) 개정 — CFO Academy 2026 개정세법특강 Slide 5~6 전사 기준",
+    "lawRef": "소득세법 제12조; 소득세법 시행령 제10조의2",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-01-01",
+    "appliesFrom": "2026-01-01",
+    "appliesTo": "(대상 확대) 2026.1.1 이후 지급분 / (한도 확대) 영 시행일이 속하는 과세기간 지급분",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "개정",
+    "previousValue": "사립학교 사무직원 육아휴직수당 비과세 한도 월 150만원 이하 / 사학연금법 제60조의4 의제 교직원은 비과세 대상 아님",
+    "scopeLimitations": "월 250/200/160만원 단계 한도는 사립학교법에 따라 임명된 사무직원 분(➌)에 한정 — 고용보험법·국가공무원법 등 분(➊➋)은 종전부터 한도 없음. 개정 시행령 원문·부칙은 직접 미확인. 한도 확대 적용시기는 '영 시행일이 속하는 과세기간 지급분'으로 effectiveDate(2026-01-01)는 대상 확대 기준.",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "2026 개정세법특강 S5~6 전사 기준 등록. 시행령 제10조의2 원문 확인 전이므로 확인필요"
+      },
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "계산 룰 미구현 — content 반영만, 룰 연계는 후속 작업"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_u26004",
+    "slug": "nonresident.treaty.reduced-rate-filing-fine",
+    "title": "제한세율 적용신청서 미제출·허위제출 과태료 최대 1,000만원(신설)",
+    "chapter": "nonresident",
+    "claim": "원천징수의무자가 비거주자·외국법인(소득자)으로부터 제출받은 조세조약 제한세율 적용신청서를 지급일이 속하는 연도의 다음 해 2월 말일까지 관할세무서에 제출하지 않거나 허위로 제출하는 경우 최대 1,000만원의 과태료가 부과된다(강의자료 기준, 2026.1.1 이후 조세조약에 따른 제한세율 적용을 신청하는 분부터 적용). 세무서 제출의무 자체의 근거는 소득세법 제156조의6·법인세법 제98조의6(신설 2025.12.23).",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 2026 개정세법특강 Slide 24·91 — 비거주자·외국법인 제한세율 적용신청서 제출 의무화 및 과태료",
+    "lawRef": "소득세법 제156조의6; 소득세법 시행령 제207조의8; 법인세법 제98조의6; 법인세법 시행규칙 제29조의3",
+    "lawUrl": "",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-01-01",
+    "appliesFrom": "2026-01-01",
+    "appliesTo": "2026.1.1 이후 조세조약 제한세율 적용 신청분",
+    "verifyStatus": "강의기반",
+    "risk": "high",
+    "changeType": "신설",
+    "previousValue": "원천징수의무자는 신청서 보관만(세무서 제출의무·과태료 규정 없음)",
+    "scopeLimitations": "과태료 최대 1,000만원은 강의 PPT(S91) 전사 기준이며 과태료 근거 조문(법률 조항)은 슬라이드에 미표기 — 법령 원문 확인 필요. 세무서 제출의무 본체(익년 2월 말 제출, 소법 §156의6④·법법 §98의6④)는 기존 f_nr0018에 확정 등록되어 본 fact는 과태료 부분만 다룬다.",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "2026 개정세법특강 S24·91 전사 기준 등록. 과태료 근거 조문 미확인으로 강의기반"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "nonresident",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": false,
+      "reporting": true,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_u26005",
+    "slug": "nonresident.personal-service.exemption-filing-mandatory",
+    "title": "비거주자 인적용역소득 비과세·면제신청서·지급명세서 제출 의무화(2026.1.1)",
+    "chapter": "nonresident",
+    "claim": "2026.1.1 이후 지급하는 분부터 비거주자·외국법인의 국내원천 인적용역소득이 조세조약상 비과세·면제 신청의무 면제 대상과 지급명세서 제출의무 면제 대상에서 삭제되어, 비과세·면제신청서(실질귀속자 증명서류 포함)와 지급명세서를 제출해야 조세조약상 비과세·면제를 적용받을 수 있다(소득세법 제156조의2, 소득세법 시행령 제216조의2, 법인세법 제98조의4, 법인세법 시행령 제162조의2). 2025.12.31 이전에는 국내원천 사업소득·인적용역소득 모두 신청서·지급명세서 제출이 면제되었다. 다만 용역수행이 국외에서 이루어져 국내원천소득에 해당하지 않는 경우에는 내국세법상 과세 대상이 아니므로 신청서 제출의무도 없다(강의 해설, 서면2팀-2073 취지).",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제156조의2·법인세법 제98조의4(조세조약상 비과세·면제 적용 신청) 개정 — CFO Academy 2026 개정세법특강 Slide 33~34 전사 기준",
+    "lawRef": "소득세법 제156조의2; 소득세법 시행령 제216조의2; 법인세법 제98조의4; 법인세법 시행령 제162조의2",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-01-01",
+    "appliesFrom": "2026-01-01",
+    "appliesTo": "2026.1.1 이후 지급하는 국내원천 인적용역소득",
+    "verifyStatus": "확인필요",
+    "risk": "high",
+    "changeType": "개정",
+    "previousValue": "국내원천 사업소득·인적용역소득은 조세조약상 비과세·면제 신청의무 및 지급명세서 제출의무 면제 대상",
+    "scopeLimitations": "면제 대상 삭제 구조는 강의 PPT(S33~34) 전사 기준이며 개정 조문 원문·부칙은 직접 미확인. 국내원천 사업소득의 면제 유지 여부 등 세부 범위는 조문 확인 필요. 일반 신청 절차(다음 달 9일 세무서 제출 등)는 기존 f_nr0013 참조.",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "2026 개정세법특강 S33~34 전사 기준 등록. 개정 조문 원문 확인 전이므로 확인필요"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "nonresident",
+    "implementationImpact": {
+      "content": true,
+      "ui": true,
+      "calculation": false,
+      "reporting": true,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_u26006",
+    "slug": "employee-local-tax.long-service-allowance-deduction",
+    "title": "종업원분 주민세 장기근속수당 과세표준 공제 신설(2026.1.1)",
+    "chapter": "employee-local-tax",
+    "claim": "종업원분 주민세 과세표준(그 달 급여총액)에서 장기근속수당 지급분을 공제하는 제도가 신설되어 2026.1.1 이후 신고분부터 적용된다(첫 적용 신고: 2026.2.10, 1월분). 공제 한도는 1인당 MIN(1인 월 급여액 × 10%, 360,000원)이다. 근거는 2025.12.30 국회 본회의를 통과한 지방세법 일부개정(지방세법 제84조의5 과세표준 공제 체계).",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의5(종업원분 과세표준 공제) 2026 개정 — CFO Academy 통합본 Slide 47·50 전사 기준",
+    "lawRef": "지방세법 제84조의5",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-01-01",
+    "appliesFrom": "2026-01-01",
+    "appliesTo": "2026.1.1 이후 종업원분 주민세 신고분(첫 신고 2026.2.10)",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "신설",
+    "previousValue": "장기근속수당에 대한 종업원분 과세표준 공제 없음(급여총액 전액 과세표준 포함)",
+    "localTaxRef": "지방세법 제84조의3·제84조의5 (2026.1.1 시행)",
+    "scopeLimitations": "월 36만원·급여 10% 한도 산식은 강의 PPT(통합본 S47·50) 전사 기준이며 개정 지방세법 신설 호·문언 원문은 직접 미확인. 종업원분 세율 0.5%·면세점 등 기본 체계는 별도 fact 대상.",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 S47·50 전사 기준 등록(2025.12.30 본회의 통과 지방세법 개정). 조문 원문 확인 전이므로 확인필요"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": true,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_u26007",
+    "slug": "employee-local-tax.parental-leave-substitute-deduction",
+    "title": "종업원분 주민세 육아휴직 대체인력 급여 공제 신설(2026.1.1)",
+    "chapter": "employee-local-tax",
+    "claim": "육아휴직 대체인력에게 지급하는 급여를 종업원분 주민세 과세표준에서 전액 공제하는 제도가 신설되어 2026년부터 적용된다(2025.12.30 국회 본회의 통과 지방세법 일부개정, 지방세법 제84조의5 과세표준 공제 체계). 종전에는 대체인력 급여가 과세표준에 포함되어 육아휴직 활용 시 사업주의 종업원분 부담이 증가했으나, 개정으로 대체인력 급여분 부담이 사실상 제거된다.",
+    "sourceType": "LAW",
+    "sourceTitle": "지방세법 제84조의5(종업원분 과세표준 공제) 2026 개정 — CFO Academy 통합본 Slide 47·51 전사 기준",
+    "lawRef": "지방세법 제84조의5",
+    "lawUrl": "https://www.law.go.kr/법령/지방세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-01-01",
+    "appliesFrom": "2026-01-01",
+    "appliesTo": "2026.1.1 이후 종업원분 주민세 신고분",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "신설",
+    "previousValue": "육아휴직 대체인력 급여도 종업원분 과세표준(급여총액)에 포함",
+    "localTaxRef": "지방세법 제84조의3·제84조의5 (2026.1.1 시행)",
+    "scopeLimitations": "전액 공제 구조는 강의 PPT(통합본 S47·51) 전사 기준이며 개정 지방세법 신설 호·문언, 대체인력 인정 요건(채용 기간·고용형태 등)은 원문 미확인. 적용시기는 강의자료의 '2026년부터' 및 동반 신설 공제(장기근속수당)의 2026.1.1 이후 신고분 기준.",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 S47·51 전사 기준 등록(2025.12.30 본회의 통과 지방세법 개정). 조문 원문 확인 전이므로 확인필요"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "all",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": true,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_u26008",
+    "slug": "ch09.retirement.auto-refund-settlement-2026-07",
+    "title": "퇴직소득 세액정산 자동환급 신설(소득세법 제148조의2, 2026.7.1)",
+    "chapter": "ch9",
+    "claim": "퇴직소득 세액정산 자동환급 제도가 신설되어(소득세법 제148조의2) 2026.7.1부터 시행된다(강의자료 기준). 종전에는 퇴직자가 종전 근무지·중간정산분 원천징수영수증을 원천징수의무자에게 제출하는 경우에만 소득세법 제148조에 따른 합산 세액정산이 가능했고 별도의 자동환급 제도는 없었다. 신설 제도의 환급 요건·절차·대상 범위 등 세부 내용은 법령 원문으로 확인 필요.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제148조의2(퇴직소득 세액정산 자동환급, 신설) — CFO Academy 통합본 Slide 266 전사 기준",
+    "lawRef": "소득세법 제148조의2",
+    "lawUrl": "https://www.law.go.kr/법령/소득세법",
+    "asOf": "2026-06-11",
+    "effectiveDate": "2026-07-01",
+    "appliesFrom": "2026-07-01",
+    "appliesTo": "2026.7.1 이후(세부 적용 기준 부칙 확인 필요)",
+    "verifyStatus": "확인필요",
+    "risk": "medium",
+    "changeType": "신설",
+    "previousValue": "소득세법 제148조 세액정산은 퇴직자의 원천징수영수증 제출(선택) 기반 합산정산만 존재, 자동환급 제도 없음",
+    "scopeLimitations": "강의자료(통합본 S266)에는 '[2026.7.1 시행] 퇴직소득 세액정산 자동환급 신설(소법 §148의2)' 한 줄만 존재 — 환급 요건·절차·금액 산정 등 세부 내용 미상. 기존 제148조 세액정산은 f_c90011 참조.",
+    "history": [
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "통합본 S266 전사 기준 등록. 조문 원문·세부 절차 확인 전이므로 확인필요"
+      },
+      {
+        "date": "2026-06-11",
+        "author": "kms",
+        "note": "계산 룰 미구현 — content 반영만, 룰 연계는 후속 작업"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "retirement",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
   }
 ]
