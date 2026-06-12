@@ -24,6 +24,7 @@ export const RuleFormula = z.object({
     'monthly-cap',
     'date-rule',
     'year-end-installment-amount',
+    'year-end-tax-simulator',
     'custom',
   ]),
   expression: z.string(), // 사람용 산식 설명
