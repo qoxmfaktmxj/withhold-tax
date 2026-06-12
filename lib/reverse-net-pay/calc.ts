@@ -75,15 +75,20 @@ export function earnedIncomeDeduction(totalSalary: number): number {
   return Math.min(14_750_000 + (totalSalary - 100_000_000) * 0.02, 20_000_000)
 }
 
-/** 근로소득세액공제(소득세법 §59, 총급여별 한도) — 한백택스 earnedTaxCredit 포팅 */
+/**
+ * 근로소득세액공제(소득세법 §59①, 총급여별 한도).
+ * 한도 감액 기울기는 법문 그대로: 3,300만 초과분 ×0.8%(최저 66만),
+ * 7,000만 초과분 ×1/2(최저 50만), 1.2억 초과분 ×1/2(최저 20만).
+ * 한백택스 원본의 ×0.5% 완만 기울기는 법문과 달라 미채택.
+ */
 export function earnedIncomeTaxCredit(calculatedTax: number, totalSalary: number): number {
   if (calculatedTax <= 0) return 0
   const base = calculatedTax <= 1_300_000 ? calculatedTax * 0.55 : 715_000 + (calculatedTax - 1_300_000) * 0.3
   let limit: number
   if (totalSalary <= 33_000_000) limit = 740_000
   else if (totalSalary <= 70_000_000) limit = Math.max(740_000 - (totalSalary - 33_000_000) * 0.008, 660_000)
-  else if (totalSalary <= 120_000_000) limit = Math.max(660_000 - (totalSalary - 70_000_000) * 0.005, 500_000)
-  else limit = Math.max(500_000 - (totalSalary - 120_000_000) * 0.005, 200_000)
+  else if (totalSalary <= 120_000_000) limit = Math.max(660_000 - (totalSalary - 70_000_000) * 0.5, 500_000)
+  else limit = Math.max(500_000 - (totalSalary - 120_000_000) * 0.5, 200_000)
   return Math.min(base, limit)
 }
 
