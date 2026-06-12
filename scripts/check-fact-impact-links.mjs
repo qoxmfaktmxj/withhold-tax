@@ -14,6 +14,7 @@ export function collectRuleFactIds(ruleDir) {
   const ids = new Set()
   for (const file of fs.readdirSync(ruleDir).filter((name) => name.endsWith('.json'))) {
     const rules = readJson(path.join(ruleDir, file))
+    if (!Array.isArray(rules)) continue
     for (const rule of rules) {
       for (const factId of rule.factIds ?? []) ids.add(factId)
     }

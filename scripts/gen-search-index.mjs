@@ -97,6 +97,31 @@ function ruleHref(rule) {
 const seenRuleDocIds = new Map()
 for (const file of fs.readdirSync(RULE_DIR).filter((name) => name.endsWith('.json')).sort()) {
   const rules = JSON.parse(fs.readFileSync(path.join(RULE_DIR, file), 'utf8'))
+  if (!Array.isArray(rules)) {
+    if (file === 'treaty-rates.json' && Array.isArray(rules.rates)) {
+      for (const entry of rules.rates) {
+        pushDoc({
+          id: `treaty-rate:${entry.countryCode}`,
+          kind: 'treaty-rate',
+          chapter: 'nonresident',
+          heading: `${entry.country} 조세조약 제한세율`,
+          text: [
+            entry.country,
+            entry.countryCode,
+            entry.region,
+            `이자 ${entry.interest?.join('/')}`,
+            `배당25 ${entry.dividend?.major25?.join('/')}`,
+            `배당기타 ${entry.dividend?.other?.join('/')}`,
+            `사용료 ${entry.royalty?.join('/')}`,
+            entry.note,
+            ...(rules.warnings || []),
+          ].filter(Boolean).join(' '),
+          href: '/ch/nonresident#주요-34개국-제한세율-표',
+        })
+      }
+    }
+    continue
+  }
   for (const rule of rules) {
     const baseId = `tax-rule:${rule.ruleId}`
     const seenCount = seenRuleDocIds.get(baseId) || 0

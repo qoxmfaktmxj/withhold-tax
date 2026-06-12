@@ -4,6 +4,7 @@ export type SearchDocKind =
   | 'chapter-section'
   | 'fact'
   | 'tax-rule'
+  | 'treaty-rate'
   | 'screen-guide'
   | 'source'
   | 'watch-item'
