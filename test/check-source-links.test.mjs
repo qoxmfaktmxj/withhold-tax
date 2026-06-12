@@ -159,6 +159,8 @@ describe('check-source-links', () => {
         { id: 'src_nts_ok', type: 'NTS_GUIDE', url: 'https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do' },
         { id: 'src_moef_ok', type: 'NTS_GUIDE', url: 'https://www.moef.go.kr' },
         { id: 'src_hometax_ok', type: 'NTS_FORM', url: 'https://www.hometax.go.kr' },
+        { id: 'src_mohw_ok', type: 'MOHW_GUIDE', url: 'https://www.mohw.go.kr/board.es' },
+        { id: 'src_nps_ok', type: 'NPS_GUIDE', url: 'https://edi.nps.or.kr/cm/main/guide.pdf' },
         { id: 'src_taxlaw_ok', type: 'TAX_RULING', url: 'https://taxlaw.nts.go.kr' },
       ],
     })
@@ -172,6 +174,8 @@ describe('check-source-links', () => {
     expect(issues.map((issue) => issue.id)).not.toContain('src_nts_ok')
     expect(issues.map((issue) => issue.id)).not.toContain('src_moef_ok')
     expect(issues.map((issue) => issue.id)).not.toContain('src_hometax_ok')
+    expect(issues.map((issue) => issue.id)).not.toContain('src_mohw_ok')
+    expect(issues.map((issue) => issue.id)).not.toContain('src_nps_ok')
     expect(issues.map((issue) => issue.id)).not.toContain('src_taxlaw_ok')
   })
 

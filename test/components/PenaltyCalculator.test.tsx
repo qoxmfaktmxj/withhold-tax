@@ -13,7 +13,7 @@ describe('PenaltyCalculator', () => {
     expect(screen.getByText(/지방소득세 특별징수 가산세는 별도 체계/)).toBeInTheDocument()
   })
 
-  it('shows revised 2026-07-01+ penalty components with manual-review flag', () => {
+  it('shows revised 2026-07-01+ penalty components as an automatic calculation with bill-note', () => {
     render(<PenaltyCalculator />)
 
     fireEvent.change(screen.getByLabelText('법정납부기한'), { target: { value: '2026-07-10' } })
@@ -27,7 +27,8 @@ describe('PenaltyCalculator', () => {
     expect(screen.getByText('고지 전 일할 이자')).toBeInTheDocument()
     expect(screen.getByText('지정납부기한 후 월할 이자')).toBeInTheDocument()
     expect(screen.getByText('독촉비용')).toBeInTheDocument()
-    expect(screen.getByText('수동 검토')).toBeInTheDocument()
+    expect(screen.getByText('고지서 기준 확인')).toBeInTheDocument()
+    expect(screen.queryByText('수동 검토')).not.toBeInTheDocument()
     expect(screen.getByText(/월 1만분의 67/)).toBeInTheDocument()
   })
 

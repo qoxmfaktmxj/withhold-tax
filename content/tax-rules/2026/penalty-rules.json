@@ -18,6 +18,7 @@
       "expression": "MIN(미납세액×3% + 미납세액×일수×22/100,000, 미납세액×10%) — 전체 한도 50%",
       "params": { "baseRate": 0.03, "dailyRate": 0.00022, "innerCap": 0.1, "outerCap": 0.5 }
     },
+    "calculationMode": "automatic",
     "examples": [
       {
         "title": "미납 1,000,000원·100일 지연",
@@ -65,7 +66,7 @@
         "maxPostDesignatedMonths": 60
       }
     },
-    "calculationMode": "manual-review",
+    "calculationMode": "automatic",
     "examples": [
       {
         "title": "미납 2,000,000원·고지 전 30일·지정납부기한 후 3개월·독촉비용 2,500원",

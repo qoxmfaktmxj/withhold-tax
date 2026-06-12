@@ -27,12 +27,18 @@ describe('checkEmployeeLocalTax', () => {
     })
   })
 
-  it('면세점 경계 — 월평균 정확히 1억 5천만원도 면세(≤ 기준)', () => {
+  it('면세점 경계 — 월평균 정확히 1억 8천만원도 면세(≤ 기준)', () => {
     expect(
       checkEmployeeLocalTax({
         avgMonthlyPayroll: EXEMPTION_THRESHOLD,
-        monthlyPayrollTotal: 160_000_000,
+        monthlyPayrollTotal: 190_000_000,
       })
+    ).toMatchObject({ exempt: true, tax: 0 })
+  })
+
+  it('기존 1억 5천만원 초과 구간인 1억 6천만원도 현행 1억 8천만원 기준에서는 면세', () => {
+    expect(
+      checkEmployeeLocalTax({ avgMonthlyPayroll: 160_000_000, monthlyPayrollTotal: 160_000_000 })
     ).toMatchObject({ exempt: true, tax: 0 })
   })
 
@@ -51,7 +57,7 @@ describe('checkEmployeeLocalTax', () => {
   it('2026 신설 공제 2종 — 강의 종합사례(Slide 54, ㈜한백테크 2026년 5월분)', () => {
     expect(
       checkEmployeeLocalTax({
-        avgMonthlyPayroll: 180_000_000,
+        avgMonthlyPayroll: 181_000_000,
         monthlyPayrollTotal: 180_000_000,
         longServiceEmployeeCount: 10,
         longServiceAllowancePerEmployee: 400_000,
@@ -139,10 +145,10 @@ describe('employee_local_tax rule — 룰 JSON ↔ lib 교차검증', () => {
 })
 
 describe('EmployeeLocalTaxCalculator', () => {
-  it('기본값 강의 종합사례 — 과세표준 146,460,000원·세액 732,300원 표시', () => {
+  it('기본값 법령 검증 사례 — 과세표준 146,460,000원·세액 732,300원 표시', () => {
     render(<EmployeeLocalTaxCalculator />)
 
-    expect(screen.getByLabelText('직전 12개월 월평균 급여총액')).toHaveValue('180000000')
+    expect(screen.getByLabelText('직전 12개월 월평균 급여총액')).toHaveValue('181000000')
     expect(screen.getByLabelText('당월 급여총액(비과세 제외)')).toHaveValue('180000000')
 
     const result = screen.getByRole('region', { name: '종업원분 주민세 계산 결과' })

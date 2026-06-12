@@ -110,7 +110,7 @@ export const TOOL_PRIORITIES: ToolPriority[] = [
     title: '종업원분 주민세 계산기',
     route: '/tools/employee-local-tax',
     status: 'available',
-    summary: '면세점(월평균 1.5억) 판정 → 과세표준 → 2026 신설 공제(장기근속·육아휴직 대체인력) 반영 세액',
+    summary: '면세점(월평균 1.8억) 판정 → 과세표준 → 2026 신설 공제(장기근속·육아휴직 대체인력) 반영 세액',
   },
   {
     id: 'executive-severance-limit',

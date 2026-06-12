@@ -12,10 +12,24 @@ import {
   canAutoCalculate,
   calculateRule,
 } from '@/lib/rules/engine'
+import type { WithholdingLatePenaltyInput } from '@/lib/rules/engine'
 import type { TaxRule } from '@/lib/rules/schema'
 import socialInsuranceRaw from '@/content/tax-rules/2026/social-insurance-2026.json'
 import fs from 'node:fs'
 import path from 'node:path'
+
+function readTaxRuleJsonArrays() {
+  const rulesDir = path.join(process.cwd(), 'content', 'tax-rules', '2026')
+  return fs
+    .readdirSync(rulesDir)
+    .filter((file) => file.endsWith('.json'))
+    .map((file) => JSON.parse(fs.readFileSync(path.join(rulesDir, file), 'utf8')))
+    .filter(Array.isArray)
+}
+
+function loadTaxRuleFiles() {
+  return readTaxRuleJsonArrays().flatMap((raw) => loadRules(raw))
+}
 
 const rateRule: TaxRule = {
   ruleId: 'resident_business_income_wht_2026',
@@ -60,7 +74,20 @@ const newPenalty: TaxRule = {
   effectiveFrom: '2026-07-01',
   effectiveTo: undefined,
   factIds: ['f_c40017'],
-  calculationMode: 'manual-review',
+  formula: {
+    type: 'penalty-late-wht',
+    expression: '개정 산식',
+    params: {
+      baseRate: 0.03,
+      dailyRate: 0.00022,
+      monthlyRate: 0.0067,
+      innerCap: 0.1,
+      outerCap: 0.5,
+      smallTaxExemption: 1_500_000,
+      maxPostDesignatedMonths: 60,
+    },
+  },
+  calculationMode: 'automatic',
 }
 
 const monthlyCapRule: TaxRule = {
@@ -257,9 +284,9 @@ describe('withholdingLatePenalty — 2026.7 이후 개정 산식 구성요소', 
 })
 
 describe('canAutoCalculate', () => {
-  it('blocks automatic amount calculation for manual-review rules', () => {
+  it('allows automatic amount calculation for penalty rules with examples', () => {
     expect(canAutoCalculate(oldPenalty)).toBe(true)
-    expect(canAutoCalculate(newPenalty)).toBe(false)
+    expect(canAutoCalculate(newPenalty)).toBe(true)
   })
 
   it('rejects custom rules that are marked automatic when loading rule files', () => {
@@ -387,14 +414,24 @@ describe('calculateRule — formula type dispatcher', () => {
     })
   })
 
-  it('returns manual review for manual-review rules', () => {
-    const result = calculateRule(newPenalty, { unpaidTax: 1_000_000, daysLate: 10 })
+  it('calculates revised withholding late-payment penalty rules', () => {
+    const result = calculateRule(newPenalty, {
+      unpaidTax: 2_000_000,
+      daysLate: 30,
+      designatedDueDate: '2026-08-20',
+      paymentDate: '2026-11-20',
+      demandCost: 2500,
+    })
 
     expect(result).toMatchObject({
-      type: 'manual-review',
-      message: '이 rule은 자동 계산 대상이 아닙니다.',
+      type: 'penalty-late-wht',
       ruleId: 'wht_late_penalty',
       version: '2026.7.0',
+      basePenalty: 60_000,
+      preNoticeDailyPenalty: 13_200,
+      postDesignatedMonthlyPenalty: 40_200,
+      demandCost: 2500,
+      total: 115_900,
     })
   })
 
@@ -441,11 +478,7 @@ describe('calculateRule — formula type dispatcher', () => {
 
 describe('content/tax-rules JSON 무결성', () => {
   it('registers business_yas_installment_amount as a JSON-backed automatic rule', () => {
-    const rulesDir = path.join(process.cwd(), 'content', 'tax-rules', '2026')
-    const rules = fs
-      .readdirSync(rulesDir)
-      .filter((file) => file.endsWith('.json'))
-      .flatMap((file) => loadRules(JSON.parse(fs.readFileSync(path.join(rulesDir, file), 'utf8'))))
+    const rules = loadTaxRuleFiles()
     const rule = rules.find((item) => item.ruleId === 'business_yas_installment_amount')
 
     expect(rule).toMatchObject({
@@ -462,11 +495,7 @@ describe('content/tax-rules JSON 무결성', () => {
   })
 
   it('registers employee_yas_installment_amount as a JSON-backed automatic rule', () => {
-    const rulesDir = path.join(process.cwd(), 'content', 'tax-rules', '2026')
-    const rules = fs
-      .readdirSync(rulesDir)
-      .filter((file) => file.endsWith('.json'))
-      .flatMap((file) => loadRules(JSON.parse(fs.readFileSync(path.join(rulesDir, file), 'utf8'))))
+    const rules = loadTaxRuleFiles()
     const rule = rules.find((item) => item.ruleId === 'employee_yas_installment_amount')
 
     expect(rule).toMatchObject({
@@ -500,11 +529,7 @@ describe('content/tax-rules JSON 무결성', () => {
   it('all rule files parse + factIds resolve + examples compute', async () => {
     const factsRaw = (await import('@/content/facts.json')).default as Array<{ id: string }>
     const ids = new Set(factsRaw.map((f) => f.id))
-    const rulesDir = path.join(process.cwd(), 'content', 'tax-rules', '2026')
-    const files = fs
-      .readdirSync(rulesDir)
-      .filter((file) => file.endsWith('.json'))
-      .map((file) => JSON.parse(fs.readFileSync(path.join(rulesDir, file), 'utf8')))
+    const files = readTaxRuleJsonArrays()
     for (const raw of files) {
       const rules = loadRules(raw)
       for (const rule of rules) {
@@ -546,6 +571,13 @@ describe('content/tax-rules JSON 무결성', () => {
         } else if (rule.formula.type === 'year-end-installment-amount') {
           for (const ex of rule.examples) {
             const out = applyYearEndInstallmentAmountRule(rule, ex.input as Record<string, unknown>)
+            for (const [k, v] of Object.entries(ex.expected)) {
+              expect(out[k as keyof typeof out], `${rule.ruleId} example "${ex.title}" key ${k}`).toEqual(v)
+            }
+          }
+        } else if (rule.formula.type === 'penalty-late-wht') {
+          for (const ex of rule.examples) {
+            const out = withholdingLatePenalty(rule, ex.input as unknown as WithholdingLatePenaltyInput)
             for (const [k, v] of Object.entries(ex.expected)) {
               expect(out[k as keyof typeof out], `${rule.ruleId} example "${ex.title}" key ${k}`).toEqual(v)
             }
