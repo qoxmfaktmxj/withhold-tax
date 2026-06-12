@@ -6263,6 +6263,523 @@
     }
   },
   {
+    "id": "f_rl0001",
+    "slug": "rulings.income-classification.lecture-fee",
+    "title": "강사료 소득구분 — 계속·반복성은 사업소득, 일시는 기타소득",
+    "chapter": "rulings",
+    "claim": "소득세과-0973은 고용관계 없이 독립된 자격으로 계속적·반복적으로 용역을 제공하고 지급받는 대가는 사업소득, 일시적으로 용역을 제공하고 지급받는 대가는 기타소득으로 보며, 일시성·계속반복성은 사업자등록 유무가 아니라 규모·횟수 등 실질내용으로 사실판단한다고 회신했다.",
+    "sourceType": "INTERPRETATION",
+    "sourceTitle": "국세법령정보시스템 소득세과-0973(2011.11.23)",
+    "lawRef": "소득세법 제19조, 제21조; 소득세과-0973",
+    "lawUrl": "https://taxlaw.nts.go.kr/qt/USEQTA002P.do?ntstDcmId=010000000000146391",
+    "asOf": "2026-06-12",
+    "effectiveDate": "2011-11-23",
+    "verifyStatus": "확정",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-12",
+        "author": "Codex",
+        "note": "국세법령정보시스템 action 검색으로 소득세과-0973 문서 ID 010000000000146391 확인 후 rulings 장에 사례 카드 추가"
+      }
+    ],
+    "nextReviewBy": "2027-01-31",
+    "primarySourceVerified": true,
+    "confidenceScore": 92,
+    "subordinateLawRef": "",
+    "scopeLimitations": "사실판단형 해석사례. 강사료 전체를 일률적으로 사업소득 또는 기타소득으로 확정하지 않으며, 고용관계·계속반복성·규모·횟수 등 실제 계약과 운영 사실 확인이 필요하다.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "2011-11-23",
+    "sunsetDate": "",
+    "reviewerId": "codex",
+    "sourceIds": [
+      "src_taxlaw_nts"
+    ],
+    "incomeType": "business",
+    "appliesTo": "강사료·강연료 등 인적용역 대가 소득구분",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_rl0002",
+    "slug": "rulings.income-classification.patent-royalty",
+    "title": "특허권 사용료 소득구분 — 계속 대여 사업소득, 일시 대여 기타소득",
+    "chapter": "rulings",
+    "claim": "원천세과-457은 특허권을 일정기간 계속적·반복적으로 사용하도록 하고 그 대가를 지급받는 경우 사업소득에 해당하고, 일시적인 특허권 대여 대가는 기타소득에 해당한다고 회신했다.",
+    "sourceType": "INTERPRETATION",
+    "sourceTitle": "국세법령정보시스템 원천세과-457(2011.07.29)",
+    "lawRef": "소득세법 제19조, 제21조; 원천세과-457",
+    "lawUrl": "https://taxlaw.nts.go.kr/qt/USEQTA002P.do?ntstDcmId=010000000000145750",
+    "asOf": "2026-06-12",
+    "effectiveDate": "2011-07-29",
+    "verifyStatus": "확정",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-12",
+        "author": "Codex",
+        "note": "국세법령정보시스템 action 검색으로 원천세과-457 문서 ID 010000000000145750 확인 후 rulings 장에 사례 카드 추가"
+      }
+    ],
+    "nextReviewBy": "2027-01-31",
+    "primarySourceVerified": true,
+    "confidenceScore": 92,
+    "subordinateLawRef": "",
+    "scopeLimitations": "권리 양도, 일시 대여, 계속 대여, 특수관계자 거래 시가 적정성은 별도 검토 필요. 부가가치세 과세 여부와 원천징수대상 사업소득 여부는 구분해야 한다.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "2011-07-29",
+    "sunsetDate": "",
+    "reviewerId": "codex",
+    "sourceIds": [
+      "src_taxlaw_nts"
+    ],
+    "incomeType": "business",
+    "appliesTo": "특허권 사용료·권리 대여 대가 소득구분",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_rl0003",
+    "slug": "rulings.income-classification.outside-director",
+    "title": "사외이사 보수 소득구분 — 이사 직무 보수는 근로소득",
+    "chapter": "rulings",
+    "claim": "소득세과-662는 거주자인 사외이사가 고용관계나 이와 유사한 계약에 따라 이사로서 직무를 수행하고 지급받는 보수는 근로소득에 해당하고, 독립된 자격으로 이사 직무 외 용역을 계속·반복 제공하고 지급받는 대가는 사업소득에 해당한다고 회신했다.",
+    "sourceType": "INTERPRETATION",
+    "sourceTitle": "국세법령정보시스템 소득세과-662(2009.02.18)",
+    "lawRef": "소득세법 제20조, 제19조; 소득세과-662",
+    "lawUrl": "https://taxlaw.nts.go.kr/qt/USEQTA002P.do?ntstDcmId=010000000000076466",
+    "asOf": "2026-06-12",
+    "effectiveDate": "2009-02-18",
+    "verifyStatus": "확정",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-12",
+        "author": "Codex",
+        "note": "국세법령정보시스템 action 검색으로 소득세과-662 문서 ID 010000000000076466 확인 후 rulings 장에 사례 카드 추가"
+      }
+    ],
+    "nextReviewBy": "2027-01-31",
+    "primarySourceVerified": true,
+    "confidenceScore": 92,
+    "subordinateLawRef": "",
+    "scopeLimitations": "사외이사라는 명칭만으로 소득구분을 확정하지 않는다. 이사 직무 수행 보수인지, 독립된 자격의 별도 자문·용역 대가인지 계약과 업무 내용을 확인해야 한다.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "2009-02-18",
+    "sunsetDate": "",
+    "reviewerId": "codex",
+    "sourceIds": [
+      "src_taxlaw_nts"
+    ],
+    "incomeType": "earned",
+    "appliesTo": "사외이사 보수·자문료 소득구분",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_rl0004",
+    "slug": "rulings.income-classification.no-facility-commission",
+    "title": "사업설비 없는 수수료 소득구분 — 서면1팀-464 문서번호 재확인 필요",
+    "chapter": "rulings",
+    "claim": "강의자료는 사업설비 없는 수수료 사례를 서면1팀-464로 제시하지만, 국세법령정보시스템 공식 검색에서 같은 문서번호와 해당 주제가 직접 매칭되지 않았다. 공식 원문 확인 전에는 문서번호를 확정 인용하지 말고, 물적시설·근로자 고용 여부와 계속·반복성 기준으로 원천징수대상 사업소득·기타소득·부가가치세 면세 인적용역 여부를 별도 판단해야 한다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 2026년 상반기 개정세법 프리뷰특강 Slide 330~332 — 문서번호 원문 미확인",
+    "lawRef": "강의자료상 서면1팀-464로 기재, 공식 taxlaw 문서번호·주제 매칭 재확인 필요",
+    "lawUrl": "",
+    "asOf": "2026-06-12",
+    "effectiveDate": "",
+    "verifyStatus": "강의기반",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-12",
+        "author": "Codex",
+        "note": "국세법령정보시스템 action 검색에서 서면1팀-464와 사업설비 없는 수수료 주제의 직접 매칭을 확인하지 못해 강의기반 fact로 보류"
+      }
+    ],
+    "nextReviewBy": "2026-07-31",
+    "primarySourceVerified": false,
+    "confidenceScore": 55,
+    "subordinateLawRef": "",
+    "scopeLimitations": "서면1팀-464 문서번호와 '사업설비 없는 수수료' 주제가 공식 검색에서 직접 매칭되지 않았다. 공식 원문 확인 전까지 문서번호 확정 인용 금지.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "",
+    "sunsetDate": "",
+    "reviewerId": "codex",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "business",
+    "appliesTo": "사업설비 없는 성과수수료·판매대행 수수료 소득구분",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_rl0005",
+    "slug": "rulings.university-research-service.six-patterns",
+    "title": "산학협력 연구용역 소득구분 6패턴",
+    "chapter": "rulings",
+    "claim": "대학교수의 산학협력 연구용역비는 계약 주체와 연구비 관리 방식에 따라 구분한다. 대학 중앙관리에서는 교수 연구용역 제공분과 고용관계 없는 연구보조원 지급분은 기타소득, 고용관계 있는 연구원 지급분은 근로소득으로 본다. 교수 등이 개별관리하는 경우 대학 체결·수령 후 지급분과 교수가 직접 계약·수령한 연구용역비는 사업소득으로 검토하고, 개별관리 중 인건비·연구보조비 지급은 고용관계 유무에 따라 근로소득 또는 기타소득으로 재분류한다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 원천징수실무 통합본 Slide 377, 391",
+    "lawRef": "강의자료 Slide 377, 391; 소득세법 제19조·제20조·제21조 사실판단",
+    "lawUrl": "",
+    "asOf": "2026-06-12",
+    "effectiveDate": "",
+    "verifyStatus": "강의기반",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-12",
+        "author": "Codex",
+        "note": "_extracted/통합본_텍스트.md Slide 377·391의 산학협력 연구용역 6행 표를 rulings 장에 반영. 강의 추출본 기반이라 원문 예규·법령 대조 전까지 강의기반 유지"
+      }
+    ],
+    "nextReviewBy": "2026-07-31",
+    "primarySourceVerified": false,
+    "confidenceScore": 70,
+    "subordinateLawRef": "",
+    "scopeLimitations": "강의자료 추출본의 패턴표 기반이다. 실제 소득구분은 계약 주체, 연구비 관리 방식, 고용관계, 연구비 집행·정산 증빙을 확인해야 하며, 공식 예규·법령 원문 대조 전까지 확정 fact로 승격하지 않는다.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "",
+    "sunsetDate": "",
+    "reviewerId": "codex",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "other",
+    "appliesTo": "대학교수 산학협력 연구용역비·연구보조비 소득구분",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_rl0006",
+    "slug": "rulings.2026.year-end-deduction-order",
+    "title": "기부금과 퇴직연금이 있을 때 연말정산 공제순서",
+    "chapter": "rulings",
+    "claim": "재정경제부 소득세제과-257은 연금계좌세액공제는 이월되지 않는 공제이나 소득세법 제61조 제3항에 따라 최후순위로 적용된다고 회신했다. 다만 이전 과세기간에 연금계좌에 납입한 연금보험료 중 연금계좌세액공제를 받지 않은 금액은 소득세법 시행령 제118조의3에 따른 전환 신청을 통해 이후연도 연금계좌 납입액으로 보아 세액공제를 적용받을 수 있다.",
+    "sourceType": "INTERPRETATION",
+    "sourceTitle": "국세법령정보시스템 재정경제부 소득세제과-257(2026.03.13)",
+    "lawRef": "소득세법 제61조 제3항, 소득세법 시행령 제118조의3; 재정경제부 소득세제과-257",
+    "lawUrl": "https://taxlaw.nts.go.kr/qt/USEQTA002P.do?ntstDcmId=200000000000019204",
+    "asOf": "2026-06-12",
+    "effectiveDate": "2026-03-13",
+    "verifyStatus": "확정",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-12",
+        "author": "Codex",
+        "note": "국세법령정보시스템 action 검색으로 문서 ID 200000000000019204와 요지를 확인"
+      }
+    ],
+    "nextReviewBy": "2027-01-31",
+    "primarySourceVerified": true,
+    "confidenceScore": 92,
+    "subordinateLawRef": "",
+    "scopeLimitations": "연말정산 공제 적용순서와 연금계좌 전환 신청에 관한 해석사례. 실제 공제 가능액은 해당 연도 공제한도, 이미 적용된 세액공제, 연금계좌취급자 신청 절차를 별도로 확인해야 한다.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "2026-03-13",
+    "sunsetDate": "",
+    "reviewerId": "codex",
+    "sourceIds": [
+      "src_taxlaw_nts"
+    ],
+    "incomeType": "earned",
+    "appliesTo": "근로소득 연말정산 공제순서·연금계좌세액공제",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_rl0007",
+    "slug": "rulings.2026.jump-up-activity-allowance",
+    "title": "점프업 프로젝트 활동수당은 근로소득·기타소득 아님",
+    "chapter": "rulings",
+    "claim": "서면-2025-소득-2234는 고용노동부가 주관하는 재학생 맞춤형 프로그램에 고용관계 없는 학생이 참여하고 지급받는 지원금은 소득세법 제20조의 근로소득 또는 제21조 제1항의 기타소득에 해당하지 않는다고 회신했다.",
+    "sourceType": "INTERPRETATION",
+    "sourceTitle": "국세법령정보시스템 서면-2025-소득-2234(2026.03.09)",
+    "lawRef": "소득세법 제20조, 제21조; 서면-2025-소득-2234",
+    "lawUrl": "https://taxlaw.nts.go.kr/qt/USEQTA002P.do?ntstDcmId=200000000000019226",
+    "asOf": "2026-06-12",
+    "effectiveDate": "2026-03-09",
+    "verifyStatus": "확정",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-12",
+        "author": "Codex",
+        "note": "국세법령정보시스템 action 검색으로 문서 ID 200000000000019226와 요지를 확인"
+      }
+    ],
+    "nextReviewBy": "2027-01-31",
+    "primarySourceVerified": true,
+    "confidenceScore": 92,
+    "subordinateLawRef": "",
+    "scopeLimitations": "고용노동부 재학생 맞춤형 프로그램 활동수당 관련 사실관계에 대한 해석사례. 지급 주체, 지급 근거, 고용관계 유무, 유사 프로그램 여부가 달라지면 별도 판단이 필요하다.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "2026-03-09",
+    "sunsetDate": "",
+    "reviewerId": "codex",
+    "sourceIds": [
+      "src_taxlaw_nts"
+    ],
+    "incomeType": "other",
+    "appliesTo": "고용노동부 재학생 맞춤형 프로그램 활동수당",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_rl0008",
+    "slug": "rulings.2026.mortgage-standard-price",
+    "title": "장기주택저당차입금 이자상환액 공제 기준시가 적용",
+    "chapter": "rulings",
+    "claim": "서면-2025-원천-3852는 장기주택저당차입금 이자상환액 공제 대상 주택은 취득 당시 기준시가가 5억원 이하인 주택이며, 새로운 기준시가가 고시되기 전에 취득하는 경우에는 직전의 기준시가를 적용한다고 회신했다.",
+    "sourceType": "INTERPRETATION",
+    "sourceTitle": "국세법령정보시스템 서면-2025-원천-3852(2026.03.03)",
+    "lawRef": "소득세법 제52조 제5항; 서면-2025-원천-3852",
+    "lawUrl": "https://taxlaw.nts.go.kr/qt/USEQTA002P.do?ntstDcmId=200000000000018954",
+    "asOf": "2026-06-12",
+    "effectiveDate": "2026-03-03",
+    "verifyStatus": "확정",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-12",
+        "author": "Codex",
+        "note": "국세법령정보시스템 action 검색으로 문서 ID 200000000000018954와 요지를 확인"
+      }
+    ],
+    "nextReviewBy": "2027-01-31",
+    "primarySourceVerified": true,
+    "confidenceScore": 92,
+    "subordinateLawRef": "",
+    "scopeLimitations": "장기주택저당차입금 공제 대상 주택 기준시가 적용에 관한 해석사례. 신축주택, 분양권, 공동소유, 다주택 여부 등은 별도 요건과 최신 해석을 확인해야 한다.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "2026-03-03",
+    "sunsetDate": "",
+    "reviewerId": "codex",
+    "sourceIds": [
+      "src_taxlaw_nts"
+    ],
+    "incomeType": "earned",
+    "appliesTo": "근로소득 연말정산 장기주택저당차입금 이자상환액 공제",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_rl0009",
+    "slug": "rulings.2026.venture-investment-deduction-recapture",
+    "title": "벤처투자조합 출자 소득공제 추징과 가산세",
+    "chapter": "rulings",
+    "claim": "서면-2025-소득-2753은 벤처투자조합 출자일 또는 투자일부터 3년이 지나기 전에 출자지분을 이전하거나 회수하면 이미 공제받은 부분에 해당하는 세액을 추징한다고 회신했다. 또한 기존회신 서면-2025-법규소득-0381을 참조해 조세특례제한법 제16조 제2항에 따른 추징에는 국세기본법상 가산세가 적용되지 않는다고 설명했다.",
+    "sourceType": "INTERPRETATION",
+    "sourceTitle": "국세법령정보시스템 서면-2025-소득-2753(2026.02.06)",
+    "lawRef": "조세특례제한법 제16조 제2항; 서면-2025-소득-2753, 서면-2025-법규소득-0381",
+    "lawUrl": "https://taxlaw.nts.go.kr/qt/USEQTA002P.do?ntstDcmId=200000000000018706",
+    "asOf": "2026-06-12",
+    "effectiveDate": "2026-02-06",
+    "verifyStatus": "확정",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-12",
+        "author": "Codex",
+        "note": "국세법령정보시스템 action 검색으로 문서 ID 200000000000018706와 요지를 확인"
+      }
+    ],
+    "nextReviewBy": "2027-01-31",
+    "primarySourceVerified": true,
+    "confidenceScore": 92,
+    "subordinateLawRef": "",
+    "scopeLimitations": "벤처투자조합 출자 소득공제 추징 관련 해석사례. 실제 추징액은 출자금 회수·이전 내역, 적용 공제율, 투자 연도별 법령에 따라 계산해야 한다.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "2026-02-06",
+    "sunsetDate": "",
+    "reviewerId": "codex",
+    "sourceIds": [
+      "src_taxlaw_nts"
+    ],
+    "incomeType": "earned",
+    "appliesTo": "벤처투자조합 출자 등에 대한 소득공제 추징",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_rl0010",
+    "slug": "rulings.2026.retroactive-ordinary-wage-withholding",
+    "title": "통상임금 판결 소급 지급분 귀속시기와 원천징수",
+    "chapter": "rulings",
+    "claim": "서면-2026-원천-4165는 판결로 추가 지급하는 임금은 근로소득에 해당하고 수입시기는 근로를 제공한 날이라고 회신했다. 과세기간 경과 후 판결된 때에는 판결이 있는 날이 속하는 달의 다음달 말일까지 추가 지급 근로소득에 대해 연말정산을 다시 하여 추가납부세액을 원천징수하고, 그 다음달 10일까지 원천징수세액을 신고·납부해야 한다.",
+    "sourceType": "INTERPRETATION",
+    "sourceTitle": "국세법령정보시스템 서면-2026-원천-4165(2026.02.05)",
+    "lawRef": "소득세법 제20조, 소득세법 시행령 제49조; 서면-2026-원천-4165",
+    "lawUrl": "https://taxlaw.nts.go.kr/qt/USEQTA002P.do?ntstDcmId=200000000000018676",
+    "asOf": "2026-06-12",
+    "effectiveDate": "2026-02-05",
+    "verifyStatus": "확정",
+    "risk": "high",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-12",
+        "author": "Codex",
+        "note": "국세법령정보시스템 action 검색으로 문서 ID 200000000000018676와 요지를 확인. 판결 소급 지급분 귀속시기와 재연말정산 기한을 rulings 장에 반영"
+      }
+    ],
+    "nextReviewBy": "2026-12-31",
+    "primarySourceVerified": true,
+    "confidenceScore": 94,
+    "subordinateLawRef": "",
+    "scopeLimitations": "판결로 추가 지급하는 통상임금 관련 사실관계에 대한 해석사례. 판결 확정일, 지급일, 귀속연도, 국세 부과제척기간·소멸시효, 지방소득세 처리는 별도 검토가 필요하다.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "2026-02-05",
+    "sunsetDate": "",
+    "reviewerId": "codex",
+    "sourceIds": [
+      "src_taxlaw_nts"
+    ],
+    "incomeType": "earned",
+    "appliesTo": "통상임금 판결 소급 지급분 근로소득 원천징수",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": true,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_rl0011",
+    "slug": "rulings.2026.pension-contribution-conversion-unverified",
+    "title": "연금보험료 전환특례 — 사전-2025-법규소득-1221 문서번호 미확인",
+    "chapter": "rulings",
+    "claim": "강의자료는 사전-2025-법규소득-1221을 인용해 연금계좌 가입자가 이전 과세기간에 연금계좌에 납입한 연금보험료 중 소득세법 제59조의3에 따른 연금계좌세액공제를 받지 않은 금액의 전부 또는 일부를 해당 과세기간 연금보험료로 전환 신청하면, 그 신청 금액을 신청일에 다시 해당 연금계좌에 납입한 연금보험료로 본다고 소개한다. 다만 국세법령정보시스템 공식 검색에서 같은 문서번호를 확인하지 못했다.",
+    "sourceType": "LECTURE",
+    "sourceTitle": "CFO Academy 2026년 상반기 개정세법 프리뷰특강 Slide 296~297 — 문서번호 원문 미확인",
+    "lawRef": "강의자료상 사전-2025-법규소득-1221, 소득세법 제59조의3, 소득세법 시행령 제118조의3",
+    "lawUrl": "",
+    "asOf": "2026-06-12",
+    "effectiveDate": "2026-01-30",
+    "verifyStatus": "강의기반",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "history": [
+      {
+        "date": "2026-06-12",
+        "author": "Codex",
+        "note": "국세법령정보시스템 action 검색에서 사전-2025-법규소득-1221은 0건. 유사 키워드는 소득세제과-257 및 과거 전환특례 회신과 매칭되나 동일 문서번호 확인 전까지 강의기반 유지"
+      }
+    ],
+    "nextReviewBy": "2026-07-31",
+    "primarySourceVerified": false,
+    "confidenceScore": 58,
+    "subordinateLawRef": "",
+    "scopeLimitations": "사전-2025-법규소득-1221 문서번호가 국세법령정보시스템 공식 검색에서 확인되지 않았다. 공식 원문 또는 정정 문서번호 확인 전까지 확정 fact로 승격하지 않는다.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "appliesFrom": "2026-01-30",
+    "sunsetDate": "",
+    "reviewerId": "codex",
+    "sourceIds": [
+      "src_cfo_academy_lecture"
+    ],
+    "incomeType": "earned",
+    "appliesTo": "연금계좌세액공제 한도액 초과납입금 등 전환특례",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": false,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
     "id": "f_dw0021",
     "slug": "daily-worker.wht.daily-tax-formula",
     "title": "일용근로 원천징수 산식(일 15만원 공제·6%·세액공제 55%)",

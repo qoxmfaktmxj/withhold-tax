@@ -22,6 +22,7 @@ export const CHAPTERS: { slug: string; title: string; cat: ChapterCat }[] = [
   { slug: 'ch8',             title: '근로소득 비과세 II',         cat: 'exempt' },
   { slug: 'ch9',             title: '간이세액·퇴직소득',          cat: 'payroll' },
   { slug: 'ch10',            title: '사업·기타소득',              cat: 'income' },
+  { slug: 'rulings',         title: '소득구분 유권해석 사례',       cat: 'income' },
   { slug: 'nonresident',     title: '비거주자·외국법인 원천징수', cat: 'global' },
   { slug: 'interest-dividend', title: '이자·배당 원천징수',       cat: 'income' },
   { slug: 'employee-local-tax', title: '종업원분 주민세',         cat: 'payroll' },
