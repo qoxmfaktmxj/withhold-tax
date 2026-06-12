@@ -9,6 +9,8 @@ export const SourceRecordType = z.enum([
   'ENFORCEMENT_RULE',   // 시행규칙
   'NTS_GUIDE',          // 국세청 안내
   'NTS_FORM',           // 국세청/홈택스 서식
+  'MOHW_GUIDE',         // 보건복지부 안내
+  'NPS_GUIDE',          // 국민연금공단 안내
   'TAX_RULING',         // 예규·해석
   'CASE',               // 판례
   'TAX_FIRM_REPORT',    // 회계법인·세무사회 보고서
@@ -17,7 +19,7 @@ export const SourceRecordType = z.enum([
   'API',                // 공공 API (국가법령정보 공동활용 등)
 ])
 
-/** 신뢰도: primary(법령 원문) > official-guide(국세청 안내) > secondary(2차 자료) */
+/** 신뢰도: primary(법령 원문) > official-guide(정부·공단 안내) > secondary(2차 자료) */
 export const Reliability = z.enum(['primary', 'official-guide', 'secondary'])
 
 export const SourceRecordSchema = z.object({

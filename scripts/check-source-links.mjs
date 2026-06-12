@@ -20,6 +20,8 @@ const OFFICIAL_SOURCE_HOSTS = {
   API: ['open.law.go.kr', 'law.go.kr'],
   NTS_GUIDE: ['nts.go.kr', 'korea.kr', 'moef.go.kr'],
   NTS_FORM: ['hometax.go.kr'],
+  MOHW_GUIDE: ['mohw.go.kr'],
+  NPS_GUIDE: ['nps.or.kr'],
   TAX_RULING: ['taxlaw.nts.go.kr'],
 }
 
