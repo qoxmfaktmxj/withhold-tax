@@ -16,4 +16,16 @@ describe('seeded facts.json', () => {
     expect(hd!.claim).toMatch(/누진|14|20|25|30/)
     expect(hd!.previousValue).toMatch(/9%/)
   })
+  it('lecture-based unverified facts explain their scope limitations', () => {
+    const facts = loadFacts(raw)
+    const unverifiedLectureFacts = facts.filter(
+      (f) =>
+        ['BOOK', 'CASE', 'LECTURE'].includes(f.sourceType) &&
+        f.primarySourceVerified !== true,
+    )
+
+    expect(
+      unverifiedLectureFacts.filter((f) => f.scopeLimitations.trim() === '').map((f) => f.id),
+    ).toEqual([])
+  })
 })

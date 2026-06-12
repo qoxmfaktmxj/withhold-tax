@@ -8,36 +8,12 @@
  * - 국민연금 상·하한: 보건복지부 2026년 고시 기준 2026.7.1 이후 659만/41만 적용.
  */
 
-/** 귀속연도 고정 상수 — 현재 시각 의존 금지 */
-export const TAX_YEAR = 2026 as const
-
-/** 2026년 4대보험 근로자 부담 요율 */
-export const SOCIAL_INSURANCE_2026 = {
-  nationalPension: {
-    /** 근로자 부담 보험료율 4.75% (합계 9.5%) */
-    employeeRate: 0.0475,
-    /** 기준소득월액 상한 659만원 (2026.7.1~) */
-    monthlyBaseCap: 6_590_000,
-    /** 기준소득월액 하한 41만원 (2026.7.1~) */
-    monthlyBaseFloor: 410_000,
-  },
-  healthInsurance: {
-    /** 근로자 부담 보험료율 3.595% (합계 7.19%) */
-    employeeRate: 0.03595,
-  },
-  longTermCare: {
-    /** 건강보험료 대비 13.14% */
-    rateOnHealthInsurance: 0.1314,
-  },
-  employmentInsurance: {
-    /** 실업급여 근로자 부담 0.9% (합계 1.8%, 동결) */
-    employeeRate: 0.009,
-  },
-  /** 지방소득세 = 소득세의 10% */
-  localIncomeTaxRate: 0.1,
-  /** 기본공제(인적공제) 1인당 연 150만원 — 소득세법 §50 */
-  personalDeductionPerPerson: 1_500_000,
-} as const
+import {
+  calculateSocialInsuranceDeductions,
+  floorToTen,
+  SOCIAL_INSURANCE_2026,
+  TAX_YEAR,
+} from '@/lib/social-insurance/deductions'
 
 /** 한백택스 고정점 반복 파라미터 (감쇠 0.85 · 오차 1원 · 최대 100회) */
 export const REVERSE_ITERATION = {
@@ -46,10 +22,7 @@ export const REVERSE_ITERATION = {
   maxIterations: 100,
 } as const
 
-/** 10원 미만 절사 */
-export function floorToTen(value: number): number {
-  return Math.floor(Math.max(0, value) / 10) * 10
-}
+export { floorToTen, SOCIAL_INSURANCE_2026, TAX_YEAR }
 
 /** 종합소득 기본세율(6~45%, 누진공제 방식) — 한백택스 incomeTax 포팅 */
 export function progressiveIncomeTax(taxBase: number): number {
@@ -138,12 +111,15 @@ export function calculateMonthlyDeductions(
   const si = SOCIAL_INSURANCE_2026
 
   // 4대보험(근로자 부담)
-  const npBase = Math.min(Math.max(taxable, si.nationalPension.monthlyBaseFloor), si.nationalPension.monthlyBaseCap)
-  const nationalPension = floorToTen(npBase * si.nationalPension.employeeRate)
-  const healthInsurance = floorToTen(taxable * si.healthInsurance.employeeRate)
-  const longTermCare = floorToTen(healthInsurance * si.longTermCare.rateOnHealthInsurance)
-  const employmentInsurance = floorToTen(taxable * si.employmentInsurance.employeeRate)
-  const socialInsuranceTotal = nationalPension + healthInsurance + longTermCare + employmentInsurance
+  const socialInsurance = calculateSocialInsuranceDeductions({
+    taxableMonthlyPay: taxable,
+    paymentDate: si.nationalPension.changeDate,
+  })
+  const nationalPension = socialInsurance.nationalPension
+  const healthInsurance = socialInsurance.healthInsurance
+  const longTermCare = socialInsurance.longTermCareInsurance
+  const employmentInsurance = socialInsurance.employmentInsurance
+  const socialInsuranceTotal = socialInsurance.total
 
   // 소득세(연말정산 방식 연 환산 근사)
   const totalSalary = taxable * 12
