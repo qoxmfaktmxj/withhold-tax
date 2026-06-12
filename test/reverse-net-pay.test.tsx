@@ -63,6 +63,14 @@ describe('calculateReverseNetPay — 실수령 4,000,000원 수렴', () => {
   })
 })
 
+describe('calculateMonthlyDeductions — 2026 국민연금 상·하한', () => {
+  it('과세 월급이 상한을 넘으면 2026.7.1 이후 상한 659만원으로 국민연금을 계산한다', () => {
+    const result = calculateMonthlyDeductions(8_000_000, 1, 0)
+
+    expect(result.nationalPension).toBe(313_020)
+  })
+})
+
 describe('calculateReverseNetPay — 비과세 20만원 포함', () => {
   it('실수령 4,000,000원·부양 1인·비과세 200,000원 — 과세급여만 줄고 비과세는 그대로 가산', () => {
     const result = calculateReverseNetPay({
@@ -95,8 +103,8 @@ describe('social_insurance_rates_2026 rule — lib 상수와 예제 일치', () 
     expect(rule).toBeDefined()
     expect(rule!.formula.params).toMatchObject({
       nationalPensionEmployeeRate: 0.0475,
-      nationalPensionMonthlyBaseCap: 6_370_000,
-      nationalPensionMonthlyBaseFloor: 400_000,
+      nationalPensionMonthlyBaseCap: 6_590_000,
+      nationalPensionMonthlyBaseFloor: 410_000,
       healthInsuranceEmployeeRate: 0.03595,
       longTermCareRateOnHealthInsurance: 0.1314,
       employmentInsuranceEmployeeRate: 0.009,
@@ -141,6 +149,7 @@ describe('ReverseNetPayCalculator UI', () => {
     expect(within(result).getByRole('row', { name: '국민연금(4.75%) 231,180원' })).toBeInTheDocument()
     expect(within(result).getByRole('row', { name: '계산 실수령액 4,000,001원' })).toBeInTheDocument()
     expect(within(result).getByText(/간이세액표가 아닌 연말정산 방식 연 환산 근사치/)).toBeInTheDocument()
+    expect(within(result).getByText(/2026\.7\.1 이후 기준\(659만\/41만\)/)).toBeInTheDocument()
   })
 
   it('비과세 200,000원 입력 시 세전 총지급액 4,801,711원으로 갱신', () => {

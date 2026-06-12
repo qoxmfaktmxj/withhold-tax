@@ -30,8 +30,8 @@ function won(value: string): number {
 }
 
 export function EmployeeLocalTaxCalculator() {
-  // 기본값: 강의 종합사례(Slide 54 — ㈜한백테크 2026년 5월분)
-  const [avgMonthlyPayroll, setAvgMonthlyPayroll] = useState('180000000')
+  // 기본값: 면세점 초과 검증 사례(2026년 5월분)
+  const [avgMonthlyPayroll, setAvgMonthlyPayroll] = useState('181000000')
   const [monthlyPayrollTotal, setMonthlyPayrollTotal] = useState('180000000')
   const [longServiceEmployeeCount, setLongServiceEmployeeCount] = useState('10')
   const [longServiceAllowancePerEmployee, setLongServiceAllowancePerEmployee] = useState('400000')

@@ -73,12 +73,12 @@
     ],
     "formula": {
       "type": "custom",
-      "expression": "면세점: 직전 12개월 월평균 급여총액 ≤ 1억5천만원 → 면세(신고의무 없음). 과세분: 세액 = (당월 급여총액 − Σ MIN(1인당 장기근속수당, 1인당 월급여×10%, 360,000원) − 육아휴직 대체인력 급여 전액 − 기타 공제) × 0.5% — 신고기한은 급여 지급한 달의 다음 달 10일. 전용 계산 함수 lib/employee-local-tax/check.ts 사용",
+      "expression": "면세점: 직전 12개월 월평균 급여총액 ≤ 1억8천만원 → 면세(신고의무 없음). 과세분: 세액 = (당월 급여총액 − Σ MIN(1인당 장기근속수당, 1인당 월급여×10%, 360,000원) − 육아휴직 대체인력 급여 전액 − 기타 공제) × 0.5% — 신고기한은 급여 지급한 달의 다음 달 10일. 전용 계산 함수 lib/employee-local-tax/check.ts 사용",
       "params": {
         "standardRate": 0.005,
         "minRateByOrdinance": 0.0025,
         "maxRateByOrdinance": 0.0075,
-        "exemptionThreshold": 150000000,
+        "exemptionThreshold": 180000000,
         "longServiceRate": 0.1,
         "longServiceCapPerPerson": 360000,
         "filingDeadlineDay": 10
@@ -91,9 +91,9 @@
     "calculationMode": "manual-review",
     "examples": [
       {
-        "title": "강의 종합사례(Slide 54) — ㈜한백테크 2026년 5월분",
+        "title": "면세점 초과 검증 사례 — 2026년 5월분",
         "input": {
-          "avgMonthlyPayroll": 180000000,
+          "avgMonthlyPayroll": 181000000,
           "monthlyPayrollTotal": 180000000,
           "longServiceEmployeeCount": 10,
           "longServiceAllowancePerEmployee": 400000,
