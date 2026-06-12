@@ -3841,6 +3841,139 @@
     ]
   },
   {
+    "id": "f_r90001",
+    "slug": "ch09.retirement.service-years-deduction-2023-expansion",
+    "chapter": "ch9",
+    "title": "퇴직소득 근속연수공제 2023 확대 전후",
+    "claim": "퇴직소득 근속연수공제는 2023.1.1 시행 개정으로 2022.12.31 이전의 5년 이하 30만원, 5년 초과 10년 이하 50만원, 10년 초과 20년 이하 80만원, 20년 초과 120만원 가산 구조에서 현행 100만원, 200만원, 250만원, 300만원 가산 구조로 확대되었다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제48조 및 국세청 퇴직소득세 계산방법",
+    "lawRef": "소득세법 제48조 제1항 제1호",
+    "subordinateLawRef": "",
+    "lawUrl": "https://www.law.go.kr/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1000658887",
+    "asOf": "2026-06-12",
+    "effectiveDate": "2023-01-01",
+    "appliesFrom": "2023-01-01",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
+    "confidenceScore": 95,
+    "scopeLimitations": "현행 공제액은 국가법령정보센터 소득세법 제48조와 국세청 퇴직소득세 계산방법으로 확인했다. 2022년 이전 금액은 국가법령정보센터 소득세법 제정·개정문과 통합본 S435의 비교 설명으로 대조했다.",
+    "localTaxRef": "",
+    "supersededRefs": "f_c90006",
+    "sunsetDate": "",
+    "risk": "medium",
+    "changeType": "개정",
+    "previousValue": "2022.12.31 이전: 30만원, 50만원, 80만원, 120만원 가산 구조",
+    "reviewerId": "Codex",
+    "nextReviewBy": "2027-06-30",
+    "history": [
+      {
+        "date": "2026-06-12",
+        "author": "Codex",
+        "note": "통합본 S288·S435 및 국가법령정보센터/국세청 원문 대조로 2023 확대 전후 표 보강"
+      }
+    ],
+    "sourceIds": [
+      "src_law_go_kr",
+      "src_nts_retirement_income_tax"
+    ],
+    "incomeType": "retirement",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_r90002",
+    "slug": "ch09.retirement.converted-salary-deduction-five-bands",
+    "chapter": "ch9",
+    "title": "퇴직소득 환산급여공제 5구간",
+    "claim": "환산급여공제는 800만원 이하 전액, 7,000만원 이하 800만원+초과분 60%, 1억원 이하 4,520만원+초과분 55%, 3억원 이하 6,170만원+초과분 45%, 3억원 초과 1억 5,170만원+초과분 35%의 5구간으로 계산한다.",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제48조 및 국세청 퇴직소득세 계산방법",
+    "lawRef": "소득세법 제48조 제1항 제2호",
+    "subordinateLawRef": "",
+    "lawUrl": "https://www.law.go.kr/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1000658887",
+    "asOf": "2026-06-12",
+    "effectiveDate": "",
+    "appliesFrom": "",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
+    "confidenceScore": 95,
+    "scopeLimitations": "환산급여 산식은 소득세법 제48조 본문에 따른다. 이 fact는 공제 구간표 자체를 다루며, 최종 산출세액 환원은 소득세법 제55조 제2항 fact에서 별도 관리한다.",
+    "localTaxRef": "",
+    "supersededRefs": "f_c90007",
+    "sunsetDate": "",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "reviewerId": "Codex",
+    "nextReviewBy": "2027-06-30",
+    "history": [
+      {
+        "date": "2026-06-12",
+        "author": "Codex",
+        "note": "통합본 S290·S436 및 국가법령정보센터/국세청 원문 대조로 환산급여공제 5구간 보강"
+      }
+    ],
+    "sourceIds": [
+      "src_law_go_kr",
+      "src_nts_retirement_income_tax"
+    ],
+    "incomeType": "retirement",
+    "implementationStatus": "content_done",
+    "implementationImpact": {
+      "content": true,
+      "ui": false,
+      "calculation": true,
+      "reporting": false,
+      "migration": false
+    }
+  },
+  {
+    "id": "f_r90003",
+    "slug": "ch09.retirement.yellow-umbrella-deduction-treatment",
+    "chapter": "ch9",
+    "title": "노란우산공제 공제금 퇴직소득 인정",
+    "claim": "폐업 등 대통령령으로 정하는 사유가 발생하여 소기업·소상공인 공제에서 공제금을 지급받는 경우, 공제금에서 실제 소득공제받은 금액을 초과하여 납입한 금액의 누계액을 뺀 금액은 퇴직소득으로 본다. 인정 사유에는 폐업·해산, 공제 가입자 사망, 법인 대표자 지위 상실, 60세 이상이면서 공제부금 납입월수 120개월 이상인 가입자의 지급청구 등이 포함된다.",
+    "sourceType": "LAW",
+    "sourceTitle": "조세특례제한법 제86조의3 및 같은 법 시행령 제80조의3",
+    "lawRef": "조세특례제한법 제86조의3 제3항",
+    "subordinateLawRef": "조세특례제한법 시행령 제80조의3 제3항·제4항",
+    "lawUrl": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsId=001584&lsJoLnkSeq=1000855404&print=print",
+    "asOf": "2026-06-12",
+    "effectiveDate": "",
+    "appliesFrom": "",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
+    "confidenceScore": 95,
+    "scopeLimitations": "이 fact는 일반 공제금 지급 사유와 퇴직소득 산식을 다룬다. 법 제86조의3 제4항의 특별 해지 사유, 경영악화 20% 감소 요건, 2026.7.1 납입한도 확대 적용시기는 해지 시점별로 별도 확인한다.",
+    "localTaxRef": "",
+    "supersededRefs": "",
+    "sunsetDate": "",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "reviewerId": "Codex",
+    "nextReviewBy": "2027-06-30",
+    "history": [
+      {
+        "date": "2026-06-12",
+        "author": "Codex",
+        "note": "통합본 S418 및 국가법령정보센터 조특법 제86조의3·조특령 제80조의3 대조로 노란우산 퇴직소득 처리 보강"
+      }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
+    ],
+    "incomeType": "retirement",
+    "implementationStatus": "content_done"
+  },
+  {
     "id": "f_c90008",
     "slug": "ch09.retirement.annualization-formula",
     "chapter": "ch9",

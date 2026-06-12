@@ -77,6 +77,17 @@
     "notes": "임원 퇴직소득 한도 산식, 2012~2019년 3배수·2020년 이후 2배수, 연평균환산액·근무기간 산정 기준 확인."
   },
   {
+    "id": "src_nts_retirement_income_tax",
+    "type": "NTS_GUIDE",
+    "title": "국세청 퇴직소득세 계산방법",
+    "publisher": "국세청",
+    "url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7880&mi=6409",
+    "accessedAt": "2026-06-12",
+    "jurisdiction": "KR",
+    "reliability": "official-guide",
+    "notes": "퇴직소득세 계산 구조, 2023.1.1 개정 후 근속연수공제, 환산급여 산식과 환산급여공제 5구간 확인."
+  },
+  {
     "id": "src_hometax_simplified_withholding_2026",
     "type": "NTS_FORM",
     "title": "홈택스 2026년 3월 1일 시행 근로소득 간이세액표",
