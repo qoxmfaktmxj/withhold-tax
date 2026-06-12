@@ -19,43 +19,8 @@ export function VerifyStatus({
   const m = MAP[status]
   const id = descId ?? `vs-${status}`
 
-  if (status === '강의기반') {
-    return (
-      <span id={id} style={{ display: 'inline' }}>
-        <details style={{ display: 'inline', verticalAlign: 'middle' }}>
-          <summary
-            title={m.note}
-            aria-label={`검증상태: ${status}. ${m.note}`}
-            className={`wt-seal ${m.cls}`}
-            style={{
-              cursor: 'pointer',
-              listStyle: 'none',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 3,
-            }}
-          >
-            <span aria-hidden>{m.icon}</span>
-            <span>{status}</span>
-          </summary>
-          <span
-            style={{
-              display: 'block',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '0.68rem',
-              color: 'var(--gray-500)',
-              marginTop: 4,
-              marginLeft: 4,
-              lineHeight: 1.5,
-            }}
-          >
-            {m.note}
-          </span>
-        </details>
-      </span>
-    )
-  }
-
+  // <details>는 MDX 문단(<p>) 안에서 invalid nesting → hydration 실패.
+  // 모든 상태를 span + title/aria-label로 통일해 본문 어디서든 안전하게 렌더.
   return (
     <span
       id={id}

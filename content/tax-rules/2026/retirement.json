@@ -1,0 +1,121 @@
+[
+  {
+    "ruleId": "executive_severance_limit",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "임원 퇴직소득금액 한도(소득세법 §22③ — 2012~2019 3배수·2020~ 2배수)",
+    "domain": "retirement",
+    "incomeType": "retirement",
+    "effectiveFrom": "2020-01-01",
+    "factIds": [
+      "f_ex0001",
+      "f_ex0002",
+      "f_ex0003",
+      "f_ex0004",
+      "f_ex0005",
+      "f_ex0006",
+      "f_ex0007"
+    ],
+    "inputs": [
+      {
+        "key": "totalSeverance",
+        "type": "number",
+        "required": true,
+        "description": "퇴직급여 지급규정에 따른 퇴직금 총액(원)"
+      },
+      {
+        "key": "joinDate",
+        "type": "date",
+        "required": true,
+        "description": "입사일(임원 취임일 — 한도 기산 시점)"
+      },
+      {
+        "key": "retireDate",
+        "type": "date",
+        "required": true,
+        "description": "퇴직일"
+      },
+      {
+        "key": "avgAnnualSalary3x",
+        "type": "number",
+        "required": false,
+        "description": "2019.12.31 기준 직전 3년('17.1.1~'19.12.31) 총급여 연평균환산액(원) — 구간 근무기간 3년 미만이면 실제 기간으로 연환산"
+      },
+      {
+        "key": "avgAnnualSalary2x",
+        "type": "number",
+        "required": false,
+        "description": "퇴직일 소급 직전 3년 총급여 연평균환산액(원)"
+      }
+    ],
+    "formula": {
+      "type": "custom",
+      "expression": "구간별 한도 = 연평균환산액 × 1/10 × (근속월수 ÷ 12) × 배수(2012.1.1~2019.12.31 근속분 3배 · 2020.1.1 이후 근속분 2배, 1개월 미만 근속월수는 1개월로 올림) → 총한도 = 구간별 합산, 근로소득 전환액 = MAX(0, 퇴직금 − 총한도)",
+      "params": {
+        "salaryRatio": 0.1,
+        "multiplier3x": 3,
+        "multiplier2x": 2,
+        "threeXStart": "2012-01-01",
+        "threeXEnd": "2019-12-31",
+        "twoXStart": "2020-01-01"
+      }
+    },
+    "calculationMode": "manual-review",
+    "examples": [
+      {
+        "title": "계산사례① 단일구간 — 2021.1.1 취임·2026.12.31 퇴직(72개월), 퇴직금 3억, 직전 3년 연평균 1.5억 (강의 Slide 277)",
+        "input": {
+          "totalSeverance": 300000000,
+          "joinDate": "2021-01-01",
+          "retireDate": "2026-12-31",
+          "avgAnnualSalary2x": 150000000
+        },
+        "expected": {
+          "totalLimit": 180000000,
+          "retirementIncome": 180000000,
+          "excessAmount": 120000000
+        }
+      },
+      {
+        "title": "계산사례② 복수구간 — 2015.1.1 취임·2026.12.31 퇴직(3배수 60개월+2배수 84개월), 퇴직금 7억 (강의 Slide 279~281)",
+        "input": {
+          "totalSeverance": 700000000,
+          "joinDate": "2015-01-01",
+          "retireDate": "2026-12-31",
+          "avgAnnualSalary3x": 100000000,
+          "avgAnnualSalary2x": 150000000
+        },
+        "expected": {
+          "limit3x": 150000000,
+          "limit2x": 210000000,
+          "totalLimit": 360000000,
+          "retirementIncome": 360000000,
+          "excessAmount": 340000000
+        }
+      },
+      {
+        "title": "복수구간 — 2018.1.1 입사·2026.12.31 퇴사(3배수 24개월+2배수 84개월), 퇴직금 9억, 연환산액 2.4억/3억 (강의 Slide 301~302)",
+        "input": {
+          "totalSeverance": 900000000,
+          "joinDate": "2018-01-01",
+          "retireDate": "2026-12-31",
+          "avgAnnualSalary3x": 240000000,
+          "avgAnnualSalary2x": 300000000
+        },
+        "expected": {
+          "limit3x": 144000000,
+          "limit2x": 420000000,
+          "totalLimit": 564000000,
+          "retirementIncome": 564000000,
+          "excessAmount": 336000000
+        }
+      }
+    ],
+    "warnings": [
+      "2011.12.31 이전 근속분은 한도 없음(별도 안분 규정) — 본 계산기 미반영",
+      "총급여는 비과세소득·법인세법 시행령 §43 손금불산입 급여 제외(급여·상여·인정상여·성과급·주식매수선택권 행사이익 포함)",
+      "구간 근무기간이 3년 미만이면 해당 기간 총급여를 실제 기간으로 연환산하여 입력",
+      "법인세법상 손금산입 한도(법인세법 시행령 §44)와는 별개 규정 — 법인의 손금 인정 여부는 별도 판단"
+    ]
+  }
+]

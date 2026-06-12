@@ -29,13 +29,13 @@ describe('tool navigation', () => {
 
     const status = screen.getByRole('list', { name: '레퍼런스 상태' })
 
-    expect(within(status).getByRole('listitem', { name: '전체 fact 141' })).toBeInTheDocument()
+    expect(within(status).getByRole('listitem', { name: '전체 fact 226' })).toBeInTheDocument()
     expect(within(status).getByRole('listitem', { name: '1차 원문 확인 54' })).toBeInTheDocument()
-    expect(within(status).getByRole('listitem', { name: '원문 미확인 87' })).toBeInTheDocument()
+    expect(within(status).getByRole('listitem', { name: '원문 미확인 172' })).toBeInTheDocument()
     expect(within(status).queryByRole('listitem', { name: '확인 필요 0' })).not.toBeInTheDocument()
-    expect(within(status).getByRole('listitem', { name: '검토 임박 0' })).toBeInTheDocument()
+    expect(within(status).getByRole('listitem', { name: '검토 임박 8' })).toBeInTheDocument()
     expect(within(status).getByRole('listitem', { name: '링크 오류 0' })).toBeInTheDocument()
-    expect(within(status).getByRole('listitem', { name: '마지막 법령 점검 2026-06-10' })).toBeInTheDocument()
+    expect(within(status).getByRole('listitem', { name: '마지막 법령 점검 2026-06-11' })).toBeInTheDocument()
   })
 
   it('keeps the tools index focused on practical risk tools', () => {

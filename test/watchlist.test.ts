@@ -113,9 +113,9 @@ describe('WatchItem schema', () => {
 })
 
 describe('content/law-watchlist.json 시드 파싱', () => {
-  it('2개 시드 항목을 파싱한다', () => {
+  it('3개 시드 항목을 파싱한다', () => {
     const items = loadWatchlist(watchlistRaw)
-    expect(items).toHaveLength(2)
+    expect(items).toHaveLength(3)
   })
 
   it('WatchlistFileSchema로 파싱 성공', () => {

@@ -19,6 +19,7 @@ export const RuleFormula = z.object({
   type: z.enum([
     'rate',
     'rate-with-local',
+    'composite-rates',
     'penalty-late-wht',
     'monthly-cap',
     'date-rule',

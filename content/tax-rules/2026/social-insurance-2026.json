@@ -1,0 +1,85 @@
+[
+  {
+    "ruleId": "social_insurance_rates_2026",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "2026년 4대보험 근로자 부담 요율 + 세후→세전 역산 근사 체인",
+    "domain": "social-insurance",
+    "incomeType": "earned",
+    "effectiveFrom": "2026-01-01",
+    "factIds": [
+      "f_si0001",
+      "f_si0002",
+      "f_si0003",
+      "f_si0004",
+      "f_si0005",
+      "f_si0006",
+      "f_si0007",
+      "f_si0008"
+    ],
+    "inputs": [
+      {
+        "key": "targetNetMonthlyPay",
+        "type": "number",
+        "required": true,
+        "description": "희망 월 실수령액(원)"
+      },
+      {
+        "key": "dependents",
+        "type": "number",
+        "required": true,
+        "description": "부양가족 수(본인 포함, 최소 1)"
+      },
+      {
+        "key": "nonTaxableMonthlyPay",
+        "type": "number",
+        "required": false,
+        "description": "월 비과세 합계(원) — 항목별 한도 미검증"
+      }
+    ],
+    "formula": {
+      "type": "composite-rates",
+      "expression": "공제 = 국민연금 4.75%(기준소득월액 40만~637만, 2026.7.1~) + 건강보험 3.595% + 장기요양(건보료×13.14%) + 고용보험 0.9% + 연 환산 근사 소득세[근로소득공제(§47)→인적공제(150만×인원)→연금보험료공제→기본세율(§55)→근로소득세액공제(§59)]÷12 + 지방소득세(소득세×10%); 세후→세전 역산은 고정점 반복(감쇠 0.85·오차 1원·최대 100회). 실제 계산은 lib/reverse-net-pay/calc.ts",
+      "params": {
+        "nationalPensionEmployeeRate": 0.0475,
+        "nationalPensionMonthlyBaseCap": 6370000,
+        "nationalPensionMonthlyBaseFloor": 400000,
+        "healthInsuranceEmployeeRate": 0.03595,
+        "longTermCareRateOnHealthInsurance": 0.1314,
+        "employmentInsuranceEmployeeRate": 0.009,
+        "localIncomeTaxRate": 0.1,
+        "personalDeductionPerPerson": 1500000
+      }
+    },
+    "rounding": {
+      "base": 10,
+      "method": "floor"
+    },
+    "calculationMode": "automatic",
+    "examples": [
+      {
+        "title": "희망 실수령 4,000,000원·부양 1인·비과세 0원 → 세전 4,866,981원",
+        "input": {
+          "targetNetMonthlyPay": 4000000,
+          "dependents": 1,
+          "nonTaxableMonthlyPay": 0
+        },
+        "expected": {
+          "converged": true,
+          "grossMonthlyPay": 4866981,
+          "achievedNetMonthlyPay": 4000001,
+          "nationalPension": 231180,
+          "healthInsurance": 174960,
+          "longTermCare": 22980,
+          "employmentInsurance": 43800,
+          "monthlyIncomeTax": 358240,
+          "monthlyLocalIncomeTax": 35820
+        }
+      }
+    ],
+    "warnings": [
+      "2026 요율·상하한은 공단 고시 확인 필요",
+      "한백택스 원본과 국민연금 상한 타임라인 차이 있음(원본이 1년 빠름 의심)"
+    ]
+  }
+]

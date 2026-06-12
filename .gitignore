@@ -48,3 +48,10 @@ next-scaffold/
 /withhold-tax-*.png
 /dev-log.txt
 /test-out*.txt
+
+# 원천 강의 자료·중간 산출물 (공개 레포 커밋 금지 — 저작물·대용량·개인정보)
+*.pptx
+/한백택스*.html
+/_extracted/
+/_staging/
+/docs/신규자료-분석-*.md

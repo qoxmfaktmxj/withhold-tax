@@ -583,6 +583,13 @@ export function calculateRule(rule: TaxRule, input: Record<string, unknown>): Ru
         ruleId: rule.ruleId,
         version: rule.version,
       }
+    case 'composite-rates':
+      return {
+        type: 'manual-review',
+        message: '복합 요율 체인(4대보험+소득세 근사)은 전용 계산기(lib/reverse-net-pay)를 사용하세요.',
+        ruleId: rule.ruleId,
+        version: rule.version,
+      }
     case 'custom':
       return calculateCustomRule(rule, input)
     default: {

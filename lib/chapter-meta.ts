@@ -24,6 +24,8 @@ export const CHAPTERS: { slug: string; title: string; cat: ChapterCat }[] = [
   { slug: 'ch10',            title: '사업·기타소득',              cat: 'income' },
   { slug: 'nonresident',     title: '비거주자·외국법인 원천징수', cat: 'global' },
   { slug: 'interest-dividend', title: '이자·배당 원천징수',       cat: 'income' },
+  { slug: 'employee-local-tax', title: '종업원분 주민세',         cat: 'payroll' },
+  { slug: 'daily-worker',    title: '일용근로자 원천징수',        cat: 'payroll' },
 ]
 
 export const APPENDICES: { slug: string; title: string; cat: ChapterCat }[] = [
