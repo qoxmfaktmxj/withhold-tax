@@ -9,6 +9,7 @@ export const SourceRecordType = z.enum([
   'ENFORCEMENT_RULE',   // 시행규칙
   'NTS_GUIDE',          // 국세청 안내
   'NTS_FORM',           // 국세청/홈택스 서식
+  'MOEL_GUIDE',         // 고용노동부 안내·고시
   'MOHW_GUIDE',         // 보건복지부 안내
   'NPS_GUIDE',          // 국민연금공단 안내
   'TAX_RULING',         // 예규·해석
