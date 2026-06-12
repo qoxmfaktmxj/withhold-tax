@@ -13,6 +13,7 @@ import {
   calculateRule,
 } from '@/lib/rules/engine'
 import type { TaxRule } from '@/lib/rules/schema'
+import socialInsuranceRaw from '@/content/tax-rules/2026/social-insurance-2026.json'
 import fs from 'node:fs'
 import path from 'node:path'
 
@@ -394,6 +395,30 @@ describe('calculateRule — formula type dispatcher', () => {
       message: '이 rule은 자동 계산 대상이 아닙니다.',
       ruleId: 'wht_late_penalty',
       version: '2026.7.0',
+    })
+  })
+
+  it('returns manual review for the composite-rates social insurance rule', () => {
+    const rule = loadRules(socialInsuranceRaw).find((r) => r.ruleId === 'social_insurance_rates_2026')
+    expect(rule).toBeDefined()
+    expect(rule!.formula.type).toBe('composite-rates')
+    expect(rule!.calculationMode).toBe('manual-review')
+
+    const input = rule!.examples[0].input as Record<string, unknown>
+    expect(calculateRule(rule!, input)).toMatchObject({
+      type: 'manual-review',
+      message: '이 rule은 자동 계산 대상이 아닙니다.',
+      ruleId: 'social_insurance_rates_2026',
+      version: '2026.1.0',
+    })
+
+    // calculationMode와 무관하게 dispatcher의 composite-rates 분기 자체도 manual-review로 라우팅
+    const automaticVariant: TaxRule = { ...rule!, calculationMode: 'automatic' }
+    expect(calculateRule(automaticVariant, input)).toMatchObject({
+      type: 'manual-review',
+      message: '복합 요율 체인(4대보험+소득세 근사)은 전용 계산기(lib/reverse-net-pay)를 사용하세요.',
+      ruleId: 'social_insurance_rates_2026',
+      version: '2026.1.0',
     })
   })
 

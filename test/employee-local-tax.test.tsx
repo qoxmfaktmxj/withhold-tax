@@ -1,12 +1,19 @@
 import { fireEvent, render, screen, within } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
+import employeeLocalTaxRaw from '@/content/tax-rules/2026/employee-local-tax.json'
 import { EmployeeLocalTaxCalculator } from '@/components/calculators/EmployeeLocalTaxCalculator'
 import {
   EXEMPTION_THRESHOLD,
+  LONG_SERVICE_CAP_PER_PERSON,
+  LONG_SERVICE_RATE,
+  STANDARD_RATE,
   checkEmployeeLocalTax,
   filingDeadlineFor,
   floorToTen,
+  type EmployeeLocalTaxInput,
+  type EmployeeLocalTaxResult,
 } from '@/lib/employee-local-tax/check'
+import { loadRules } from '@/lib/rules/engine'
 
 describe('checkEmployeeLocalTax', () => {
   it('면세점 이하 — 월평균 급여총액 1억 4천만원 → 비과세(신고의무 없음)', () => {
@@ -101,6 +108,33 @@ describe('checkEmployeeLocalTax', () => {
   it('신고기한은 지급월 다음 달 10일 — 12월분은 익년 1월 10일', () => {
     expect(filingDeadlineFor('2026-12')).toBe('2027-01-10')
     expect(filingDeadlineFor('잘못된값')).toBeNull()
+  })
+})
+
+describe('employee_local_tax rule — 룰 JSON ↔ lib 교차검증', () => {
+  const rule = loadRules(employeeLocalTaxRaw).find((r) => r.ruleId === 'employee_local_tax')
+
+  it('rule이 스키마를 통과하고 formula.params가 lib 상수와 일치', () => {
+    expect(rule).toBeDefined()
+    expect(rule!.calculationMode).toBe('manual-review')
+    expect(rule!.formula.params).toMatchObject({
+      standardRate: STANDARD_RATE,
+      exemptionThreshold: EXEMPTION_THRESHOLD,
+      longServiceRate: LONG_SERVICE_RATE,
+      longServiceCapPerPerson: LONG_SERVICE_CAP_PER_PERSON,
+      filingDeadlineDay: 10, // filingDeadlineFor()의 다음 달 10일과 일치
+    })
+  })
+
+  it('examples 전건이 checkEmployeeLocalTax 계산과 일치', () => {
+    expect(rule).toBeDefined()
+    expect(rule!.examples.length).toBeGreaterThan(0)
+    for (const example of rule!.examples) {
+      const result = checkEmployeeLocalTax(example.input as EmployeeLocalTaxInput)
+      for (const [key, value] of Object.entries(example.expected)) {
+        expect(result[key as keyof EmployeeLocalTaxResult], `"${example.title}" key ${key}`).toEqual(value)
+      }
+    }
   })
 })
 

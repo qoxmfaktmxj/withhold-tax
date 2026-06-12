@@ -1,7 +1,17 @@
 import { fireEvent, render, screen, within } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
+import withholdingRatesRaw from '@/content/tax-rules/2026/withholding-rates.json'
 import { DailyWorkerTaxCalculator } from '@/components/calculators/DailyWorkerTaxCalculator'
-import { calcDailyIncomeTax, calcDailyWorkerTax, floorToTen } from '@/lib/daily-worker/check'
+import {
+  DAILY_DEDUCTION,
+  SMALL_SUM_THRESHOLD,
+  calcDailyIncomeTax,
+  calcDailyWorkerTax,
+  floorToTen,
+  type DailyWorkerTaxInput,
+  type DailyWorkerTaxResult,
+} from '@/lib/daily-worker/check'
+import { loadRules } from '@/lib/rules/engine'
 
 describe('calcDailyWorkerTax', () => {
   it('일당 187,000원 1일 — 일세액 999원 → 소액부징수로 0원 (강의 사례 1)', () => {
@@ -82,6 +92,36 @@ describe('calcDailyWorkerTax', () => {
 
   it('지방소득세는 10원 미만 절사', () => {
     expect(floorToTen(108)).toBe(100)
+  })
+})
+
+describe('daily_worker_wht rule — 룰 JSON ↔ lib 교차검증', () => {
+  const rule = loadRules(withholdingRatesRaw).find((r) => r.ruleId === 'daily_worker_wht')
+
+  it('rule이 스키마를 통과하고 formula.params가 lib 상수와 일치', () => {
+    expect(rule).toBeDefined()
+    expect(rule!.calculationMode).toBe('manual-review')
+    expect(rule!.formula.params).toMatchObject({
+      dailyDeduction: DAILY_DEDUCTION,
+      rate: 0.06,
+      taxCreditRate: 0.55,
+      smallSumThreshold: SMALL_SUM_THRESHOLD,
+      localRate: 0.1,
+    })
+    // lib의 정수 연산(× 27 / 1,000) ↔ params(6% × (1−55%) = 2.7%) 일관성
+    const params = rule!.formula.params as { rate: number; taxCreditRate: number }
+    expect(params.rate * (1 - params.taxCreditRate) * 1000).toBeCloseTo(27, 8)
+  })
+
+  it('examples 전건이 calcDailyWorkerTax 계산과 일치', () => {
+    expect(rule).toBeDefined()
+    expect(rule!.examples.length).toBeGreaterThan(0)
+    for (const example of rule!.examples) {
+      const result = calcDailyWorkerTax(example.input as DailyWorkerTaxInput)
+      for (const [key, value] of Object.entries(example.expected)) {
+        expect(result[key as keyof DailyWorkerTaxResult], `"${example.title}" key ${key}`).toEqual(value)
+      }
+    }
   })
 })
 

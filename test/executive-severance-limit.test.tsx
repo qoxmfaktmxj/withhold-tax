@@ -1,11 +1,18 @@
 import { fireEvent, render, screen, within } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
+import retirementRulesRaw from '@/content/tax-rules/2026/retirement.json'
 import { ExecutiveSeveranceLimitCalculator } from '@/components/calculators/ExecutiveSeveranceLimitCalculator'
 import {
+  THREE_X_END,
+  THREE_X_START,
+  TWO_X_START,
   calculateExecutiveSeveranceLimit,
   periodLimit,
   serviceMonths,
+  type ExecutiveSeveranceInput,
+  type ExecutiveSeveranceResult,
 } from '@/lib/executive-severance/check'
+import { loadRules } from '@/lib/rules/engine'
 
 describe('calculateExecutiveSeveranceLimit', () => {
   it('단일구간 2배수 — 2021.1.1 취임·2026.12.31 퇴직(72개월), 한도 1.8억 (강의 Slide 277)', () => {
@@ -121,6 +128,46 @@ describe('calculateExecutiveSeveranceLimit', () => {
     expect(serviceMonths('2020-01-15', '2020-03-14')).toBe(2) // 정확히 2개월
     expect(serviceMonths('2020-01-15', '2020-03-20')).toBe(3) // 단수 6일 → 1개월 올림
     expect(periodLimit(150_000_000, 72, 2)).toBe(180_000_000)
+  })
+})
+
+describe('executive_severance_limit rule — 룰 JSON ↔ lib 교차검증', () => {
+  const rule = loadRules(retirementRulesRaw).find((r) => r.ruleId === 'executive_severance_limit')
+
+  it('rule이 스키마를 통과하고 formula.params가 lib 상수와 일치', () => {
+    expect(rule).toBeDefined()
+    expect(rule!.calculationMode).toBe('manual-review')
+    expect(rule!.formula.params).toMatchObject({
+      salaryRatio: 0.1, // periodLimit()의 ÷120 = ×1/10 ×1/12 과 일치
+      multiplier3x: 3,
+      multiplier2x: 2,
+      threeXStart: THREE_X_START,
+      threeXEnd: THREE_X_END,
+      twoXStart: TWO_X_START,
+    })
+  })
+
+  it('examples 전건이 calculateExecutiveSeveranceLimit 계산과 일치', () => {
+    expect(rule).toBeDefined()
+    expect(rule!.examples.length).toBeGreaterThan(0)
+    for (const example of rule!.examples) {
+      const result = calculateExecutiveSeveranceLimit(example.input as ExecutiveSeveranceInput)
+      expect(result.valid, `"${example.title}" valid`).toBe(true)
+
+      // limit3x/limit2x 는 구간별 한도(periods[].limit)에 매핑
+      const { limit3x, limit2x, ...rest } = example.expected as Record<string, number>
+      if (limit3x !== undefined) {
+        const period3 = result.periods.find((p) => p.periodKey === 'multiplier3')
+        expect(period3?.limit, `"${example.title}" limit3x`).toBe(limit3x)
+      }
+      if (limit2x !== undefined) {
+        const period2 = result.periods.find((p) => p.periodKey === 'multiplier2')
+        expect(period2?.limit, `"${example.title}" limit2x`).toBe(limit2x)
+      }
+      for (const [key, value] of Object.entries(rest)) {
+        expect(result[key as keyof ExecutiveSeveranceResult], `"${example.title}" key ${key}`).toEqual(value)
+      }
+    }
   })
 })
 
