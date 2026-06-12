@@ -175,6 +175,11 @@ export type RuleCalculationResult =
       ruleId: string
       version: string
     } & YearEndInstallmentSchedule)
+  | ({
+      type: 'penalty-late-wht'
+      ruleId: string
+      version: string
+    } & PenaltyResult)
   | { type: 'manual-review'; ruleId: string; version: string; message: string }
   | ({ type: 'custom'; customType: 'payment-statement-penalty'; ruleId: string; version: string } & PaymentStatementPenaltyResult)
 
@@ -578,8 +583,8 @@ export function calculateRule(rule: TaxRule, input: Record<string, unknown>): Ru
       }
     case 'penalty-late-wht':
       return {
-        type: 'manual-review',
-        message: '납부지연가산세는 전용 계산기를 사용하세요.',
+        type: 'penalty-late-wht',
+        ...withholdingLatePenalty(rule, input as unknown as WithholdingLatePenaltyInput),
         ruleId: rule.ruleId,
         version: rule.version,
       }

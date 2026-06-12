@@ -203,7 +203,7 @@ export function PenaltyCalculator() {
               </tr>
               <tr>
                 <td style={{ padding: '4px 0', color: 'var(--gray-600)' }}>고지서 확인</td>
-                <td style={{ textAlign: 'right' }}>{result.billReviewRequired ? '수동 검토' : '고지 전 추정'}</td>
+                <td style={{ textAlign: 'right' }}>{result.billReviewRequired ? '고지서 기준 확인' : '고지 전 추정'}</td>
               </tr>
               <tr style={{ borderTop: '1px solid var(--border)' }}>
                 <td style={{ padding: '8px 0 0', fontWeight: 700 }}>예상 납부지연가산세</td>
