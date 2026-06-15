@@ -10471,5 +10471,40 @@
     "nextReviewBy": "2027-06-30",
     "sourceIds": ["src_cfo_academy_lecture"],
     "incomeType": "nonresident"
+  },
+  {
+    "id": "f_nr0019",
+    "slug": "nonresident.entertainer.156-5-20pct",
+    "title": "비거주 연예인등 용역 관련 외국법인 20% 강제 원천징수(소법 §156의5)",
+    "chapter": "nonresident",
+    "claim": "비거주자인 연예인·운동가 등(비거주 연예인등)이 국내에서 제공한 용역과 관련하여, 조세조약상 국내사업장이 없거나 귀속되지 않아 과세되지 않는 외국법인(비과세 외국연예등법인)에 보수·대가를 지급하는 자는 조세조약에도 불구하고 지급금액의 20%를 원천징수하여 다음 달 10일까지 납부해야 한다(소득세법 제156조의5 제1항). 비과세 외국연예등법인이 비거주 연예인등에게 보수를 지급할 때도 20%를 원천징수하며(제2항), 지급자가 제1항에 따라 납부한 범위에서 납부한 것으로 본다. 제1항 납부액이 제2항 납부액보다 크면 그 차액은 외국법인이 환급 신청할 수 있다(제3항).",
+    "sourceType": "LAW",
+    "sourceTitle": "소득세법 제156조의5",
+    "lawRef": "소득세법 제156조의5 제1항·제2항·제3항",
+    "subordinateLawRef": "소득세법 시행령(비거주 연예인등의 범위) — 위임",
+    "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C156%EC%A1%B0%EC%9D%985",
+    "asOf": "2026-06-15",
+    "effectiveDate": "",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
+    "confidenceScore": 88,
+    "scopeLimitations": "조세조약상 비과세되는 외국법인(연예기획사 등)을 경유하는 구조에 대한 절차특례로, 일반 비거주자 인적용역(조약 적용 시 3% 특례, §7 참조)과 구분된다. 비거주 연예인등의 구체적 범위는 시행령 위임. 지방소득세는 별도(원천징수세액의 10%).",
+    "localTaxRef": "지방소득세 별도(원천징수세액의 10%, 지방세법)",
+    "risk": "medium",
+    "changeType": "없음",
+    "previousValue": "",
+    "reviewerId": "claude",
+    "nextReviewBy": "2027-03-31",
+    "history": [
+      {
+        "date": "2026-06-15",
+        "author": "claude",
+        "note": "라운드3 G031 — 소득세법 제156조의5 OPEN API 원문 검증(MST 285523, 시행 20260421) 후 추가"
+      }
+    ],
+    "sourceIds": [
+      "src_law_go_kr"
+    ],
+    "incomeType": "nonresident"
   }
 ]
