@@ -8775,11 +8775,13 @@
     "lawUrl": "https://www.law.go.kr/법령/소득세법",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
     "risk": "medium",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 소득세법 제164조 제1항 단서 + 시행령 제213조 제5항(대통령령 일용근로자=시행령 §20)·일용 지급명세서 제출 구조 원문 대조 일치 → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
@@ -8812,11 +8814,13 @@
     "lawUrl": "https://www.law.go.kr/법령/소득세법시행령",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
     "risk": "medium",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 소득세법 시행령 제213조 제4항(근로내용확인신고서 제출 시 지급명세서 제출 의제) OPEN API 원문 대조(MST 286211) 일치 → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
@@ -8929,11 +8933,13 @@
     "lawUrl": "https://www.law.go.kr/법령/고용보험법",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
     "risk": "medium",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 고용보험법 제2조 제6호(일용근로자=1개월 미만 고용) OPEN API 원문 대조(MST 279807) 일치 → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
