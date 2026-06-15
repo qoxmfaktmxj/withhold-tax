@@ -595,6 +595,13 @@ export function calculateRule(rule: TaxRule, input: Record<string, unknown>): Ru
         ruleId: rule.ruleId,
         version: rule.version,
       }
+    case 'year-end-tax-simulator':
+      return {
+        type: 'manual-review',
+        message: '연말정산 간이 시뮬레이터는 전용 계산기(lib/year-end/simulate)를 사용하세요.',
+        ruleId: rule.ruleId,
+        version: rule.version,
+      }
     case 'custom':
       return calculateCustomRule(rule, input)
     default: {

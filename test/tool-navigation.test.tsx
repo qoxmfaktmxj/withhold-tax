@@ -29,11 +29,11 @@ describe('tool navigation', () => {
 
     const status = screen.getByRole('list', { name: '레퍼런스 상태' })
 
-    expect(within(status).getByRole('listitem', { name: '전체 fact 237' })).toBeInTheDocument()
-    expect(within(status).getByRole('listitem', { name: '1차 원문 확인 89' })).toBeInTheDocument()
-    expect(within(status).getByRole('listitem', { name: '원문 미확인 148' })).toBeInTheDocument()
+    expect(within(status).getByRole('listitem', { name: '전체 fact 258' })).toBeInTheDocument()
+    expect(within(status).getByRole('listitem', { name: '1차 원문 확인 109' })).toBeInTheDocument()
+    expect(within(status).getByRole('listitem', { name: '원문 미확인 149' })).toBeInTheDocument()
     expect(within(status).queryByRole('listitem', { name: '확인 필요 0' })).not.toBeInTheDocument()
-    expect(within(status).getByRole('listitem', { name: '검토 임박 4' })).toBeInTheDocument()
+    expect(within(status).getByRole('listitem', { name: '검토 임박 7' })).toBeInTheDocument()
     expect(within(status).getByRole('listitem', { name: '링크 오류 0' })).toBeInTheDocument()
     expect(within(status).getByRole('listitem', { name: '마지막 법령 점검 2026-06-12' })).toBeInTheDocument()
   })

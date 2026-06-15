@@ -459,5 +459,28 @@
       "지방소득세 특별징수(소득세의 10%·10원 미만 절사)는 지방세법 별도 체계 — 고지·신고 서식 기준 확인",
       "전용 계산기(lib/daily-worker/check.ts)로 자동 계산 — 엔진 일반 계산(calculateRule)은 미지원(custom)"
     ]
+  },
+  {
+    "ruleId": "ordinary_wage_retroactive_attribution_review",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "통상임금 판결 소급 지급분 귀속시기·원천징수 수동검토",
+    "domain": "withholding-rate",
+    "incomeType": "earned",
+    "effectiveFrom": "2026-01-01",
+    "factIds": ["f_rl0010"],
+    "inputs": [
+      { "key": "retroactivePay", "type": "number", "required": false, "description": "통상임금 재산정 소급 지급액(원)" },
+      { "key": "attributionYear", "type": "number", "required": false, "description": "근로제공 귀속연도" }
+    ],
+    "formula": {
+      "type": "custom",
+      "expression": "통상임금 판결에 따른 소급 지급분의 귀속시기와 원천징수·연말정산 재정산은 예규(서면-2026-원천-4165) 기준 수동검토 — 자동계산 미구현",
+      "params": {}
+    },
+    "calculationMode": "manual-review",
+    "warnings": [
+      "소급분 귀속시기(근로제공일 vs 지급일)와 원천징수·연말정산 재정산 방식은 소득세법 제20조·시행령 제49조 및 최신 예규로 최종 확인"
+    ]
   }
 ]
