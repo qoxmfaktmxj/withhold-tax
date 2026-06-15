@@ -1524,7 +1524,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 85,
     "scopeLimitations": "지방소득세 4.5%는 산출세액의 10%가 아니라 '소득세율의 1/10' 구조(지방세법 종합소득분 세율). 지방세법 조문번호(제92조 등) 인간 확인 권장. 45% 구간(10억 초과)은 2023.1.1 신설. casenote 교차확인.",
     "localTaxRef": "개인지방소득세(종합소득분)는 지방세법상 소득세율의 1/10, 최고 4.5%로 별도 부과",
@@ -1536,6 +1536,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G006 — 소득세법 제55조 제1항(종합소득 최고세율 45%) OPEN API 원문 대조(MST 285523) 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -1566,7 +1567,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 87,
     "scopeLimitations": "세율표 직접 대조로 8,800만원 경계 24%→35%(11%p) 확인. 강의 원문은 이 점프를 '1.5억 구간'으로 오기. casenote 세율표 교차확인.",
     "localTaxRef": "",
@@ -1578,6 +1579,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G006 — 소득세법 제55조 제1항(8구간 누진세율, 8,800만 경계 24→35%) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -1608,7 +1610,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 87,
     "scopeLimitations": "세율표 직접 대조(8,800만:24→35, 1.5억:35→38, 3억:38→40, 5억:40→42, 10억:42→45). 강의 원문 오류 교정 fact. casenote 교차확인.",
     "localTaxRef": "",
@@ -1620,6 +1622,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G006 — 소득세법 제55조 제1항(1.5억 경계 35→38%) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -3621,7 +3624,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 85,
     "scopeLimitations": "공적연금 일시금 등 호별 구분 별도. '현실적 퇴직' 해당 여부는 시행령 제42조의2 열거(중간정산 사유 등) 확인. casenote 미러 교차확인(law.go.kr 동적로딩).",
     "localTaxRef": "",
@@ -3633,6 +3636,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G006 — 소득세법 제22조 제1항(퇴직소득=현실적 퇴직 원인 지급 일시금) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -3700,7 +3704,7 @@
     "effectiveDate": "2020-01-01",
     "appliesFrom": "2020-01-01",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 86,
     "scopeLimitations": "배수는 근무기간별로 분리 적용(~2011 한도없음/2012~2019 3배/2020~ 2배). 2020.1.1 이후 근무 3년 미만이면 그 기간 연평균. 근속연수는 월수 계산(1월 미만 1월). casenote 미러 교차확인.",
     "localTaxRef": "",
@@ -3712,6 +3716,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G006 — 소득세법 제22조 제3항(임원 퇴직소득금액 한도 계산식·배수) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -4001,7 +4006,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 78,
     "scopeLimitations": "환산급여 산식(÷근속연수×12)은 제48조, 산출세액 환원(×근속연수÷12)은 제55조 제2항. 제55조 제2항 항번호는 개정본별 인간 재확인 권장. 기본세율은 종합소득 기본세율(6~45%) 적용.",
     "localTaxRef": "",
@@ -4013,6 +4018,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G006 — 소득세법 제55조 제2항(퇴직소득 연분연승 산출세액 산식) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -4411,7 +4417,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 82,
     "scopeLimitations": "NTS 안내가 '소득세법 제21조제1항제19호'로 명확히 한정 — 사례금(제17호) 포함은 오류. 강의 원문의 코드 '76번(사례금)·79번(고문료)'은 내부 소득구분코드로 제19호 인적용역에 해당하지 않는 사례금까지 묶은 부정확한 설명이라 교정. 제19호가 필요경비 60% 의제 대상과 동일.",
     "localTaxRef": "",
@@ -4423,6 +4429,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G006 — 소득세법 제164조의3(간이지급명세서 제출, 기타소득 §21①19호 포함) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -5063,7 +5070,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 78,
     "scopeLimitations": "다음 달 10일 납부는 원천징수 일반원칙(반기납부 특례는 비거주자분에 제한적). 모법 조문(소법 제128조 등) 직접 매칭은 인간 재확인 권장. NTS 안내 기반.",
     "localTaxRef": "",
@@ -5075,6 +5082,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G006 — 소득세법 제128조 제1항(원천세 다음 달 10일 납부) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
