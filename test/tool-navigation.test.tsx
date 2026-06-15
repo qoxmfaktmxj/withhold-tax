@@ -30,8 +30,8 @@ describe('tool navigation', () => {
     const status = screen.getByRole('list', { name: '레퍼런스 상태' })
 
     expect(within(status).getByRole('listitem', { name: '전체 fact 259' })).toBeInTheDocument()
-    expect(within(status).getByRole('listitem', { name: '1차 원문 확인 214' })).toBeInTheDocument()
-    expect(within(status).getByRole('listitem', { name: '원문 미확인 45' })).toBeInTheDocument()
+    expect(within(status).getByRole('listitem', { name: '1차 원문 확인 216' })).toBeInTheDocument()
+    expect(within(status).getByRole('listitem', { name: '원문 미확인 43' })).toBeInTheDocument()
     expect(within(status).queryByRole('listitem', { name: '확인 필요 0' })).not.toBeInTheDocument()
     expect(within(status).getByRole('listitem', { name: '검토 임박 7' })).toBeInTheDocument()
     expect(within(status).getByRole('listitem', { name: '링크 오류 0' })).toBeInTheDocument()
