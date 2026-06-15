@@ -6471,11 +6471,12 @@
     "lawUrl": "https://www.law.go.kr/법령/소득세법",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
     "risk": "medium",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 소득세법 제47조(근로소득공제 한도 2천만원·일용 1일 15만원) OPEN API 원문 대조(MST 285523, 시행 20260421). 구간별 공제율은 현행 별표와 일치 → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
@@ -6483,7 +6484,7 @@
       }
     ],
     "nextReviewBy": "2026-07-31",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 75,
     "subordinateLawRef": "",
     "scopeLimitations": "연 환산 근사용. 일용근로자 공제(일 15만원)와 별개이며, 실제 연말정산은 입사·퇴사월 안분 등 반영 필요.",
@@ -6517,11 +6518,12 @@
     "lawUrl": "https://www.law.go.kr/법령/소득세법",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
     "risk": "medium",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 소득세법 제59조(근로소득세액공제 55%/30%·총급여별 한도 74/66/50/20만) 원문 전항 대조 일치 → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
@@ -6529,7 +6531,7 @@
       }
     ],
     "nextReviewBy": "2026-07-31",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 75,
     "subordinateLawRef": "",
     "scopeLimitations": "연 환산 근사용. 한도 체감 구간 산식(총급여 초과분×0.8%/0.5% 차감)은 법문과 표현 차이가 있을 수 있어 원문 대조 필요.",
@@ -6563,11 +6565,12 @@
     "lawUrl": "https://www.law.go.kr/법령/소득세법",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
     "risk": "medium",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 소득세법 제55조(종합소득 기본세율) 원문 대조(MST 285523). 8구간 6~45%·누진공제는 현행 세율표와 일치 → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
@@ -6575,7 +6578,7 @@
       }
     ],
     "nextReviewBy": "2026-07-31",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 75,
     "subordinateLawRef": "",
     "scopeLimitations": "간이세액표가 아닌 연말정산 방식 연 환산 근사. 특별소득공제·세액공제(보험료·의료비·신용카드 등)는 미반영이므로 실제 결정세액보다 과대 추정될 수 있음.",
@@ -7304,11 +7307,14 @@
     "lawUrl": "https://www.law.go.kr/법령/소득세법",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
+    "confidenceScore": 90,
     "risk": "medium",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 소득세법 제14조 제3항(일용근로소득 분리과세) 원문 대조(과세표준 계산 조문) 일치 → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
@@ -7342,11 +7348,14 @@
     "lawUrl": "https://www.law.go.kr/법령/소득세법",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
+    "confidenceScore": 90,
     "risk": "medium",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 소득세법 시행령 제185조(원천징수이행상황신고서 제출, 세액 없는 자 포함) 원문 대조 일치 → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
@@ -8238,11 +8247,14 @@
     "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C129%EC%A1%B0",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
+    "confidenceScore": 90,
     "risk": "low",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 소득세법 제129조 제1항 제8호(봉사료 5%) OPEN API 원문 대조 일치 → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
@@ -8268,11 +8280,14 @@
     "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C129%EC%A1%B0",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
+    "confidenceScore": 90,
     "risk": "medium",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 소득세법 제129조 제2항 제2호(비실명 45%, 금융실명법 §5 적용 시 동조 세율) 원문 대조 일치 → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
@@ -8298,11 +8313,14 @@
     "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C156%EC%9D%985%EC%A1%B0",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
+    "confidenceScore": 90,
     "risk": "medium",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 소득세법 제156조의5(비거주 연예인등 20% 특례) 원문 대조 일치(MST 285523) → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
@@ -8328,11 +8346,14 @@
     "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C128%EC%A1%B0",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
+    "confidenceScore": 90,
     "risk": "low",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 소득세법 제128조 제2항(반기납부 특례, 반기 마지막달 다음달 10일) 원문 대조 일치. 20명 이하·승인 요건은 시행령 제186조 위임 → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
@@ -8704,11 +8725,14 @@
     "lawUrl": "https://www.law.go.kr/법령/소득세법",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
+    "confidenceScore": 90,
     "risk": "medium",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 소득세법 제128조 제1항(다음달 10일 납부)·시행령 제185조(원천징수이행상황신고서) 원문 대조 일치 → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
@@ -8815,11 +8839,14 @@
     "lawUrl": "https://www.law.go.kr/법령/소득세법",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
+    "confidenceScore": 90,
     "risk": "medium",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 소득세법 제81조의11(지급명세서등 제출 불성실 가산세 구조) 원문 대조 일치. 0.25%/0.125% 세부율은 각 목·현행 기준 → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
@@ -8852,11 +8879,14 @@
     "lawUrl": "https://www.law.go.kr/법령/소득세법",
     "asOf": "2026-06-11",
     "effectiveDate": "",
-    "verifyStatus": "확인필요",
+    "verifyStatus": "확정",
+    "primarySourceVerified": true,
+    "confidenceScore": 90,
     "risk": "medium",
     "changeType": "없음",
     "previousValue": "",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G009 — 소득세법 제14조 제3항 제2호(일용근로소득 분리과세) 원문 대조 일치 → 확정 승격" },
       {
         "date": "2026-06-11",
         "author": "kms",
