@@ -1303,11 +1303,11 @@
     "lawRef": "소득세법 제1조의2 제1항 제1호",
     "subordinateLawRef": "소득세법 시행령 제2조~제4조(주소·거소 및 거주기간 계산) — 거주기간 계산 세부는 별도",
     "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C1%EC%A1%B0%EC%9D%982",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 88,
     "scopeLimitations": "183일 기준은 2018년 개정(종전 1년)으로 확정. '2과세기간에 걸쳐 183일' 거주기간 계산은 시행령 영역으로 본 fact 범위 밖. law.go.kr 동적로딩으로 casenote 교차확인.",
     "localTaxRef": "",
@@ -1328,6 +1328,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 소득세법 §1조의2①1호 원문(OPEN API) 대조 — 거주자(주소 또는 183일 이상 거소) 확인"
       }
     ],
     "sourceIds": [
@@ -1345,11 +1350,11 @@
     "lawRef": "소득세법 제1조의2 제1항 제2호",
     "subordinateLawRef": "",
     "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C1%EC%A1%B0%EC%9D%982",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 88,
     "scopeLimitations": "비거주자는 국내원천소득에 한해 납세의무(소득세법 제2조·제3조 별도). casenote 교차확인.",
     "localTaxRef": "",
@@ -1370,6 +1375,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 소득세법 §1조의2①2호 원문 대조 — 비거주자(거주자 아닌 개인) 확인"
       }
     ],
     "sourceIds": [
@@ -1381,17 +1391,17 @@
     "slug": "ch01.domestic-corp.real-management-place",
     "chapter": "ch1",
     "title": "내국법인 정의(본점·주사무소·실질적 관리장소)",
-    "claim": "내국법인이란 본점이나 주사무소 또는 사업의 실질적 관리장소가 국내에 있는 법인을 말한다(법인세법 제2조 제1호). 소득세법 제1조의2 제1항 제5호는 이 정의를 준용한다. 2026년 현재 유효.",
+    "claim": "내국법인이란 본점이나 주사무소 또는 사업의 실질적 관리장소가 국내에 있는 법인을 말한다(법인세법 제2조 제1호). 소득세법 제1조의2 제1항 제3호는 이 정의를 준용한다. 2026년 현재 유효.",
     "sourceType": "LAW",
     "sourceTitle": "법인세법 제2조(정의) 제1호 / 소득세법 제1조의2 제1항 제5호 준용",
     "lawRef": "법인세법 제2조 제1호",
     "subordinateLawRef": "",
     "lawUrl": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1001063612",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 85,
     "scopeLimitations": "'사업의 실질적 관리장소' 판정은 사실관계(이사회·핵심관리·고위경영 의사결정 장소 등) 종합 판단. 론스타 사건이 입법 계기. law.go.kr 동적로딩으로 검색결과 교차확인.",
     "localTaxRef": "",
@@ -1407,6 +1417,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 법인세법 §2 1호(내국법인) 원문 대조 확인; 소법 준용조항 §1조의2①5호→3호 교정(5호=사업자)"
       }
     ],
     "sourceIds": [
@@ -1424,11 +1439,11 @@
     "lawRef": "법인세법 제2조 제3호",
     "subordinateLawRef": "법인세법 시행령 제2조(외국법인의 구분) — 단체의 법인 판정기준",
     "lawUrl": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1001063612",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 82,
     "scopeLimitations": "외국법인 여부는 시행령상 단체 구분기준 추가 검토 필요. 본문은 '내국법인이 아닌 법인'만 서술. law.go.kr 동적로딩으로 교차확인.",
     "localTaxRef": "",
@@ -1444,6 +1459,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 법인세법 §2 3호(외국법인) 원문 대조 확인"
       }
     ],
     "sourceIds": [
@@ -1461,11 +1481,11 @@
     "lawRef": "소득세법 제4조 제1항",
     "subordinateLawRef": "",
     "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C4%EC%A1%B0",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 84,
     "scopeLimitations": "조문상 금융투자소득(제2호의2)은 2025.1.1 폐지 전 텍스트가 일부 DB에 잔존할 수 있어, 2026년 실효 분류는 종합·퇴직·양도(f_c10006 참조). 종합 6가지 자체는 확정. casenote 교차확인.",
     "localTaxRef": "",
@@ -1486,6 +1506,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 소득세법 §4① 원문 대조 — 종합(6종)·퇴직·양도 구분 확인"
       }
     ],
     "sourceIds": [
@@ -1674,11 +1699,11 @@
     "lawRef": "소득세법 제16조 제2항; 제17조 제3항",
     "subordinateLawRef": "",
     "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C16%EC%A1%B0",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 80,
     "scopeLimitations": "배당소득은 Gross-up(배당가산) 후 배당세액공제가 별도 존재하나, '필요경비 불인정'(총수입금액=소득금액) 명제 자체는 유효. 본문 표는 이자·배당 필요경비 ❌만 표기. 조문(제16조 제2항/제17조 제3항) 인간 정밀 재확인 권장.",
     "localTaxRef": "",
@@ -1699,6 +1724,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 소득세법 §16②·§17③ 원문 대조 — 이자·배당소득금액=총수입금액(필요경비 불인정) 확인"
       }
     ],
     "sourceIds": [
@@ -1916,11 +1946,11 @@
     "lawRef": "국세기본법 제22조 제2항·제3항",
     "subordinateLawRef": "",
     "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C22%EC%A1%B0",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 85,
     "scopeLimitations": "종합부동산세는 정부부과가 원칙이나 신고선택 시 신고납세로 확정(종부세법 제16조, f_c20006b 참조). '3가지만'은 국세 기준 표준 분류이며, 국세기본법 제22조 제2항 열거(신고납세) 외 국세가 정부부과라는 구조에 근거. law.go.kr 원문 동적로딩으로 casenote 교차확인.",
     "localTaxRef": "지방세는 신고납부·보통징수(부과) 등 별도 체계",
@@ -1941,6 +1971,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 국세기본법 §22②③ 원문(OPEN API) 대조 — 각 호 외 국세 정부부과 확인"
       }
     ],
     "sourceIds": [
@@ -1958,11 +1993,11 @@
     "lawRef": "종합부동산세법 제16조(부과·징수 등) 제3항",
     "subordinateLawRef": "",
     "lawUrl": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2351&cntntsId=7733",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 82,
     "scopeLimitations": "신고선택 시에만 신고납세로 전환되며 기본은 정부 결정·고지. 종부세법 제16조 제3항 항번호는 개정본 확인 권장. 국세청 안내(2차) 교차확인.",
     "localTaxRef": "",
@@ -1978,6 +2013,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2(종부세 신고선택 보충 fact 신설, mdx F id=f_c20006b)"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 종합부동산세법 §16①③ 원문 대조 — 정부부과 원칙(12.1~12.15)·신고선택 예외 확인"
       }
     ],
     "sourceIds": [
@@ -1995,11 +2035,11 @@
     "lawRef": "국세기본법 제22조 제2항",
     "subordinateLawRef": "",
     "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C22%EC%A1%B0",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 85,
     "scopeLimitations": "제22조 제2항 각 호에 신고납세 세목(소득세·법인세·부가세·개별소비세·주세·증권거래세·교육세·교통에너지환경세·종합부동산세(신고선택) 등) 열거. casenote 교차확인.",
     "localTaxRef": "",
@@ -2020,6 +2060,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 국세기본법 §22② 원문 대조 — 신고납세 세목(소득·법인·부가세 등) 확인"
       }
     ],
     "sourceIds": [
@@ -2037,11 +2082,11 @@
     "lawRef": "국세기본법 제45조",
     "subordinateLawRef": "",
     "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C45%EC%A1%B0",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 82,
     "scopeLimitations": "신고납세 세목의 수정신고만 확정력 인정. 부과과세 세목(상속·증여 등) 신고는 협력의무에 그쳐 확정력 없음. 원본 '자동 경정' 표현을 '확정력 있음'으로 정밀화. casenote 교차확인.",
     "localTaxRef": "",
@@ -2062,6 +2107,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 국세기본법 §45① 원문 대조 — 수정신고(미달 증액·결정통지 전) 확인"
       }
     ],
     "sourceIds": [
@@ -2079,11 +2129,11 @@
     "lawRef": "국세기본법 제45조의2 제1항·제3항",
     "subordinateLawRef": "",
     "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C45%EC%A1%B0%EC%9D%982",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 85,
     "scopeLimitations": "통상적 경정청구 기한 5년·결정기한 2개월은 casenote 원문 발췌로 확인. 후발적 사유 경정청구(사유 발생일로부터 3개월)는 별도(제45조의2 제2항). 본문은 감액·세무서 결정 핵심만 서술.",
     "localTaxRef": "",
@@ -2104,6 +2154,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 국세기본법 §45의2①③ 원문 대조 — 경정청구 법정기한 후 5년 이내 확인"
       }
     ],
     "sourceIds": [
@@ -2121,11 +2176,11 @@
     "lawRef": "국세기본법 제45조의3",
     "subordinateLawRef": "",
     "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C45%EC%A1%B0%EC%9D%983",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 84,
     "scopeLimitations": "세무서장 결정기한 '신고일부터 3개월 이내'는 제45조의3 원문 발췌로 확인. 본문 원본 '결정력 없음(세무서가 결정)' 취지와 일치. casenote 교차확인.",
     "localTaxRef": "",
@@ -2146,6 +2201,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 국세기본법 §45의3①③ 원문 대조 — 기한후신고 확정력無·3개월내 결정 확인"
       }
     ],
     "sourceIds": [
@@ -2163,11 +2223,11 @@
     "lawRef": "소득세법 제1조의2(거주자 정의) 위임",
     "subordinateLawRef": "소득세법 시행령 제3조(해외현지법인등의 임직원 등에 대한 거주자 판정)",
     "lawUrl": "https://lbox.kr/v2/statute/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95%EC%8B%9C%ED%96%89%EB%A0%B9/%EB%B3%B8%EB%AC%B8%20%3E%20%EC%A0%9C1%EC%9E%A5%20%3E%20%EC%A0%9C3%EC%A1%B0",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 82,
     "scopeLimitations": "100% '직접 또는 간접' 출자 요건 충족 시에만 무조건 거주자. 출자비율 100% 미만 현지법인 파견은 일반 거주자 판정기준(생계동일 가족·자산·183일 등) 적용. 국외 현지채용자는 '파견'에 해당하지 않을 수 있음(예규). law.go.kr 원문 동적로딩 직접열람 미완 → LBOX 인용 기반.",
     "localTaxRef": "",
@@ -2183,6 +2243,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 1차출처 검증(시행령 제3조 100% 직간접출자 LBOX 인용 + 국세 예규 다수 교차확인)"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 소법 §1조의2② 위임+시행령§3 원문 대조 — 해외현지법인(100% 출자) 파견 임직원 거주자 의제 확인"
       }
     ],
     "sourceIds": [
@@ -2200,11 +2265,11 @@
     "lawRef": "소득세법 제1조의2 위임",
     "subordinateLawRef": "소득세법 시행령 제3조",
     "lawUrl": "https://lbox.kr/v2/statute/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95%EC%8B%9C%ED%96%89%EB%A0%B9/%EB%B3%B8%EB%AC%B8%20%3E%20%EC%A0%9C1%EC%9E%A5%20%3E%20%EC%A0%9C3%EC%A1%B0",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 84,
     "scopeLimitations": "시행령 제3조 동일 조문에 파견 임직원과 함께 규정. law.go.kr 원문 동적로딩 직접열람 미완 → LBOX·WebSearch 요약 교차확인.",
     "localTaxRef": "",
@@ -2220,6 +2285,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2 1차출처 검증(시행령 제3조)"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 소법 §1조의2② 위임+시행령§3 원문 대조 — 국외근무 공무원 거주자 의제 확인"
       }
     ],
     "sourceIds": [
@@ -2237,11 +2307,11 @@
     "lawRef": "소득세법 제3조",
     "subordinateLawRef": "",
     "lawUrl": "https://www.law.go.kr/법령/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95/%EC%A0%9C3%EC%A1%B0",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 88,
     "scopeLimitations": "거주자 중 국외원천소득 과세는 일부 단기거주 외국인 특례(최근 10년 중 국내 주소·거소 5년 이하 외국인의 국외원천소득 국내지급·송금분 한정 과세) 예외 존재(소득세법 제3조 제1항 단서). 본문은 일반 거주자 기준. CaseNote 교차확인.",
     "localTaxRef": "",
@@ -2262,6 +2332,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 소득세법 §3①② 원문 대조 — 거주자 전세계소득·비거주자 국내원천(§119) 확인"
       }
     ],
     "sourceIds": [
@@ -2563,11 +2638,11 @@
     "lawRef": "국세기본법 제47조의5",
     "subordinateLawRef": "",
     "lawUrl": "https://www.law.go.kr/법령/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C47%EC%A1%B0%EC%9D%985",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 80,
     "scopeLimitations": "신고불성실 가산세는 없으나 납부지연·지급명세서 제출불성실 가산세는 별개로 존재(강의의 '가산세 없음'은 과장). 조문 표제에 '신고' 부재는 1차 확인되나 '신고불성실 가산세 부존재' 명제는 체계해석(2차). ch4 f_c40009와 동일 명제 재인용.",
     "localTaxRef": "",
@@ -2588,6 +2663,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "casenote 미러 → 국가법령정보(law.go.kr) 공식 링크 전환 (OPEN API로 법령 검증)"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 국세기본법 §47의5(원천세 납부지연가산세)+§22④2호(자동확정) 원문 대조 — 신고불성실 가산세 부존재 구조 확인"
       }
     ],
     "sourceIds": [
@@ -5421,11 +5501,11 @@
     "lawRef": "소득세법 제14조 제3항; 제62조",
     "subordinateLawRef": "",
     "lawUrl": "https://www.standardchartered.co.kr/np/kr/cms/pl/se/SynthesisTaxation.jsp",
-    "asOf": "2026-06-09",
+    "asOf": "2026-06-15",
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 80,
     "scopeLimitations": "2천만원 기준·14%/누진 분리 적용 메커니즘은 다수 안내·법조문 체계로 확인. 다만 1차 출처(소득세법 제14조·제62조 원문) URL 직접 매칭은 못 하고 2차(금융기관 안내) 기반 → primarySourceVerified=false. 비과세·분리과세 금융소득(장기저축성보험 등)은 2천만원 산정서 제외.",
     "localTaxRef": "",
@@ -5441,6 +5521,11 @@
         "date": "2026-06-09",
         "author": "kms",
         "note": "배치2: 2천만원·14% 메커니즘 2차 교차확인, 법조문 원문 직접매칭 미완으로 확정·primary false"
+      },
+      {
+        "date": "2026-06-15",
+        "author": "kms",
+        "note": "라운드4 G006: 소득세법 §14③·§62 원문 대조 — 금융소득 종합과세 비교과세·기준금액 14%(§129①1호라목) 확인"
       }
     ],
     "sourceIds": [
