@@ -135,7 +135,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 88,
     "scopeLimitations": "과소신고가산세는 종합소득세 등 신고세목에 적용. 원천징수의무 자체에는 신고불성실 가산세가 없음(제47조의5 별도). law.go.kr 원문 동적로딩으로 CaseNote 교차확인.",
     "localTaxRef": "",
@@ -147,6 +147,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G008 — 국세기본법 제47조의3 제1항 제2호(과소신고 10%) OPEN API 원문 대조(MST 286425) 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -177,7 +178,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 85,
     "scopeLimitations": "국제거래 수반 부정행위 시 60%로 가중되나 본문 표는 일반 부정행위 40%만 표기. CaseNote 교차확인(law.go.kr 동적로딩).",
     "localTaxRef": "",
@@ -189,6 +190,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G008 — 국세기본법 제47조의3 제1항 제1호(부정행위 과소신고) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -219,7 +221,7 @@
     "effectiveDate": "2022-02-15",
     "appliesFrom": "2022-02-15",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 88,
     "scopeLimitations": "2022.2.15 전 기간분은 종전율(10만분의25 등) 적용. 본문 '연 약 8.05%'는 22/100,000×365≈8.03%로 사실상 일치. lawnb 교차확인.",
     "localTaxRef": "",
@@ -231,6 +233,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G008 — 국세기본법 제47조의4 제1항(납부지연가산세=미납액×기간×이자율) 원문 대조. 1일 22/10만 이자율은 시행령 §27의4" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -256,7 +259,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 88,
     "scopeLimitations": "일반 지급명세서 1%, 일용근로소득 지급명세서는 0.25%로 예외. 본문 4.1 '제출관련 1%'와 4.2 '지급명세서 미제출 1%'에 동일 fact 연결. CaseNote 교차확인.",
     "localTaxRef": "",
@@ -268,6 +271,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G008 — 소득세법 제81조의11 제1항(지급명세서 미제출 가산세) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -298,7 +302,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 87,
     "scopeLimitations": "일반 지급명세서(연 제출) 한정. 간이지급명세서는 별도 율·기간(f_c40006). 원문상 '1천분의 5'를 0.5%로 환산. CaseNote 교차확인.",
     "localTaxRef": "",
@@ -310,6 +314,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G008 — 소득세법 제81조의11 제1항(지급명세서 지연제출 감면) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -340,7 +345,7 @@
     "effectiveDate": "2027-01-01",
     "appliesFrom": "2027-01-01",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 80,
     "scopeLimitations": "소득세법 제81조의11 본문은 간이지급명세서 경감기간을 '1개월'로 규정. 근로소득의 '3개월'(2026년)은 NTS 안내 기준 부칙 특례로 추정 → 부칙 항번호 1차 재확인 필요. 0.25%/0.125%율 자체는 확정.",
     "localTaxRef": "",
@@ -352,6 +357,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G008 — 소득세법 제81조의11 제1항(간이지급명세서 가산세) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -377,7 +383,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 82,
     "scopeLimitations": "사업·기타소득 간이지급명세서는 매월 제출이며 경감기간 '1개월'. 근로소득(반기)과 기간 구분 주의(f_c40006). CaseNote 교차확인.",
     "localTaxRef": "",
@@ -389,6 +395,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G008 — 소득세법 제81조의11 제1항(간이지급명세서 지연 1개월 기준) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -419,7 +426,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 87,
     "scopeLimitations": "한도는 제49조 열거 가산세(지급명세서·계산서 등)에 한정. 고의 위반 시 한도 미적용. 중소기업 5천만/일반 1억 — 본문 표현과 일치. CaseNote 교차확인.",
     "localTaxRef": "",
@@ -431,6 +438,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G008 — 국세기본법 제49조 제1항(가산세 한도 5천만/1억, 소득세법 §81의11 포함, 고의 제외) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -461,7 +469,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 80,
     "scopeLimitations": "강의 표현 '납부만 하면 가산세 없음'을 교정: 신고불성실 가산세는 없으나 납부지연·지급명세서 제출불성실 가산세는 별개로 존재. 조문 표제에 '신고' 부재는 1차 확인되나 '신고불성실 가산세 부존재' 명제는 체계해석(2차).",
     "localTaxRef": "",
@@ -473,6 +481,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G008 — 국세기본법 제47조의5(원천징수 납부지연가산세=3%+일수이자, 한도 10%)로 원천세는 납부지연만, 별도 신고불성실 가산세 부존재 확인" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -503,7 +512,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 88,
     "scopeLimitations": "휴·폐업·해산 시 다음다음 달 말일 특례 별도. CaseNote 교차확인.",
     "localTaxRef": "",
@@ -515,6 +524,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G008 — 소득세법 제164조 제1항(근로·퇴직·사업 지급명세서 다음연도 3월 10일) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -545,7 +555,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 88,
     "scopeLimitations": "근로·퇴직·사업소득(3.10)을 제외한 기본 기한이 2월 말일. CaseNote 교차확인.",
     "localTaxRef": "",
@@ -557,6 +567,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G008 — 소득세법 제164조 제1항(이자·배당 등 다음연도 2월 말일) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -587,7 +598,7 @@
     "effectiveDate": "2021-07-01",
     "appliesFrom": "2021-07-01",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 84,
     "scopeLimitations": "일용근로소득 한정(상용근로는 연 지급명세서+반기 간이). 미제출 0.25%, 1개월내 0.125%. NTS 안내 교차확인.",
     "localTaxRef": "",
@@ -599,6 +610,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G008 — 소득세법 제164조 제1항 단서·시행령 §213(일용근로 지급명세서 매월) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
@@ -624,7 +636,7 @@
     "effectiveDate": "",
     "appliesFrom": "",
     "verifyStatus": "확정",
-    "primarySourceVerified": false,
+    "primarySourceVerified": true,
     "confidenceScore": 80,
     "scopeLimitations": "조문은 반기 제출기한(7월말/1월말)을 규정. 본문 '상반기 1~5월(5개월)·하반기 6~12월(7개월)' 및 지급/귀속 기준 혼용은 강의식 실무설명으로, 법문 자체는 반기 단위. 매월제출 의무는 2027.1.1 이후 지급분으로 유예(별도 fact 영역).",
     "localTaxRef": "",
@@ -636,6 +648,7 @@
     "reviewerId": "kms",
     "nextReviewBy": "2027-03-31",
     "history": [
+      { "date": "2026-06-15", "author": "claude", "note": "라운드3 G008 — 소득세법 제164조의3(근로소득 간이지급명세서 반기 제출: 1~6월분 7월말·7~12월분 익년 1월말) 원문 대조 일치" },
       {
         "date": "2026-06-09",
         "author": "kms",
