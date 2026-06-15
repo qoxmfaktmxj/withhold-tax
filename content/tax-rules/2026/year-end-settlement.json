@@ -84,6 +84,96 @@
     "warnings": ["근로소득 원천징수이행상황신고서 반영 방식은 최신 서식 기준으로 최종 확인"]
   },
   {
+    "ruleId": "employee_year_end_tax_simulator_2026",
+    "version": "2026.1.0",
+    "calendarYear": 2026,
+    "name": "근로소득 연말정산 환급·추가납부 간이 시뮬레이터",
+    "domain": "year-end-settlement",
+    "incomeType": "earned",
+    "effectiveFrom": "2026-01-01",
+    "factIds": ["f_u26001", "f_si0006", "f_si0007", "f_si0008"],
+    "inputs": [
+      { "key": "grossAnnualPay", "type": "number", "required": true, "description": "총급여(원)" },
+      { "key": "prepaidTax", "type": "number", "required": true, "description": "기납부 소득세(원)" },
+      { "key": "additionalDependents", "type": "number", "required": true, "description": "인적공제 인원(본인 외)" },
+      { "key": "children", "type": "number", "required": true, "description": "자녀세액공제 대상 자녀 수" },
+      { "key": "pensionContribution", "type": "number", "required": false, "description": "연금보험료 공제 입력액" },
+      { "key": "deductionTotal", "type": "number", "required": false, "description": "그 밖의 직접입력 공제 합계" }
+    ],
+    "formula": {
+      "type": "year-end-tax-simulator",
+      "expression": "총급여 → 근로소득공제 → 인적공제·연금보험료·직접입력 공제 → 기본세율 → 근로소득세액공제·자녀세액공제 → 결정세액 → 결정세액-기납부세액",
+      "params": {
+        "personalDeductionPerPerson": 1500000,
+        "childCreditOneMonthly": 20830,
+        "childCreditTwoMonthly": 45830,
+        "childCreditAdditionalMonthly": 33330,
+        "localIncomeTaxRate": 0.1
+      }
+    },
+    "calculationMode": "automatic",
+    "examples": [
+      {
+        "title": "환급 예상",
+        "input": {
+          "grossAnnualPay": 50000000,
+          "prepaidTax": 2100000,
+          "additionalDependents": 1,
+          "children": 2,
+          "pensionContribution": 2160000,
+          "deductionTotal": 3000000
+        },
+        "expected": {
+          "taxBase": 29590000,
+          "finalIncomeTax": 1968540,
+          "localIncomeTax": 196850,
+          "settlementTax": -131460,
+          "refundAmount": 131460,
+          "additionalTax": 0,
+          "status": "refund"
+        }
+      },
+      {
+        "title": "추가납부 예상",
+        "input": {
+          "grossAnnualPay": 50000000,
+          "prepaidTax": 1500000,
+          "additionalDependents": 1,
+          "children": 2,
+          "pensionContribution": 2160000,
+          "deductionTotal": 3000000
+        },
+        "expected": {
+          "finalIncomeTax": 1968540,
+          "settlementTax": 468540,
+          "refundAmount": 0,
+          "additionalTax": 468540,
+          "status": "additional"
+        }
+      },
+      {
+        "title": "0원 경계",
+        "input": {
+          "grossAnnualPay": 50000000,
+          "prepaidTax": 1968540,
+          "additionalDependents": 1,
+          "children": 2,
+          "pensionContribution": 2160000,
+          "deductionTotal": 3000000
+        },
+        "expected": {
+          "finalIncomeTax": 1968540,
+          "settlementTax": 0,
+          "status": "even"
+        }
+      }
+    ],
+    "warnings": [
+      "신용카드·의료비 등 공제율 자동계산 없음 — 공제액 직접입력 방식의 간이 추정",
+      "간이세액표 월별 원천징수액과 실제 연말정산 결정세액은 공제자료·제출자료에 따라 달라질 수 있음"
+    ]
+  },
+  {
     "ruleId": "education_expense_credit_2026_review",
     "version": "2026.1.0",
     "calendarYear": 2026,

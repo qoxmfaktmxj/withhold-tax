@@ -1,8 +1,8 @@
 {
-  "linkCheckedAt": "2026-06-11",
+  "linkCheckedAt": "2026-06-15",
   "linkCheckCommand": "npm run check:links",
-  "linkTotal": 131,
-  "linkOk": 127,
+  "linkTotal": 167,
+  "linkOk": 163,
   "linkRedirect": 4,
   "linkErrors": 0
 }

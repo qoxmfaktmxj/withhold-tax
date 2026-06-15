@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest'
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import treatyRates from '@/content/tax-rules/2026/treaty-rates.json'
 
 type TreatyRateEntry = {
@@ -16,6 +18,8 @@ type TreatyRateEntry = {
 
 describe('2026 treaty rates data', () => {
   const entries = (treatyRates as { rates: TreatyRateEntry[] }).rates
+  const formatRates = (rates: number[]) =>
+    `${rates.map((rate) => Math.round(rate * 100)).join('/')}%`
 
   it('contains the planned 34 country sample', () => {
     expect(entries).toHaveLength(34)
@@ -53,5 +57,38 @@ describe('2026 treaty rates data', () => {
 
     expect(australia?.region).toBe('oceania')
     expect(newZealand?.region).toBe('oceania')
+  })
+
+  it('keeps nonresident.mdx treaty table in sync with the JSON rates', () => {
+    const mdx = readFileSync(join(process.cwd(), 'content/chapters/nonresident.mdx'), 'utf8')
+    const sectionStart = mdx.indexOf('## 11. 주요 34개국 제한세율 표')
+    expect(sectionStart).toBeGreaterThanOrEqual(0)
+
+    const section = mdx.slice(sectionStart)
+    const rows = [...section.matchAll(
+      /<tr><td>([^<]+)<\/td><td>([^<]*)<\/td><td>([^<]*)<\/td><td>([^<]*)<\/td><td>([^<]*)<\/td><td>([^<]*)<\/td><\/tr>/g,
+    )].map((match) => ({
+      country: match[1],
+      interest: match[2],
+      major25: match[3],
+      other: match[4],
+      royalty: match[5],
+      note: match[6],
+    }))
+
+    expect(rows).toHaveLength(entries.length)
+    expect(rows.map((row) => row.country)).toEqual(entries.map((entry) => entry.country))
+
+    for (const entry of entries) {
+      const row = rows.find((candidate) => candidate.country === entry.country)
+      expect(row).toEqual({
+        country: entry.country,
+        interest: formatRates(entry.interest),
+        major25: formatRates(entry.dividend.major25),
+        other: formatRates(entry.dividend.other),
+        royalty: formatRates(entry.royalty),
+        note: entry.note ?? '',
+      })
+    }
   })
 })

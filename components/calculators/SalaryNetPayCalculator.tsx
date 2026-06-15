@@ -32,6 +32,7 @@ function parseWon(value: string): number {
 export function SalaryNetPayCalculator() {
   const [grossMonthlyPay, setGrossMonthlyPay] = useState('4000000')
   const [nonTaxablePay, setNonTaxablePay] = useState('200000')
+  const [mealAllowancePay, setMealAllowancePay] = useState('0')
   const [incomeTax, setIncomeTax] = useState('120000')
   const [localIncomeTax, setLocalIncomeTax] = useState('12000')
   const [nationalPension, setNationalPension] = useState('180000')
@@ -40,12 +41,15 @@ export function SalaryNetPayCalculator() {
   const [employmentInsurance, setEmploymentInsurance] = useState('36000')
   const [otherDeductions, setOtherDeductions] = useState('50000')
   const [paymentMonths, setPaymentMonths] = useState('12')
+  const [autoSocialInsurance, setAutoSocialInsurance] = useState(false)
+  const [socialInsurancePaymentDate, setSocialInsurancePaymentDate] = useState('2026-07-01')
 
   const result = useMemo(
     () =>
       calculateSalaryNetPay({
         grossMonthlyPay: parseWon(grossMonthlyPay),
         nonTaxablePay: parseWon(nonTaxablePay),
+        mealAllowancePay: parseWon(mealAllowancePay),
         incomeTax: parseWon(incomeTax),
         localIncomeTax: parseWon(localIncomeTax),
         nationalPension: parseWon(nationalPension),
@@ -54,23 +58,49 @@ export function SalaryNetPayCalculator() {
         employmentInsurance: parseWon(employmentInsurance),
         otherDeductions: parseWon(otherDeductions),
         paymentMonths: Number(paymentMonths) || 12,
+        socialInsuranceMode: autoSocialInsurance ? 'auto' : 'manual',
+        socialInsurancePaymentDate,
       }),
     [
+      autoSocialInsurance,
       employmentInsurance,
       grossMonthlyPay,
       healthInsurance,
       incomeTax,
       localIncomeTax,
       longTermCareInsurance,
+      mealAllowancePay,
       nationalPension,
       nonTaxablePay,
       otherDeductions,
       paymentMonths,
+      socialInsurancePaymentDate,
     ]
   )
 
   return (
     <div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 14, marginBottom: 14 }}>
+        <label style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: '0.86rem', fontWeight: 700 }}>
+          <input
+            type="checkbox"
+            checked={autoSocialInsurance}
+            onChange={(e) => setAutoSocialInsurance(e.target.checked)}
+          />
+          사회보험 자동 계산
+        </label>
+        <label htmlFor="salary-social-period" style={{ ...label, marginBottom: 0 }}>국민연금 상·하한 적용기간</label>
+        <select
+          id="salary-social-period"
+          style={{ ...field, width: 220 }}
+          value={socialInsurancePaymentDate}
+          onChange={(e) => setSocialInsurancePaymentDate(e.target.value)}
+          disabled={!autoSocialInsurance}
+        >
+          <option value="2026-07-01">2026.7~2027.6</option>
+          <option value="2026-06-30">2026.1~2026.6</option>
+        </select>
+      </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 860 }}>
         <div>
           <label htmlFor="salary-gross" style={label}>월 총급여</label>
@@ -79,6 +109,10 @@ export function SalaryNetPayCalculator() {
         <div>
           <label htmlFor="salary-nontax" style={label}>비과세 급여</label>
           <input id="salary-nontax" style={field} inputMode="numeric" value={nonTaxablePay} onChange={(e) => setNonTaxablePay(e.target.value)} />
+        </div>
+        <div>
+          <label htmlFor="salary-meal" style={label}>식대(한도 적용)</label>
+          <input id="salary-meal" style={field} inputMode="numeric" value={mealAllowancePay} onChange={(e) => setMealAllowancePay(e.target.value)} />
         </div>
         <div>
           <label htmlFor="salary-months" style={label}>지급 개월 수</label>
@@ -94,19 +128,19 @@ export function SalaryNetPayCalculator() {
         </div>
         <div>
           <label htmlFor="salary-pension" style={label}>국민연금</label>
-          <input id="salary-pension" style={field} inputMode="numeric" value={nationalPension} onChange={(e) => setNationalPension(e.target.value)} />
+          <input id="salary-pension" style={field} inputMode="numeric" value={nationalPension} onChange={(e) => setNationalPension(e.target.value)} disabled={autoSocialInsurance} />
         </div>
         <div>
           <label htmlFor="salary-health" style={label}>건강보험</label>
-          <input id="salary-health" style={field} inputMode="numeric" value={healthInsurance} onChange={(e) => setHealthInsurance(e.target.value)} />
+          <input id="salary-health" style={field} inputMode="numeric" value={healthInsurance} onChange={(e) => setHealthInsurance(e.target.value)} disabled={autoSocialInsurance} />
         </div>
         <div>
           <label htmlFor="salary-care" style={label}>장기요양보험</label>
-          <input id="salary-care" style={field} inputMode="numeric" value={longTermCareInsurance} onChange={(e) => setLongTermCareInsurance(e.target.value)} />
+          <input id="salary-care" style={field} inputMode="numeric" value={longTermCareInsurance} onChange={(e) => setLongTermCareInsurance(e.target.value)} disabled={autoSocialInsurance} />
         </div>
         <div>
           <label htmlFor="salary-employment" style={label}>고용보험</label>
-          <input id="salary-employment" style={field} inputMode="numeric" value={employmentInsurance} onChange={(e) => setEmploymentInsurance(e.target.value)} />
+          <input id="salary-employment" style={field} inputMode="numeric" value={employmentInsurance} onChange={(e) => setEmploymentInsurance(e.target.value)} disabled={autoSocialInsurance} />
         </div>
         <div>
           <label htmlFor="salary-other" style={label}>기타 공제</label>
@@ -156,7 +190,9 @@ export function SalaryNetPayCalculator() {
           </tbody>
         </table>
         <p style={{ margin: '12px 0 0', color: 'var(--gray-500)', fontSize: '0.78rem', lineHeight: 1.6 }}>
-          국민연금·건강보험·고용보험 요율 추정값을 자동 산출하지 않습니다. 급여명세서 또는 사내 급여 시스템의 공제액을 입력해 실수령액을 검산합니다.
+          {autoSocialInsurance
+            ? '사회보험은 2026년 룰 JSON 기준으로 자동 산출합니다. 소득세·지방소득세·기타 공제는 입력값을 그대로 쓰며, 실제 급여 시스템·간이세액표와 다를 수 있습니다.'
+            : '수동 모드는 급여명세서 또는 사내 급여 시스템의 공제액을 입력해 실수령액을 검산합니다. 사회보험 자동 계산을 켜면 2026년 룰 JSON 기준 추정값으로 대체합니다.'}
         </p>
       </section>
     </div>

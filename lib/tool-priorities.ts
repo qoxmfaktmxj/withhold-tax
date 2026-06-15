@@ -77,9 +77,18 @@ export const TOOL_PRIORITIES: ToolPriority[] = [
     summary: '추가납부세액이 10만원을 초과할 때 2월부터 4월까지 지급월별 분납 스케줄 산출',
   },
   {
-    id: 'statement-penalty',
+    id: 'year-end-simulator',
     tier: 'P1',
     rank: 8,
+    title: '연말정산 환급·추가납부 시뮬레이터',
+    route: '/tools/year-end-simulator',
+    status: 'available',
+    summary: '총급여·기납부세액·직접입력 공제 합계로 결정세액과 환급·추가납부 예상액 간이 추정',
+  },
+  {
+    id: 'statement-penalty',
+    tier: 'P1',
+    rank: 9,
     title: '지급명세서·간이지급명세서 가산세 계산기',
     route: '/tools/statement-penalty',
     status: 'available',
@@ -88,7 +97,7 @@ export const TOOL_PRIORITIES: ToolPriority[] = [
   {
     id: 'retirement-tax-check',
     tier: 'P1',
-    rank: 9,
+    rank: 10,
     title: '퇴직소득세 검산기',
     route: '/tools/retirement-tax',
     status: 'available',
@@ -97,7 +106,7 @@ export const TOOL_PRIORITIES: ToolPriority[] = [
   {
     id: 'daily-worker-tax',
     tier: 'P0',
-    rank: 10,
+    rank: 11,
     title: '일용근로 원천징수 세액 계산기',
     route: '/tools/daily-worker-tax',
     status: 'available',
@@ -106,7 +115,7 @@ export const TOOL_PRIORITIES: ToolPriority[] = [
   {
     id: 'employee-local-tax',
     tier: 'P0',
-    rank: 11,
+    rank: 12,
     title: '종업원분 주민세 계산기',
     route: '/tools/employee-local-tax',
     status: 'available',
@@ -115,7 +124,7 @@ export const TOOL_PRIORITIES: ToolPriority[] = [
   {
     id: 'executive-severance-limit',
     tier: 'P1',
-    rank: 12,
+    rank: 13,
     title: '임원퇴직금 한도 계산기',
     route: '/tools/executive-severance-limit',
     status: 'available',
@@ -124,7 +133,7 @@ export const TOOL_PRIORITIES: ToolPriority[] = [
   {
     id: 'reverse-net-pay',
     tier: 'P1',
-    rank: 13,
+    rank: 14,
     title: '세후→세전 역산 계산기',
     route: '/tools/reverse-net-pay',
     status: 'available',

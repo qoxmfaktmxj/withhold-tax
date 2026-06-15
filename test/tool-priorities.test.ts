@@ -13,12 +13,13 @@ describe('tool priorities', () => {
       { tier: 'P0', rank: 5, title: '비거주자 지급 체크리스트' },
       { tier: 'P1', rank: 6, title: '연봉·실수령액 계산기' },
       { tier: 'P1', rank: 7, title: '연말정산 추가세액 분납 스케줄러' },
-      { tier: 'P1', rank: 8, title: '지급명세서·간이지급명세서 가산세 계산기' },
-      { tier: 'P1', rank: 9, title: '퇴직소득세 검산기' },
-      { tier: 'P0', rank: 10, title: '일용근로 원천징수 세액 계산기' },
-      { tier: 'P0', rank: 11, title: '종업원분 주민세 계산기' },
-      { tier: 'P1', rank: 12, title: '임원퇴직금 한도 계산기' },
-      { tier: 'P1', rank: 13, title: '세후→세전 역산 계산기' },
+      { tier: 'P1', rank: 8, title: '연말정산 환급·추가납부 시뮬레이터' },
+      { tier: 'P1', rank: 9, title: '지급명세서·간이지급명세서 가산세 계산기' },
+      { tier: 'P1', rank: 10, title: '퇴직소득세 검산기' },
+      { tier: 'P0', rank: 11, title: '일용근로 원천징수 세액 계산기' },
+      { tier: 'P0', rank: 12, title: '종업원분 주민세 계산기' },
+      { tier: 'P1', rank: 13, title: '임원퇴직금 한도 계산기' },
+      { tier: 'P1', rank: 14, title: '세후→세전 역산 계산기' },
     ])
   })
 
@@ -51,6 +52,10 @@ describe('tool priorities', () => {
       expect.objectContaining({
         id: 'year-end-installment',
         route: '/tools/year-end-installment',
+      }),
+      expect.objectContaining({
+        id: 'year-end-simulator',
+        route: '/tools/year-end-simulator',
       }),
       expect.objectContaining({
         id: 'statement-penalty',

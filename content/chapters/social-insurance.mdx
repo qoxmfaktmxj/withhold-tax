@@ -1,0 +1,73 @@
+## 1. 2026년 4대보험 요율 총괄
+
+<Tbl scroll>
+  <thead>
+    <tr><th>구분</th><th>근로자 부담</th><th>사용자 부담</th><th>합계·기준</th><th>계산기 반영</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>국민연금</td><td><F id="f_si0001">4.75%</F></td><td>4.75%</td><td>합계 9.5%, 2033년 13%까지 매년 0.5%p 인상</td><td>근로자 부담분만 공제</td></tr>
+    <tr><td>건강보험</td><td><F id="f_si0003">3.595%</F></td><td>3.595%</td><td>합계 7.19%</td><td>보수월액 × 3.595%</td></tr>
+    <tr><td>장기요양보험</td><td><F id="f_si0004">건강보험료 × 13.14%</F></td><td>동일</td><td>건강보험료 대비 요율</td><td>근로자 건강보험료에 곱함</td></tr>
+    <tr><td>고용보험</td><td><F id="f_si0005">실업급여 0.9%</F></td><td>실업급여 0.9% + 고용안정·직업능력개발사업</td><td>실업급여 합계 1.8%</td><td>근로자 부담 0.9%만 공제</td></tr>
+  </tbody>
+</Tbl>
+
+<Box kind="warn" title="계산 범위">
+급여 실수령 계산기는 근로자 부담분만 공제한다. 사용자 부담분, 고용안정·직업능력개발사업 보험료, 보수 외 소득월액 보험료, 사업장별 예외는 별도 검토가 필요하다.
+</Box>
+
+## 2. 국민연금 기준소득월액 상·하한
+
+<F id="f_si0002">국민연금 기준소득월액 상·하한은 적용기간이 매년 7월부터 다음 해 6월까지 이어진다.</F> 2026년 귀속 급여라도 지급월에 따라 상·하한이 갈린다.
+
+<Tbl scroll>
+  <thead>
+    <tr><th>적용 지급월</th><th>상한</th><th>하한</th><th>근로자 부담 계산</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>2026.1~2026.6</td><td>637만원</td><td>40만원</td><td>MIN(MAX(과세급여, 40만원), 637만원) × 4.75%</td></tr>
+    <tr><td>2026.7~2027.6</td><td>659만원</td><td>41만원</td><td>MIN(MAX(과세급여, 41만원), 659만원) × 4.75%</td></tr>
+  </tbody>
+</Tbl>
+
+<Box kind="note" title="룰 JSON 연결">
+`content/tax-rules/2026/social-insurance-2026.json`의 `nationalPensionMonthlyBaseCapBeforeJuly`,
+`nationalPensionMonthlyBaseFloorBeforeJuly`, `nationalPensionMonthlyBaseCapFromJuly`,
+`nationalPensionMonthlyBaseFloorFromJuly` 값과 이 표가 일치해야 한다.
+</Box>
+
+## 3. 최저임금 월 환산 기준
+
+<F id="f_si0009">2026년 적용 최저임금은 시간급 10,320원이고, 월 209시간 기준 환산액은 2,156,880원이다.</F> 이 금액은 주 40시간과 유급주휴 8시간을 포함한 월 환산 기준이다.
+
+<Tbl scroll>
+  <thead>
+    <tr><th>적용기간</th><th>시간급</th><th>월 환산 기준</th><th>월 환산액</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>2026.1.1~2026.12.31</td><td>10,320원</td><td>209시간</td><td>2,156,880원</td></tr>
+  </tbody>
+</Tbl>
+
+<Box kind="warn" title="노동법 검토 필요">
+최저임금 산입범위, 주휴수당 발생 여부, 감액 적용 가능 여부, 수습근로자 예외는 실수령액 계산기에서 자동 판정하지 않는다.
+</Box>
+
+## 4. 근로소득세 근사 체인
+
+세후→세전 역산 계산기와 연말정산 시뮬레이터는 간이세액표를 직접 재현하지 않는다. 연 환산 근사로 총급여에서 공제와 세액공제를 차감한다.
+
+<Tbl scroll>
+  <thead>
+    <tr><th>단계</th><th>근거 fact</th><th>계산 의미</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>근로소득공제</td><td><F id="f_si0006">f_si0006</F></td><td>총급여 구간별 70%~2%, 한도 2,000만원</td></tr>
+    <tr><td>근로소득세액공제</td><td><F id="f_si0007">f_si0007</F></td><td>산출세액 55%/30%, 총급여별 한도 적용</td></tr>
+    <tr><td>기본세율·지방소득세</td><td><F id="f_si0008">f_si0008</F></td><td>6~45% 누진세율과 소득세의 10% 지방소득세 참고값</td></tr>
+  </tbody>
+</Tbl>
+
+<Box kind="tip" title="계산기 이동">
+연봉·실수령액 계산기는 [급여 실수령 계산기](/tools/salary-net-pay), 세후→세전 역산 계산기는 [세후→세전 역산 계산기](/tools/reverse-net-pay)에서 확인한다.
+</Box>
