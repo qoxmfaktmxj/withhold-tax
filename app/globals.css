@@ -1251,19 +1251,19 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 .wt-seal--확정 {
   background: var(--verified-bg);
   color: var(--verified-text);
-  border-color: var(--verified-border);
+  border-radius: var(--radius-pill);
 }
 
 .wt-seal--확인필요 {
   background: var(--caution-bg);
   color: var(--caution-text);
-  border-color: var(--caution-border);
+  border-radius: var(--radius-pill);
 }
 
 .wt-seal--강의기반 {
   background: var(--lecture-bg);
   color: var(--lecture-text);
-  border-color: var(--lecture-border);
+  border-radius: var(--radius-pill);
   font-style: normal;
 }
 
