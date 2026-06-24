@@ -1205,9 +1205,9 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   gap: 6px;
 }
 
-.wt-box--imp  .wt-icon-chip { background: #F04452; color: #fff; }
-.wt-box--note .wt-icon-chip { background: #03A66A; color: #fff; }
-.wt-box--warn .wt-icon-chip { background: #C2840A; color: #fff; }
+.wt-box--imp  .wt-icon-chip { background: var(--badge-del-fg); color: #fff; }
+.wt-box--note .wt-icon-chip { background: var(--verified-text); color: #fff; }
+.wt-box--warn .wt-icon-chip { background: var(--caution-text); color: #fff; }
 .wt-box--tip  .wt-icon-chip { background: var(--accent); color: #fff; }
 
 /* ══════════════════════════════════════════════════════════════════
