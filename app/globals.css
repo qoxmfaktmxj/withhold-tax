@@ -1182,60 +1182,33 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
    CALLOUT BLOCKS (.wt-box) — soft card, full border, NO side stripes
 ══════════════════════════════════════════════════════════════════ */
 .wt-box {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: var(--space-lg);
+  border: 0;
+  border-radius: var(--radius-xl);
+  padding: 15px 17px;
   margin: var(--space-lg) 0;
-  position: relative;
-  background: var(--white);
-  box-shadow: var(--shadow-xs);
+  display: flex;
+  gap: 12px;
 }
 
-.wt-box--imp {
-  background: var(--blue-50);
-  border-color: var(--blue-200);
-}
-
-.wt-box--note {
-  background: var(--white);
-  border-color: var(--border);
-}
-
-.wt-box--warn {
-  background: var(--caution-bg);
-  border-color: var(--caution-border);
-}
-
-.wt-box--tip {
-  background: var(--verified-bg);
-  border-color: var(--verified-border);
-}
+.wt-box--imp  { background: var(--badge-del-bg); }
+.wt-box--note { background: var(--verified-bg); }
+.wt-box--warn { background: var(--caution-bg); }
+.wt-box--tip  { background: var(--accent-soft); }
 
 .wt-box-label {
-  font-family: var(--font-display);
-  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--ink);
   margin-bottom: var(--space-sm);
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.wt-box-label::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: currentColor;
-  flex-shrink: 0;
-}
-
-.wt-box--imp  .wt-box-label { color: var(--blue-700); }
-.wt-box--note .wt-box-label { color: var(--gray-600); }
-.wt-box--warn .wt-box-label { color: var(--caution-text); }
-.wt-box--tip  .wt-box-label { color: var(--verified-text); }
+.wt-box--imp  .wt-icon-chip { background: #F04452; color: #fff; }
+.wt-box--note .wt-icon-chip { background: #03A66A; color: #fff; }
+.wt-box--warn .wt-icon-chip { background: #C2840A; color: #fff; }
+.wt-box--tip  .wt-icon-chip { background: var(--accent); color: #fff; }
 
 /* ══════════════════════════════════════════════════════════════════
    TRUST MARKS — citation line
