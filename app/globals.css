@@ -2090,6 +2090,259 @@ h1, h2 { text-wrap: balance; }
   }
 }
 
+/* ══════════════════════════════════════════════════════════════════
+   CALCULATOR COMPONENTS (.wt-calc) — Toss mood
+   입력: 라운드·포커스 블루링  토글: 블루 슬라이드
+   결과카드: white + shadow-md  실수령액 행: accent-soft bg
+   도넛: conic-gradient blue/pale   숫자: tabular-nums
+══════════════════════════════════════════════════════════════════ */
+
+/* ── Wrapper (add class="wt-calc" to top-level div of each calculator) ── */
+.wt-calc {
+  font-family: var(--font-body);
+}
+
+/* ── Field: input / select / textarea inside .wt-calc ── */
+.wt-calc input,
+.wt-calc select,
+.wt-calc textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 13px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  font-variant-numeric: tabular-nums;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.wt-calc input:focus,
+.wt-calc select:focus,
+.wt-calc textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-100);
+}
+
+.wt-calc input:disabled,
+.wt-calc select:disabled {
+  background: var(--stone-50);
+  color: var(--stone-400);
+  cursor: not-allowed;
+}
+
+/* ── select: restore arrow (removed by appearance:none) ── */
+.wt-calc select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238B95A1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 34px;
+}
+
+/* ── Label ── */
+.wt-calc-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--stone-600);
+  margin-bottom: 6px;
+}
+
+/* ── Toggle (checkbox → pill toggle) ── */
+.wt-calc-toggle-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.wt-calc-toggle-wrap input[type="checkbox"] {
+  /* hide native checkbox */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* pill track */
+.wt-calc-toggle-track {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 26px;
+  border-radius: var(--radius-pill);
+  background: var(--stone-300);
+  transition: background 0.18s;
+  flex-shrink: 0;
+}
+
+.wt-calc-toggle-wrap input[type="checkbox"]:checked + .wt-calc-toggle-track {
+  background: var(--accent);
+}
+
+/* handle */
+.wt-calc-toggle-track::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgb(0 0 0 / .18);
+  transition: transform 0.18s;
+}
+
+.wt-calc-toggle-wrap input[type="checkbox"]:checked + .wt-calc-toggle-track::after {
+  transform: translateX(18px);
+}
+
+/* ── Result card ── */
+.wt-calc-result {
+  margin-top: 18px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: 20px 22px;
+  max-width: 860px;
+}
+
+.wt-calc-result h2 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.wt-calc-result table {
+  width: 100%;
+  font-size: 0.88rem;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.wt-calc-result td {
+  padding: 5px 0;
+  vertical-align: baseline;
+}
+
+.wt-calc-result td:last-child {
+  text-align: right;
+}
+
+/* Highlighted "월 실수령액" row */
+.wt-calc-result-highlight {
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  margin: 6px -10px;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wt-calc-result-highlight-label {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.wt-calc-result-highlight-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* ── 공제율 Donut ── */
+.wt-calc-donut-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.wt-calc-donut {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  /* conic-gradient set via inline style (dynamic %) */
+}
+
+.wt-calc-donut::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.wt-calc-donut-label {
+  font-size: 0.78rem;
+  color: var(--stone-600);
+  line-height: 1.5;
+}
+
+.wt-calc-donut-label strong {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* ── 월 실수령액 table row — visually highlighted (semantically still <tr>) ── */
+.wt-calc-result-net-row td {
+  background: var(--accent-soft);
+  padding: 10px 10px !important;
+}
+
+.wt-calc-result-net-row td:first-child {
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.wt-calc-result-net-row td:last-child {
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.wt-calc-result-net-label {
+  font-weight: 700;
+  color: var(--text-primary) !important;
+  font-size: 0.92rem;
+}
+
+.wt-calc-result-net-value {
+  text-align: right;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: var(--accent) !important;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* ── Note / footnote inside result ── */
+.wt-calc-footnote {
+  margin: 12px 0 0;
+  color: var(--stone-500);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
 /* ── 카테고리 컬러 코딩 (챕터·부록 분류) ─────────────────────────── */
 :root {
   --cat-structure-fg:  #4e6e8e;  /* 기본구조·법체계 — slate */
