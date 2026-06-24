@@ -941,17 +941,16 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-citation-card {
-  background: var(--white);
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 20px 22px;
-  box-shadow: var(--shadow-xs);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: 16px 18px;
   transition: box-shadow 0.2s, border-color 0.2s;
 }
 
 .wt-citation-card:hover {
-  box-shadow: var(--shadow-md);
-  border-color: var(--blue-200);
+  box-shadow: var(--shadow-lg);
 }
 
 .wt-citation-card-header {
@@ -983,13 +982,17 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 .wt-citation-card-status--확정 {
   background: var(--verified-bg);
   color: var(--verified-text);
-  border: 1px solid var(--verified-border);
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  padding: 3px 10px;
 }
 
 .wt-citation-card-status--확인필요 {
   background: var(--caution-bg);
   color: var(--caution-text);
-  border: 1px solid var(--caution-border);
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  padding: 3px 10px;
 }
 
 .wt-citation-statement {
@@ -1003,7 +1006,9 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-citation-rate {
-  color: var(--blue-600);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
 }
 
 .wt-citation-card-body {
@@ -1019,8 +1024,8 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 
 .wt-citation-ref {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--gray-500);
+  font-size: 11px;
+  color: var(--text-muted);
   line-height: 1.65;
   padding: 8px 12px;
   background: var(--gray-50);
