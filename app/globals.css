@@ -4,68 +4,62 @@
 @import "tailwindcss";
 
 /* ══════════════════════════════════════════════════════════════════════
-   AIRTABLE EDITORIAL DESIGN SYSTEM
-   (claude.ai design export 270e01f4 — tokens + wt.css 동기화본)
-   Canvas: white · Primary: ink #181d26 · Link: #1b61c9 (≠ primary)
-   Signature surfaces(풀블리드 전용): coral #aa2d00 · forest #0a2e0e ·
-   cream #f5e9d4 · dark navy #181d26
-   Type: Pretendard Variable 단일 서체 — display 400–500, 라벨만 600,
+   TOSS MOOD DESIGN SYSTEM
+   Canvas: pure white #FFFFFF · Primary: Toss Blue #3182F6
+   Link: #1B64DA (AA) · Neutrals: Toss Gray #191F28–#F6F8FA
+   Type: Pretendard Variable 단일 서체 — bold 700 헤딩, 400–600 본문
    숫자·조문은 tnum(tabular numerals)
 ══════════════════════════════════════════════════════════════════════ */
 
-/* ── Color tokens — AIRTABLE EDITORIAL (DESIGN-airtable.md) ────────────
-   Palette: white canvas · dark-ink type #181d26 · near-black primary CTA
-   Voltage: signature surfaces (coral #aa2d00 · forest #0a2e0e · cream
-            #f5e9d4 · dark navy #181d26) — full-bleed cards only,
-            never small accents.
-   Links:   #1b61c9 (link blue ≠ primary).
+/* ── Color tokens — TOSS MOOD (white canvas · Toss Blue · bold sans) ───
+   Palette: pure white canvas · Toss Gray ink · Toss Blue #3182F6 accent
+   Single accent = #3182F6; body link text #1B64DA (AA).
    NOTE: --blue-* / --gray-* / --accent-* / --stone-* names are kept as
-   LEGACY ALIASES so existing components keep working. The accent scale
-   now resolves to INK — "black IS the primary".
+   LEGACY ALIASES so existing components keep working.
 ─────────────────────────────────────────────────────────────────────── */
 :root {
-  /* --- Ink scale (primary = near-black) --- */
-  --accent-900: #0a0e13;
-  --accent-800: #0d1218;   /* primary-active */
-  --accent-700: #11161d;
-  --accent-600: #181d26;   /* PRIMARY — buttons, active nav, display type */
-  --accent-500: #6b7077;
-  --accent-400: #9297a0;   /* border-strong */
-  --accent-300: #c3c7cd;
-  --accent-200: #dddddd;   /* hairline */
-  --accent-100: #eceef0;
-  --accent-50:  #f8fafc;   /* surface-soft */
+  /* --- Toss Blue accent scale --- */
+  --accent-900: #0B3A86;
+  --accent-800: #11489E;
+  --accent-700: #1B64DA;
+  --accent-600: #3182F6;   /* PRIMARY */
+  --accent-500: #5A9CF8;
+  --accent-400: #8FBDFB;
+  --accent-300: #BCD8FD;
+  --accent-200: #DCEBFE;
+  --accent-100: #E8F3FF;
+  --accent-50:  #F1F6FF;
 
-  /* --- Cool ink-tinted neutrals --- */
+  /* --- Toss Gray neutrals --- */
   --stone-950:  #0d1218;
-  --stone-900:  #181d26;   /* ink */
-  --stone-800:  #262b34;
-  --stone-700:  #333840;   /* body */
-  --stone-600:  #41454d;   /* muted */
-  --stone-500:  #6b7077;
-  --stone-400:  #9297a0;
-  --stone-300:  #c3c7cd;
-  --stone-200:  #dddddd;
-  --stone-100:  #eceef0;
-  --stone-50:   #f8fafc;
+  --stone-900:  #191F28;   /* ink */
+  --stone-800:  #283038;
+  --stone-700:  #4E5968;   /* body */
+  --stone-600:  #6B7684;   /* muted */
+  --stone-500:  #8B95A1;
+  --stone-400:  #B0B8C1;
+  --stone-300:  #D1D6DB;
+  --stone-200:  #E5E8EB;
+  --stone-100:  #EDEFF2;
+  --stone-50:   #F6F8FA;
   --white:      #ffffff;
 
-  /* --- Signature surfaces (brand voltage — full-bleed cards only) --- */
-  --sig-coral:   #aa2d00;
-  --sig-forest:  #0a2e0e;
-  --sig-cream:   #f5e9d4;
+  /* --- Signature surfaces (neutralized to blue/neutral) --- */
+  --sig-coral:   #3182F6;
+  --sig-forest:  #03A66A;
+  --sig-cream:   #F1F6FF;
   --sig-peach:   #fcab79;
   --sig-mint:    #a8d8c4;
   --sig-yellow:  #f4d35e;
   --sig-mustard: #d9a441;
-  --surface-dark:          #181d26;
-  --surface-dark-elevated: #1d1f25;
+  --surface-dark:          #191F28;
+  --surface-dark-elevated: #20262E;
 
-  /* --- Links & focus (link blue ≠ primary) --- */
-  --link:        #1b61c9;
-  --link-active: #1a3866;
-  --info:        #254fad;
-  --focus-ring:  #458fff;
+  /* --- Links & focus (Toss Blue) --- */
+  --link:        #1B64DA;
+  --link-active: #11489E;
+  --info:        #1B64DA;
+  --focus-ring:  #3182F6;
 
   /* --- Legacy scale aliases (components reference these) --- */
   --blue-900:   var(--accent-900);
@@ -79,50 +73,51 @@
   --blue-100:   var(--accent-100);
   --blue-50:    var(--accent-50);
   --gray-950:   var(--stone-950);
-  --gray-900:   var(--stone-900);
-  --gray-800:   var(--stone-800);
-  --gray-700:   var(--stone-700);
-  --gray-600:   var(--stone-600);
-  --gray-500:   var(--stone-500);
-  --gray-400:   var(--stone-400);
-  --gray-300:   var(--stone-300);
-  --gray-200:   var(--stone-200);
-  --gray-100:   var(--stone-100);
-  --gray-50:    var(--stone-50);
+  --gray-900:   #191F28;
+  --gray-800:   #283038;
+  --gray-700:   #4E5968;
+  --gray-600:   #6B7684;
+  --gray-500:   #8B95A1;
+  --gray-400:   #B0B8C1;
+  --gray-300:   #D1D6DB;
+  --gray-200:   #E5E8EB;
+  --gray-100:   #EDEFF2;
+  --gray-50:    #F6F8FA;
 
   /* --- Semantic surfaces --- */
   --surface:           var(--white);
-  --surface-subtle:    #ffffff;              /* white canvas — no tinted bg */
-  --surface-sidebar:   #ffffff;              /* white rail + hairline border */
-  --border:            #dddddd;              /* hairline */
-  --border-blue:       #dddddd;              /* sidebar border (legacy name) */
-  --text-primary:      var(--stone-900);
-  --text-secondary:    var(--stone-700);
-  --text-muted:        var(--stone-600);
-  --accent:            var(--accent-600);
-  --accent-hover:      var(--accent-800);
+  --surface-subtle:    #FFFFFF;              /* pure white canvas */
+  --surface-sidebar:   #FFFFFF;              /* white rail */
+  --border:            #EDEFF2;              /* hairline */
+  --border-blue:       #EDEFF2;              /* sidebar border (legacy name) */
+  --text-primary:      #191F28;
+  --text-secondary:    #4E5968;
+  --text-muted:        #8B95A1;
+  --accent:            #3182F6;
+  --accent-hover:      #2272EB;
+  --accent-soft:       #E8F3FF;             /* chips · notices · info callout bg */
 
   /* --- Verify status colors (WCAG AA) --- */
-  --verified-bg:       #eef7ee;
-  --verified-text:     #006400;
-  --verified-border:   #b9e0bd;
-  --caution-bg:        #fdf6e3;
-  --caution-text:      #8a5a0b;
-  --caution-border:    #f0dfa8;
-  --lecture-bg:        var(--stone-100);
-  --lecture-text:      var(--stone-600);
-  --lecture-border:    var(--stone-300);
+  --verified-bg:       #E7F9F1;
+  --verified-text:     #03A66A;
+  --verified-border:   #B6ECD4;
+  --caution-bg:        #FFF6E0;
+  --caution-text:      #C2840A;
+  --caution-border:    #FBE3A6;
+  --lecture-bg:        #F2F4F6;
+  --lecture-text:      #8B95A1;
+  --lecture-border:    #E5E8EB;
 
   /* --- Change badge colors --- */
-  --badge-new-bg:      #eef7ee;
-  --badge-new-fg:      #006400;
-  --badge-new-border:  #b9e0bd;
-  --badge-rev-bg:      #eef3fc;
-  --badge-rev-fg:      #254fad;
-  --badge-rev-border:  #c5d7f5;
-  --badge-del-bg:      #f9e7e0;
-  --badge-del-fg:      #aa2d00;
-  --badge-del-border:  #efc9b9;
+  --badge-new-bg:      #E7F9F1;
+  --badge-new-fg:      #03A66A;
+  --badge-new-border:  #B6ECD4;
+  --badge-rev-bg:      #E8F3FF;
+  --badge-rev-fg:      #1B64DA;
+  --badge-rev-border:  #BCD8FD;
+  --badge-del-bg:      #FFF1EE;
+  --badge-del-fg:      #F04452;
+  --badge-del-border:  #FBD1CB;
   --badge-none-bg:     var(--stone-100);
   --badge-none-fg:     var(--stone-600);
   --badge-none-border: var(--stone-300);
@@ -131,15 +126,15 @@
   --cream:          var(--white);
   --cream-dark:     var(--stone-50);
   --cream-deeper:   var(--stone-100);
-  --ink:            var(--stone-900);
-  --ink-light:      var(--stone-700);
-  --ink-faint:      var(--stone-500);
-  --rule:           var(--stone-200);
-  --rule-heavy:     var(--stone-300);
+  --ink:            #191F28;
+  --ink-light:      #4E5968;
+  --ink-faint:      #8B95A1;
+  --rule:           #E5E8EB;
+  --rule-heavy:     #D1D6DB;
   --label-muted:    var(--stone-600);
-  --oxblood:        var(--sig-coral);
-  --oxblood-lt:     #8f2600;
-  --oxblood-tint:   #fcf0e9;
+  --oxblood:        #1B64DA;
+  --oxblood-lt:     #2272EB;
+  --oxblood-tint:   #E8F3FF;
   --verified:       var(--verified-text);
   --caution:        var(--caution-text);
   --lecture:        var(--stone-500);
@@ -148,20 +143,20 @@
   --color-canvas-soft:     var(--stone-50);
   --color-surface-card:    var(--white);
   --color-surface-warm:    var(--stone-50);
-  --color-surface-warm-strong: #e0e2e6;
+  --color-surface-warm-strong: #D1D6DB;
   --color-navy:            var(--surface-dark);
   --color-navy-elevated:   var(--surface-dark-elevated);
   --color-navy-soft:       var(--stone-700);
-  --color-ink:             var(--stone-900);
-  --color-body-strong:     var(--stone-800);
-  --color-body:            var(--stone-700);
-  --color-muted:           var(--stone-600);
-  --color-muted-soft:      var(--stone-500);
+  --color-ink:             #191F28;
+  --color-body-strong:     #283038;
+  --color-body:            #4E5968;
+  --color-muted:           #6B7684;
+  --color-muted-soft:      #8B95A1;
   --color-on-dark:         var(--white);
   --color-on-dark-soft:    #ced3da;
-  --color-coral:           var(--sig-coral);
-  --color-coral-active:    #8f2600;
-  --color-coral-tint:      #fcf0e9;
+  --color-coral:           #3182F6;
+  --color-coral-active:    #2272EB;
+  --color-coral-tint:      #E8F3FF;
   --color-verified:        var(--verified-text);
   --color-check:           var(--caution-text);
   --color-lecture:         var(--stone-500);
@@ -171,8 +166,8 @@
   --color-badge-rev-fg:    var(--badge-rev-fg);
   --color-badge-del-bg:    var(--badge-del-bg);
   --color-badge-del-fg:    var(--badge-del-fg);
-  --color-hairline:        var(--stone-200);
-  --color-hairline-soft:   var(--stone-100);
+  --color-hairline:        #E5E8EB;
+  --color-hairline-soft:   #EDEFF2;
 }
 
 /* ── Typography tokens ─────────────────────────────────────────────────
