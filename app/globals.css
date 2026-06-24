@@ -1545,10 +1545,10 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-compare-side {
-  background: var(--white);
+  background: #fff;
   padding: var(--space-md) var(--space-lg);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-xs);
 }
 
@@ -1556,17 +1556,19 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   font-family: var(--font-display);
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--gray-400);
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
   letter-spacing: 0.1em;
   align-self: center;
-  padding-top: var(--space-md);
   text-transform: uppercase;
 }
 
-/* Formula — soft tinted code box */
+/* Formula — dark surface preserved */
 .wt-formula {
-  background: var(--gray-900);
-  color: var(--blue-100);
+  background: var(--surface-dark);
+  color: #fff;
   padding: var(--space-lg) var(--space-xl);
   margin: var(--space-lg) 0;
   font-family: var(--font-mono);
@@ -1575,7 +1577,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   white-space: pre;
   overflow-x: auto;
   max-width: 100%;
-  border-radius: var(--radius);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-md);
 }
 
@@ -1589,13 +1591,13 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   color: var(--white);
 }
 
-/* CaseNote — soft card */
+/* CaseNote — white card with accent label */
 .wt-casenote {
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-xl);
   padding: var(--space-md) var(--space-lg);
   margin: var(--space-lg) 0;
-  background: var(--gray-50);
   box-shadow: var(--shadow-xs);
 }
 
@@ -1605,7 +1607,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--gray-500);
+  color: var(--accent);
   margin-bottom: var(--space-sm);
   display: flex;
   align-items: center;
@@ -1617,7 +1619,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--gray-400);
+  background: var(--accent);
   flex-shrink: 0;
 }
 
@@ -1667,9 +1669,9 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-flow-step {
-  background: var(--white);
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-xl);
   padding: 6px 14px;
   font-family: var(--font-body);
   font-size: 0.84rem;
@@ -1679,20 +1681,20 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-flow-arrow {
-  color: var(--gray-400);
+  color: var(--accent);
   font-size: 0.9rem;
   font-weight: 700;
   font-family: var(--font-mono);
   padding: 0 8px;
 }
 
-/* CheatCard — dark blue band */
+/* CheatCard — dark surface with accent highlights */
 .wt-cheatcard {
-  background: var(--gray-900);
+  background: var(--surface-dark);
   color: var(--white);
   padding: var(--space-xl);
   margin: var(--space-lg) 0;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
 }
 
@@ -1707,13 +1709,17 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   color: var(--blue-100);
 }
 
+.wt-cheatcard .label {
+  color: var(--accent);
+}
+
 /* Navy band */
 .wt-navy-band {
-  background: var(--gray-900);
+  background: var(--surface-dark);
   color: var(--white);
   padding: var(--space-xl) var(--space-xxl);
   margin: var(--space-xl) 0;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
 }
 
