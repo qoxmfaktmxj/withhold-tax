@@ -872,72 +872,61 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 .wt-notice-block {
   display: flex;
   align-items: center;
-  gap: 20px;
-  background: var(--sig-cream);
-  border: 1px solid #e8d9bd;
-  border-radius: var(--radius);
-  padding: 16px 20px;
+  gap: 14px;
+  background: var(--accent-soft);
+  border: 0;
+  border-radius: var(--radius-xl);
+  padding: 16px 18px;
   margin: var(--space-lg) 0 var(--space-xl);
-  box-shadow: var(--shadow-sm);
   animation: fadeUp 0.5s ease 0.15s both;
 }
 
 .wt-notice-inner {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   flex: 1;
   flex-wrap: wrap;
   min-width: 0;
 }
 
 .wt-notice-label {
-  font-family: var(--font-display);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--sig-coral);
+  background: #fff;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 4px 9px;
   white-space: nowrap;
   flex-shrink: 0;
-  background: var(--white);
-  border: 1px solid #e8d9bd;
-  border-radius: var(--radius-xs);
-  padding: 2px 8px;
 }
 
 .wt-notice-text {
   font-family: var(--font-body);
-  font-size: 0.88rem;
-  color: var(--text-primary);
-  font-weight: 500;
+  font-size: 13px;
+  color: var(--text-secondary);
   line-height: 1.4;
 }
 
 .wt-notice-link {
   font-family: var(--font-body);
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--blue-600);
+  font-size: 13px;
+  font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 8px 16px;
-  background: var(--blue-600);
-  color: white;
-  border-radius: var(--radius-sm);
-  box-shadow: 0 1px 2px rgb(24 29 38 / .25);
-  transition: background 0.15s, box-shadow 0.15s, transform 0.12s;
-  letter-spacing: 0.01em;
+  padding: 9px 15px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  transition: background 0.15s;
 }
 
 .wt-notice-link:hover {
-  background: var(--blue-800);
-  box-shadow: 0 4px 12px rgb(24 29 38 / .3);
-  transform: translateY(-1px);
+  background: var(--accent-hover);
 }
 
 /* ══════════════════════════════════════════════════════════════════
