@@ -5,24 +5,6 @@ import { evaluateBusinessIncomePayment, type BusinessIncomeClassification } from
 
 const KRW = (n: number) => n.toLocaleString('ko-KR') + '원'
 
-const field: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '9px 12px',
-  border: '1px solid var(--border)',
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--white)',
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.9rem',
-  color: 'var(--text-primary)',
-}
-const label: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  color: 'var(--gray-600)',
-  marginBottom: 6,
-}
 
 export function BusinessIncomeCalculator() {
   const [gross, setGross] = useState('1000000')
@@ -46,18 +28,17 @@ export function BusinessIncomeCalculator() {
     <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14, maxWidth: 640 }}>
         <div>
-          <label htmlFor="bc-gross" style={label}>지급 총액(인적용역 사업소득)</label>
-          <input id="bc-gross" style={field} inputMode="numeric" value={gross} onChange={(e) => setGross(e.target.value)} />
+          <label htmlFor="bc-gross" className="wt-calc-label">지급 총액(인적용역 사업소득)</label>
+          <input id="bc-gross" inputMode="numeric" value={gross} onChange={(e) => setGross(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="bc-date" style={label}>지급일</label>
-          <input id="bc-date" style={field} type="date" value={payDate} onChange={(e) => setPayDate(e.target.value)} />
+          <label htmlFor="bc-date" className="wt-calc-label">지급일</label>
+          <input id="bc-date" type="date" value={payDate} onChange={(e) => setPayDate(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="bc-class" style={label}>소득 분류</label>
+          <label htmlFor="bc-class" className="wt-calc-label">소득 분류</label>
           <select
             id="bc-class"
-            style={field}
             value={incomeClass}
             onChange={(e) => setIncomeClass(e.target.value as BusinessIncomeClassification)}
           >

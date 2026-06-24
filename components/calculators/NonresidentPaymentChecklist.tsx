@@ -7,24 +7,6 @@ import {
   type NonresidentPayeeType,
 } from '@/lib/nonresident-payment/checklist'
 
-const field: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '9px 12px',
-  border: '1px solid var(--border)',
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--white)',
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.9rem',
-  color: 'var(--text-primary)',
-}
-const label: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  color: 'var(--gray-600)',
-  marginBottom: 6,
-}
 const rateModeLabel = {
   domestic_law: '국내법 세율 적용',
   domestic_law_required: '국내법 세율 적용 필요',
@@ -75,15 +57,15 @@ export function NonresidentPaymentChecklist() {
     <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14, maxWidth: 860 }}>
         <div>
-          <label htmlFor="nr-payee-type" style={label}>대상자 유형</label>
-          <select id="nr-payee-type" style={field} value={payeeType} onChange={(e) => setPayeeType(e.target.value as NonresidentPayeeType)}>
+          <label htmlFor="nr-payee-type" className="wt-calc-label">대상자 유형</label>
+          <select id="nr-payee-type" value={payeeType} onChange={(e) => setPayeeType(e.target.value as NonresidentPayeeType)}>
             <option value="individual">비거주자(개인)</option>
             <option value="foreign_corporation">외국법인</option>
           </select>
         </div>
         <div>
-          <label htmlFor="nr-income-type" style={label}>소득 유형</label>
-          <select id="nr-income-type" style={field} value={incomeType} onChange={(e) => setIncomeType(e.target.value as NonresidentIncomeType)}>
+          <label htmlFor="nr-income-type" className="wt-calc-label">소득 유형</label>
+          <select id="nr-income-type" value={incomeType} onChange={(e) => setIncomeType(e.target.value as NonresidentIncomeType)}>
             <option value="interest">이자</option>
             <option value="dividend">배당</option>
             <option value="business">사업</option>
@@ -93,8 +75,8 @@ export function NonresidentPaymentChecklist() {
           </select>
         </div>
         <div>
-          <label htmlFor="nr-payment-date" style={label}>지급일</label>
-          <input id="nr-payment-date" style={field} type="date" value={paymentDate} onChange={(e) => setPaymentDate(e.target.value)} />
+          <label htmlFor="nr-payment-date" className="wt-calc-label">지급일</label>
+          <input id="nr-payment-date" type="date" value={paymentDate} onChange={(e) => setPaymentDate(e.target.value)} />
         </div>
         <label
           htmlFor="nr-treaty"
@@ -104,21 +86,19 @@ export function NonresidentPaymentChecklist() {
           조세조약 적용
         </label>
         <div>
-          <label htmlFor="nr-treaty-form-date" style={label}>제한세율 신청서 수령일</label>
+          <label htmlFor="nr-treaty-form-date" className="wt-calc-label">제한세율 신청서 수령일</label>
           <input
             id="nr-treaty-form-date"
-            style={field}
-            type="date"
+                       type="date"
             value={treatyApplicationFormDate}
             onChange={(e) => setTreatyApplicationFormDate(e.target.value)}
           />
         </div>
         <div>
-          <label htmlFor="nr-residence-cert-date" style={label}>거주자증명서 수령일</label>
+          <label htmlFor="nr-residence-cert-date" className="wt-calc-label">거주자증명서 수령일</label>
           <input
             id="nr-residence-cert-date"
-            style={field}
-            type="date"
+                       type="date"
             value={residenceCertificateDate}
             onChange={(e) => setResidenceCertificateDate(e.target.value)}
           />
@@ -136,8 +116,8 @@ export function NonresidentPaymentChecklist() {
           실질귀속자 확인 완료
         </label>
         <div>
-          <label htmlFor="nr-tax-office-date" style={label}>세무서 제출일</label>
-          <input id="nr-tax-office-date" style={field} type="date" value={taxOfficeFilingDate} onChange={(e) => setTaxOfficeFilingDate(e.target.value)} />
+          <label htmlFor="nr-tax-office-date" className="wt-calc-label">세무서 제출일</label>
+          <input id="nr-tax-office-date" type="date" value={taxOfficeFilingDate} onChange={(e) => setTaxOfficeFilingDate(e.target.value)} />
         </div>
       </div>
 

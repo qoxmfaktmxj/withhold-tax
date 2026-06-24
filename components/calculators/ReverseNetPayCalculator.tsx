@@ -5,25 +5,6 @@ import { calculateReverseNetPay, TAX_YEAR } from '@/lib/reverse-net-pay/calc'
 
 const KRW = (n: number) => n.toLocaleString('ko-KR') + '원'
 
-const field: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '9px 12px',
-  border: '1px solid var(--border)',
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--white)',
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.9rem',
-  color: 'var(--text-primary)',
-}
-
-const label: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  color: 'var(--gray-600)',
-  marginBottom: 6,
-}
 
 function won(value: string): number {
   return Number(value.replace(/[^0-9]/g, '')) || 0
@@ -50,16 +31,16 @@ export function ReverseNetPayCalculator() {
     <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 840 }}>
         <div>
-          <label htmlFor="rnp-target" style={label}>희망 월 실수령액</label>
-          <input id="rnp-target" style={field} inputMode="numeric" value={targetNetMonthlyPay} onChange={(e) => setTargetNetMonthlyPay(e.target.value)} />
+          <label htmlFor="rnp-target" className="wt-calc-label">희망 월 실수령액</label>
+          <input id="rnp-target" inputMode="numeric" value={targetNetMonthlyPay} onChange={(e) => setTargetNetMonthlyPay(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="rnp-dependents" style={label}>부양가족 수(본인 포함)</label>
-          <input id="rnp-dependents" style={field} inputMode="numeric" value={dependents} onChange={(e) => setDependents(e.target.value)} />
+          <label htmlFor="rnp-dependents" className="wt-calc-label">부양가족 수(본인 포함)</label>
+          <input id="rnp-dependents" inputMode="numeric" value={dependents} onChange={(e) => setDependents(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="rnp-nontaxable" style={label}>월 비과세 합계</label>
-          <input id="rnp-nontaxable" style={field} inputMode="numeric" value={nonTaxableMonthlyPay} onChange={(e) => setNonTaxableMonthlyPay(e.target.value)} />
+          <label htmlFor="rnp-nontaxable" className="wt-calc-label">월 비과세 합계</label>
+          <input id="rnp-nontaxable" inputMode="numeric" value={nonTaxableMonthlyPay} onChange={(e) => setNonTaxableMonthlyPay(e.target.value)} />
         </div>
       </div>
 

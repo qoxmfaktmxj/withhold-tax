@@ -5,25 +5,6 @@ import { checkMonthlyWithholding, type MonthlyWithholdingStatus } from '@/lib/mo
 
 const KRW = (n: number) => n.toLocaleString('ko-KR') + '원'
 
-const field: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '9px 12px',
-  border: '1px solid var(--border)',
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--white)',
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.9rem',
-  color: 'var(--text-primary)',
-}
-
-const label: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  color: 'var(--gray-600)',
-  marginBottom: 6,
-}
 
 function won(value: string): number {
   return Number(value.replace(/[^0-9]/g, '')) || 0
@@ -70,36 +51,36 @@ export function MonthlyWithholdingChecker() {
     <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 840 }}>
         <div>
-          <label htmlFor="mw-pay" style={label}>월 과세급여</label>
-          <input id="mw-pay" style={field} inputMode="numeric" value={taxableMonthlyPay} onChange={(e) => setTaxableMonthlyPay(e.target.value)} />
+          <label htmlFor="mw-pay" className="wt-calc-label">월 과세급여</label>
+          <input id="mw-pay" inputMode="numeric" value={taxableMonthlyPay} onChange={(e) => setTaxableMonthlyPay(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="mw-family" style={label}>공제대상 가족 수</label>
-          <input id="mw-family" style={field} inputMode="numeric" value={familyCount} onChange={(e) => setFamilyCount(e.target.value)} />
+          <label htmlFor="mw-family" className="wt-calc-label">공제대상 가족 수</label>
+          <input id="mw-family" inputMode="numeric" value={familyCount} onChange={(e) => setFamilyCount(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="mw-child" style={label}>8~20세 자녀 수</label>
-          <input id="mw-child" style={field} inputMode="numeric" value={childCount8To20} onChange={(e) => setChildCount8To20(e.target.value)} />
+          <label htmlFor="mw-child" className="wt-calc-label">8~20세 자녀 수</label>
+          <input id="mw-child" inputMode="numeric" value={childCount8To20} onChange={(e) => setChildCount8To20(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="mw-official-tax" style={label}>간이세액표 소득세</label>
-          <input id="mw-official-tax" style={field} inputMode="numeric" value={officialSimpleTax} onChange={(e) => setOfficialSimpleTax(e.target.value)} />
+          <label htmlFor="mw-official-tax" className="wt-calc-label">간이세액표 소득세</label>
+          <input id="mw-official-tax" inputMode="numeric" value={officialSimpleTax} onChange={(e) => setOfficialSimpleTax(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="mw-rate" style={label}>선택 원천징수비율</label>
-          <select id="mw-rate" style={field} value={withholdingRatePercent} onChange={(e) => setWithholdingRatePercent(e.target.value as '80' | '100' | '120')}>
+          <label htmlFor="mw-rate" className="wt-calc-label">선택 원천징수비율</label>
+          <select id="mw-rate" value={withholdingRatePercent} onChange={(e) => setWithholdingRatePercent(e.target.value as '80' | '100' | '120')}>
             <option value="80">80%</option>
             <option value="100">100%</option>
             <option value="120">120%</option>
           </select>
         </div>
         <div>
-          <label htmlFor="mw-actual-national" style={label}>회사 원천징수 소득세</label>
-          <input id="mw-actual-national" style={field} inputMode="numeric" value={actualNationalTax} onChange={(e) => setActualNationalTax(e.target.value)} />
+          <label htmlFor="mw-actual-national" className="wt-calc-label">회사 원천징수 소득세</label>
+          <input id="mw-actual-national" inputMode="numeric" value={actualNationalTax} onChange={(e) => setActualNationalTax(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="mw-actual-local" style={label}>회사 원천징수 지방소득세</label>
-          <input id="mw-actual-local" style={field} inputMode="numeric" value={actualLocalTax} onChange={(e) => setActualLocalTax(e.target.value)} />
+          <label htmlFor="mw-actual-local" className="wt-calc-label">회사 원천징수 지방소득세</label>
+          <input id="mw-actual-local" inputMode="numeric" value={actualLocalTax} onChange={(e) => setActualLocalTax(e.target.value)} />
         </div>
       </div>
 

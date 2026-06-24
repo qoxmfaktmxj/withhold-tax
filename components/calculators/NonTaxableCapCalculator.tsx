@@ -7,24 +7,6 @@ import { applyMonthlyCapRule, loadRules } from '@/lib/rules/engine'
 const RULES = loadRules(nonTaxableRulesRaw).filter((rule) => rule.formula.type === 'monthly-cap')
 const KRW = (n: number) => n.toLocaleString('ko-KR') + '원'
 
-const field: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '9px 12px',
-  border: '1px solid var(--border)',
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--white)',
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.9rem',
-  color: 'var(--text-primary)',
-}
-const label: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  color: 'var(--gray-600)',
-  marginBottom: 6,
-}
 
 export function NonTaxableCapCalculator() {
   const [ruleId, setRuleId] = useState('meal_allowance_cap')
@@ -51,8 +33,8 @@ export function NonTaxableCapCalculator() {
     <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14, maxWidth: 760 }}>
         <div>
-          <label htmlFor="nt-rule" style={label}>급여 항목</label>
-          <select id="nt-rule" style={field} value={ruleId} onChange={(e) => setRuleId(e.target.value)}>
+          <label htmlFor="nt-rule" className="wt-calc-label">급여 항목</label>
+          <select id="nt-rule" value={ruleId} onChange={(e) => setRuleId(e.target.value)}>
             {RULES.map((item) => (
               <option key={item.ruleId} value={item.ruleId}>
                 {item.name}
@@ -61,32 +43,29 @@ export function NonTaxableCapCalculator() {
           </select>
         </div>
         <div>
-          <label htmlFor="nt-amount" style={label}>월 지급액</label>
+          <label htmlFor="nt-amount" className="wt-calc-label">월 지급액</label>
           <input
             id="nt-amount"
-            style={field}
-            inputMode="numeric"
+                       inputMode="numeric"
             value={monthlyAmount}
             onChange={(e) => setMonthlyAmount(e.target.value)}
           />
         </div>
         <div>
-          <label htmlFor="nt-months" style={label}>적용 개월 수</label>
+          <label htmlFor="nt-months" className="wt-calc-label">적용 개월 수</label>
           <input
             id="nt-months"
-            style={field}
-            inputMode="numeric"
+                       inputMode="numeric"
             value={months}
             onChange={(e) => setMonths(e.target.value)}
           />
         </div>
         {needsChildren && (
           <div>
-            <label htmlFor="nt-children" style={label}>6세 이하 자녀 수</label>
+            <label htmlFor="nt-children" className="wt-calc-label">6세 이하 자녀 수</label>
             <input
               id="nt-children"
-              style={field}
-              inputMode="numeric"
+                           inputMode="numeric"
               value={childrenUnder6}
               onChange={(e) => setChildrenUnder6(e.target.value)}
             />

@@ -15,24 +15,6 @@ const RULE = pickRule(loadRules(penaltyRulesRaw), 'payment_statement_penalty', '
 const KRW = (value: number) => `${value.toLocaleString('ko-KR')}원`
 const PERCENT = (value: number) => `${(value * 100).toLocaleString('ko-KR', { maximumFractionDigits: 3 })}%`
 
-const field: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '9px 12px',
-  border: '1px solid var(--border)',
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--white)',
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.9rem',
-  color: 'var(--text-primary)',
-}
-const label: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  color: 'var(--gray-600)',
-  marginBottom: 6,
-}
 
 export function StatementPenaltyCalculator() {
   const [amount, setAmount] = useState(10_000_000)
@@ -48,11 +30,10 @@ export function StatementPenaltyCalculator() {
     <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 840 }}>
         <div>
-          <label htmlFor="statement-amount" style={label}>미제출·지연제출 지급금액</label>
+          <label htmlFor="statement-amount" className="wt-calc-label">미제출·지연제출 지급금액</label>
           <input
             id="statement-amount"
-            style={field}
-            type="number"
+                       type="number"
             min={0}
             step={1}
             value={amount}
@@ -60,11 +41,10 @@ export function StatementPenaltyCalculator() {
           />
         </div>
         <div>
-          <label htmlFor="statement-type" style={label}>명세서 유형</label>
+          <label htmlFor="statement-type" className="wt-calc-label">명세서 유형</label>
           <select
             id="statement-type"
-            style={field}
-            value={statementType}
+                       value={statementType}
             onChange={(event) => setStatementType(event.target.value as PaymentStatementType)}
           >
             <option value="annual">지급명세서(연)</option>
@@ -72,11 +52,10 @@ export function StatementPenaltyCalculator() {
           </select>
         </div>
         <div>
-          <label htmlFor="submission-status" style={label}>제출 상태</label>
+          <label htmlFor="submission-status" className="wt-calc-label">제출 상태</label>
           <select
             id="submission-status"
-            style={field}
-            value={submissionStatus}
+                       value={submissionStatus}
             onChange={(event) => setSubmissionStatus(event.target.value as PaymentStatementSubmissionStatus)}
           >
             <option value="missing">미제출</option>
@@ -84,11 +63,10 @@ export function StatementPenaltyCalculator() {
           </select>
         </div>
         <div>
-          <label htmlFor="company-size" style={label}>기업 구분</label>
+          <label htmlFor="company-size" className="wt-calc-label">기업 구분</label>
           <select
             id="company-size"
-            style={field}
-            value={companySize}
+                       value={companySize}
             onChange={(event) => setCompanySize(event.target.value as CompanySize)}
           >
             <option value="general">일반기업</option>

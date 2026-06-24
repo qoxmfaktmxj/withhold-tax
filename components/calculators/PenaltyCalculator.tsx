@@ -13,24 +13,6 @@ function daysBetween(a: string, b: string): number {
   return Math.max(0, Math.round(ms / 86_400_000))
 }
 
-const field: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '9px 12px',
-  border: '1px solid var(--border)',
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--white)',
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.9rem',
-  color: 'var(--text-primary)',
-}
-const label: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  color: 'var(--gray-600)',
-  marginBottom: 6,
-}
 
 export function PenaltyCalculator() {
   const [unpaid, setUnpaid] = useState('1000000')
@@ -71,23 +53,22 @@ export function PenaltyCalculator() {
     <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14, maxWidth: 640 }}>
         <div>
-          <label htmlFor="pc-unpaid" style={label}>미납·과소납부 세액(원천세 본세)</label>
-          <input id="pc-unpaid" style={field} inputMode="numeric" value={unpaid} onChange={(e) => setUnpaid(e.target.value)} />
+          <label htmlFor="pc-unpaid" className="wt-calc-label">미납·과소납부 세액(원천세 본세)</label>
+          <input id="pc-unpaid" inputMode="numeric" value={unpaid} onChange={(e) => setUnpaid(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="pc-due" style={label}>법정납부기한</label>
-          <input id="pc-due" style={field} type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
+          <label htmlFor="pc-due" className="wt-calc-label">법정납부기한</label>
+          <input id="pc-due" type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="pc-pay" style={label}>실제 납부(예정)일</label>
-          <input id="pc-pay" style={field} type="date" value={payDate} onChange={(e) => setPayDate(e.target.value)} />
+          <label htmlFor="pc-pay" className="wt-calc-label">실제 납부(예정)일</label>
+          <input id="pc-pay" type="date" value={payDate} onChange={(e) => setPayDate(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="pc-notice" style={label}>고지 전/후 여부</label>
+          <label htmlFor="pc-notice" className="wt-calc-label">고지 전/후 여부</label>
           <select
             id="pc-notice"
-            style={field}
-            value={noticeStatus}
+                       value={noticeStatus}
             onChange={(e) => setNoticeStatus(e.target.value as NoticeStatus)}
           >
             <option value="before_notice">고지 전 자진납부</option>
@@ -101,31 +82,28 @@ export function PenaltyCalculator() {
           style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14, maxWidth: 640, marginTop: 14 }}
         >
           <div>
-            <label htmlFor="pc-notice-date" style={label}>납부고지일</label>
+            <label htmlFor="pc-notice-date" className="wt-calc-label">납부고지일</label>
             <input
               id="pc-notice-date"
-              style={field}
-              type="date"
+                           type="date"
               value={noticeDate}
               onChange={(e) => setNoticeDate(e.target.value)}
             />
           </div>
           <div>
-            <label htmlFor="pc-designated-due" style={label}>지정납부기한</label>
+            <label htmlFor="pc-designated-due" className="wt-calc-label">지정납부기한</label>
             <input
               id="pc-designated-due"
-              style={field}
-              type="date"
+                           type="date"
               value={designatedDueDate}
               onChange={(e) => setDesignatedDueDate(e.target.value)}
             />
           </div>
           <div>
-            <label htmlFor="pc-demand-cost" style={label}>독촉비용</label>
+            <label htmlFor="pc-demand-cost" className="wt-calc-label">독촉비용</label>
             <input
               id="pc-demand-cost"
-              style={field}
-              inputMode="numeric"
+                           inputMode="numeric"
               value={demandCost}
               onChange={(e) => setDemandCost(e.target.value)}
             />

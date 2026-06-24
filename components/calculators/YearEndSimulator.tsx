@@ -5,25 +5,6 @@ import { simulateYearEndSettlement } from '@/lib/year-end/simulate'
 
 const KRW = (n: number) => n.toLocaleString('ko-KR') + '원'
 
-const field: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '9px 12px',
-  border: '1px solid var(--border)',
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--white)',
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.9rem',
-  color: 'var(--text-primary)',
-}
-
-const label: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  color: 'var(--gray-600)',
-  marginBottom: 6,
-}
 
 function parseWon(value: string): number {
   return Number(value.replace(/[^0-9]/g, '')) || 0
@@ -59,28 +40,28 @@ export function YearEndSimulator() {
     <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 860 }}>
         <div>
-          <label htmlFor="year-end-gross" style={label}>총급여</label>
-          <input id="year-end-gross" style={field} inputMode="numeric" value={grossAnnualPay} onChange={(event) => setGrossAnnualPay(event.target.value)} />
+          <label htmlFor="year-end-gross" className="wt-calc-label">총급여</label>
+          <input id="year-end-gross" inputMode="numeric" value={grossAnnualPay} onChange={(event) => setGrossAnnualPay(event.target.value)} />
         </div>
         <div>
-          <label htmlFor="year-end-prepaid" style={label}>기납부세액</label>
-          <input id="year-end-prepaid" style={field} inputMode="numeric" value={prepaidTax} onChange={(event) => setPrepaidTax(event.target.value)} />
+          <label htmlFor="year-end-prepaid" className="wt-calc-label">기납부세액</label>
+          <input id="year-end-prepaid" inputMode="numeric" value={prepaidTax} onChange={(event) => setPrepaidTax(event.target.value)} />
         </div>
         <div>
-          <label htmlFor="year-end-dependents" style={label}>인적공제 인원(본인 외)</label>
-          <input id="year-end-dependents" style={field} inputMode="numeric" value={additionalDependents} onChange={(event) => setAdditionalDependents(event.target.value)} />
+          <label htmlFor="year-end-dependents" className="wt-calc-label">인적공제 인원(본인 외)</label>
+          <input id="year-end-dependents" inputMode="numeric" value={additionalDependents} onChange={(event) => setAdditionalDependents(event.target.value)} />
         </div>
         <div>
-          <label htmlFor="year-end-children" style={label}>자녀 수</label>
-          <input id="year-end-children" style={field} inputMode="numeric" value={children} onChange={(event) => setChildren(event.target.value)} />
+          <label htmlFor="year-end-children" className="wt-calc-label">자녀 수</label>
+          <input id="year-end-children" inputMode="numeric" value={children} onChange={(event) => setChildren(event.target.value)} />
         </div>
         <div>
-          <label htmlFor="year-end-pension" style={label}>연금보험료</label>
-          <input id="year-end-pension" style={field} inputMode="numeric" value={pensionContribution} onChange={(event) => setPensionContribution(event.target.value)} />
+          <label htmlFor="year-end-pension" className="wt-calc-label">연금보험료</label>
+          <input id="year-end-pension" inputMode="numeric" value={pensionContribution} onChange={(event) => setPensionContribution(event.target.value)} />
         </div>
         <div>
-          <label htmlFor="year-end-deductions" style={label}>직접입력 공제 합계</label>
-          <input id="year-end-deductions" style={field} inputMode="numeric" value={deductionTotal} onChange={(event) => setDeductionTotal(event.target.value)} />
+          <label htmlFor="year-end-deductions" className="wt-calc-label">직접입력 공제 합계</label>
+          <input id="year-end-deductions" inputMode="numeric" value={deductionTotal} onChange={(event) => setDeductionTotal(event.target.value)} />
         </div>
       </div>
 

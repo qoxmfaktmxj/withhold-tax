@@ -5,25 +5,6 @@ import { calculateExecutiveSeveranceLimit } from '@/lib/executive-severance/chec
 
 const KRW = (n: number) => n.toLocaleString('ko-KR') + '원'
 
-const field: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '9px 12px',
-  border: '1px solid var(--border)',
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--white)',
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.9rem',
-  color: 'var(--text-primary)',
-}
-
-const label: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  color: 'var(--gray-600)',
-  marginBottom: 6,
-}
 
 function won(value: string): number {
   return Number(value.replace(/[^0-9]/g, '')) || 0
@@ -52,24 +33,24 @@ export function ExecutiveSeveranceLimitCalculator() {
     <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 840 }}>
         <div>
-          <label htmlFor="esl-total" style={label}>퇴직금 총액</label>
-          <input id="esl-total" style={field} inputMode="numeric" value={totalSeverance} onChange={(e) => setTotalSeverance(e.target.value)} />
+          <label htmlFor="esl-total" className="wt-calc-label">퇴직금 총액</label>
+          <input id="esl-total" inputMode="numeric" value={totalSeverance} onChange={(e) => setTotalSeverance(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="esl-join" style={label}>입사일(임원 취임일)</label>
-          <input id="esl-join" style={field} type="date" value={joinDate} onChange={(e) => setJoinDate(e.target.value)} />
+          <label htmlFor="esl-join" className="wt-calc-label">입사일(임원 취임일)</label>
+          <input id="esl-join" type="date" value={joinDate} onChange={(e) => setJoinDate(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="esl-retire" style={label}>퇴직일</label>
-          <input id="esl-retire" style={field} type="date" value={retireDate} onChange={(e) => setRetireDate(e.target.value)} />
+          <label htmlFor="esl-retire" className="wt-calc-label">퇴직일</label>
+          <input id="esl-retire" type="date" value={retireDate} onChange={(e) => setRetireDate(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="esl-avg3" style={label}>2019.12.31 이전 3년 연평균환산액</label>
-          <input id="esl-avg3" style={field} inputMode="numeric" value={avgAnnualSalary3x} onChange={(e) => setAvgAnnualSalary3x(e.target.value)} />
+          <label htmlFor="esl-avg3" className="wt-calc-label">2019.12.31 이전 3년 연평균환산액</label>
+          <input id="esl-avg3" inputMode="numeric" value={avgAnnualSalary3x} onChange={(e) => setAvgAnnualSalary3x(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="esl-avg2" style={label}>퇴직일 직전 3년 연평균환산액</label>
-          <input id="esl-avg2" style={field} inputMode="numeric" value={avgAnnualSalary2x} onChange={(e) => setAvgAnnualSalary2x(e.target.value)} />
+          <label htmlFor="esl-avg2" className="wt-calc-label">퇴직일 직전 3년 연평균환산액</label>
+          <input id="esl-avg2" inputMode="numeric" value={avgAnnualSalary2x} onChange={(e) => setAvgAnnualSalary2x(e.target.value)} />
         </div>
       </div>
 

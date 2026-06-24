@@ -6,24 +6,6 @@ import { calculateDeadline, loadRules } from '@/lib/rules/engine'
 
 const RULES = loadRules(deadlinesRaw).filter((rule) => rule.formula.type === 'date-rule')
 
-const field: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '9px 12px',
-  border: '1px solid var(--border)',
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--white)',
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.9rem',
-  color: 'var(--text-primary)',
-}
-const label: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  color: 'var(--gray-600)',
-  marginBottom: 6,
-}
 
 export function FilingDeadlineCalculator() {
   const [ruleId, setRuleId] = useState('monthly_wht_filing')
@@ -35,8 +17,8 @@ export function FilingDeadlineCalculator() {
     <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14, maxWidth: 760 }}>
         <div>
-          <label htmlFor="deadline-rule" style={label}>신고·제출 유형</label>
-          <select id="deadline-rule" style={field} value={ruleId} onChange={(e) => setRuleId(e.target.value)}>
+          <label htmlFor="deadline-rule" className="wt-calc-label">신고·제출 유형</label>
+          <select id="deadline-rule" value={ruleId} onChange={(e) => setRuleId(e.target.value)}>
             {RULES.map((item) => (
               <option key={item.ruleId} value={item.ruleId}>
                 {item.name}
@@ -45,11 +27,10 @@ export function FilingDeadlineCalculator() {
           </select>
         </div>
         <div>
-          <label htmlFor="deadline-payment-date" style={label}>지급일</label>
+          <label htmlFor="deadline-payment-date" className="wt-calc-label">지급일</label>
           <input
             id="deadline-payment-date"
-            style={field}
-            type="date"
+                       type="date"
             value={paymentDate}
             onChange={(e) => setPaymentDate(e.target.value)}
           />

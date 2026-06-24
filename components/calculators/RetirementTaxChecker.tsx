@@ -5,25 +5,6 @@ import { checkRetirementTax, type RetirementTaxStatus } from '@/lib/retirement-t
 
 const KRW = (n: number) => n.toLocaleString('ko-KR') + '원'
 
-const field: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '9px 12px',
-  border: '1px solid var(--border)',
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--white)',
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.9rem',
-  color: 'var(--text-primary)',
-}
-
-const label: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  color: 'var(--gray-600)',
-  marginBottom: 6,
-}
 
 function parseWon(value: string): number {
   return Number(value.replace(/[^0-9]/g, '')) || 0
@@ -56,20 +37,20 @@ export function RetirementTaxChecker() {
     <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 820 }}>
         <div>
-          <label htmlFor="retire-pay" style={label}>퇴직급여</label>
-          <input id="retire-pay" style={field} inputMode="numeric" value={retirementPay} onChange={(e) => setRetirementPay(e.target.value)} />
+          <label htmlFor="retire-pay" className="wt-calc-label">퇴직급여</label>
+          <input id="retire-pay" inputMode="numeric" value={retirementPay} onChange={(e) => setRetirementPay(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="retire-official-tax" style={label}>공식 산출 퇴직소득세</label>
-          <input id="retire-official-tax" style={field} inputMode="numeric" value={officialRetirementIncomeTax} onChange={(e) => setOfficialRetirementIncomeTax(e.target.value)} />
+          <label htmlFor="retire-official-tax" className="wt-calc-label">공식 산출 퇴직소득세</label>
+          <input id="retire-official-tax" inputMode="numeric" value={officialRetirementIncomeTax} onChange={(e) => setOfficialRetirementIncomeTax(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="retire-actual-national" style={label}>실제 원천징수 소득세</label>
-          <input id="retire-actual-national" style={field} inputMode="numeric" value={actualNationalTax} onChange={(e) => setActualNationalTax(e.target.value)} />
+          <label htmlFor="retire-actual-national" className="wt-calc-label">실제 원천징수 소득세</label>
+          <input id="retire-actual-national" inputMode="numeric" value={actualNationalTax} onChange={(e) => setActualNationalTax(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="retire-actual-local" style={label}>실제 원천징수 지방소득세</label>
-          <input id="retire-actual-local" style={field} inputMode="numeric" value={actualLocalTax} onChange={(e) => setActualLocalTax(e.target.value)} />
+          <label htmlFor="retire-actual-local" className="wt-calc-label">실제 원천징수 지방소득세</label>
+          <input id="retire-actual-local" inputMode="numeric" value={actualLocalTax} onChange={(e) => setActualLocalTax(e.target.value)} />
         </div>
       </div>
 
