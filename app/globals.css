@@ -48,10 +48,10 @@
   --sig-coral:   #3182F6;
   --sig-forest:  #03A66A;
   --sig-cream:   #F1F6FF;
-  --sig-peach:   #fcab79;
-  --sig-mint:    #a8d8c4;
-  --sig-yellow:  #f4d35e;
-  --sig-mustard: #d9a441;
+  --sig-peach:   var(--accent-soft);
+  --sig-mint:    var(--accent-soft);
+  --sig-yellow:  var(--accent-soft);
+  --sig-mustard: var(--accent-soft);
   --surface-dark:          #191F28;
   --surface-dark-elevated: #20262E;
 
@@ -1107,7 +1107,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 
 .wt-chapter-card--active {
   border-color: var(--blue-300);
-  box-shadow: 0 0 0 3px rgb(24 29 38 / .08);
+  box-shadow: 0 0 0 3px rgb(20 30 50 / .08);
 }
 
 .wt-chapter-number {
@@ -1795,7 +1795,7 @@ a:hover { text-decoration-color: currentColor; }
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
-  box-shadow: 0 1px 2px rgb(24 29 38 / .25);
+  box-shadow: 0 1px 2px rgb(20 30 50 / .25);
   transition: background 0.15s, box-shadow 0.15s, transform 0.12s;
   letter-spacing: 0.01em;
   border: none;
@@ -1804,7 +1804,7 @@ a:hover { text-decoration-color: currentColor; }
 
 .btn-primary:hover {
   background: var(--blue-800);
-  box-shadow: 0 4px 12px rgb(24 29 38 / .3);
+  box-shadow: 0 4px 12px rgb(20 30 50 / .3);
   transform: translateY(-1px);
 }
 
@@ -1914,7 +1914,7 @@ a:hover { text-decoration-color: currentColor; }
   border-radius: 50%;
   background: var(--blue-600);
   color: var(--white);
-  box-shadow: 0 6px 16px rgb(24 29 38 / .35);
+  box-shadow: 0 6px 16px rgb(20 30 50 / .35);
   cursor: pointer;
 }
 @media (max-width: 640px) {
