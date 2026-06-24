@@ -1774,7 +1774,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
    MISC UTILITIES
 ══════════════════════════════════════════════════════════════════ */
 .wt-text-muted  { color: var(--gray-500); }
-.wt-text-coral  { color: var(--blue-600); }
+.wt-text-coral  { color: var(--accent); }
 .wt-text-ink    { color: var(--gray-900); }
 
 a { color: inherit; }
@@ -2347,8 +2347,8 @@ h1, h2 { text-wrap: balance; }
 :root {
   --cat-structure-fg:  #4e6e8e;  /* 기본구조·법체계 — slate */
   --cat-structure-ln:  #c9d8e5;
-  --cat-core-fg:       #aa2d00;  /* 원천징수 핵심 — signature coral */
-  --cat-core-ln:       #efc9b9;
+  --cat-core-fg:       var(--accent);   /* 원천징수 핵심 — accent blue */
+  --cat-core-ln:       var(--blue-100);
   --cat-penalty-fg:    #a4434e;  /* 가산세·신고 — rose */
   --cat-penalty-ln:    #e9cad0;
   --cat-global-fg:     #2e7466;  /* 거주자·국제 — teal */
