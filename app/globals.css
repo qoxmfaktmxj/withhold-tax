@@ -1874,7 +1874,7 @@ a:hover { text-decoration-color: currentColor; }
   padding: 8px 10px;
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   box-shadow: var(--shadow-xs);
   color: var(--gray-400);
   cursor: pointer;
@@ -1891,10 +1891,10 @@ a:hover { text-decoration-color: currentColor; }
   font-family: var(--font-mono);
   font-size: 0.62rem;
   font-weight: 600;
-  color: var(--gray-500);
+  color: var(--text-muted);
   background: var(--gray-50);
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   padding: 2px 5px;
   line-height: 1;
 }
@@ -1941,9 +1941,9 @@ a:hover { text-decoration-color: currentColor; }
   max-height: min(70vh, 560px);
   display: flex;
   flex-direction: column;
-  background: var(--white);
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg), 0 0 0 1px rgb(0 0 0 / .02);
   overflow: hidden;
   animation: cmdkPop 0.14s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1968,6 +1968,7 @@ a:hover { text-decoration-color: currentColor; }
   font-family: var(--font-body);
   font-size: 1rem;
   color: var(--text-primary);
+  border-radius: var(--radius);
 }
 .wt-cmdk-input::placeholder { color: var(--gray-400); }
 
@@ -1991,7 +1992,9 @@ a:hover { text-decoration-color: currentColor; }
   cursor: pointer;
   scroll-margin: 6px;
 }
-.wt-cmdk-item.is-active { background: var(--blue-50); }
+.wt-cmdk-item.is-active,
+.wt-cmdk-item[aria-selected="true"],
+.wt-cmdk-item:hover { background: var(--accent-soft); }
 .wt-cmdk-item-top {
   display: flex;
   align-items: baseline;
@@ -2045,9 +2048,10 @@ a:hover { text-decoration-color: currentColor; }
 .wt-cmdk-kbd-sm {
   font-family: var(--font-mono);
   font-size: 0.62rem;
-  background: var(--white);
+  background: var(--gray-50);
+  color: var(--text-muted);
   border: 1px solid var(--border);
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
   padding: 1px 4px;
   margin-right: 2px;
 }
