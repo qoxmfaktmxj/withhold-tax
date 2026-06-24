@@ -1131,7 +1131,6 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   color: var(--accent);
 }
 
-.wt-chapter-card:hover .wt-chapter-title { color: var(--blue-800); }
 .wt-chapter-card--unavailable .wt-chapter-title { color: var(--gray-400); }
 .wt-chapter-card--unavailable .wt-chapter-number { color: var(--gray-300); }
 
