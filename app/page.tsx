@@ -99,28 +99,59 @@ export default function Home() {
             marginBottom: 'var(--space-xl)',
           }}
         >
-          {referenceStatus.map((item) => (
-            <div
-              key={item.label}
-              role="listitem"
-              aria-label={`${item.label} ${item.value}`}
-              style={{
-                background: 'var(--white)',
-                border: '1px solid var(--border)',
-                borderRadius: 'var(--radius-sm)',
-                boxShadow: 'var(--shadow-xs)',
-                padding: '10px 12px',
-                minHeight: 64,
-              }}
-            >
-              <div style={{ fontSize: '0.72rem', color: 'var(--gray-500)', marginBottom: 4 }}>
-                {item.label}
+          {referenceStatus.map((item) => {
+            const isVerified = item.label === '1차 원문 확인'
+            const isDanger = item.label === '검토 임박'
+            const valueColor = isVerified
+              ? 'var(--verified-text)'
+              : isDanger
+              ? 'var(--badge-del-fg)'
+              : 'var(--ink)'
+            const chipBg = isVerified
+              ? 'var(--verified-bg)'
+              : isDanger
+              ? 'var(--badge-del-bg)'
+              : 'var(--accent-soft)'
+            const chipColor = isVerified
+              ? 'var(--verified-text)'
+              : isDanger
+              ? 'var(--badge-del-fg)'
+              : 'var(--accent)'
+            return (
+              <div
+                key={item.label}
+                role="listitem"
+                aria-label={`${item.label} ${item.value}`}
+                style={{
+                  background: '#fff',
+                  border: '1px solid var(--border)',
+                  borderRadius: 'var(--radius-xl)',
+                  boxShadow: 'var(--shadow-md)',
+                  padding: 14,
+                }}
+              >
+                <span
+                  className="wt-icon-chip"
+                  style={{ marginBottom: 9, background: chipBg, color: chipColor }}
+                  aria-hidden="true"
+                >
+                  {isVerified ? (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  ) : isDanger ? (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  ) : (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                  )}
+                </span>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: 3 }}>
+                  {item.label}
+                </div>
+                <div style={{ fontSize: '1.4rem', fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: valueColor }}>
+                  {item.value}
+                </div>
               </div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '1rem', fontWeight: 800 }}>
-                {item.value}
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         {/* ════════════ TOOLS ════════════ */}
