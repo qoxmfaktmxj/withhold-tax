@@ -485,11 +485,11 @@ pre,
 .wt-chapter-index-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 10px;
+  gap: 9px;
+  padding: 7px 9px;
   border-radius: var(--radius-sm);
-  font-size: 0.82rem;
-  color: var(--gray-900);
+  font-size: 13px;
+  color: var(--text-secondary);
   text-decoration: none;
   transition: background 0.12s, color 0.12s;
   line-height: 1.4;
@@ -497,15 +497,31 @@ pre,
 }
 
 .wt-chapter-index-item:hover {
-  background: var(--blue-50);
-  color: var(--blue-700);
+  background: var(--gray-50);
 }
 
-.wt-chapter-index-item.active,
 .wt-chapter-index-item[aria-current="page"] {
-  background: var(--blue-100);
-  color: var(--blue-800);
-  font-weight: 600;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ── Icon chip utility ────────────────────────────────────────────── */
+.wt-icon-chip {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--gray-50);
+  color: var(--text-secondary);
+}
+
+.wt-chapter-index-item[aria-current="page"] .wt-icon-chip {
+  background: #fff;
+  color: var(--accent);
 }
 
 .wt-chapter-num {
@@ -517,9 +533,8 @@ pre,
   letter-spacing: 0.04em;
 }
 
-.wt-chapter-index-item.active .wt-chapter-num,
 .wt-chapter-index-item[aria-current="page"] .wt-chapter-num {
-  color: var(--blue-500);
+  color: var(--accent);
 }
 
 .wt-chapter-name {
