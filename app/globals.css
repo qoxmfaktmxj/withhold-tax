@@ -4,68 +4,62 @@
 @import "tailwindcss";
 
 /* ══════════════════════════════════════════════════════════════════════
-   AIRTABLE EDITORIAL DESIGN SYSTEM
-   (claude.ai design export 270e01f4 — tokens + wt.css 동기화본)
-   Canvas: white · Primary: ink #181d26 · Link: #1b61c9 (≠ primary)
-   Signature surfaces(풀블리드 전용): coral #aa2d00 · forest #0a2e0e ·
-   cream #f5e9d4 · dark navy #181d26
-   Type: Pretendard Variable 단일 서체 — display 400–500, 라벨만 600,
+   TOSS MOOD DESIGN SYSTEM
+   Canvas: pure white #FFFFFF · Primary: Toss Blue #3182F6
+   Link: #1B64DA (AA) · Neutrals: Toss Gray #191F28–#F6F8FA
+   Type: Pretendard Variable 단일 서체 — bold 700 헤딩, 400–600 본문
    숫자·조문은 tnum(tabular numerals)
 ══════════════════════════════════════════════════════════════════════ */
 
-/* ── Color tokens — AIRTABLE EDITORIAL (DESIGN-airtable.md) ────────────
-   Palette: white canvas · dark-ink type #181d26 · near-black primary CTA
-   Voltage: signature surfaces (coral #aa2d00 · forest #0a2e0e · cream
-            #f5e9d4 · dark navy #181d26) — full-bleed cards only,
-            never small accents.
-   Links:   #1b61c9 (link blue ≠ primary).
+/* ── Color tokens — TOSS MOOD (white canvas · Toss Blue · bold sans) ───
+   Palette: pure white canvas · Toss Gray ink · Toss Blue #3182F6 accent
+   Single accent = #3182F6; body link text #1B64DA (AA).
    NOTE: --blue-* / --gray-* / --accent-* / --stone-* names are kept as
-   LEGACY ALIASES so existing components keep working. The accent scale
-   now resolves to INK — "black IS the primary".
+   LEGACY ALIASES so existing components keep working.
 ─────────────────────────────────────────────────────────────────────── */
 :root {
-  /* --- Ink scale (primary = near-black) --- */
-  --accent-900: #0a0e13;
-  --accent-800: #0d1218;   /* primary-active */
-  --accent-700: #11161d;
-  --accent-600: #181d26;   /* PRIMARY — buttons, active nav, display type */
-  --accent-500: #6b7077;
-  --accent-400: #9297a0;   /* border-strong */
-  --accent-300: #c3c7cd;
-  --accent-200: #dddddd;   /* hairline */
-  --accent-100: #eceef0;
-  --accent-50:  #f8fafc;   /* surface-soft */
+  /* --- Toss Blue accent scale --- */
+  --accent-900: #0B3A86;
+  --accent-800: #11489E;
+  --accent-700: #1B64DA;
+  --accent-600: #3182F6;   /* PRIMARY */
+  --accent-500: #5A9CF8;
+  --accent-400: #8FBDFB;
+  --accent-300: #BCD8FD;
+  --accent-200: #DCEBFE;
+  --accent-100: #E8F3FF;
+  --accent-50:  #F1F6FF;
 
-  /* --- Cool ink-tinted neutrals --- */
+  /* --- Toss Gray neutrals --- */
   --stone-950:  #0d1218;
-  --stone-900:  #181d26;   /* ink */
-  --stone-800:  #262b34;
-  --stone-700:  #333840;   /* body */
-  --stone-600:  #41454d;   /* muted */
-  --stone-500:  #6b7077;
-  --stone-400:  #9297a0;
-  --stone-300:  #c3c7cd;
-  --stone-200:  #dddddd;
-  --stone-100:  #eceef0;
-  --stone-50:   #f8fafc;
+  --stone-900:  #191F28;   /* ink */
+  --stone-800:  #283038;
+  --stone-700:  #4E5968;   /* body */
+  --stone-600:  #6B7684;   /* muted */
+  --stone-500:  #8B95A1;
+  --stone-400:  #B0B8C1;
+  --stone-300:  #D1D6DB;
+  --stone-200:  #E5E8EB;
+  --stone-100:  #EDEFF2;
+  --stone-50:   #F6F8FA;
   --white:      #ffffff;
 
-  /* --- Signature surfaces (brand voltage — full-bleed cards only) --- */
-  --sig-coral:   #aa2d00;
-  --sig-forest:  #0a2e0e;
-  --sig-cream:   #f5e9d4;
-  --sig-peach:   #fcab79;
-  --sig-mint:    #a8d8c4;
-  --sig-yellow:  #f4d35e;
-  --sig-mustard: #d9a441;
-  --surface-dark:          #181d26;
-  --surface-dark-elevated: #1d1f25;
+  /* --- Signature surfaces (neutralized to blue/neutral) --- */
+  --sig-coral:   #3182F6;
+  --sig-forest:  #03A66A;
+  --sig-cream:   #F1F6FF;
+  --sig-peach:   var(--accent-soft);
+  --sig-mint:    var(--accent-soft);
+  --sig-yellow:  var(--accent-soft);
+  --sig-mustard: var(--accent-soft);
+  --surface-dark:          #191F28;
+  --surface-dark-elevated: #20262E;
 
-  /* --- Links & focus (link blue ≠ primary) --- */
-  --link:        #1b61c9;
-  --link-active: #1a3866;
-  --info:        #254fad;
-  --focus-ring:  #458fff;
+  /* --- Links & focus (Toss Blue) --- */
+  --link:        #1B64DA;
+  --link-active: #11489E;
+  --info:        #1B64DA;
+  --focus-ring:  #3182F6;
 
   /* --- Legacy scale aliases (components reference these) --- */
   --blue-900:   var(--accent-900);
@@ -79,50 +73,51 @@
   --blue-100:   var(--accent-100);
   --blue-50:    var(--accent-50);
   --gray-950:   var(--stone-950);
-  --gray-900:   var(--stone-900);
-  --gray-800:   var(--stone-800);
-  --gray-700:   var(--stone-700);
-  --gray-600:   var(--stone-600);
-  --gray-500:   var(--stone-500);
-  --gray-400:   var(--stone-400);
-  --gray-300:   var(--stone-300);
-  --gray-200:   var(--stone-200);
-  --gray-100:   var(--stone-100);
-  --gray-50:    var(--stone-50);
+  --gray-900:   #191F28;
+  --gray-800:   #283038;
+  --gray-700:   #4E5968;
+  --gray-600:   #6B7684;
+  --gray-500:   #8B95A1;
+  --gray-400:   #B0B8C1;
+  --gray-300:   #D1D6DB;
+  --gray-200:   #E5E8EB;
+  --gray-100:   #EDEFF2;
+  --gray-50:    #F6F8FA;
 
   /* --- Semantic surfaces --- */
   --surface:           var(--white);
-  --surface-subtle:    #ffffff;              /* white canvas — no tinted bg */
-  --surface-sidebar:   #ffffff;              /* white rail + hairline border */
-  --border:            #dddddd;              /* hairline */
-  --border-blue:       #dddddd;              /* sidebar border (legacy name) */
-  --text-primary:      var(--stone-900);
-  --text-secondary:    var(--stone-700);
-  --text-muted:        var(--stone-600);
-  --accent:            var(--accent-600);
-  --accent-hover:      var(--accent-800);
+  --surface-subtle:    #FFFFFF;              /* pure white canvas */
+  --surface-sidebar:   #FFFFFF;              /* white rail */
+  --border:            #EDEFF2;              /* hairline */
+  --border-blue:       #EDEFF2;              /* sidebar border (legacy name) */
+  --text-primary:      #191F28;
+  --text-secondary:    #4E5968;
+  --text-muted:        #8B95A1;
+  --accent:            #3182F6;
+  --accent-hover:      #2272EB;
+  --accent-soft:       #E8F3FF;             /* chips · notices · info callout bg */
 
   /* --- Verify status colors (WCAG AA) --- */
-  --verified-bg:       #eef7ee;
-  --verified-text:     #006400;
-  --verified-border:   #b9e0bd;
-  --caution-bg:        #fdf6e3;
-  --caution-text:      #8a5a0b;
-  --caution-border:    #f0dfa8;
-  --lecture-bg:        var(--stone-100);
-  --lecture-text:      var(--stone-600);
-  --lecture-border:    var(--stone-300);
+  --verified-bg:       #E7F9F1;
+  --verified-text:     #03A66A;
+  --verified-border:   #B6ECD4;
+  --caution-bg:        #FFF6E0;
+  --caution-text:      #C2840A;
+  --caution-border:    #FBE3A6;
+  --lecture-bg:        #F2F4F6;
+  --lecture-text:      #8B95A1;
+  --lecture-border:    #E5E8EB;
 
   /* --- Change badge colors --- */
-  --badge-new-bg:      #eef7ee;
-  --badge-new-fg:      #006400;
-  --badge-new-border:  #b9e0bd;
-  --badge-rev-bg:      #eef3fc;
-  --badge-rev-fg:      #254fad;
-  --badge-rev-border:  #c5d7f5;
-  --badge-del-bg:      #f9e7e0;
-  --badge-del-fg:      #aa2d00;
-  --badge-del-border:  #efc9b9;
+  --badge-new-bg:      #E7F9F1;
+  --badge-new-fg:      #03A66A;
+  --badge-new-border:  #B6ECD4;
+  --badge-rev-bg:      #E8F3FF;
+  --badge-rev-fg:      #1B64DA;
+  --badge-rev-border:  #BCD8FD;
+  --badge-del-bg:      #FFF1EE;
+  --badge-del-fg:      #F04452;
+  --badge-del-border:  #FBD1CB;
   --badge-none-bg:     var(--stone-100);
   --badge-none-fg:     var(--stone-600);
   --badge-none-border: var(--stone-300);
@@ -131,15 +126,15 @@
   --cream:          var(--white);
   --cream-dark:     var(--stone-50);
   --cream-deeper:   var(--stone-100);
-  --ink:            var(--stone-900);
-  --ink-light:      var(--stone-700);
-  --ink-faint:      var(--stone-500);
-  --rule:           var(--stone-200);
-  --rule-heavy:     var(--stone-300);
+  --ink:            #191F28;
+  --ink-light:      #4E5968;
+  --ink-faint:      #8B95A1;
+  --rule:           #E5E8EB;
+  --rule-heavy:     #D1D6DB;
   --label-muted:    var(--stone-600);
-  --oxblood:        var(--sig-coral);
-  --oxblood-lt:     #8f2600;
-  --oxblood-tint:   #fcf0e9;
+  --oxblood:        #1B64DA;
+  --oxblood-lt:     #2272EB;
+  --oxblood-tint:   #E8F3FF;
   --verified:       var(--verified-text);
   --caution:        var(--caution-text);
   --lecture:        var(--stone-500);
@@ -148,20 +143,20 @@
   --color-canvas-soft:     var(--stone-50);
   --color-surface-card:    var(--white);
   --color-surface-warm:    var(--stone-50);
-  --color-surface-warm-strong: #e0e2e6;
+  --color-surface-warm-strong: #D1D6DB;
   --color-navy:            var(--surface-dark);
   --color-navy-elevated:   var(--surface-dark-elevated);
   --color-navy-soft:       var(--stone-700);
-  --color-ink:             var(--stone-900);
-  --color-body-strong:     var(--stone-800);
-  --color-body:            var(--stone-700);
-  --color-muted:           var(--stone-600);
-  --color-muted-soft:      var(--stone-500);
+  --color-ink:             #191F28;
+  --color-body-strong:     #283038;
+  --color-body:            #4E5968;
+  --color-muted:           #6B7684;
+  --color-muted-soft:      #8B95A1;
   --color-on-dark:         var(--white);
   --color-on-dark-soft:    #ced3da;
-  --color-coral:           var(--sig-coral);
-  --color-coral-active:    #8f2600;
-  --color-coral-tint:      #fcf0e9;
+  --color-coral:           #3182F6;
+  --color-coral-active:    #2272EB;
+  --color-coral-tint:      #E8F3FF;
   --color-verified:        var(--verified-text);
   --color-check:           var(--caution-text);
   --color-lecture:         var(--stone-500);
@@ -171,8 +166,8 @@
   --color-badge-rev-fg:    var(--badge-rev-fg);
   --color-badge-del-bg:    var(--badge-del-bg);
   --color-badge-del-fg:    var(--badge-del-fg);
-  --color-hairline:        var(--stone-200);
-  --color-hairline-soft:   var(--stone-100);
+  --color-hairline:        #E5E8EB;
+  --color-hairline-soft:   #EDEFF2;
 }
 
 /* ── Typography tokens ─────────────────────────────────────────────────
@@ -200,18 +195,18 @@
           NO border-left stripes · NO gradient text · NO glassmorphism
 ─────────────────────────────────────────────────────────────────────── */
 :root {
-  /* --- Shadows --- */
-  --shadow-xs:  0 1px 2px 0 rgb(0 0 0 / .05);
-  --shadow-sm:  0 1px 3px 0 rgb(0 0 0 / .08), 0 1px 2px -1px rgb(0 0 0 / .05);
-  --shadow-md:  0 4px 6px -1px rgb(0 0 0 / .07), 0 2px 4px -2px rgb(0 0 0 / .05);
-  --shadow-lg:  0 10px 15px -3px rgb(0 0 0 / .07), 0 4px 6px -4px rgb(0 0 0 / .04);
+  /* --- Shadows (Toss soft) --- */
+  --shadow-xs:  0 1px 2px 0 rgb(20 30 50 / .04);
+  --shadow-sm:  0 1px 2px 0 rgb(20 30 50 / .05);
+  --shadow-md:  0 1px 2px rgb(20 30 50 / .04), 0 6px 16px rgb(20 30 50 / .05);
+  --shadow-lg:  0 10px 30px rgb(20 30 50 / .08);
 
-  /* --- Radius (restrained, not pill-everything) --- */
+  /* --- Radius (Toss rounded cards) --- */
   --radius-xs:  4px;
-  --radius-sm:  6px;
-  --radius:     10px;
-  --radius-lg:  12px;
-  --radius-xl:  16px;
+  --radius-sm:  8px;
+  --radius:     12px;
+  --radius-lg:  16px;
+  --radius-xl:  18px;
   --radius-pill: 9999px;
 
   /* --- Spacing --- */
@@ -289,19 +284,19 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 500;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.9rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 h2 {
-  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
-  font-weight: 500;
-  letter-spacing: -0.025em;
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
 }
 h4 {
   font-size: 0.95rem;
@@ -490,11 +485,11 @@ pre,
 .wt-chapter-index-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 10px;
+  gap: 9px;
+  padding: 7px 9px;
   border-radius: var(--radius-sm);
-  font-size: 0.82rem;
-  color: var(--gray-900);
+  font-size: 13px;
+  color: var(--text-secondary);
   text-decoration: none;
   transition: background 0.12s, color 0.12s;
   line-height: 1.4;
@@ -502,15 +497,31 @@ pre,
 }
 
 .wt-chapter-index-item:hover {
-  background: var(--blue-50);
-  color: var(--blue-700);
+  background: var(--gray-50);
 }
 
-.wt-chapter-index-item.active,
 .wt-chapter-index-item[aria-current="page"] {
-  background: var(--blue-100);
-  color: var(--blue-800);
-  font-weight: 600;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ── Icon chip utility ────────────────────────────────────────────── */
+.wt-icon-chip {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--gray-50);
+  color: var(--text-secondary);
+}
+
+.wt-chapter-index-item[aria-current="page"] .wt-icon-chip {
+  background: #fff;
+  color: var(--accent);
 }
 
 .wt-chapter-num {
@@ -522,9 +533,8 @@ pre,
   letter-spacing: 0.04em;
 }
 
-.wt-chapter-index-item.active .wt-chapter-num,
 .wt-chapter-index-item[aria-current="page"] .wt-chapter-num {
-  color: var(--blue-500);
+  color: var(--accent);
 }
 
 .wt-chapter-name {
@@ -769,7 +779,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 
 /* Hero — Webflow SaaS style */
 .wt-gazette-masthead {
-  padding: 0 var(--space-xxl) 0;
+  padding: 8px var(--space-xxl) 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -784,38 +794,33 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   align-items: center;
   gap: 6px;
   font-family: var(--font-display);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--blue-600);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: none;
+  color: var(--accent);
   margin-bottom: 14px;
 }
 
 .wt-gazette-kicker::before {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: var(--blue-500);
-  border-radius: 1px;
+  display: none;
 }
 
 .wt-gazette-headline {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 500;
-  color: var(--gray-950);
-  line-height: 1.12;
-  letter-spacing: -0.035em;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   margin-bottom: 16px;
 }
 
 .wt-gazette-dateline {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 14px;
   color: var(--text-secondary);
-  line-height: 1.75;
+  line-height: 1.6;
   max-width: 580px;
   letter-spacing: 0;
   text-transform: none;
@@ -867,72 +872,61 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 .wt-notice-block {
   display: flex;
   align-items: center;
-  gap: 20px;
-  background: var(--sig-cream);
-  border: 1px solid #e8d9bd;
-  border-radius: var(--radius);
-  padding: 16px 20px;
+  gap: 14px;
+  background: var(--accent-soft);
+  border: 0;
+  border-radius: var(--radius-xl);
+  padding: 16px 18px;
   margin: var(--space-lg) 0 var(--space-xl);
-  box-shadow: var(--shadow-sm);
   animation: fadeUp 0.5s ease 0.15s both;
 }
 
 .wt-notice-inner {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   flex: 1;
   flex-wrap: wrap;
   min-width: 0;
 }
 
 .wt-notice-label {
-  font-family: var(--font-display);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--sig-coral);
+  background: #fff;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 4px 9px;
   white-space: nowrap;
   flex-shrink: 0;
-  background: var(--white);
-  border: 1px solid #e8d9bd;
-  border-radius: var(--radius-xs);
-  padding: 2px 8px;
 }
 
 .wt-notice-text {
   font-family: var(--font-body);
-  font-size: 0.88rem;
-  color: var(--text-primary);
-  font-weight: 500;
+  font-size: 13px;
+  color: var(--text-secondary);
   line-height: 1.4;
 }
 
 .wt-notice-link {
   font-family: var(--font-body);
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--blue-600);
+  font-size: 13px;
+  font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 8px 16px;
-  background: var(--blue-600);
-  color: white;
-  border-radius: var(--radius-sm);
-  box-shadow: 0 1px 2px rgb(24 29 38 / .25);
-  transition: background 0.15s, box-shadow 0.15s, transform 0.12s;
-  letter-spacing: 0.01em;
+  padding: 9px 15px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  transition: background 0.15s;
 }
 
 .wt-notice-link:hover {
-  background: var(--blue-800);
-  box-shadow: 0 4px 12px rgb(24 29 38 / .3);
-  transform: translateY(-1px);
+  background: var(--accent-hover);
 }
 
 /* ══════════════════════════════════════════════════════════════════
@@ -947,17 +941,16 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-citation-card {
-  background: var(--white);
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 20px 22px;
-  box-shadow: var(--shadow-xs);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: 16px 18px;
   transition: box-shadow 0.2s, border-color 0.2s;
 }
 
 .wt-citation-card:hover {
-  box-shadow: var(--shadow-md);
-  border-color: var(--blue-200);
+  box-shadow: var(--shadow-lg);
 }
 
 .wt-citation-card-header {
@@ -989,13 +982,17 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 .wt-citation-card-status--확정 {
   background: var(--verified-bg);
   color: var(--verified-text);
-  border: 1px solid var(--verified-border);
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  padding: 3px 10px;
 }
 
 .wt-citation-card-status--확인필요 {
   background: var(--caution-bg);
   color: var(--caution-text);
-  border: 1px solid var(--caution-border);
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  padding: 3px 10px;
 }
 
 .wt-citation-statement {
@@ -1009,7 +1006,9 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-citation-rate {
-  color: var(--blue-600);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
 }
 
 .wt-citation-card-body {
@@ -1025,8 +1024,8 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 
 .wt-citation-ref {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--gray-500);
+  font-size: 11px;
+  color: var(--text-muted);
   line-height: 1.65;
   padding: 8px 12px;
   background: var(--gray-50);
@@ -1068,37 +1067,30 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-chapter-card {
-  background: var(--white);
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px 14px;
+  border-radius: var(--radius-xl);
+  padding: 14px 15px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   text-decoration: none;
   color: var(--text-primary);
-  box-shadow: var(--shadow-xs);
-  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .15s, border-color .15s;
   position: relative;
   overflow: hidden;
 }
 
 .wt-chapter-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--blue-50);
-  opacity: 0;
-  transition: opacity 0.2s;
+  display: none;
 }
 
 .wt-chapter-card:hover {
   box-shadow: var(--shadow-md);
-  border-color: var(--blue-300);
-  transform: translateY(-2px);
+  border-color: var(--accent-300);
 }
 
-.wt-chapter-card:hover::before { opacity: 1; }
 .wt-chapter-card > * { position: relative; }
 
 .wt-chapter-card:focus-visible {
@@ -1107,37 +1099,38 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-chapter-card--unavailable {
-  opacity: 0.5;
+  opacity: .55;
+  box-shadow: none;
   cursor: default;
   pointer-events: none;
 }
 
 .wt-chapter-card--active {
   border-color: var(--blue-300);
-  box-shadow: 0 0 0 3px rgb(24 29 38 / .08);
+  box-shadow: 0 0 0 3px rgb(20 30 50 / .08);
 }
 
 .wt-chapter-number {
-  font-family: var(--font-display);
-  font-size: 0.66rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--blue-500);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
   display: block;
 }
 
 .wt-chapter-title {
   font-family: var(--font-body);
   font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--gray-800);
+  font-weight: 500;
+  color: var(--ink);
   line-height: 1.45;
   letter-spacing: -0.01em;
   display: block;
 }
 
-.wt-chapter-card:hover .wt-chapter-title { color: var(--blue-800); }
+.wt-chapter-card:hover .wt-chapter-title {
+  color: var(--accent);
+}
+
 .wt-chapter-card--unavailable .wt-chapter-title { color: var(--gray-400); }
 .wt-chapter-card--unavailable .wt-chapter-number { color: var(--gray-300); }
 
@@ -1145,103 +1138,77 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
    TABLES (.wt-tbl) — clean, light header, soft separators
 ══════════════════════════════════════════════════════════════════ */
 .wt-tbl {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   width: 100%;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin: var(--space-lg) 0;
   font-size: 0.875rem;
   line-height: 1.5;
-  margin: var(--space-lg) 0;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-xs);
 }
 
 .wt-tbl thead th {
   background: var(--gray-50);
-  color: var(--gray-700);
-  padding: 10px 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 12px;
   text-align: left;
-  font-weight: 600;
-  font-size: 0.78rem;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-  font-family: var(--font-display);
-  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+  border: 0;
+  border-bottom: 1px solid var(--gray-100);
 }
 
 .wt-tbl tbody td {
+  padding: 13px 16px;
   border-top: 1px solid var(--gray-100);
-  padding: 9px 14px;
+  font-size: 14px;
   color: var(--text-secondary);
   vertical-align: top;
 }
 
 .wt-tbl tbody tr:hover td {
-  background: var(--blue-50);
+  background: var(--accent-50);
 }
 
-.wt-tbl td.hl  { background: var(--blue-50); }
-.wt-tbl td.red { color: var(--caution-text); font-weight: 600; }
+.wt-tbl td.hl  { background: var(--accent-50); }
+.wt-tbl td.red { color: var(--caution-text); font-weight: 500; }
 .wt-tbl td.grn { color: var(--verified-text); font-weight: 500; }
 
 /* ══════════════════════════════════════════════════════════════════
    CALLOUT BLOCKS (.wt-box) — soft card, full border, NO side stripes
 ══════════════════════════════════════════════════════════════════ */
 .wt-box {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: var(--space-lg);
+  border: 0;
+  border-radius: var(--radius-xl);
+  padding: 15px 17px;
   margin: var(--space-lg) 0;
-  position: relative;
-  background: var(--white);
-  box-shadow: var(--shadow-xs);
+  display: flex;
+  gap: 12px;
 }
 
-.wt-box--imp {
-  background: var(--blue-50);
-  border-color: var(--blue-200);
-}
-
-.wt-box--note {
-  background: var(--white);
-  border-color: var(--border);
-}
-
-.wt-box--warn {
-  background: var(--caution-bg);
-  border-color: var(--caution-border);
-}
-
-.wt-box--tip {
-  background: var(--verified-bg);
-  border-color: var(--verified-border);
-}
+.wt-box--imp  { background: var(--badge-del-bg); }
+.wt-box--note { background: var(--verified-bg); }
+.wt-box--warn { background: var(--caution-bg); }
+.wt-box--tip  { background: var(--accent-soft); }
 
 .wt-box-label {
-  font-family: var(--font-display);
-  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--ink);
   margin-bottom: var(--space-sm);
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.wt-box-label::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: currentColor;
-  flex-shrink: 0;
-}
-
-.wt-box--imp  .wt-box-label { color: var(--blue-700); }
-.wt-box--note .wt-box-label { color: var(--gray-600); }
-.wt-box--warn .wt-box-label { color: var(--caution-text); }
-.wt-box--tip  .wt-box-label { color: var(--verified-text); }
+.wt-box--imp  .wt-icon-chip { background: var(--badge-del-fg); color: #fff; }
+.wt-box--note .wt-icon-chip { background: var(--verified-text); color: #fff; }
+.wt-box--warn .wt-icon-chip { background: var(--caution-text); color: #fff; }
+.wt-box--tip  .wt-icon-chip { background: var(--accent); color: #fff; }
 
 /* ══════════════════════════════════════════════════════════════════
    TRUST MARKS — citation line
@@ -1284,19 +1251,19 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 .wt-seal--확정 {
   background: var(--verified-bg);
   color: var(--verified-text);
-  border-color: var(--verified-border);
+  border-radius: var(--radius-pill);
 }
 
 .wt-seal--확인필요 {
   background: var(--caution-bg);
   color: var(--caution-text);
-  border-color: var(--caution-border);
+  border-radius: var(--radius-pill);
 }
 
 .wt-seal--강의기반 {
   background: var(--lecture-bg);
   color: var(--lecture-text);
-  border-color: var(--lecture-border);
+  border-radius: var(--radius-pill);
   font-style: normal;
 }
 
@@ -1398,20 +1365,25 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 ══════════════════════════════════════════════════════════════════ */
 .wt-updates-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin: var(--space-lg) 0;
   table-layout: auto;
-  background: var(--white);
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--shadow-md);
 }
 
 .wt-updates-table thead th {
   background: var(--gray-50);
-  border-bottom: 1px solid var(--border);
-  padding: 10px 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 12px;
+  border-bottom: 1px solid var(--gray-100);
+  border-top: 0;
+  padding: 10px 16px;
   text-align: left;
 }
 
@@ -1433,7 +1405,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 .wt-update-row td:nth-child(2) { padding-left: var(--space-md); padding-right: var(--space-md); }
 .wt-update-row td:last-child { padding-right: var(--space-md); text-align: right; }
 
-.wt-update-row:hover td { background: var(--gray-50); }
+.wt-update-row:hover td { background: var(--accent-50); }
 
 .wt-update-title {
   font-family: var(--font-display);
@@ -1573,10 +1545,10 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-compare-side {
-  background: var(--white);
+  background: #fff;
   padding: var(--space-md) var(--space-lg);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-xs);
 }
 
@@ -1584,17 +1556,19 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   font-family: var(--font-display);
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--gray-400);
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
   letter-spacing: 0.1em;
   align-self: center;
-  padding-top: var(--space-md);
   text-transform: uppercase;
 }
 
-/* Formula — soft tinted code box */
+/* Formula — dark surface preserved */
 .wt-formula {
-  background: var(--gray-900);
-  color: var(--blue-100);
+  background: var(--surface-dark);
+  color: #fff;
   padding: var(--space-lg) var(--space-xl);
   margin: var(--space-lg) 0;
   font-family: var(--font-mono);
@@ -1603,7 +1577,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   white-space: pre;
   overflow-x: auto;
   max-width: 100%;
-  border-radius: var(--radius);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-md);
 }
 
@@ -1617,13 +1591,13 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   color: var(--white);
 }
 
-/* CaseNote — soft card */
+/* CaseNote — white card with accent label */
 .wt-casenote {
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-xl);
   padding: var(--space-md) var(--space-lg);
   margin: var(--space-lg) 0;
-  background: var(--gray-50);
   box-shadow: var(--shadow-xs);
 }
 
@@ -1633,7 +1607,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--gray-500);
+  color: var(--accent);
   margin-bottom: var(--space-sm);
   display: flex;
   align-items: center;
@@ -1645,7 +1619,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--gray-400);
+  background: var(--accent);
   flex-shrink: 0;
 }
 
@@ -1695,9 +1669,9 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-flow-step {
-  background: var(--white);
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-xl);
   padding: 6px 14px;
   font-family: var(--font-body);
   font-size: 0.84rem;
@@ -1707,20 +1681,20 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-flow-arrow {
-  color: var(--gray-400);
+  color: var(--accent);
   font-size: 0.9rem;
   font-weight: 700;
   font-family: var(--font-mono);
   padding: 0 8px;
 }
 
-/* CheatCard — dark blue band */
+/* CheatCard — dark surface with accent highlights */
 .wt-cheatcard {
-  background: var(--gray-900);
+  background: var(--surface-dark);
   color: var(--white);
   padding: var(--space-xl);
   margin: var(--space-lg) 0;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
 }
 
@@ -1735,13 +1709,17 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
   color: var(--blue-100);
 }
 
+.wt-cheatcard .label {
+  color: var(--accent);
+}
+
 /* Navy band */
 .wt-navy-band {
-  background: var(--gray-900);
+  background: var(--surface-dark);
   color: var(--white);
   padding: var(--space-xl) var(--space-xxl);
   margin: var(--space-xl) 0;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
 }
 
@@ -1796,7 +1774,7 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
    MISC UTILITIES
 ══════════════════════════════════════════════════════════════════ */
 .wt-text-muted  { color: var(--gray-500); }
-.wt-text-coral  { color: var(--blue-600); }
+.wt-text-coral  { color: var(--accent); }
 .wt-text-ink    { color: var(--gray-900); }
 
 a { color: inherit; }
@@ -1817,7 +1795,7 @@ a:hover { text-decoration-color: currentColor; }
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
-  box-shadow: 0 1px 2px rgb(24 29 38 / .25);
+  box-shadow: 0 1px 2px rgb(20 30 50 / .25);
   transition: background 0.15s, box-shadow 0.15s, transform 0.12s;
   letter-spacing: 0.01em;
   border: none;
@@ -1826,7 +1804,7 @@ a:hover { text-decoration-color: currentColor; }
 
 .btn-primary:hover {
   background: var(--blue-800);
-  box-shadow: 0 4px 12px rgb(24 29 38 / .3);
+  box-shadow: 0 4px 12px rgb(20 30 50 / .3);
   transform: translateY(-1px);
 }
 
@@ -1896,7 +1874,7 @@ a:hover { text-decoration-color: currentColor; }
   padding: 8px 10px;
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   box-shadow: var(--shadow-xs);
   color: var(--gray-400);
   cursor: pointer;
@@ -1913,10 +1891,10 @@ a:hover { text-decoration-color: currentColor; }
   font-family: var(--font-mono);
   font-size: 0.62rem;
   font-weight: 600;
-  color: var(--gray-500);
+  color: var(--text-muted);
   background: var(--gray-50);
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   padding: 2px 5px;
   line-height: 1;
 }
@@ -1936,7 +1914,7 @@ a:hover { text-decoration-color: currentColor; }
   border-radius: 50%;
   background: var(--blue-600);
   color: var(--white);
-  box-shadow: 0 6px 16px rgb(24 29 38 / .35);
+  box-shadow: 0 6px 16px rgb(20 30 50 / .35);
   cursor: pointer;
 }
 @media (max-width: 640px) {
@@ -1963,9 +1941,9 @@ a:hover { text-decoration-color: currentColor; }
   max-height: min(70vh, 560px);
   display: flex;
   flex-direction: column;
-  background: var(--white);
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg), 0 0 0 1px rgb(0 0 0 / .02);
   overflow: hidden;
   animation: cmdkPop 0.14s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1990,6 +1968,7 @@ a:hover { text-decoration-color: currentColor; }
   font-family: var(--font-body);
   font-size: 1rem;
   color: var(--text-primary);
+  border-radius: var(--radius);
 }
 .wt-cmdk-input::placeholder { color: var(--gray-400); }
 
@@ -2013,7 +1992,9 @@ a:hover { text-decoration-color: currentColor; }
   cursor: pointer;
   scroll-margin: 6px;
 }
-.wt-cmdk-item.is-active { background: var(--blue-50); }
+.wt-cmdk-item.is-active,
+.wt-cmdk-item[aria-selected="true"],
+.wt-cmdk-item:hover { background: var(--accent-soft); }
 .wt-cmdk-item-top {
   display: flex;
   align-items: baseline;
@@ -2067,9 +2048,10 @@ a:hover { text-decoration-color: currentColor; }
 .wt-cmdk-kbd-sm {
   font-family: var(--font-mono);
   font-size: 0.62rem;
-  background: var(--white);
+  background: var(--gray-50);
+  color: var(--text-muted);
   border: 1px solid var(--border);
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
   padding: 1px 4px;
   margin-right: 2px;
 }
@@ -2108,12 +2090,265 @@ h1, h2 { text-wrap: balance; }
   }
 }
 
+/* ══════════════════════════════════════════════════════════════════
+   CALCULATOR COMPONENTS (.wt-calc) — Toss mood
+   입력: 라운드·포커스 블루링  토글: 블루 슬라이드
+   결과카드: white + shadow-md  실수령액 행: accent-soft bg
+   도넛: conic-gradient blue/pale   숫자: tabular-nums
+══════════════════════════════════════════════════════════════════ */
+
+/* ── Wrapper (add class="wt-calc" to top-level div of each calculator) ── */
+.wt-calc {
+  font-family: var(--font-body);
+}
+
+/* ── Field: input / select / textarea inside .wt-calc ── */
+.wt-calc input,
+.wt-calc select,
+.wt-calc textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 13px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  font-variant-numeric: tabular-nums;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.wt-calc input:focus,
+.wt-calc select:focus,
+.wt-calc textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-100);
+}
+
+.wt-calc input:disabled,
+.wt-calc select:disabled {
+  background: var(--stone-50);
+  color: var(--stone-400);
+  cursor: not-allowed;
+}
+
+/* ── select: restore arrow (removed by appearance:none) ── */
+.wt-calc select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238B95A1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 34px;
+}
+
+/* ── Label ── */
+.wt-calc-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--stone-600);
+  margin-bottom: 6px;
+}
+
+/* ── Toggle (checkbox → pill toggle) ── */
+.wt-calc-toggle-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.wt-calc-toggle-wrap input[type="checkbox"] {
+  /* hide native checkbox */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* pill track */
+.wt-calc-toggle-track {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 26px;
+  border-radius: var(--radius-pill);
+  background: var(--stone-300);
+  transition: background 0.18s;
+  flex-shrink: 0;
+}
+
+.wt-calc-toggle-wrap input[type="checkbox"]:checked + .wt-calc-toggle-track {
+  background: var(--accent);
+}
+
+/* handle */
+.wt-calc-toggle-track::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgb(0 0 0 / .18);
+  transition: transform 0.18s;
+}
+
+.wt-calc-toggle-wrap input[type="checkbox"]:checked + .wt-calc-toggle-track::after {
+  transform: translateX(18px);
+}
+
+/* ── Result card ── */
+.wt-calc-result {
+  margin-top: 18px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: 20px 22px;
+  max-width: 860px;
+}
+
+.wt-calc-result h2 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.wt-calc-result table {
+  width: 100%;
+  font-size: 0.88rem;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.wt-calc-result td {
+  padding: 5px 0;
+  vertical-align: baseline;
+}
+
+.wt-calc-result td:last-child {
+  text-align: right;
+}
+
+/* Highlighted "월 실수령액" row */
+.wt-calc-result-highlight {
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  margin: 6px -10px;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wt-calc-result-highlight-label {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.wt-calc-result-highlight-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* ── 공제율 Donut ── */
+.wt-calc-donut-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.wt-calc-donut {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  /* conic-gradient set via inline style (dynamic %) */
+}
+
+.wt-calc-donut::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.wt-calc-donut-label {
+  font-size: 0.78rem;
+  color: var(--stone-600);
+  line-height: 1.5;
+}
+
+.wt-calc-donut-label strong {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* ── 월 실수령액 table row — visually highlighted (semantically still <tr>) ── */
+.wt-calc-result-net-row td {
+  background: var(--accent-soft);
+  padding: 10px 10px !important;
+}
+
+.wt-calc-result-net-row td:first-child {
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.wt-calc-result-net-row td:last-child {
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.wt-calc-result-net-label {
+  font-weight: 700;
+  color: var(--text-primary) !important;
+  font-size: 0.92rem;
+}
+
+.wt-calc-result-net-value {
+  text-align: right;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: var(--accent) !important;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* ── Note / footnote inside result ── */
+.wt-calc-footnote {
+  margin: 12px 0 0;
+  color: var(--stone-500);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
 /* ── 카테고리 컬러 코딩 (챕터·부록 분류) ─────────────────────────── */
 :root {
   --cat-structure-fg:  #4e6e8e;  /* 기본구조·법체계 — slate */
   --cat-structure-ln:  #c9d8e5;
-  --cat-core-fg:       #aa2d00;  /* 원천징수 핵심 — signature coral */
-  --cat-core-ln:       #efc9b9;
+  --cat-core-fg:       var(--accent);   /* 원천징수 핵심 — accent blue */
+  --cat-core-ln:       var(--blue-100);
   --cat-penalty-fg:    #a4434e;  /* 가산세·신고 — rose */
   --cat-penalty-ln:    #e9cad0;
   --cat-global-fg:     #2e7466;  /* 거주자·국제 — teal */

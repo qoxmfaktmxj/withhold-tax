@@ -9,25 +9,6 @@ import {
 
 const KRW = (n: number) => n.toLocaleString('ko-KR') + '원'
 
-const field: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '9px 12px',
-  border: '1px solid var(--border)',
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--white)',
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.9rem',
-  color: 'var(--text-primary)',
-}
-
-const label: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  color: 'var(--gray-600)',
-  marginBottom: 6,
-}
 
 function won(value: string): number {
   return Number(value.replace(/[^0-9]/g, '')) || 0
@@ -55,19 +36,19 @@ export function DailyWorkerTaxCalculator() {
   )
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 840 }}>
         <div>
-          <label htmlFor="dw-wage" style={label}>일당</label>
-          <input id="dw-wage" style={field} inputMode="numeric" value={dailyWage} onChange={(e) => setDailyWage(e.target.value)} />
+          <label htmlFor="dw-wage" className="wt-calc-label">일당</label>
+          <input id="dw-wage" inputMode="numeric" value={dailyWage} onChange={(e) => setDailyWage(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="dw-days" style={label}>근무일수</label>
-          <input id="dw-days" style={field} inputMode="numeric" value={workDays} onChange={(e) => setWorkDays(e.target.value)} />
+          <label htmlFor="dw-days" className="wt-calc-label">근무일수</label>
+          <input id="dw-days" inputMode="numeric" value={workDays} onChange={(e) => setWorkDays(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="dw-method" style={label}>지급방식</label>
-          <select id="dw-method" style={field} value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value as DailyWorkerPaymentMethod)}>
+          <label htmlFor="dw-method" className="wt-calc-label">지급방식</label>
+          <select id="dw-method" value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value as DailyWorkerPaymentMethod)}>
             <option value="per_day">일별 지급</option>
             <option value="lump_sum">월 일괄 지급</option>
           </select>

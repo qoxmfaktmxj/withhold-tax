@@ -5,25 +5,6 @@ import { checkEmployeeLocalTax } from '@/lib/employee-local-tax/check'
 
 const KRW = (n: number) => n.toLocaleString('ko-KR') + '원'
 
-const field: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '9px 12px',
-  border: '1px solid var(--border)',
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--white)',
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.9rem',
-  color: 'var(--text-primary)',
-}
-
-const label: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  color: 'var(--gray-600)',
-  marginBottom: 6,
-}
 
 function won(value: string): number {
   return Number(value.replace(/[^0-9]/g, '')) || 0
@@ -65,39 +46,39 @@ export function EmployeeLocalTaxCalculator() {
   )
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 840 }}>
         <div>
-          <label htmlFor="elt-avg" style={label}>직전 12개월 월평균 급여총액</label>
-          <input id="elt-avg" style={field} inputMode="numeric" value={avgMonthlyPayroll} onChange={(e) => setAvgMonthlyPayroll(e.target.value)} />
+          <label htmlFor="elt-avg" className="wt-calc-label">직전 12개월 월평균 급여총액</label>
+          <input id="elt-avg" inputMode="numeric" value={avgMonthlyPayroll} onChange={(e) => setAvgMonthlyPayroll(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="elt-payroll" style={label}>당월 급여총액(비과세 제외)</label>
-          <input id="elt-payroll" style={field} inputMode="numeric" value={monthlyPayrollTotal} onChange={(e) => setMonthlyPayrollTotal(e.target.value)} />
+          <label htmlFor="elt-payroll" className="wt-calc-label">당월 급여총액(비과세 제외)</label>
+          <input id="elt-payroll" inputMode="numeric" value={monthlyPayrollTotal} onChange={(e) => setMonthlyPayrollTotal(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="elt-ls-count" style={label}>장기근속수당 지급 인원</label>
-          <input id="elt-ls-count" style={field} inputMode="numeric" value={longServiceEmployeeCount} onChange={(e) => setLongServiceEmployeeCount(e.target.value)} />
+          <label htmlFor="elt-ls-count" className="wt-calc-label">장기근속수당 지급 인원</label>
+          <input id="elt-ls-count" inputMode="numeric" value={longServiceEmployeeCount} onChange={(e) => setLongServiceEmployeeCount(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="elt-ls-allowance" style={label}>1인당 장기근속수당 지급액</label>
-          <input id="elt-ls-allowance" style={field} inputMode="numeric" value={longServiceAllowancePerEmployee} onChange={(e) => setLongServiceAllowancePerEmployee(e.target.value)} />
+          <label htmlFor="elt-ls-allowance" className="wt-calc-label">1인당 장기근속수당 지급액</label>
+          <input id="elt-ls-allowance" inputMode="numeric" value={longServiceAllowancePerEmployee} onChange={(e) => setLongServiceAllowancePerEmployee(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="elt-ls-pay" style={label}>해당 직원 1인당 월급여</label>
-          <input id="elt-ls-pay" style={field} inputMode="numeric" value={longServiceMonthlyPayPerEmployee} onChange={(e) => setLongServiceMonthlyPayPerEmployee(e.target.value)} />
+          <label htmlFor="elt-ls-pay" className="wt-calc-label">해당 직원 1인당 월급여</label>
+          <input id="elt-ls-pay" inputMode="numeric" value={longServiceMonthlyPayPerEmployee} onChange={(e) => setLongServiceMonthlyPayPerEmployee(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="elt-childcare" style={label}>육아휴직 대체인력 급여 합계</label>
-          <input id="elt-childcare" style={field} inputMode="numeric" value={childcareReplacementPay} onChange={(e) => setChildcareReplacementPay(e.target.value)} />
+          <label htmlFor="elt-childcare" className="wt-calc-label">육아휴직 대체인력 급여 합계</label>
+          <input id="elt-childcare" inputMode="numeric" value={childcareReplacementPay} onChange={(e) => setChildcareReplacementPay(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="elt-other" style={label}>기타 공제(중소기업 고용지원 등)</label>
-          <input id="elt-other" style={field} inputMode="numeric" value={otherDeduction} onChange={(e) => setOtherDeduction(e.target.value)} />
+          <label htmlFor="elt-other" className="wt-calc-label">기타 공제(중소기업 고용지원 등)</label>
+          <input id="elt-other" inputMode="numeric" value={otherDeduction} onChange={(e) => setOtherDeduction(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="elt-month" style={label}>급여 지급월(YYYY-MM)</label>
-          <input id="elt-month" type="month" style={field} placeholder="2026-05" value={paymentMonth} onChange={(e) => setPaymentMonth(e.target.value)} />
+          <label htmlFor="elt-month" className="wt-calc-label">급여 지급월(YYYY-MM)</label>
+          <input id="elt-month" type="month" placeholder="2026-05" value={paymentMonth} onChange={(e) => setPaymentMonth(e.target.value)} />
         </div>
       </div>
 

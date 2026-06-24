@@ -8,24 +8,6 @@ import {
 
 const formatter = new Intl.NumberFormat('ko-KR')
 
-const field: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '9px 12px',
-  border: '1px solid var(--border)',
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--white)',
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.9rem',
-  color: 'var(--text-primary)',
-}
-const label: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  color: 'var(--gray-600)',
-  marginBottom: 6,
-}
 
 const incomeTypeOptions: Array<{ value: YearEndSettlementIncomeType; label: string }> = [
   { value: 'business', label: '사업소득 연말정산 대상' },
@@ -43,14 +25,13 @@ export function YearEndInstallmentScheduler() {
   )
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14, maxWidth: 840 }}>
         <div>
-          <label htmlFor="yas-income-type" style={label}>대상 소득 유형</label>
+          <label htmlFor="yas-income-type" className="wt-calc-label">대상 소득 유형</label>
           <select
             id="yas-income-type"
-            style={field}
-            value={incomeType}
+                       value={incomeType}
             onChange={(event) => setIncomeType(event.target.value as YearEndSettlementIncomeType)}
           >
             {incomeTypeOptions.map((option) => (
@@ -61,22 +42,20 @@ export function YearEndInstallmentScheduler() {
           </select>
         </div>
         <div>
-          <label htmlFor="yas-settlement-year" style={label}>연말정산 귀속연도</label>
+          <label htmlFor="yas-settlement-year" className="wt-calc-label">연말정산 귀속연도</label>
           <input
             id="yas-settlement-year"
-            style={field}
-            type="number"
+                       type="number"
             min={2026}
             value={settlementYear}
             onChange={(event) => setSettlementYear(Number(event.target.value))}
           />
         </div>
         <div>
-          <label htmlFor="yas-additional-tax" style={label}>추가납부세액</label>
+          <label htmlFor="yas-additional-tax" className="wt-calc-label">추가납부세액</label>
           <input
             id="yas-additional-tax"
-            style={field}
-            type="number"
+                       type="number"
             min={0}
             step={1}
             value={additionalTax}
