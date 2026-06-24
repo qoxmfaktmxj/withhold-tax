@@ -48,7 +48,7 @@ export function NonTaxableCapCalculator() {
   const needsSpecialSite = rule.ruleId === 'overseas_work_exemption'
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14, maxWidth: 760 }}>
         <div>
           <label htmlFor="nt-rule" style={label}>급여 항목</label>

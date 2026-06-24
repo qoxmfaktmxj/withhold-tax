@@ -43,7 +43,7 @@ export function BusinessIncomeCalculator() {
   }, [gross, payDate, incomeClass])
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14, maxWidth: 640 }}>
         <div>
           <label htmlFor="bc-gross" style={label}>지급 총액(인적용역 사업소득)</label>

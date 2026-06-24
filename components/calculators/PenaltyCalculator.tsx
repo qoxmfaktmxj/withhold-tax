@@ -68,7 +68,7 @@ export function PenaltyCalculator() {
   }, [unpaid, dueDate, payDate, noticeStatus, noticeDate, designatedDueDate, demandCost])
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14, maxWidth: 640 }}>
         <div>
           <label htmlFor="pc-unpaid" style={label}>미납·과소납부 세액(원천세 본세)</label>

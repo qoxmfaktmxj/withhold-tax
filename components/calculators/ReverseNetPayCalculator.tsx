@@ -47,7 +47,7 @@ export function ReverseNetPayCalculator() {
   const b = result.breakdown
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 840 }}>
         <div>
           <label htmlFor="rnp-target" style={label}>희망 월 실수령액</label>

@@ -43,7 +43,7 @@ export function YearEndInstallmentScheduler() {
   )
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14, maxWidth: 840 }}>
         <div>
           <label htmlFor="yas-income-type" style={label}>대상 소득 유형</label>

@@ -65,7 +65,7 @@ export function EmployeeLocalTaxCalculator() {
   )
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 840 }}>
         <div>
           <label htmlFor="elt-avg" style={label}>직전 12개월 월평균 급여총액</label>

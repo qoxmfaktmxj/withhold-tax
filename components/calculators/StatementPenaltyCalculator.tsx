@@ -45,7 +45,7 @@ export function StatementPenaltyCalculator() {
   }, [amount, companySize, statementType, submissionStatus])
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 840 }}>
         <div>
           <label htmlFor="statement-amount" style={label}>미제출·지연제출 지급금액</label>

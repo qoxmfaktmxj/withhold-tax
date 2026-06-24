@@ -32,7 +32,7 @@ export function FilingDeadlineCalculator() {
   const result = useMemo(() => calculateDeadline(rule, { paymentDate }), [paymentDate, rule])
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14, maxWidth: 760 }}>
         <div>
           <label htmlFor="deadline-rule" style={label}>신고·제출 유형</label>

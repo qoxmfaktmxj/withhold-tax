@@ -56,7 +56,7 @@ export function YearEndSimulator() {
     result.status === 'refund' ? result.refundAmount : result.status === 'additional' ? result.additionalTax : 0
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 860 }}>
         <div>
           <label htmlFor="year-end-gross" style={label}>총급여</label>

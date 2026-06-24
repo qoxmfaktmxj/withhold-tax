@@ -53,7 +53,7 @@ export function RetirementTaxChecker() {
   )
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 820 }}>
         <div>
           <label htmlFor="retire-pay" style={label}>퇴직급여</label>

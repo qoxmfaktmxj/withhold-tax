@@ -49,7 +49,7 @@ export function ExecutiveSeveranceLimitCalculator() {
   )
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14, maxWidth: 840 }}>
         <div>
           <label htmlFor="esl-total" style={label}>퇴직금 총액</label>

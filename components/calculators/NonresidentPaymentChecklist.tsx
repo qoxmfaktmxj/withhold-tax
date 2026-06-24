@@ -72,7 +72,7 @@ export function NonresidentPaymentChecklist() {
   )
 
   return (
-    <div>
+    <div className="wt-calc">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14, maxWidth: 860 }}>
         <div>
           <label htmlFor="nr-payee-type" style={label}>대상자 유형</label>
