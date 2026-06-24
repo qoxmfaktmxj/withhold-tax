@@ -1067,37 +1067,30 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-chapter-card {
-  background: var(--white);
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px 14px;
+  border-radius: var(--radius-xl);
+  padding: 14px 15px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   text-decoration: none;
   color: var(--text-primary);
-  box-shadow: var(--shadow-xs);
-  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .15s, border-color .15s;
   position: relative;
   overflow: hidden;
 }
 
 .wt-chapter-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--blue-50);
-  opacity: 0;
-  transition: opacity 0.2s;
+  display: none;
 }
 
 .wt-chapter-card:hover {
   box-shadow: var(--shadow-md);
-  border-color: var(--blue-300);
-  transform: translateY(-2px);
+  border-color: var(--accent-300);
 }
 
-.wt-chapter-card:hover::before { opacity: 1; }
 .wt-chapter-card > * { position: relative; }
 
 .wt-chapter-card:focus-visible {
@@ -1106,7 +1099,8 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-chapter-card--unavailable {
-  opacity: 0.5;
+  opacity: .55;
+  box-shadow: none;
   cursor: default;
   pointer-events: none;
 }
@@ -1117,23 +1111,24 @@ div.wt-sidebar-search button:hover { color: var(--gray-700); }
 }
 
 .wt-chapter-number {
-  font-family: var(--font-display);
-  font-size: 0.66rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--blue-500);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
   display: block;
 }
 
 .wt-chapter-title {
   font-family: var(--font-body);
   font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--gray-800);
+  font-weight: 500;
+  color: var(--ink);
   line-height: 1.45;
   letter-spacing: -0.01em;
   display: block;
+}
+
+.wt-chapter-card:hover .wt-chapter-title {
+  color: var(--accent);
 }
 
 .wt-chapter-card:hover .wt-chapter-title { color: var(--blue-800); }
