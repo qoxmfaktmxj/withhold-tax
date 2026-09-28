@@ -102,9 +102,9 @@ reveal IntersectionObserver, glossary/index 검색 필터.
 
 ## 작업 워크플로
 
-이 레포는 superpowers + gstack 스킬 사용 환경. 신규 앱 설계이므로:
-1. `/office-hours` — 무엇을/왜 만들지 구상
-2. superpowers `brainstorming` → `writing-plans` — 계획 수립
+신규 앱 설계 흐름:
+1. 요구사항과 목적 정리
+2. 계획 수립
 3. 구현 → Vercel 배포
 
 위험 작업(파일 삭제·git force/reset·설정/환경변수 변경·전역 패키지)은 실행 전 확인.
