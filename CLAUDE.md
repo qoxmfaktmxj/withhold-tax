@@ -104,7 +104,7 @@ reveal IntersectionObserver, glossary/index 검색 필터.
 
 ## 작업 워크플로
 
-이 레포는 superpowers + gstack 스킬 사용 환경. 기존 앱 유지보수 흐름:
+기존 앱 유지보수 흐름:
 1. 근거 문서/HANDOFF/신규 자료 분석
 2. fact/rule/MDX 연결 구조 확인
 3. TDD/SDD 기준으로 테스트 또는 스키마 먼저 정의
